@@ -1,0 +1,176 @@
+/* ------------------------------------------------------ */
+/* || -------------- START "ПОДВАЛ САЙТА" --------------- */
+/* ------------------------------------------------------ */
+.page-footer {
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+  background-color: var(--color-bg-hero);
+}
+
+/* START Футер-адрес */ /* .footer-address-wrapper { } */
+.footer-address {
+  margin-top: var(--uni-margin-small);
+  font-style: inherit;
+}
+
+/* .footer-address-list { } */
+/* .footer-address-list-item { } */
+
+.footer-address-list .footer-address-item + .footer-address-item {
+  margin-top: 9px; /* Верхний отступ между ссылками в адресе */
+}
+
+/* г. Киев, пр-т Леси Украинки, 26; LH24px; */
+.footer-map-pointer {
+  position: relative;
+  /* from browser - font-weight: 400; from .footer-address - font-style: normal; */
+  color: var(--color-white);
+}
+
+/* info@example.com, +38 099 111 11 11, h21px */
+.footer-contact {
+  position: relative;
+  /* from browser - font-weight: 400; from .footer-address - font-style: normal; */
+  color: rgba(255, 255, 255, 0.6);
+}
+/* END Футер-адрес */
+
+/*
+ *
+*/
+
+/* START "Футер cоц. ссылки" */
+.footer-social-container {
+  /* margin-top: 60px; for mobile */
+  margin-left: 4.375rem; /* 70px */
+}
+
+/* присоединяйтесь, h16.41px */
+.footer-social-title {
+  /* margin-top: 60px; for mobile only */
+  margin-bottom: var(--uni-margin-med);
+  /* text-align: center; for mobile and tablet only */
+
+  font-weight: 700;
+  line-height: 1.17; /* from body font-size: 14px; */
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.footer-social-list__link {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-social-list__icon {
+  fill: var(--color-white);
+}
+/* END "Футер cоц. ссылки" */
+
+/* START Форма подписки на рассылку */
+.subscribe-form-wrapper {
+  margin-left: 5.8125rem; /* 93px for desktop only, mobile = 0; */
+}
+
+.subscribe-form {
+  /* text-align: center; for mobile only */
+}
+
+/* Подпишитесь на рассылку */
+/* .subscribe-title { mb20 w219 h16 fw700 fz14 lh15 lsp0.03em ttup c#FFF } */
+.subscribe-title {
+  display: block;
+
+  min-width: 13.6875rem;
+  /* margin-top: 60px; for mobile */
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  line-height: 1.07;
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.subscribe-form > .group {
+  margin-bottom: 0;
+}
+
+.group.subscribe {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.subscribe > .form-field {
+  border: none;
+}
+
+/* { mr12 mb94 w358 x h50  brad4 bdr1px solid rgba(255, 255, 255, 0.3); */
+.subscribe-input {
+  position: relative;
+
+  min-width: 22.375rem; /* 358px */
+  min-height: 3.125rem; /* 50px */
+  padding: 0.75rem; /* 12px */
+  margin-right: 0.75rem; /* margin-top: var(--uni-margin-med); for mobile */
+
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+
+  background-color: var(--color-bg-hero);
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+
+  /* E-mail */
+  /* { pt=pb=15 pl=16 w47 h20 fz16 lh20 df alic lsp0.03em crgba(255, 255, 255, 0.6); } */
+  &::placeholder {
+    display: flex;
+    align-items: center;
+    min-height: 1.25rem; /* 20px */
+    padding: 0.9375rem 0 0.9375rem 1rem;
+    font-size: 1rem; /* 16px */
+    line-height: 1.25rem; /* 20px */
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.03em;
+  }
+}
+
+/* Подписаться */
+.subscribe-btn {
+  display: inline-flex;
+  align-items: center;
+
+  padding-top: 0.5625rem; /* 9px */
+  padding-right: 1.6875rem; /* 27px */
+  padding-bottom: 0.5625rem; /* 9px */
+  padding-left: 1.75rem; /* 28px */
+  /* margin-top: var(--uni-margin-med); for mobile */
+
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.875; /* = box */
+  letter-spacing: 0.06em;
+}
+
+.subscribe-btn .send-icon {
+  margin-left: 0.625rem;
+  fill: currentColor;
+  /* anchor */
+  animation: send-icon-return var(--time) var(--cubic) 1 backwards;
+
+  /* transform: rotate(-1deg) scale(1); */
+  transform-origin: top left;
+  transition: currentColor var(--time) var(--cubic);
+}
+
+.subscribe-btn:hover > .send-icon,
+.subscribe-btn:focus > .send-icon {
+  animation: send-icon-fly var(--time) var(--cubic) 1 forwards;
+}
+
+/* END Форма подписки на рассылку */
+
+/* ------------------------------------------------------ */
+/* || -------------- END "ПОДВАЛ САЙТА" ----------------- */
+/* ------------------------------------------------------ */

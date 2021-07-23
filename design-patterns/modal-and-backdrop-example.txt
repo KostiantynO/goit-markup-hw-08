@@ -1,0 +1,26 @@
+.window-overlay {
+  align-items: flex-start;
+  background-color: rgba(0,0,0,.64);
+  display: none;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+display: block;
+
+.window {
+  background-color: #f4f5f7;
+  border-radius: 2px;
+
+  margin: 48px 0 80px;
+  overflow: hidden;
+  position: relative;
+  width: 768px;
+  z-index: 25;
+}

@@ -1,0 +1,69 @@
+/* START Анимация */
+/* opacity, translate, rotate, scale, transform: perspective(400px) rotateY(45deg); */
+
+/* keep */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(7deg);
+  }
+
+  75% {
+    transform: rotate(-7deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* just for fun */
+@keyframes rotate-box {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.21 scale(0.8);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scalingUp {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(100%);
+  }
+}
+
+@keyframes send-icon-fly {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  100% {
+    transform: rotate(-360deg) scale(0.5);
+  }
+}
+
+@keyframes send-icon-return {
+  0% {
+    transform: rotate(360deg) scale(0.5);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* END Анимация */

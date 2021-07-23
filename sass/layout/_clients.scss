@@ -1,0 +1,62 @@
+/* ------------------------------------------------------ */
+/* || ---------------- START "КЛИЕНТЫ" ------------------ */
+/* ------------------------------------------------------ */
+
+/* Постоянные клиенты */
+.clients-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: calc(-1 * var(--uni-margin)); /* 30px top left */
+  margin-left: calc(-1 * var(--uni-margin));
+}
+
+.client-item {
+  /*  Ширина карточки постоянного клиента */
+  flex-basis: calc(100% / var(--cards-per-line-6) - var(--uni-margin)); /* 6 cards */
+  min-width: 10.625rem;
+  max-width: 14.125rem;
+  /* flex-grow: 1; FIXME for mobile */
+
+  height: 5.75rem;
+  margin-top: var(--uni-margin); /* 30px top and left */
+  margin-left: var(--uni-margin);
+}
+
+.client-link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-icon);
+  border-radius: 0.25rem;
+
+  transition: border-color var(--time) var(--cubic);
+}
+
+.client-icon {
+  fill: var(--color-icon);
+
+  transition: fill var(--time) var(--cubic);
+}
+
+.client-link:hover,
+.client-link:focus {
+  border-color: var(--color-accent);
+}
+
+.client-link:hover .client-icon,
+.client-link:focus .client-icon {
+  fill: var(--color-accent);
+}
+/* ------------------------------------------------------ */
+/* || ----------------- END "КЛИЕНТЫ" ------------------- */
+/* ------------------------------------------------------ */

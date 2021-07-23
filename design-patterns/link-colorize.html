@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html> <head> <meta name="viewport" content="width=device-width, initial-scale=1"> <style>
+.container        { height: 600px; width: 600px; }
+.container div    { height: 50px;  width: 600px; }
+
+.nav-link         { position: relative; display: inline-block; font-size: 40px; }
+.nav-link::before { position: absolute; content: ""; display: inline-block;  inset: 0;  transform: scaleX(0); transition: 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+.nav-link:hover::before { transform: scaleX(100%);}
+
+.nav-link > span    { position: absolute; display: inline-block;  inset: 0;  transform: scaleX(100%); transition: 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+.nav-link:hover > span { transform: scaleX(0);}
+
+
+
+/* Result: link color = #2196f3 (accent) */
+.nav-link         { color: black; background-color: white; }
+.nav-link::before { background-color: #2196f3; mix-blend-mode: screen; }
+
+
+/* Result: #212121 color on link */
+.nav-link > span  { background-color: #212121; mix-blend-mode: screen; }
+
+
+
+
+.normal      { mix-blend-mode: normal;      }
+.multiply    { mix-blend-mode: multiply;    }
+.screen      { mix-blend-mode: screen;      }
+.overlay     { mix-blend-mode: overlay;     }
+.darken      { mix-blend-mode: darken;      }
+.lighten     { mix-blend-mode: lighten;     }
+.color-dodge { mix-blend-mode: color-dodge; }
+.color-burn  { mix-blend-mode: color-burn;  }
+.difference  { mix-blend-mode: difference;  }
+.exclusion   { mix-blend-mode: exclusion;   }
+.hue         { mix-blend-mode: hue;         }
+.saturation  { mix-blend-mode: saturation;  }
+.color       { mix-blend-mode: color;       }
+.luminosity  { mix-blend-mode: luminosity;  }
+</style>
+</head>
+<body>
+
+<h2>All mix-blend-mode values</h2>
+<p>The mix-blend-mode property specifies how an element's content should blend with its background:</p>
+
+
+<div class="container">
+  <div width="300" height="300" class="white-bg normal"      width="300" height="300"> <a class="nav-link" href="#0">STUDIO <span class="nav-link-bg"></span></a> </div>
+  <div width="300" height="300" class="white-bg multiply"    width="300" height="300"> <a class="nav-link" href="#0">STUDIO <span class="nav-link-bg"></span></a> </div>
+  <div width="300" height="300" class="white-bg screen"      width="300" height="300"> <a class="nav-link" href="#0">STUDIO <span class="nav-link-bg"></span></a> </div>
+  <div width="300" height="300" class="white-bg overlay"   	 width="300" height="300"> <a class="nav-link" href="#0">STUDIO <span class="nav-link-bg"></span></a> </div>
+  <div width="300" height="300" class="white-bg darken"      width="300" height="300"> <a class="nav-link" href="#0">STUDIO <span class="nav-link-bg"></span></a> </div>
+
+  <div width="300" height="300" class="white-bg lighten"     width="300" height="300"> <a class="nav-link" href="#0">STUDIO <span class="nav-link-bg"></span></a> </div>
+  <div width="300" height="300" class="white-bg color-dodge" width="300" height="300"> <a class="nav-link" href="#0">STUDIO <span class="nav-link-bg"></span></a> </div>
+  <div width="300" height="300" class="white-bg color-burn"  width="300" height="300"> <a class="nav-link" href="#0">STUDIO <span class="nav-link-bg"></span></a> </div>
+  <div width="300" height="300" class="white-bg difference"  width="300" height="300"> <a class="nav-link" href="#0">STUDIO <span class="nav-link-bg"></span></a> </div>
+  <div width="300" height="300" class="white-bg exclusion"   width="300" height="300"> <a class="nav-link" href="#0">STUDIO <span class="nav-link-bg"></span></a> </div>
+
+  <div width="300" height="300" class="white-bg hue"         width="300" height="300"> <a class="nav-link" href="#0">STUDIO <span class="nav-link-bg"></span></a> </div>
+  <div width="300" height="300" class="white-bg saturation"  width="300" height="300"> <a class="nav-link" href="#0">STUDIO <span class="nav-link-bg"></span></a> </div>
+  <div width="300" height="300" class="white-bg color-burn"  width="300" height="300"> <a class="nav-link" href="#0">STUDIO <span class="nav-link-bg"></span></a> </div>
+  <div width="300" height="300" class="white-bg color"       width="300" height="300"> <a class="nav-link" href="#0">STUDIO <span class="nav-link-bg"></span></a> </div>
+  <div width="300" height="300" class="white-bg luminosity"  width="300" height="300"> <a class="nav-link" href="#0">STUDIO <span class="nav-link-bg"></span></a> </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+w450px img-h460px title-h162px card-h622px
+w354px img-h374px title-h162px card-h536px
+w270px img-h260px title-h168px card-h428px

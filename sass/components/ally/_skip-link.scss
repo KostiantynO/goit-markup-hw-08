@@ -1,0 +1,30 @@
+body > .skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: var(--zi-2);
+
+  max-width: 18.75rem; /* 300px */
+  max-height: 3.125rem; /* 50px */
+  padding: 0.5rem; /* 8px */
+  margin-left: 0.5rem;
+  overflow: hidden;
+
+  font-weight: bold;
+  font-size: 1.21rem;
+  line-height: 1.21rem;
+  color: var(--color-text-primary);
+  word-wrap: break-word;
+
+  background-color: var(--color-white);
+  border: 1px solid transparent;
+  border-radius: 3px;
+
+  transform: translateY(-100%);
+  transition: transform var(--time) var(--cubic);
+
+  &:focus {
+    transform: translateY(21%);
+  }
+}

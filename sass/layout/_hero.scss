@@ -1,0 +1,28 @@
+/* ------------------------------------------------------ */
+/* || ------------------ START "ГЕРОЙ" ------------------ */
+/* ------------------------------------------------------ */
+.hero {
+  max-width: 100rem;
+
+  padding-top: clamp(7.375rem, #{"max(12.5vw, 118px)"}, 12.5rem); /* 118px to 200px */
+  padding-bottom: clamp(7.375rem, #{"max(12.5vw, 118px)"}, 12.5rem);
+
+  text-align: center;
+
+  background-color: var(--color-bg-hero); /* 2F303A */
+
+  /* Img Overlay */
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/squooshed/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.main__hero {
+  margin: 0 auto;
+}
+
+/* ------------------------------------------------------ */
+/* || ------------------- END "ГЕРОЙ" ------------------- */
+/* ------------------------------------------------------ */

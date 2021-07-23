@@ -1,0 +1,64 @@
+.nav__link {
+  @extend %header-link;
+
+  display: inline-block;
+  padding-top: 0.5rem; /* 8px */
+
+  text-decoration: none;
+
+  /* || ----- START SPECIAL LINK OVERLAY -----  */
+  /* Result: link color = #2196f3 (accent) */
+  color: var(--color-black);
+  background-color: var(--color-white);
+
+  &::before {
+    content: "";
+    @extend %nav__link-overlay;
+    @extend %scaleX-zero;
+
+    /* Result: link color = #2196f3 (accent) */
+    background-color: var(--color-accent);
+  }
+  /* || ------ END SPECIAL LINK OVERLAY ------  */
+
+  &:focus::before,
+  &:hover::before {
+    @extend %scaleX-full-width;
+  }
+
+  &--current::before {
+    @extend %scaleX-full-width;
+  }
+
+  /* Current-link highlight */
+  &--current::after {
+    position: absolute;
+    top: 3.3125rem;
+    left: 0;
+
+    min-width: 100%;
+    min-height: 0.25rem;
+    content: "";
+
+    background-color: var(--color-accent);
+    border-radius: 0.125rem;
+    border: 1px solid transparent;
+  }
+}
+
+.nav__link-overlay {
+  @extend %nav__link-overlay;
+  @extend %scaleX-full-width;
+
+  /* Result: nav__link color = #212121 (text-primary) */
+  background-color: var(--color-text-primary);
+}
+
+.nav__link:focus > .nav__link-overlay,
+.nav__link:hover > .nav__link-overlay {
+  @extend %scaleX-zero;
+}
+
+.nav__link-overlay--current {
+  @extend %scaleX-zero;
+}

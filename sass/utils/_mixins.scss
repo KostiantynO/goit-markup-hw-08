@@ -1,0 +1,25 @@
+@mixin font($fs: 18px, $fw: 400, $lh: 24px) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh/$fs;
+}
+
+.mixin-title {
+  @include font();
+  color: tomato;
+}
+
+.mixin-title2 {
+  @include font(24px, 700, 28.8px);
+  color: tomato;
+}
+
+.mixin-title3 {
+  @include font($fw: 700);
+  color: tomato;
+}
+
+.mixin-title4 {
+  @include font();
+  color: tomato;
+}

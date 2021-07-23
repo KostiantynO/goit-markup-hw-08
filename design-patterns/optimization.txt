@@ -1,0 +1,5 @@
+1. Split css to blocking and non blocking.
+
+<!-- <link rel="stylesheet" href="styles.css"> <!-- blocking -->
+<!-- <link rel="stylesheet" href="print.css" media="print"> <!--  not blocking -->
+<!-- <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 480px)"> <!-- not blocking on large screens -->

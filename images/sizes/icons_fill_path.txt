@@ -1,0 +1,13 @@
+astronaut
+<symbol id="icon-astronaut" viewBox="0 0 32 32"><path fill="var(--color-accent)" d="M31.974 4.524a.535.535
+
+antenna
+<symbol id="icon-antenna" viewBox="0 0 32 32">
+<path fill="var(--color-accent)" d="M13.876 20.267h-.007a1.6 1.6 0 00-.003 3.2h.007a1.6
+
+diagram
+<symbol id="icon-diagram" viewBox="0 0 32 32"><path fill="var(--color-accent)" d="M14.926 14.965h1.066v4.798h-1.066v-4.798zm4.264
+
+clock
+<symbol id="icon-clock" viewBox="0 0 32 32">
+<path fill="var(--color-accent)" d="M15.354 3.185V4.46a.638.638 0 001.276 0V3.185a.638.638

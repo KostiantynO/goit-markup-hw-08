@@ -1,0 +1,55 @@
+
+------------------------- MODAL WINDOW AND FORM -------------------------
+mobile.modal  { w450 x h609 mt93  mb94  ml=mr15  p40
+background: #FFFFFF;
+box-shadow:
+0px 1px 3px rgba(0, 0, 0, 0.12),
+0px 1px 1px rgba(0, 0, 0, 0.14),
+0px 2px 1px rgba(0, 0, 0, 0.2);
+border-radius: 4px; }
+
+tablet.modal  { w450 x h609 mt221 mb222 ml=mr536 p40 }
+desktop.modal { w528 x h581 mt93  mb94  ml=mr15  p40 }
+
+
+mt 480 93px 19.37vw
+mt 768 208px 27.08vw
+mt 1600 221px 13.81vw
+
+mb 480 94px 19.58vw
+mb 768 207px 26.95vw
+mb 1600 222px 13.87vw
+
+
+.form {  }
+
+.form-title {mb12 w370 x h60 fw700 fz20 lh30 talcenter lsp0.03em c#212121 }
+.form-label-name|tel|email|comment { mb4 fz12 lh14 lsp0.01em c#757575 }
+.form-input-name|tel|email { fz16 lh16 mb10 pl42 pt=pb12 pr=12 w370 x h40 brrad4 brdr:1px solid rgba(33, 33, 33, 0.2); }
+.form-input-name:focus { border: 1px solid #2196F3; }
+
+.form-input-icon { mr12 w18 x h18 pt=pb=11 pl12 pr340 }
+.form-input-name:focus ~ .form-input-icon { bg#2196F3 }
+
+.form-textarea { mb20 p12px16px w370 x h120 fz14 lh16 lsp0.01em c: rgba(117, 117, 117, 0.5);  brd: 1px solid rgba(33, 33, 33, 0.2); b-rad4 }
+
+.group.policy { df aifs mb30}
+.form-input-checkbox { mr8 pt4 pr2 pb3 pl3  w16 x h15 c#212121}
+.form-input-checkbox > icon { w11.4 h8.4 bg#fff brd0.2px solid #fff; }
+
+.form-label-checkbox {w346 x h14 fz12 lh14 lsp0.03em c#757575 }
+form-label-link { c#2196f3 tdecund }
+
+
+.footer > form
+
+
+/* Подпишитесь на рассылку */
+.subscribe-wrapper { ml93 }
+.subscribe-title { mb20 w219 h16 fw700 fz14 lh15 lsp0.03em ttup c#FFF }
+
+/* bg */
+.subscribe-form-input { mr12 mb94 w358 x h50  brad4 bdr1px solid rgba(255, 255, 255, 0.3);
+                           filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));  }
+/*  E-mail */
+.subscribe-form-input-email::placeholder { pt=pb=15 pl=16 w47 h20 fz16 lh20 df alic lsp0.03em crgba(255, 255, 255, 0.6); }

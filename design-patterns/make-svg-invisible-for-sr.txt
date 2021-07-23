@@ -1,0 +1,19 @@
+make svg invisible for screen-readers in html:
+
+<button aria-label="Search">
+<svg role="img" aria-label="Icon-only button" focusable="false">
+	<use aria-hidden="true"></use></svg>
+</button>
+
+.icon-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  padding: 0.35em;
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+}

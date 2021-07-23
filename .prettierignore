@@ -1,0 +1,7 @@
+# Ignore all minified HTML/CSS/JS files:
+*.min.html
+*.min.css
+*.min.css*
+*.min.js
+icons.svg
+link-colorize.html

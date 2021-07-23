@@ -1,0 +1,57 @@
+Project Architecture:
+- my-project/
+ - index.html
+ - sass/
+    - main.scss
+    - utils/
+        - _colors.scss
+        - _mixins.scss
+    - components/
+	- _header.scss
+	- _logo.scss
+	- _site-nav.scss
+	- _section.scss
+
+
+
+/* ===== SASS (main.scss) ===== */
+%notification {
+  background-color: #ccc;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.notification-error {
+  @extend %notification;
+  background-color: red;
+}
+
+.notification-success {
+  @extend %notification;
+  background-color: green;
+}
+
+/* ===== CSS (main.css) ===== */
+.notification-error, .notification-success {
+  background-color: #ccc;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.notification-error {
+  background-color: red;
+}
+
+.notification-success {
+  background-color: green;
+}
+
+/* ===== SASS (main.scss) ===== */
+%list { list-style: none; }
+.features { @extend %list;  background-color: red; }
+.team{ @extend %list;  background-color: teal; }
+
+/* ===== CSS (main.css) ===== */
+.features, .team { list-style: none; }
+.features { background-color: red; }
+.team  { background-color: teal; }

@@ -1,0 +1,21 @@
+/* Overlay */
+.backdrop {
+  position: fixed;
+  inset: 0;
+
+  z-index: var(--zi-7);
+
+  padding: 0 15px;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic),
+    visibility var(--time) var(--cubic), background-color var(--time) var(--cubic);
+  /* Fading is smooth after deleting excessive is-hidden parts. */
+
+  &.is-hidden {
+    overflow: hidden;
+  }
+}

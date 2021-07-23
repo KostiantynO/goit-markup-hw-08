@@ -1,0 +1,99 @@
+/* ------------------------------------------------------ */
+/* || --------------- START "ОСОБЕННОСТИ" --------------- */
+/* ------------------------------------------------------ */
+main > .features {
+  padding-bottom: 2.9375rem;
+}
+
+/* Особенности */ /* .features-container { } */
+.features-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  margin-top: calc(-1 * var(--uni-margin));
+  margin-left: calc(-1 * var(--uni-margin));
+}
+
+.feature-list-item {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  flex-basis: calc(100% / var(--cards-per-line-4) - var(--uni-margin));
+  /* flex-grow: 1; FIXME for mobile */
+
+  min-width: 15.625rem;
+  max-width: 28.125rem;
+  max-height: 16.735rem; /* 267.76px */
+  margin-top: var(--uni-margin); /* 30px top and left */
+  margin-left: var(--uni-margin);
+  overflow: hidden;
+
+  word-wrap: break-word;
+
+  &::before {
+    position: absolute;
+    z-index: var(--zi-1);
+    top: 0;
+    width: 100%;
+    height: 7.5rem;
+    content: "";
+
+    background-color: var(--color-bg-btn-secondary);
+    border-radius: 0.25rem;
+  }
+}
+
+.feature-svg {
+  z-index: var(--zi-2);
+
+  align-self: center;
+  width: 4.375rem;
+  height: 4.375rem;
+  margin-top: 1.5625rem;
+  margin-bottom: 3.4375rem;
+
+  /* .antenna-circle, .clock-ticks, .diagram-bars, .astronaut-stars */
+  color: var(--color-accent);
+}
+
+/* Внимание к деталям, Пунктуальность, Планирование, Современные технологии, h16.41px */
+.feature-heading {
+  max-height: 2.0475rem; /* 1.17 × 14px × 2 = 32.76px / 16px = 2.0475rem */
+  margin-bottom: var(--uni-margin-min);
+  overflow: hidden;
+
+  font-size: inherit; /* from body font-size: 14px; color: #212121; */
+  line-height: 1.17; /* from h3 font-weight: 700; */
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    overflow-y: auto;
+  }
+}
+
+/*Идейные соображения, а также начало повседневной работы по формированию позиции.
+Задача организации, в особенности же рамки и место обучения кадров влечет за собой.
+Равным образом консультация с широким активом в значительной степени обуславливает.
+Значимость этих проблем настолько очевидна, что реализация плановых заданий. w270px, h75px */
+.feature-paragraph {
+  min-width: 15.625rem;
+  max-height: 4.6875rem; /* 75px */
+  overflow: hidden;
+
+  color: var(--color-text-secondary); /* #757575 */ /* from browser font-weight: 400; */
+
+  &:hover,
+  &:focus {
+    overflow-y: auto;
+  }
+}
+
+/* ------------------------------------------------------ */
+/* || ---------------- END "ОСОБЕННОСТИ" ---------------- */
+/* ------------------------------------------------------ */

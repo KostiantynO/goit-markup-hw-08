@@ -1,0 +1,12 @@
+Close a Modal Window when users Click Outside it
+https://techstacker.com/close-modal-click-outside-vanilla-javascript/
+
+https://codepen.io/bradtraversy/pen/zEOrPp?editors=0010
+
+
+<script async src="foobar.js"></script>
+
+Modal Window Focus Trap:
+https://uxdesign.cc/how-to-trap-focus-inside-modal-to-make-it-ada-compliant-6a50f9a70700
+
+Same on GitHub: https://gist.github.com/myogeshchavan97/d50d42aa9205573b811587d57c2e58a6#file-trap_focus-js

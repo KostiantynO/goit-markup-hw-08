@@ -1,0 +1,24 @@
+/* START "Главная навигация сайта" */
+.page-header__nav {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav__menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+
+  margin-left: 5.625rem; /* 90px, левый у Нав */
+}
+
+.nav__item:not(:first-child) {
+  margin-left: calc(var(--uni-margin-big) - 0.375rem); /* все потомки, кроме первого */
+}
+
+/* END "Главная навигация сайта" */

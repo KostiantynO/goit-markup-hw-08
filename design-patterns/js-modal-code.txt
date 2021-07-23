@@ -1,0 +1,31 @@
+  for (let i = 0; i < refs.modalControls.length; i++) {
+      /* Чарівництво */
+      setTimeout(() => {
+        refs.modalControls[i].focus();
+        isFocused = document.activeElement === refs.modalControls[i];
+        console.log(`| ${refs.modalControls[i].className} isFocused: ${isFocused}`);
+      }, 250);
+    }
+
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' || event.keyCode === 27) {
+    // close modal here
+  }
+})
+
+ document.addEventListener("keydown", e => console.log(`keydown: ${e.key}`));
+
+$(document).on('keyup', function(e) {
+  if (e.key == "Enter") $('.save').click();
+  if (e.key == "Escape") $('.cancel').click();
+});
+
+$(document).keyup(function(e) {
+    if (e.which === 13) $('.save').click();   // enter
+    if (e.which === 27) $('.cancel').click(); // esc
+
+    /* OPTIONAL: Only if you want other elements to ignore event */
+    e.preventDefault();
+    e.stopPropagation();
+});

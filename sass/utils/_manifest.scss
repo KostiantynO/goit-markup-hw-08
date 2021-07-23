@@ -1,0 +1,316 @@
+/* USED CLASS NAMES LIST */
+
+/* GENERAL SELECTORS */
+body
+h1
+h2
+h3
+p
+ul
+li
+
+/* BLOCK */
+
+/* ELEMENT */
+
+/* MODIFIER */
+
+/* MIX */
+
+/* HARD SELECTORS */
+
+
+:root {
+  --color-text-primary: #212121;
+  --color-text-secondary: #757575;
+  --color-accent: #2196f3;
+  --color-bg-hero: #2f303a;
+  --color-bg-hero-btn: #188ce8;
+  --color-bg-btn-secondary: #f5f4fa;
+  --color-bg-project-card: #eeeeee;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-icon: #afb1b8;
+  --shadow-middle: 0 3px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08),
+    0 2px 2px rgba(0, 0, 0, 0.12);
+  --shadow-hero-btn: 0 4px 4px rgba(0, 0, 0, 0.15);
+  --body-sans-serif: "Roboto", sans-serif;
+  --logo-sans-serif: "Raleway", sans-serif;
+  --mob: 480px;
+  --tab: 768px;
+  --desk: 1600px;
+  --uni-margin: 1.875rem;
+  --uni-margin-big: 3.125rem;
+  --uni-margin-med: 1.25rem;
+  --uni-margin-small: 1.25rem;
+  --uni-margin-min: 0.625rem;
+  --cards-per-line-6: 6;
+  --cards-per-line-4: 4;
+  --cards-per-line-3: 3;
+  --line-height-project-name: 2;
+  --line-height-project-type: 1.88;
+  --width-portfolio-image: 28.125rem;
+  --zi-1: 1;
+  --zi-2: 2;
+  --zi-3: 3;
+  --zi-4: 4;
+  --zi-5: 5;
+  --zi-6: 6;
+  --zi-7: 7;
+  --zi-8: 8;
+  --zi-9: 9;
+  --zi-10: 10;
+  --time: 250ms;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.is-hidden
+body .sr-only
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+.links,
+.btn
+p
+.list
+.image
+.links
+.svg
+.tooltip
+.svg:focus,
+.btn:focus,
+.btn--primary:focus,
+.btn--secondary:focus,
+.nav__btn-mobile:focus,
+.skip-link:focus,
+.page-header .links:focus,
+.page-header .nav__link:focus
+.btn:focus .links:focus,
+.hero-btn:focus,
+.activities .links:focus,
+.team .links:focus,
+.team .social-list__link:focus,
+.portfolio .links:focus,
+.page-footer .links:focus,
+.page-footer .social-list__link:focus,
+.page-footer .btn:focus,
+.client-link:focus,
+.clients .links:focus,
+.clients .client-link:focus
+.accent,
+.links:hover,
+.links:focus
+.page-html
+.page-html.no-scroll
+.studio-body
+.studio-body.no-scroll
+.portfolio-body
+body
+.container
+.page-header > .container
+.page-footer > .container
+.section
+.section:nth-child(2n + 4)
+.section-title
+rotate {}
+rotate-box {}
+scalingUp {}
+body > .skip-link
+body > .skip-link:focus
+.page-header__nav
+.nav__menu
+.nav__item:not(:first-child)
+.nav__btn-mobile
+.nav__btn-mobile.is-hidden
+.nav__icon
+.logo
+.logo:hover,
+.logo:focus
+.logo__web-studio
+.logo:hover .logo__web-studio,
+.logo:focus .logo__web-studio
+.logo__last-part--inverse
+.logo__web-studio.black
+.white
+.black
+.nav__link
+.nav__link::before
+.nav__link--current::after
+.nav__link-overlay
+.btn
+.btn--primary
+.btn--secondary
+.page-header__nav .btn--secondary:hover,
+.page-header__nav .btn--secondary:focus,
+.page-header__nav .btn--secondary:active
+.page-header__nav .btn--secondary:hover
+.page-header__contacts-list
+.page-header__contacts-list .contact-item + .contact-item
+.header-contact
+.header-contact-icon
+.header-contact:hover > .header-contact-icon,
+.header-contact:focus > .header-contact-icon
+.icon-envelope
+.social-list
+.social-list__item
+.social-list__link
+.social-list__link:focus,
+.social-list__link:hover
+.social-list__icon
+.social-list__link:focus .social-list__icon,
+.social-list__link:hover .social-list__icon
+.backdrop
+.modal
+.backdrop.is-hidden > .modal
+.modal-close-btn-container
+.modal-close-btn-container > .modal-close-btn
+.modal-close-icon
+.modal-close-btn-container > .modal-close-btn:hover,
+.modal-close-btn-container > .modal-close-btn:focus
+.form-title
+.form-field
+.user-info > .form-field + .form-field
+.user-comment
+.form-label
+.form-input
+.form-input:focus,
+.form-comment:focus
+.form-input::placeholder
+.user-info .svg-wrapper,
+.user-info .form-label
+.user-info .svg-wrapper
+.user-info .form-label
+.form-input:not(:placeholder-shown) + .form-label,
+.form-input:focus + .form-label
+.form-input:focus ~ .svg-wrapper
+.form-svg
+.form-input:focus + label
+.form-comment
+.form-comment::placeholder
+.policy
+.custom-checkbox
+.form-input-checkbox:focus:not(:checked) + .form-label > .custom-checkbox
+.form-input-checkbox:focus:checked + .form-label > .custom-checkbox
+.form-input-checkbox:checked + .form-label > .custom-checkbox
+.custom-checkbox > .form-svg
+.form-input-checkbox:checked + .form-label > .custom-checkbox > .form-svg
+.policy > .form-label
+.form-label > .tac-link
+.submit-btn-wrapper
+.portfolio-filters
+.portfolio-filters-list
+.portfolio-filter-list-item
+.page-header
+.main__hero
+.hero__title
+.hero__btn
+main > .features
+.features-list
+.feature-list-item
+.feature-list-item::before
+.feature-svg
+.feature-heading
+.feature-heading:hover,
+.feature-heading:focus
+.feature-paragraph
+.feature-paragraph:hover,
+.feature-paragraph:focus
+main > .activities
+.activities-list
+.activity-list-item
+.activity-image
+.activity-overlay
+.activity-overlay:hover,
+.activity-overlay:focus,
+.activity-overlay:active
+.activity-list-label
+.team
+.designers-list
+.designer-list-item
+.designer-card
+.designer-photo
+.designer-card-title
+.designer-name
+.designer-name:hover
+.designer-role
+.designer-role:hover
+.clients-list
+.client-item
+.client-link
+.client-icon
+.client-link:hover,
+.client-link:focus
+.client-link:hover .client-icon,
+.client-link:focus .client-icon
+.portfolio-list
+.portfolio-list-item
+.portfolio-card
+.portfolio-project-link
+.portfolio-project-link:focus,
+.portfolio-project-link:hover
+.portfolio-card > .links:hover,
+.portfolio-card > .links:focus
+.project-thumb
+.project-thumb::before
+.project-thumb::before,
+.portfolio-project-desc
+.portfolio-project-link:hover .portfolio-project-desc,
+.portfolio-project-link:focus .portfolio-project-desc,
+.portfolio-project-link:hover .project-thumb::before,
+.portfolio-project-link:focus .project-thumb::before
+.portfolio-image
+.portfolio-project-desc
+.project-title
+.project-title:hover,
+.project-title:focus
+.portfolio-project-name
+.portfolio-project-name:hover,
+.portfolio-project-name:focus,
+.portfolio-project-name:active
+.portfolio-project-type
+.portfolio-project-type:hover,
+.portfolio-project-type:focus,
+.portfolio-project-type:active
+.page-footer
+.footer-address
+.footer-address-list .footer-address-item + .footer-address-item
+.footer-map-pointer
+.footer-contact
+.footer-social-container
+.footer-social-title
+.footer-social-list__link
+.footer-social-list__icon
+.subscribe-form-wrapper
+.subscribe-title
+.subscribe-form > .group
+.group.subscribe
+.subscribe > .form-field
+.subscribe-input
+.subscribe-input::placeholder
+.subscribe-btn
+.subscribe-btn .send-icon
+.subscribe-btn:hover > .send-icon,
+.subscribe-btn:focus > .send-icon
+send-icon-fly {}
+send-icon-return {}
+.nav__link,
+.header-contact
+.nav__link::before,
+.nav__link-overlay
+.nav__link::before,
+.nav__link:focus > .nav__link-overlay,
+.nav__link:hover > .nav__link-overlay
+.nav__link:focus::before,
+.nav__link:hover::before,
+.nav__link--current::before,
+.nav__link-overlay
+.btn--secondary:hover,
+.btn--secondary:focus,
+.current-btn
+.btn--primary:focus,
+.btn--primary:hover,
+.current-btn:focus,
+.current-btn:hover

@@ -1,0 +1,20 @@
+$lines-count: (
+  "_page-header.scss": 16,
+  "_hero.scss": 65,
+  "_features.scss": 100,
+  "_activities.scss": 76,
+  "_team.scss": 109,
+  "_clients.scss": 63,
+  "_portfolio.scss": 202,
+  "_page-footer.scss": 197,
+  "_form.scss": 227,
+  "_common.scss": 100,
+);
+
+@function get($key) {
+  @return map-get($stats, $key);
+}
+
+body {
+  background-color: get("background");
+}

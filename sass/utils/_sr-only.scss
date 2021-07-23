@@ -1,0 +1,32 @@
+/* START "Скрытый класс для скрин-ридеров"*/
+body .sr-only {
+  /* В классе "screen readers only" (.sr-only) Для Читалок удалить visibility: hidden; -> и задать элементу (скрытым заголовкам секций) в тег tabindex="0"
+  Тогда контент не выделяется клавишей <таб>.  Контент видно, выделяется мышкой. Блок в потоке. */
+
+  /* Do not size content to 0 pixels if you want the content to be read by a screen reader.
+  * If content styled with font-size:0px or line-height:0, then the elements would still take horizontal space on the screen.
+  * All these techniques may result in search engine penalties as they may be interpreted as malicious. */
+  position: absolute; /* Small */ /* Вытягивает Блок из потока. Сдвигает все элементы страницы выше на высоту блока. Не влияет на сам контент. */
+  top: auto;
+  left: -625rem;
+  width: 1px; /* Useful */ /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
+  height: 1px; /* Useful */ /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
+  padding: 0; /* small importance */ /* Нет внутренних отступов. Не влияет. */
+  margin: -1px; /* small importance */ /* Нет внешних отступов. Не влияет. */
+
+  overflow: hidden; /* Useful */ /* Обрезает контент если Блочный контейнер имеет высоту|макс. высоту, или white-space: nowrap. */
+  clip-path: inset(100%); /* Useful */ /* Вырезает контент. Блок в потоке. */
+  clip: rect(1px 1px 1px 1px); /* Useful */ /* Старая IE6, IE7, вырезает контент. Блок в потоке. */
+  clip: rect(1px, 1px, 1px, 1px); /* Useful */ /* Старая, вырезает контент. Блок в потоке. */
+
+  font-size: 1px; /* Useful */ /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
+  line-height: 1px; /* Useful */ /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
+  white-space: nowrap; /* small importance */ /* Nowrap - элементы в одной строке не переходят на новую строку. Влияет на overflow. */
+
+  pointer-events: none; /* MUST HAVE */ /* Не выделяется мышкой. Контент видно, выделяется клавишей <tab>. Блок в потоке. */
+
+  border: 0; /* small importance */ /* Нет границы. Сжимает внутрь на 1px. Не влияет. */
+  outline: none; /* small importance */ /* Нет рамки вокруг. Не влияет. */
+  opacity: 0; /* only visual effect */ /* Контент прозрачный (не видно, но можно кликать и выделять). Контент и Блок в потоке. */
+}
+/* END "Скрытый класс для скрин-ридеров" */

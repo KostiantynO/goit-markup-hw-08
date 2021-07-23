@@ -1,0 +1,28 @@
+/* ------------------------------------------------------ */
+/* || ------- START "ПОРТФОЛИО - ФИЛЬТРЫ-КНОПКИ" -------- */
+/* ------------------------------------------------------ */
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--uni-margin-big);
+  white-space: nowrap;
+}
+
+.portfolio-filters-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  margin-top: calc(-1 * 0.9375rem);
+  margin-left: calc(-1 * 0.5rem);
+}
+
+.portfolio-filter-list-item {
+  margin-top: 0.9375rem; /* Верхний отступ между фильтрами-кнопками */
+  margin-left: 0.5rem; /* Левый отступ между фильтрами-кнопками */
+}
+
+/* ------------------------------------------------------ */
+/* || ------- END "ПОРТФОЛИО - ФИЛЬТРЫ-КНОПКИ" ---------- */
+/* ------------------------------------------------------ */

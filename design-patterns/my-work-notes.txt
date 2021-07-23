@@ -1,0 +1,5 @@
+clamp( minValue,       vwValue, maxValue ) =
+
+  max( minValue,  min( vwValue, maxValue ) )
+       24px            vwValue? 106px
+           i need      24px here

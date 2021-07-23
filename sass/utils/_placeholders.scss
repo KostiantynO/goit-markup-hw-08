@@ -1,0 +1,45 @@
+/* Студия, Портфолио, Контакты, h16px */
+%header-link {
+  position: relative;
+
+  padding-right: 3px;
+  padding-bottom: 0.5rem;
+  padding-left: 3px;
+
+  font-weight: 500;
+  line-height: 1.14; /* 16px, color: #2196f3; Hover Focus */
+  letter-spacing: 0.02em; /* white-space: nowrap; */
+}
+
+/* nav-link overlays for centered color fill on :hover */
+%nav__link-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: inline-block;
+  mix-blend-mode: screen;
+
+  transition: transform var(--time) var(--cubic);
+}
+
+/* Hide standard overlay over active nav-link */
+%scaleX-zero {
+  transform: scaleX(0);
+}
+
+/* Show overlay over active nav-link */
+%scaleX-full-width {
+  transform: scaleX(100%);
+}
+
+/* Вторичная кнопка по наведению: текст белый, фон - акцент, + тень (динамическая) */
+%btn--secondary-active {
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  box-shadow: var(--shadow-middle);
+}
+
+/* Главная кнопка - активна */
+%btn--primary-active {
+  background-color: var(--color-bg-hero-btn);
+}

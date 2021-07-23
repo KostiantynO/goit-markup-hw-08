@@ -1,0 +1,17 @@
+.form-submit-btn {
+  background-color: #2196F3;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+
+.form-submit-btn:hover,
+.form-submit-btn:focus {
+  background-color: #188CE8;
+}
+
+
+.current-btn {
+  box-shadow:
+  0 3px 1px rgba(0, 0, 0, 0.1),
+  0 1px 2px rgba(0, 0, 0, 0.08),
+  0 2px 2px rgba(0, 0, 0, 0.12); /* Тень Главной кнопки (статическая) shadow-middle */
+}

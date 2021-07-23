@@ -1,0 +1,48 @@
+/* START "Лого-ссылка WebStudio" */
+.logo {
+  display: inline-flex; /* WebStudio w145px; h31px; */
+
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 9.0625rem;
+
+  font-family: var(--logo-sans-serif);
+  font-size: 1.625rem; /* "Web" color: #2196F3; from .accent */
+  font-weight: 700; /* "Studio" color: var(--color-black); from .black */
+  line-height: 1.193; /* 31px = box */
+
+  animation-duration: var(--time);
+  animation-timing-function: var(--cubic);
+
+  &:hover,
+  &:focus {
+    animation-name: rotate;
+  }
+}
+
+.logo__web-studio {
+  min-height: 26px;
+
+  transition: color var(--time) var(--cubic);
+
+  .logo:hover &,
+  .logo:focus & {
+    color: var(--color-accent); /* Акцент #2196F3 */
+  }
+}
+
+.logo__first-part {
+  width: 3.66rem; /* 58.56px; */
+  color: var(--color-accent); /* "Studio" в Лого */
+}
+
+.logo__last-part {
+  width: 5.22rem; /* 83.52px */
+  color: var(--color-black);
+}
+
+.logo__last-part--inverse {
+  color: var(--color-white);
+}
+
+/* END "Лого-ссылка WebStudio" */

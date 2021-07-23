@@ -1,0 +1,108 @@
+/* ------------------------------------------------------ */
+/* || ------------- START "НАША КОМАНДА" ---------------- */
+/* ------------------------------------------------------ */
+.team {
+  background-color: var(--color-bg-btn-secondary);
+}
+
+/* team */
+.designers-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  margin-top: calc(-1 * var(--uni-margin));
+  margin-left: calc(-1 * var(--uni-margin));
+}
+
+/* team card 1-4 or "designer card" */
+.designer-list-item {
+  flex-basis: calc(100% / var(--cards-per-line-4) - var(--uni-margin));
+  /* flex-grow: 1; FIXME for mobile */
+
+  min-width: 15.625rem;
+  max-width: 28.125rem;
+  min-height: 26.75rem; /* 428px */
+  max-height: 42.45rem; /* 679.2px */
+
+  margin-top: var(--uni-margin); /* 30px top and left */
+  margin-left: var(--uni-margin);
+  word-wrap: break-word;
+}
+
+.designer-card {
+  padding-bottom: 1.5rem;
+
+  background-color: var(--color-white); /* card bg */
+  border-radius: 0 0 4px 4px;
+  /* Тень для Карточки дизайнера (статическая) - material shadow v1 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14),
+    0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.designer-photo {
+  object-fit: contain;
+  object-position: top;
+
+  width: 100%;
+  min-width: clamp(15.625rem, 100%, 28.125rem); /* 250...450px */
+  height: 100%;
+  min-height: clamp(16.25rem, 100%, 28.75rem); /* 260...460px */
+  margin: 0 auto;
+  /* w450px img-h460px title-h162px card-h622px
+     w354px img-h374px title-h162px card-h536px
+     w270px img-h260px title-h168px card-h428px */
+}
+
+.designer-card-title {
+  min-height: 4.88rem; /* 78.08px */
+  max-height: 8.45rem; /* 135.2px */
+  padding-top: var(--uni-margin); /* Заполнение между именем/ролью дизайнера и их контейнером */
+  padding-right: calc(var(--uni-margin) + 0.125rem);
+  padding-bottom: calc(1.5rem, 4.5vw, var(--uni-margin));
+  padding-left: calc(var(--uni-margin) + 0.125rem);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+/* Игорь Демьяненко, Ольга Репина, Николай Тарасов, Михаил Ермаков, h19px */
+.designer-name {
+  min-height: 1.1875rem;
+  margin-bottom: var(--uni-margin-min);
+
+  max-height: 2.38rem;
+  overflow: hidden;
+
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.19; /* 19px = box */
+  text-align: center; /* inherits color: #212121; */
+}
+
+.designer-name:hover {
+  overflow-y: auto;
+}
+
+/* Product Designer, Frontend Developer, Marketing, UI Designer, h19px */
+.designer-role {
+  min-height: 1.1875rem;
+
+  max-height: 3.57rem;
+
+  overflow: hidden;
+
+  font-size: 1rem; /* from browser font-weight: 400; */
+  line-height: 1.19; /* 19px = box */
+  color: var(--color-text-secondary); /* color: #757575; */
+  text-align: center;
+}
+
+.designer-role:hover {
+  overflow-y: auto;
+}
+
+/* ------------------------------------------------------ */
+/* || --------------- END "НАША КОМАНДА" ---------------- */
+/* ------------------------------------------------------ */

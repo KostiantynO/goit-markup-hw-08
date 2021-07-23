@@ -1,0 +1,44 @@
+/* START "Шапка сайта - Контакты" */
+
+.page-header__contacts-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: auto;
+}
+
+.page-header__contacts-list .contact-item + .contact-item {
+  margin-left: var(--uni-margin-big);
+}
+
+/* info@devstudio.com, +38 096 111 11 11, h16px */
+.header-contact {
+  @extend %header-link;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  padding-top: 0.4375rem;
+
+  color: var(--color-text-secondary);
+}
+
+.header-contact-icon {
+  margin-right: 0.625rem;
+  fill: currentColor;
+
+  transition: transform var(--time) var(--cubic);
+}
+
+.header-contact:hover > .header-contact-icon,
+.header-contact:focus > .header-contact-icon {
+  transform: rotateY(180deg);
+}
+
+.icon-envelope {
+  margin-top: 0.125rem;
+  margin-bottom: 0.125rem;
+}
+
+/* END "Шапка сайта - Контакты" */

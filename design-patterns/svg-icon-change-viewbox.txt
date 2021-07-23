@@ -1,0 +1,9 @@
+- Go to icomoon
+- Select icons
+- Set default icon draw-grid size to 16.
+
+(15.625px / 16px) * 512viewBox = 500viewBox
+
+Actual size of path (15.625px)
+divide by intended height (16px)
+multiply by original viewBox height (512px)
