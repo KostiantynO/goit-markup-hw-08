@@ -1,0 +1,39 @@
+.activity-card__image {
+  width: clamp(15.625rem, 100%, 23.125rem);
+  height: 18.375rem;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+/* bg - activity-card__overlay-label */
+.activity-card__overlay {
+  position: absolute; /* label */
+  bottom: 0;
+
+  min-width: 100%;
+  padding-top: calc(1rem + 11px);
+  padding-right: clamp(#{"(0.4rem + 1px)"}, 2vw, #{"(1rem - 1px)"});
+  padding-bottom: calc(1rem + 11px);
+  padding-left: clamp(#{"(0.4rem + 1px)"}, 2vw, #{"(1rem - 1px)"});
+
+  overflow: hidden;
+  word-wrap: break-word;
+
+  background-color: rgba(47, 48, 58, 0.8);
+
+  &:hover,
+  &:focus,
+  &:active {
+    overflow-y: auto;
+  }
+}
+
+/* Десктопные приложения, Мобильные приложения, Дизайнерские решения, h16px */
+.activity-card__title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.17;
+  color: var(--color-white);
+  text-align: center;
+  text-transform: uppercase;
+}

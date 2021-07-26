@@ -1,0 +1,20 @@
+.portfolio-card__thumb {
+  position: relative;
+
+  overflow: hidden;
+
+  &::before {
+    @extend %portfolio-card-overlay;
+
+    z-index: var(--zi-2);
+    content: "";
+    background-color: rgba(33, 150, 243, 0.9);
+  }
+
+  .portfolio-card__link:focus &::before,
+  .portfolio-card__link:hover &::before {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+}

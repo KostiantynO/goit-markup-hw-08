@@ -46,7 +46,7 @@ form-label-link { c#2196f3 tdecund }
 
 /* Подпишитесь на рассылку */
 .subscribe-wrapper { ml93 }
-.subscribe-title { mb20 w219 h16 fw700 fz14 lh15 lsp0.03em ttup c#FFF }
+.subscribe-form__title { mb20 w219 h16 fw700 fz14 lh15 lsp0.03em ttup c#FFF }
 
 /* bg */
 .subscribe-form-input { mr12 mb94 w358 x h50  brad4 bdr1px solid rgba(255, 255, 255, 0.3);

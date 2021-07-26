@@ -14,6 +14,11 @@
       .list:empty::after {
         content: attr(data-placeholder);
       }
+
+      .image {
+        width: initial;
+        height: initial;
+      }
     </style>
 
     <link
@@ -39,7 +44,7 @@
     <!-- Пропустить к Основному Контенту -->
     <a class="skip-link links" href="#main-content">Skip to main content</a>
 
-    <!-- Шапка сайта 2021-07-23 15:12 -->
+    <!-- Шапка сайта 2021-07-26 02:35 -->
     <header class="page-header">
       <div class="container page-header__container">
         <nav class="nav page-header__nav">
@@ -48,7 +53,7 @@
             ><span class="logo__web-studio logo__last-part">Studio</span>
           </a>
 
-          <ul class="nav__menu list">
+          <ul class="nav__menu">
             <li class="nav__item">
               <a class="nav__link" data-content="Студия" href="./" hreflang="ru"
                 >Студия<span class="nav__link-overlay"></span>
@@ -59,8 +64,8 @@
               <a
                 class="nav__link nav__link--current"
                 data-content="Портфолио"
-                href="./portfolio.html"
                 aria-current="page"
+                href="./portfolio.html"
                 hreflang="ru"
                 >Портфолио<span class="nav__link-overlay nav__link-overlay--current"></span
               ></a>
@@ -77,14 +82,15 @@
             </li>
           </ul>
 
+          <!-- Mobile menu - burger button -->
           <button
             type="button"
-            class="btn btn--secondary nav__btn-mobile is-hidden"
+            class="btn btn--secondary btn-burger nav__btn-mobile btn-mobile is-hidden"
             aria-labelledby="burger-id-label"
           >
             <!-- 40x40 -->
             <svg
-              class="nav__icon svg icon-burger"
+              class="btn-mobile__icon svg icon-burger"
               aria-hidden="true"
               width="2.5rem"
               height="2.5rem"
@@ -94,24 +100,9 @@
 
             <span class="tooltip sr-only" id="burger-id-label" tabindex="-1"> Меню </span>
           </button>
-
-          <button
-            type="button"
-            class="btn btn--secondary nav__btn-mobile is-hidden"
-            aria-labelledby="close-nav__menu-id-label"
-          >
-            <!-- 40x40 -->
-            <svg class="nav__icon svg icon-close" aria-hidden="true" width="2.5rem" height="2.5rem">
-              <use href="./images/icomoon-svgomg/icons.svg#icon-close-40px"></use>
-            </svg>
-
-            <span class="tooltip sr-only" id="close-nav__menu-id-label" tabindex="-1">
-              Закрыть
-            </span>
-          </button>
         </nav>
 
-        <ul class="page-header__contacts-list list">
+        <ul class="page-header__contacts-list">
           <li class="contact-item">
             <a
               class="header-contact links"
@@ -161,6 +152,28 @@
           </li>
         </ul>
       </div>
+
+      <!-- Главная (бургер, шаг 2) -->
+      <div class="mobile-overlay">
+        <!-- Кнопка закрытия мобильного меню -->
+        <button
+          type="button"
+          class="btn btn--secondary btn-mobile btn-mobile-close is-hidden"
+          aria-labelledby="close-nav__menu-id-label"
+        >
+          <!-- 40x40 -->
+          <svg
+            class="btn-mobile__icon svg icon-close"
+            aria-hidden="true"
+            width="2.5rem"
+            height="2.5rem"
+          >
+            <use href="./images/icomoon-svgomg/icons.svg#icon-close-40px"></use>
+          </svg>
+
+          <span class="tooltip sr-only" id="close-nav__menu-id-label" tabindex="-1"> Закрыть </span>
+        </button>
+      </div>
     </header>
 
     <main>
@@ -173,8 +186,8 @@
           <div class="portfolio-filters" aria-labelledby="portfolio-filters-title-id">
             <h2 class="sr-only" id="portfolio-filters-title-id">Фильтры-кнопки по типу проекта</h2>
 
-            <ul class="portfolio-filters-list list" role="radiogroup">
-              <li class="portfolio-filter-list-item">
+            <ul class="portfolio-filters-list" role="radiogroup">
+              <li class="portfolio-filters-list__item">
                 <button
                   type="button"
                   class="btn btn--secondary current-btn filter-btn"
@@ -185,25 +198,25 @@
                 </button>
               </li>
 
-              <li class="portfolio-filter-list-item">
+              <li class="portfolio-filters-list__item">
                 <button type="button" class="btn btn--secondary filter-btn" id="filter-2">
                   <span class="btn__label">Веб-сайты</span>
                 </button>
               </li>
 
-              <li class="portfolio-filter-list-item">
+              <li class="portfolio-filters-list__item">
                 <button type="button" class="btn btn--secondary filter-btn" id="filter-3">
                   <span class="btn__label">Приложения</span>
                 </button>
               </li>
 
-              <li class="portfolio-filter-list-item">
+              <li class="portfolio-filters-list__item">
                 <button type="button" class="btn btn--secondary filter-btn" id="filter-4">
                   <span class="btn__label">Дизайн</span>
                 </button>
               </li>
 
-              <li class="portfolio-filter-list-item">
+              <li class="portfolio-filters-list__item">
                 <button type="button" class="btn btn--secondary filter-btn" id="filter-5">
                   <span class="btn__label">Маркетинг</span>
                 </button>
@@ -215,291 +228,298 @@
           <div class="portfolio-projects" aria-labelledby="portfolio-projects-title-id">
             <h2 class="sr-only" id="portfolio-projects-title-id">Список карточек проектов</h2>
 
-            <ul class="portfolio-list list" data-placeholder="Заполнитель">
-              <li class="portfolio-list-item">
+            <ul class="portfolio-list" data-placeholder="Заполнитель">
+              <li class="portfolio-list__item">
                 <div class="portfolio-card">
                   <a
-                    class="portfolio-project-link links"
+                    class="portfolio-card__link links"
                     rel="noopener nofollow noreferrer"
                     href="#0"
                   >
-                    <div class="project-thumb">
+                    <div class="portfolio-card__thumb">
+                      <!-- 370x294 -->
                       <img
-                        class="portfolio-image image"
+                        class="portfolio-card__image image"
                         src="./images/squooshed/portfolio/project-1.jpg"
                         alt="На экране MacBook Pro открыт веб-сайт Технокряк с фото команды"
-                        width="370"
-                        height="294"
+                        width="23.125rem"
+                        height="18.375rem"
                       />
 
-                      <p class="portfolio-project-desc" tabindex="-1">
+                      <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
                         используют эту платформу для цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
 
-                    <div class="project-title">
-                      <h3 class="portfolio-project-name">Технокряк</h3>
-                      <p class="portfolio-project-type">Веб-сайт</p>
+                    <div class="portfolio-card__meta">
+                      <h3 class="portfolio-card__name">Технокряк</h3>
+                      <p class="portfolio-card__type">Веб-сайт</p>
                     </div>
                   </a>
                 </div>
               </li>
 
-              <li class="portfolio-list-item">
+              <li class="portfolio-list__item">
                 <div class="portfolio-card">
                   <a
-                    class="portfolio-project-link links"
+                    class="portfolio-card__link links"
                     rel="noopener nofollow noreferrer"
                     href="#0"
                   >
-                    <div class="project-thumb">
+                    <div class="portfolio-card__thumb">
+                      <!-- 370x294 -->
                       <img
-                        class="portfolio-image image"
+                        class="portfolio-card__image image"
                         src="./images/squooshed/portfolio/project-2.jpg"
                         alt="Баскетболист Golden Star блокирует бросок игрока New Orlean"
-                        width="370"
-                        height="294"
+                        width="23.125rem"
+                        height="18.375rem"
                       />
 
-                      <p class="portfolio-project-desc" tabindex="-1">
+                      <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
                         используют эту платформу для цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
 
-                    <div class="project-title">
-                      <h3 class="portfolio-project-name">
+                    <div class="portfolio-card__meta">
+                      <h3 class="portfolio-card__name">
                         Постер <span lang="en">New Orlean vs Golden Star</span>
                       </h3>
-                      <p class="portfolio-project-type">Дизайн</p>
+                      <p class="portfolio-card__type">Дизайн</p>
                     </div>
                   </a>
                 </div>
               </li>
 
-              <li class="portfolio-list-item">
+              <li class="portfolio-list__item">
                 <div class="portfolio-card">
                   <a
-                    class="portfolio-project-link links"
+                    class="portfolio-card__link links"
                     rel="noopener nofollow noreferrer"
                     href="#0"
                   >
-                    <div class="project-thumb">
+                    <div class="portfolio-card__thumb">
+                      <!-- 370x294 -->
                       <img
-                        class="portfolio-image image"
+                        class="portfolio-card__image image"
                         src="./images/squooshed/portfolio/project-3.jpg"
                         alt
-                        width="370"
-                        height="294"
+                        width="23.125rem"
+                        height="18.375rem"
                       />
 
-                      <p class="portfolio-project-desc" tabindex="-1">
+                      <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
                         используют эту платформу для цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
 
-                    <div class="project-title">
-                      <h3 class="portfolio-project-name">
-                        Ресторан <span lang="en">Seafood</span>
-                      </h3>
-                      <p class="portfolio-project-type">Приложение</p>
+                    <div class="portfolio-card__meta">
+                      <h3 class="portfolio-card__name">Ресторан <span lang="en">Seafood</span></h3>
+                      <p class="portfolio-card__type">Приложение</p>
                     </div>
                   </a>
                 </div>
               </li>
 
-              <li class="portfolio-list-item">
+              <li class="portfolio-list__item">
                 <div class="portfolio-card">
                   <a
-                    class="portfolio-project-link links"
+                    class="portfolio-card__link links"
                     rel="noopener nofollow noreferrer"
                     href="#0"
                   >
-                    <div class="project-thumb">
+                    <div class="portfolio-card__thumb">
+                      <!-- 370x294 -->
                       <img
-                        class="portfolio-image image"
+                        class="portfolio-card__image image"
                         src="./images/squooshed/portfolio/project-4.jpg"
                         alt
-                        width="370"
-                        height="294"
+                        width="23.125rem"
+                        height="18.375rem"
                       />
 
-                      <p class="portfolio-project-desc" tabindex="-1">
+                      <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
                         используют эту платформу для цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
 
-                    <div class="project-title">
-                      <h3 class="portfolio-project-name">Проект <span lang="en">Prime</span></h3>
-                      <p class="portfolio-project-type">Маркетинг</p>
+                    <div class="portfolio-card__meta">
+                      <h3 class="portfolio-card__name">Проект <span lang="en">Prime</span></h3>
+                      <p class="portfolio-card__type">Маркетинг</p>
                     </div>
                   </a>
                 </div>
               </li>
 
-              <li class="portfolio-list-item">
+              <li class="portfolio-list__item">
                 <div class="portfolio-card">
                   <a
-                    class="portfolio-project-link links"
+                    class="portfolio-card__link links"
                     rel="noopener nofollow noreferrer"
                     href="#0"
                   >
-                    <div class="project-thumb">
+                    <div class="portfolio-card__thumb">
+                      <!-- 370x294 -->
                       <img
-                        class="portfolio-image image"
+                        class="portfolio-card__image image"
                         src="./images/squooshed/portfolio/project-5.jpg"
                         alt
-                        width="370"
-                        height="294"
+                        width="23.125rem"
+                        height="18.375rem"
                       />
 
-                      <p class="portfolio-project-desc" tabindex="-1">
+                      <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
                         используют эту платформу для цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
 
-                    <div class="project-title">
-                      <h3 class="portfolio-project-name">Проект <span lang="en">Boxes</span></h3>
-                      <p class="portfolio-project-type">Приложение</p>
+                    <div class="portfolio-card__meta">
+                      <h3 class="portfolio-card__name">Проект <span lang="en">Boxes</span></h3>
+                      <p class="portfolio-card__type">Приложение</p>
                     </div>
                   </a>
                 </div>
               </li>
 
-              <li class="portfolio-list-item">
+              <li class="portfolio-list__item">
                 <div class="portfolio-card">
                   <a
-                    class="portfolio-project-link links"
+                    class="portfolio-card__link links"
                     rel="noopener nofollow noreferrer"
                     href="#0"
                   >
-                    <div class="project-thumb">
+                    <div class="portfolio-card__thumb">
+                      <!-- 370x294 -->
                       <img
-                        class="portfolio-image image"
+                        class="portfolio-card__image image"
                         src="./images/squooshed/portfolio/project-6.jpg"
                         alt
-                        width="370"
-                        height="294"
+                        width="23.125rem"
+                        height="18.375rem"
                       />
 
-                      <p class="portfolio-project-desc" tabindex="-1">
+                      <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
                         используют эту платформу для цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
 
-                    <div class="project-title">
-                      <h3 class="portfolio-project-name">
+                    <div class="portfolio-card__meta">
+                      <h3 class="portfolio-card__name">
                         <span lang="en">Inspiration has no Borders</span>
                       </h3>
-                      <p class="portfolio-project-type">Веб-сайт</p>
+                      <p class="portfolio-card__type">Веб-сайт</p>
                     </div>
                   </a>
                 </div>
               </li>
 
-              <li class="portfolio-list-item">
+              <li class="portfolio-list__item">
                 <div class="portfolio-card">
                   <a
-                    class="portfolio-project-link links"
+                    class="portfolio-card__link links"
                     rel="noopener nofollow noreferrer"
                     href="#0"
                   >
-                    <div class="project-thumb">
+                    <div class="portfolio-card__thumb">
+                      <!-- 370x294 -->
                       <img
-                        class="portfolio-image image"
+                        class="portfolio-card__image image"
                         src="./images/squooshed/portfolio/project-7.jpg"
                         alt
-                        width="370"
-                        height="294"
+                        width="23.125rem"
+                        height="18.375rem"
                       />
 
-                      <p class="portfolio-project-desc" tabindex="-1">
+                      <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
                         используют эту платформу для цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
 
-                    <div class="project-title">
-                      <h3 class="portfolio-project-name">
+                    <div class="portfolio-card__meta">
+                      <h3 class="portfolio-card__name">
                         Издание <span lang="en">Limited Edition</span>
                       </h3>
-                      <p class="portfolio-project-type">Дизайн</p>
+                      <p class="portfolio-card__type">Дизайн</p>
                     </div>
                   </a>
                 </div>
               </li>
 
-              <li class="portfolio-list-item">
+              <li class="portfolio-list__item">
                 <div class="portfolio-card">
                   <a
-                    class="portfolio-project-link links"
+                    class="portfolio-card__link links"
                     rel="noopener nofollow noreferrer"
                     href="#0"
                   >
-                    <div class="project-thumb">
+                    <div class="portfolio-card__thumb">
+                      <!-- 370x294 -->
                       <img
-                        class="portfolio-image image"
+                        class="portfolio-card__image image"
                         src="./images/squooshed/portfolio/project-8.jpg"
                         alt
-                        width="370"
-                        height="294"
+                        width="23.125rem"
+                        height="18.375rem"
                       />
 
-                      <p class="portfolio-project-desc" tabindex="-1">
+                      <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
                         используют эту платформу для цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
 
-                    <div class="project-title">
-                      <h3 class="portfolio-project-name">Проект <span lang="en">LAB</span></h3>
-                      <p class="portfolio-project-type">Маркетинг</p>
+                    <div class="portfolio-card__meta">
+                      <h3 class="portfolio-card__name">Проект <span lang="en">LAB</span></h3>
+                      <p class="portfolio-card__type">Маркетинг</p>
                     </div>
                   </a>
                 </div>
               </li>
 
-              <li class="portfolio-list-item">
+              <li class="portfolio-list__item">
                 <div class="portfolio-card">
                   <a
-                    class="portfolio-project-link links"
+                    class="portfolio-card__link links"
                     rel="noopener nofollow noreferrer"
                     href="#0"
                   >
-                    <div class="project-thumb">
+                    <div class="portfolio-card__thumb">
+                      <!-- 370x294 -->
                       <img
-                        class="portfolio-image image"
+                        class="portfolio-card__image image"
                         src="./images/squooshed/portfolio/project-9.jpg"
                         alt
-                        width="370"
-                        height="294"
+                        width="23.125rem"
+                        height="18.375rem"
                       />
 
-                      <p class="portfolio-project-desc" tabindex="-1">
+                      <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
                         используют эту платформу для цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
 
-                    <div class="project-title">
-                      <h3 class="portfolio-project-name">
+                    <div class="portfolio-card__meta">
+                      <h3 class="portfolio-card__name">
                         <span lang="en">Growing Business</span>
                       </h3>
-                      <p class="portfolio-project-type">Приложение</p>
+                      <p class="portfolio-card__type">Приложение</p>
                     </div>
                   </a>
                 </div>
@@ -513,14 +533,14 @@
     <!-- Footer Updated on 2021-07-23 15:15 -->
     <footer class="page-footer">
       <div class="container page-footer__container">
-        <div class="footer-address-wrapper">
+        <div class="page-footer__address-wrapper">
           <a class="logo links" href="./" lang="en">
             <span class="logo__web-studio logo__first-part"> Web</span
             ><span class="logo__web-studio logo__last-part--inverse">Studio </span>
           </a>
-          <address class="footer-address">
-            <ul class="footer-address-list list">
-              <li class="footer-address-item">
+          <address class="page-footer__address">
+            <ul class="page-footer__address-list">
+              <li class="page-footer__address-item">
                 <a
                   class="footer-map-pointer links"
                   rel="noopener noreferrer nofollow"
@@ -536,7 +556,7 @@
                 </a>
               </li>
 
-              <li class="footer-address-item">
+              <li class="page-footer__address-item">
                 <a
                   class="footer-contact links"
                   href="mailto:info@example.com"
@@ -550,7 +570,7 @@
                 </a>
               </li>
 
-              <li class="footer-address-item">
+              <li class="page-footer__address-item">
                 <a
                   class="footer-contact links"
                   href="tel:+380991111111"
@@ -567,21 +587,21 @@
           </address>
         </div>
 
-        <div class="footer-social-container">
+        <div class="page-footer__social-container">
           <!-- Footer Social links -->
-          <p class="footer-social-title">Присоединяйтесь</p>
+          <p class="page-footer__social-title social-list__title">Присоединяйтесь</p>
 
-          <ul class="social-list list">
+          <ul class="social-list">
             <li class="social-list__item">
               <a
-                class="social-list__link footer-social-list__link"
+                class="social-list__link page-footer__social-link"
                 rel="noopener nofollow noreferrer"
                 href="#0"
                 aria-labelledby="webstudio-instagram-id-label"
               >
                 <!-- 20x20 -->
                 <svg
-                  class="social-list__icon svg footer-social-list__icon"
+                  class="social-list__icon svg page-footer__social-icon"
                   aria-hidden="true"
                   width="1.25rem"
                   height="1.25rem"
@@ -597,14 +617,14 @@
 
             <li class="social-list__item">
               <a
-                class="social-list__link footer-social-list__link"
+                class="social-list__link page-footer__social-link"
                 rel="noopener nofollow noreferrer"
                 href="#0"
                 aria-labelledby="webstudio-twitter-id-label"
               >
                 <!-- 20x20 -->
                 <svg
-                  class="social-list__icon svg footer-social-list__icon"
+                  class="social-list__icon svg page-footer__social-icon"
                   aria-hidden="true"
                   width="1.25rem"
                   height="1.25rem"
@@ -620,14 +640,14 @@
 
             <li class="social-list__item">
               <a
-                class="social-list__link footer-social-list__link"
+                class="social-list__link page-footer__social-link"
                 rel="noopener nofollow noreferrer"
                 href="#0"
                 aria-labelledby="webstudio-facebook-id-label"
               >
                 <!-- 20x20 -->
                 <svg
-                  class="social-list__icon svg footer-social-list__icon"
+                  class="social-list__icon svg page-footer__social-icon"
                   aria-hidden="true"
                   width="1.25rem"
                   height="1.25rem"
@@ -643,14 +663,14 @@
 
             <li class="social-list__item">
               <a
-                class="social-list__link footer-social-list__link"
+                class="social-list__link page-footer__social-link"
                 rel="noopener nofollow noreferrer"
                 href="#0"
                 aria-labelledby="webstudio-linkedin-id-label"
               >
                 <!-- 20x20 -->
                 <svg
-                  class="social-list__icon svg footer-social-list__icon"
+                  class="social-list__icon svg page-footer__social-icon"
                   aria-hidden="true"
                   width="1.25rem"
                   height="1.25rem"
@@ -667,40 +687,42 @@
         </div>
 
         <!-- Форма подписки на рассылку (email input) -->
-        <div class="subscribe-form-wrapper">
-          <form class="subscribe-form" aria-labelledby="subscribe-title-id">
-            <b class="subscribe-title" id="subscribe-title-id">Подпишитесь на рассылку</b>
 
-            <div class="group subscribe">
-              <!-- E-mail -->
-              <div class="form-field">
-                <input
-                  type="email"
-                  name="subscribe-user-email"
-                  class="subscribe-input"
-                  id="subscribe-user-email-id"
-                  maxlength="80"
-                  placeholder="E-mail"
-                  required
-                />
+        <form
+          class="subscribe-form page-footer__subscribe-form"
+          aria-labelledby="subscribe-form__title-id"
+        >
+          <b class="subscribe-form__title" id="subscribe-form__title-id">Подпишитесь на рассылку</b>
 
-                <label class="subscribe-label tooltip sr-only" for="subscribe-user-email-id">
-                  Ваша почта
-                </label>
-              </div>
+          <div class="subscribe__group">
+            <!-- E-mail -->
+            <div class="subscribe-form__field">
+              <input
+                type="email"
+                name="subscribe-user-email"
+                class="subscribe-input"
+                id="subscribe-user-email-id"
+                maxlength="80"
+                placeholder="E-mail"
+                required
+              />
 
-              <!-- Отправляем форму подписки -->
-              <button type="submit" class="subscribe-btn btn btn--primary" id="subscribe-btn-id">
-                <span class="btn__label">Подписаться</span>
-
-                <!-- 24x24 -->
-                <svg class="send-icon svg" aria-hidden="true" width="1.5rem" height="1.5rem">
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-send"></use>
-                </svg>
-              </button>
+              <label class="subscribe-label tooltip sr-only" for="subscribe-user-email-id">
+                Ваша почта
+              </label>
             </div>
-          </form>
-        </div>
+
+            <!-- Отправляем форму подписки -->
+            <button type="submit" class="subscribe-btn btn btn--primary" id="subscribe-btn-id">
+              <span class="btn__label">Подписаться</span>
+
+              <!-- 24x24 -->
+              <svg class="send-icon svg" aria-hidden="true" width="1.5rem" height="1.5rem">
+                <use href="./images/icomoon-svgomg/icons.svg#icon-send"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
       </div>
     </footer>
   </body>

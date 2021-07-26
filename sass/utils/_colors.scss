@@ -1,0 +1,26 @@
+/* || ----------------- START "COLORS" ------------------ */
+$colors: (
+  "text-primary": #212121,
+  "text-secondary": #757575,
+  "accent": #2196f3,
+  "bg-hero": #2f303a,
+  "bg-hero-btn": #188ce8,
+  "bg-btn-secondary": #f5f4fa,
+  "bg-project-card": #eeeeee,
+  "white": #ffffff,
+  "black": #000000,
+  "icon": #afb1b8,
+);
+/* || ------------------ END "COLORS" ------------------- */
+
+@function getColor($key) {
+  @return nth($colorsValues, $key);
+}
+
+$colorsValues: map-values($colors);
+
+@function getColorValue($key) {
+  @return nth($colorsValues, $key);
+}
+
+/* map-get($colors, $key) */

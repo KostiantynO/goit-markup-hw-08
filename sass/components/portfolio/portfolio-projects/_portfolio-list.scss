@@ -1,0 +1,37 @@
+.portfolio-list {
+  @extend %list;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin-top: calc(-1 * var(--uni-margin));
+  margin-left: calc(-1 * var(--uni-margin));
+}
+
+/* project 4 */
+.portfolio-list__item {
+  display: flex;
+  flex-direction: column;
+
+  flex-basis: calc(100% / var(--cards-per-line-3) - var(--uni-margin));
+
+  width: clamp(15.625rem, 100%, var(--width-portfolio-card__image)); /* 250px, 100%, 450px */
+  min-width: 15.625rem; /* 250px */
+
+  /* Макс. ширина карточки Проекта */
+  max-width: var(--width-portfolio-card__image); /* 450px */
+
+  max-height: calc(
+    23.125rem +
+      (
+        (var(--line-height-project-name) * 1.125rem * 2) +
+          (var(--line-height-project-type) * 1rem * 2) + 2.875rem
+      )
+  ); /* 370px + 178.16px = 548.16px */
+
+  word-wrap: break-word;
+
+  margin-top: var(--uni-margin); /* 30px top and left */
+  margin-left: var(--uni-margin);
+}

@@ -1,0 +1,74 @@
+body {
+  background-color: #fff;
+}
+
+.container {
+  background-color: #00bcd4;
+  min-width: 270px;
+  max-width: 1200px;
+}
+
+@media screen and (min-width: 480px) {
+  body {
+    background-color: #2196f3;
+    font-size: 21px;
+    color: #fff;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-color: #4caf50;
+  }
+
+  // .container {min-width: 768px;}
+}
+
+// @import "../utils/stats";
+$stats: (
+  "1": 16px,
+  "2": 65px,
+  "3": 100px,
+  "4": 76px,
+  "5": 109px,
+  "6": 63px,
+  "7": 202px,
+  "8": 197px,
+  "9": 227px,
+  "10": 100px,
+);
+
+// @import "../utils/colors";
+$colors: (
+  "text-primary": #212121,
+  "text-secondary": #757575,
+  "accent": #2196f3,
+  "bg-hero": #2f303a,
+  "bg-hero-btn": #188ce8,
+  "bg-btn-secondary": #f5f4fa,
+  "bg-project-card": #eeeeee,
+  "white": #ffffff,
+  "black": #000000,
+  "icon": #afb1b8,
+);
+
+$colorKeys: map-keys($colors);
+$widthKeys: map-keys($stats);
+
+@each $stat in $widthKeys {
+  $idxStatKey: index($widthKeys, $stat);
+
+  .element:nth-child(#{$idxStatKey}) {
+    max-width: calc(#{map-get($stats, $stat)} * #{3});
+  }
+}
+
+@each $color in $colorKeys {
+  $idxColorKey: index($colorKeys, $color);
+
+  .element:nth-child(#{$idxColorKey}) {
+    background-color: map-get($colors, $color);
+  }
+}
+
+/* @media screen and (min-width: 1200px) { .container {min-width: 1200px;}} */

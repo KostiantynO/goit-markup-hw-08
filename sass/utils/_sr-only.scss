@@ -7,8 +7,6 @@ body .sr-only {
   * If content styled with font-size:0px or line-height:0, then the elements would still take horizontal space on the screen.
   * All these techniques may result in search engine penalties as they may be interpreted as malicious. */
   position: absolute; /* Small */ /* Вытягивает Блок из потока. Сдвигает все элементы страницы выше на высоту блока. Не влияет на сам контент. */
-  top: auto;
-  left: -625rem;
   width: 1px; /* Useful */ /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
   height: 1px; /* Useful */ /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
   padding: 0; /* small importance */ /* Нет внутренних отступов. Не влияет. */

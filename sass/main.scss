@@ -1,77 +1,17 @@
-/* ------------------------------------------------------ */
-/* || ------------------ START "UTILS" ------------------ */
-/* ------------------------------------------------------ */
-@import "./utils/variables";
+// Utils
+@import "./utils/index";
 
-@import "./utils/is-hidden";
-@import "./utils/sr-only";
-@import "./utils/site-testing";
-/* ------------------------------------------------------ */
-/* || ------------------- END "UTILS" ------------------- */
-/* ------------------------------------------------------ */
+// Base
+@import "./base/index";
 
-/* ------------------------------------------------------ */
-/* || ------------------ START "BASE" ------------------- */
-/* ------------------------------------------------------ */
-@import "./base/common";
-@import "./base/body";
-@import "./base/container";
-@import "./base/section";
-/* ------------------------------------------------------ */
-/* || ------------------- END "BASE" -------------------- */
-/* ------------------------------------------------------ */
+// Components
+@import "./components/index";
 
-/* ------------------------------------------------------ */
-/* || --------------- START "COMPONENTS" ---------------- */
-/* ------------------------------------------------------ */
+// Layout
+@import "./layout/index";
 
-// Studio and Portfolio - Page-header
-@import "./components/shared/animations";
-@import "./components/ally/skip-link";
-@import "./components/page-header/__nav/page-header__nav";
-@import "./components/shared/logo";
+// Media
+@import "./media/index";
 
-@import "./components/page-header/__nav/__link/nav__link";
-@import "./components/shared/btn";
-@import "./components/page-header/__nav/__btn-mobile/nav__btn-mobile";
-
-@import "./components/page-header/page-header__contacts-list";
-
-@import "./components/shared/social-list";
-
-// Hero
-@import "./components/hero/__title/hero__title";
-@import "./components/hero/__btn/hero__btn";
-
-// Studio - Modal
-@import "./components/modal/backdrop";
-@import "./components/modal/modal";
-@import "./components/modal/form";
-
-// Portfolio - Filters
-@import "./components/portfolio/portfolio-filters";
-/* ------------------------------------------------------ */
-/* || ---------------- END "COMPONENTS" ----------------- */
-/* ------------------------------------------------------ */
-
-/* ------------------------------------------------------ */
-/* || ----------------- START "LAYOUT" ------------------ */
-/* ------------------------------------------------------ */
-@import "./layout/page-header";
-
-// Studio
-@import "./layout/hero";
-@import "./layout/features";
-@import "./layout/activities";
-@import "./layout/team";
-@import "./layout/clients";
-
-// Portfolio
-@import "./layout/portfolio";
-
-@import "./layout/page-footer";
-
+// Sass shame - placeholders are processed after all content.
 @import "./utils/placeholders";
-/* ------------------------------------------------------ */
-/* || ------------------ END "LAYOUT" ------------------- */
-/* ------------------------------------------------------ */

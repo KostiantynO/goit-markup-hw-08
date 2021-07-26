@@ -1,0 +1,26 @@
+/* Постоянные клиенты */
+.clients-list {
+  @extend %list;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: calc(-1 * var(--uni-margin)); /* 30px top left */
+  margin-left: calc(-1 * var(--uni-margin));
+}
+
+.clients-list__item {
+  /*  Ширина карточки постоянного клиента */
+  flex-basis: calc(100% / var(--cards-per-line-6) - var(--uni-margin)); /* 6 cards */
+
+  min-width: 10.625rem;
+  max-width: 14.125rem;
+  /* flex-grow: 1; FIXME for mobile */
+  height: 5.75rem;
+
+  margin-top: var(--uni-margin); /* 30px top and left */
+  margin-left: var(--uni-margin);
+}

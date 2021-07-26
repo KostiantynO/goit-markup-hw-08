@@ -1,0 +1,19 @@
+/* "Технокряк, Постер New Orlean vs Golden Star, Ресторан Seafood, Проект Prime, Проект Boxes, Inspiration has no Borders, Издание Limited Edition, Проект LAB, Growing Business", h36px */
+.portfolio-card__name {
+  min-height: calc(6px + var(--uni-margin));
+  max-height: calc(var(--line-height-project-name) * 18px * 2);
+
+  margin-bottom: 4px;
+  overflow: hidden;
+
+  font-size: 18px; /* от h3 font-weight: 700; */
+  line-height: var(--line-height-project-name); /* 2 = 36px = box */
+  letter-spacing: 0.06em; /* От body color: #212121; */
+  /* white-space: nowrap; */
+
+  &:hover,
+  &:focus,
+  &:active {
+    overflow-y: auto;
+  }
+}

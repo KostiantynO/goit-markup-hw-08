@@ -1,0 +1,23 @@
+.activities-list {
+  @extend %list;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin-top: calc(-1 * var(--uni-margin));
+  margin-left: calc(-1 * var(--uni-margin));
+}
+
+.activities-list__item {
+  position: relative;
+
+  flex-basis: calc(100% / var(--cards-per-line-3) - var(--uni-margin));
+  min-width: 15.625rem;
+
+  justify-content: center;
+
+  margin-top: var(--uni-margin);
+  margin-left: var(--uni-margin);
+}

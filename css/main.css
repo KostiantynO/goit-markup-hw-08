@@ -54,7 +54,7 @@
   --cards-per-line-3: 3;
   --line-height-project-name: 2;
   --line-height-project-type: 1.88;
-  --width-portfolio-image: 28.125rem;
+  --width-portfolio-card__image: 28.125rem;
   /* || ------------------ END "ОТСТУПЫ" ------------------ */
   /* || ---------------- START "АНИМАЦИЯ" ----------------- */
   --zi-1: 1;
@@ -75,6 +75,73 @@
 /* ------------------------------------------------------ */
 /* || ---------------- END "ПЕРЕМЕННЫЕ" ----------------- */
 /* ------------------------------------------------------ */
+.mixin-title {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.333;
+  color: tomato;
+}
+
+.mixin-title2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: tomato;
+}
+
+.mixin-title3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.333;
+  color: tomato;
+}
+
+.mixin-title4 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.333;
+  color: tomato;
+}
+
+.reviews-item:nth-child(1) {
+  background-color: #795548;
+}
+
+.reviews-item:nth-child(2) {
+  background-color: #607D8B;
+}
+
+.reviews-item:nth-child(3) {
+  background-color: #7B1FA2;
+}
+
+.features-item:nth-child(1) {
+  background-color: #F44336;
+}
+
+.features-item:nth-child(2) {
+  background-color: #3F51B5;
+}
+
+.features-item:nth-child(3) {
+  background-color: #4CAf50;
+}
+
+.features-item:nth-child(4) {
+  background-color: #00BCD4;
+}
+
+.features-item:nth-child(5) {
+  background-color: #E91E63;
+}
+
+.features-item:nth-child(6) {
+  background-color: #009688;
+}
+
+/* || ----------------- START "COLORS" ------------------ */
+/* || ------------------ END "COLORS" ------------------- */
+/* map-get($colors, $key) */
 /* "Мобильное меню, Бекдроп и Модальное окно скрыто от всех (и скрин-ридеров) до нажатия на кнопку-героя" */
 .is-hidden {
   pointer-events: none;
@@ -96,8 +163,6 @@ body .sr-only {
   position: absolute;
   /* Small */
   /* Вытягивает Блок из потока. Сдвигает все элементы страницы выше на высоту блока. Не влияет на сам контент. */
-  top: auto;
-  left: -625rem;
   width: 1px;
   /* Useful */
   /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
@@ -191,10 +256,6 @@ p {
 }
 
 /* END "Обнуление" */
-.list {
-  list-style: none;
-}
-
 .image {
   display: block;
 }
@@ -218,8 +279,6 @@ p {
   max-height: 2rem;
 }
 
-/* OUTLINES */
-/* anchor */
 /* START Подсветка ссылок */
 .accent,
 .links:hover,
@@ -229,6 +288,7 @@ p {
 }
 
 /* END Подсветка ссылок */
+/* OUTLINES - no-no-no do not change them 78) */
 /* ------------------------------------------------------ */
 /* || -------------- END "ОБЩИЕ НАСТРОЙКИ" -------------- */
 /* ------------------------------------------------------ */
@@ -288,11 +348,13 @@ p {
   align-items: center;
 }
 
-.page-footer__container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
+@media screen and (min-width: 768px) {
+  .page-footer__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+  }
 }
 
 .section {
@@ -306,7 +368,7 @@ p {
 }
 
 /* Чем мы занимаемся, Наша команда, Постоянные клиенты h42px */
-.section-title {
+.section__title {
   margin-bottom: var(--uni-margin-big);
   font-size: 2.25rem;
   /* 36px */
@@ -322,6 +384,7 @@ p {
 /* ------------------------------------------------------ */
 /* || --------------- START "COMPONENTS" ---------------- */
 /* ------------------------------------------------------ */
+/* Studio and Portfolio - Page-header */
 /* START Анимация */
 /* opacity, translate, rotate, scale, transform: perspective(400px) rotateY(45deg); */
 /* keep */
@@ -413,17 +476,15 @@ body > .skip-link:focus {
 }
 
 /* START "Главная навигация сайта" */
-.page-header__nav {
+.nav {
   position: relative;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
 }
 
 .nav__menu {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   margin-left: 5.625rem;
@@ -579,35 +640,38 @@ body > .skip-link:focus {
 
 /* END "Фильтры-Кнопки" */
 /* START Mobile button */
-.nav__btn-mobile {
+.btn-mobile {
   position: absolute;
   top: 0%;
   left: 100%;
   max-width: 2.5rem;
   max-height: 2.5rem;
   padding: 0;
-  margin: 0.625rem 0.9375rem;
-  margin-left: auto;
   color: var(--color-text-primary);
   background-color: #fff;
-  border: none;
-  transform: translateY(-50%);
 }
 
-.nav__btn-mobile:hover, .nav__btn-mobile:focus, .nav__btn-mobile:active {
+.btn-mobile:hover, .btn-mobile:focus, .btn-mobile:active {
   color: var(--color-accent);
   background-color: #fff;
 }
 
-.nav__btn-mobile:hover {
+.btn-mobile:hover {
   box-shadow: none;
 }
 
-.nav__icon {
+.btn-mobile__icon {
   fill: currentColor;
 }
 
 /* END Mobile button */
+.nav__btn-mobile {
+  margin: 0.625rem 0.9375rem;
+  margin-left: auto;
+  border: none;
+  transform: translateY(-50%);
+}
+
 /* START "Шапка сайта - Контакты" */
 .page-header__contacts-list {
   display: flex;
@@ -692,6 +756,7 @@ body > .skip-link:focus {
 }
 
 /* END "Ссылки на соц. сети" */
+/* Studio - Hero */
 /* Эффективные решения для вашего бизнеса */
 .hero__title {
   position: relative;
@@ -715,6 +780,301 @@ body > .skip-link:focus {
 /* Заказать услугу h30px */
 /* .hero__btn {} */
 /* END Hero-Button */
+/* Studio - Features */
+/* Особенности */
+/* .features-container { } */
+.features-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: calc(-1 * var(--uni-margin));
+  margin-left: calc(-1 * var(--uni-margin));
+}
+
+.features-list__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc(100% / var(--cards-per-line-4) - var(--uni-margin));
+  /* flex-grow: 1; FIXME for mobile */
+  min-width: 15.625rem;
+  max-width: 28.125rem;
+  max-height: 16.735rem;
+  /* 267.76px */
+  margin-top: var(--uni-margin);
+  /* 30px top and left */
+  margin-left: var(--uni-margin);
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.feature-card__svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7.5rem;
+  margin-bottom: 1.875rem;
+  background-color: var(--color-bg-btn-secondary);
+  border-radius: 0.25rem;
+}
+
+.feature-card__svg {
+  width: 4.375rem;
+  height: 4.375rem;
+  /* .antenna-circle, .clock-ticks, .diagram-bars, .astronaut-stars */
+  color: var(--color-accent);
+}
+
+/* Внимание к деталям, Пунктуальность, Планирование, Современные технологии, h16.41px */
+.feature-card__heading {
+  max-height: 2.0475rem;
+  /* 1.17 × 14px × 2 = 32.76px / 16px = 2.0475rem */
+  margin-bottom: var(--uni-margin-min);
+  overflow: hidden;
+  font-size: inherit;
+  /* from body font-size: 14px; color: #212121; */
+  line-height: 1.17;
+  /* from h3 font-weight: 700; */
+  text-transform: uppercase;
+}
+
+.feature-card__heading:hover, .feature-card__heading:focus {
+  overflow-y: auto;
+}
+
+/*Идейные соображения, а также начало повседневной работы по формированию позиции.
+Задача организации, в особенности же рамки и место обучения кадров влечет за собой.
+Равным образом консультация с широким активом в значительной степени обуславливает.
+Значимость этих проблем настолько очевидна, что реализация плановых заданий. w270px, h75px */
+.feature-card__paragraph {
+  min-width: 15.625rem;
+  max-height: 4.6875rem;
+  /* 75px */
+  overflow: hidden;
+  color: var(--color-text-secondary);
+  /* #757575 */
+  /* from browser font-weight: 400; */
+}
+
+.feature-card__paragraph:hover, .feature-card__paragraph:focus {
+  overflow-y: auto;
+}
+
+/* Studio - Activities */
+.activities-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: calc(-1 * var(--uni-margin));
+  margin-left: calc(-1 * var(--uni-margin));
+}
+
+.activities-list__item {
+  position: relative;
+  flex-basis: calc(100% / var(--cards-per-line-3) - var(--uni-margin));
+  min-width: 15.625rem;
+  justify-content: center;
+  margin-top: var(--uni-margin);
+  margin-left: var(--uni-margin);
+}
+
+.activity-card__image {
+  width: clamp(15.625rem, 100%, 23.125rem);
+  height: 18.375rem;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+/* bg - activity-card__overlay-label */
+.activity-card__overlay {
+  position: absolute;
+  /* label */
+  bottom: 0;
+  min-width: 100%;
+  padding-top: calc(1rem + 11px);
+  padding-right: clamp((0.4rem + 1px), 2vw, (1rem - 1px));
+  padding-bottom: calc(1rem + 11px);
+  padding-left: clamp((0.4rem + 1px), 2vw, (1rem - 1px));
+  overflow: hidden;
+  word-wrap: break-word;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.activity-card__overlay:hover, .activity-card__overlay:focus, .activity-card__overlay:active {
+  overflow-y: auto;
+}
+
+/* Десктопные приложения, Мобильные приложения, Дизайнерские решения, h16px */
+.activity-card__title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.17;
+  color: var(--color-white);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Studio - Team */
+/* team */
+.designers-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: calc(-1 * var(--uni-margin));
+  margin-left: calc(-1 * var(--uni-margin));
+}
+
+/* team card 1-4 or "designer card" */
+.designers-list__item {
+  flex-basis: calc(100% / var(--cards-per-line-4) - var(--uni-margin));
+  /* flex-grow: 1; FIXME for mobile */
+  min-width: 15.625rem;
+  max-width: 28.125rem;
+  min-height: 26.75rem;
+  /* 428px */
+  max-height: 42.45rem;
+  /* 679.2px */
+  margin-top: var(--uni-margin);
+  /* 30px top and left */
+  margin-left: var(--uni-margin);
+  word-wrap: break-word;
+}
+
+.designer-card {
+  padding-bottom: 1.5rem;
+  background-color: var(--color-white);
+  /* card bg */
+  border-radius: 0 0 4px 4px;
+  /* Тень для Карточки дизайнера (статическая) - material shadow v1 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.designer-card__photo {
+  object-fit: contain;
+  object-position: top;
+  width: 100%;
+  min-width: clamp(15.625rem, 100%, 28.125rem);
+  /* 250...450px */
+  height: 100%;
+  min-height: clamp(16.25rem, 100%, 28.75rem);
+  /* 260...460px */
+  margin: 0 auto;
+  /* w450px img-h460px title-h162px card-h622px
+     w354px img-h374px title-h162px card-h536px
+     w270px img-h260px title-h168px card-h428px */
+}
+
+.designer-card__meta {
+  min-height: 4.88rem;
+  /* 78.08px */
+  max-height: 8.45rem;
+  /* 135.2px */
+  padding-top: var(--uni-margin);
+  /* Заполнение между именем/ролью дизайнера и их контейнером */
+  padding-right: calc(var(--uni-margin) + 0.125rem);
+  padding-bottom: calc(1.5rem, 4.5vw, var(--uni-margin));
+  padding-left: calc(var(--uni-margin) + 0.125rem);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+/* Игорь Демьяненко, Ольга Репина, Николай Тарасов, Михаил Ермаков, h19px */
+.designer-card__name {
+  min-height: 1.1875rem;
+  max-height: 2.38rem;
+  margin-bottom: var(--uni-margin-min);
+  overflow: hidden;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.19;
+  /* 19px = box */
+  text-align: center;
+  /* inherits color: #212121; */
+}
+
+.designer-card__name:hover {
+  overflow-y: auto;
+}
+
+/* Product Designer, Frontend Developer, Marketing, UI Designer, h19px */
+.designer-card__role {
+  min-height: 1.1875rem;
+  max-height: 3.57rem;
+  overflow: hidden;
+  font-size: 1rem;
+  /* from browser font-weight: 400; */
+  line-height: 1.19;
+  /* 19px = box */
+  color: var(--color-text-secondary);
+  /* color: #757575; */
+  text-align: center;
+}
+
+.designer-card__role:hover {
+  overflow-y: auto;
+}
+
+/* Studio - Clients */
+/* Постоянные клиенты */
+.clients-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: calc(-1 * var(--uni-margin));
+  /* 30px top left */
+  margin-left: calc(-1 * var(--uni-margin));
+}
+
+.clients-list__item {
+  /*  Ширина карточки постоянного клиента */
+  flex-basis: calc(100% / var(--cards-per-line-6) - var(--uni-margin));
+  /* 6 cards */
+  min-width: 10.625rem;
+  max-width: 14.125rem;
+  /* flex-grow: 1; FIXME for mobile */
+  height: 5.75rem;
+  margin-top: var(--uni-margin);
+  /* 30px top and left */
+  margin-left: var(--uni-margin);
+}
+
+.client-card {
+  height: 100%;
+}
+
+.client-card__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-icon);
+  border-radius: 0.25rem;
+  transition: border-color var(--time) var(--cubic);
+}
+
+.client-card__link:hover, .client-card__link:focus {
+  border-color: var(--color-accent);
+}
+
+.client-card__icon {
+  fill: var(--color-icon);
+  transition: fill var(--time) var(--cubic);
+}
+
+.client-card__link:hover .client-card__icon,
+.client-card__link:focus .client-card__icon {
+  fill: var(--color-accent);
+}
+
+/* Studio - Modal */
 /* Overlay */
 .backdrop {
   position: fixed;
@@ -1037,6 +1397,7 @@ body > .skip-link:focus {
 
 /* || -------------- END "СТУДИЯ - ФОРМА" --------------- */
 /* ------------------------------------------------------ */
+/* Portfolio - Filters */
 /* ------------------------------------------------------ */
 /* || ------- START "ПОРТФОЛИО - ФИЛЬТРЫ-КНОПКИ" -------- */
 /* ------------------------------------------------------ */
@@ -1049,14 +1410,13 @@ body > .skip-link:focus {
 
 .portfolio-filters-list {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-top: calc(-1 * 0.9375rem);
   margin-left: calc(-1 * 0.5rem);
 }
 
-.portfolio-filter-list-item {
+.portfolio-filters-list__item {
   margin-top: 0.9375rem;
   /* Верхний отступ между фильтрами-кнопками */
   margin-left: 0.5rem;
@@ -1066,6 +1426,162 @@ body > .skip-link:focus {
 /* ------------------------------------------------------ */
 /* || ------- END "ПОРТФОЛИО - ФИЛЬТРЫ-КНОПКИ" ---------- */
 /* ------------------------------------------------------ */
+/* Portfolio - Projects */
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: calc(-1 * var(--uni-margin));
+  margin-left: calc(-1 * var(--uni-margin));
+}
+
+/* project 4 */
+.portfolio-list__item {
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc(100% / var(--cards-per-line-3) - var(--uni-margin));
+  width: clamp(15.625rem, 100%, var(--width-portfolio-card__image));
+  /* 250px, 100%, 450px */
+  min-width: 15.625rem;
+  /* 250px */
+  /* Макс. ширина карточки Проекта */
+  max-width: var(--width-portfolio-card__image);
+  /* 450px */
+  max-height: calc( 23.125rem + ( (var(--line-height-project-name) * 1.125rem * 2) + (var(--line-height-project-type) * 1rem * 2) + 2.875rem ));
+  /* 370px + 178.16px = 548.16px */
+  word-wrap: break-word;
+  margin-top: var(--uni-margin);
+  /* 30px top and left */
+  margin-left: var(--uni-margin);
+}
+
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--color-white);
+}
+
+.portfolio-card__link {
+  display: flex;
+  /* Магия флексов :) */
+  flex-direction: column;
+  flex-grow: 1;
+  transition: box-shadow var(--time) var(--cubic);
+}
+
+.portfolio-card__link:focus, .portfolio-card__link:hover {
+  color: inherit;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio-card__thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-card__thumb::before {
+  z-index: var(--zi-2);
+  content: "";
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
+.portfolio-card__link:focus .portfolio-card__thumb::before,
+.portfolio-card__link:hover .portfolio-card__thumb::before {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-100%);
+}
+
+.portfolio-card__image {
+  width: 100%;
+  /* 22.125rem=354px if need later */
+  height: 18.375rem;
+  /* 250px, 100%, 450px */
+  min-width: clamp(15.625rem, 100%, var(--width-portfolio-card__image));
+}
+
+/* Description = Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для цифрового шпионажа и атак на защищённые сервера конкурентов. */
+.portfolio-card__desc {
+  z-index: var(--zi-3);
+  padding-top: clamp(15px, 5.3vw, 63px);
+  padding-right: 1.5rem;
+  padding-bottom: clamp(15px, 5.3vw, 63px);
+  padding-left: 1.5rem;
+  overflow: hidden;
+  overflow-y: auto;
+  font-size: 1.125rem;
+  /* 18px */
+  line-height: 1.56;
+  /* 28px */
+  color: var(--color-white);
+  letter-spacing: 0.03em;
+}
+
+.portfolio-card__link:hover .portfolio-card__desc,
+.portfolio-card__link:focus .portfolio-card__desc {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-100%);
+}
+
+.portfolio-card__meta {
+  flex-grow: 1;
+  min-height: 110px;
+  max-height: calc( (var(--line-height-project-name) * 18px * 2) + (var(--line-height-project-type) * 16px * 2) + 46px);
+  padding-top: clamp(0.625rem, 3.5vh, var(--uni-margin-med));
+  padding-right: 1.4375rem;
+  /* 23xp */
+  padding-bottom: 1.1875rem;
+  /* 19px */
+  padding-left: 1.4375rem;
+  overflow: hidden;
+  border-right: 1px solid var(--color-bg-project-card);
+  border-bottom: 1px solid var(--color-bg-project-card);
+  border-left: 1px solid var(--color-bg-project-card);
+}
+
+.portfolio-card__meta:hover, .portfolio-card__meta:focus {
+  overflow-y: auto;
+}
+
+/* "Технокряк, Постер New Orlean vs Golden Star, Ресторан Seafood, Проект Prime, Проект Boxes, Inspiration has no Borders, Издание Limited Edition, Проект LAB, Growing Business", h36px */
+.portfolio-card__name {
+  min-height: calc(6px + var(--uni-margin));
+  max-height: calc(var(--line-height-project-name) * 18px * 2);
+  margin-bottom: 4px;
+  overflow: hidden;
+  font-size: 18px;
+  /* от h3 font-weight: 700; */
+  line-height: var(--line-height-project-name);
+  /* 2 = 36px = box */
+  letter-spacing: 0.06em;
+  /* От body color: #212121; */
+  /* white-space: nowrap; */
+}
+
+.portfolio-card__name:hover, .portfolio-card__name:focus, .portfolio-card__name:active {
+  overflow-y: auto;
+}
+
+/* Тип проекта: Веб-сайт, Дизайн, Приложение, Маркетинг, h30px */
+.portfolio-card__type {
+  min-height: var(--uni-margin);
+  max-height: calc(var(--line-height-project-type) * 1rem * 2);
+  margin-bottom: 0.25rem;
+  overflow: hidden;
+  font-size: 16px;
+  /* from body font-weight: 400; */
+  line-height: var(--line-height-project-type);
+  /* 1.88 = 30px = box */
+  color: var(--color-text-secondary);
+  /* color: #757575; */
+}
+
+.portfolio-card__type:hover, .portfolio-card__type:focus, .portfolio-card__type:active {
+  overflow-y: auto;
+}
+
 /* ------------------------------------------------------ */
 /* || ---------------- END "COMPONENTS" ----------------- */
 /* ------------------------------------------------------ */
@@ -1115,93 +1631,8 @@ body > .skip-link:focus {
 /* ------------------------------------------------------ */
 /* || --------------- START "ОСОБЕННОСТИ" --------------- */
 /* ------------------------------------------------------ */
-main > .features {
+.main__features {
   padding-bottom: 2.9375rem;
-}
-
-/* Особенности */
-/* .features-container { } */
-.features-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: calc(-1 * var(--uni-margin));
-  margin-left: calc(-1 * var(--uni-margin));
-}
-
-.feature-list-item {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex-basis: calc(100% / var(--cards-per-line-4) - var(--uni-margin));
-  /* flex-grow: 1; FIXME for mobile */
-  min-width: 15.625rem;
-  max-width: 28.125rem;
-  max-height: 16.735rem;
-  /* 267.76px */
-  margin-top: var(--uni-margin);
-  /* 30px top and left */
-  margin-left: var(--uni-margin);
-  overflow: hidden;
-  word-wrap: break-word;
-}
-
-.feature-list-item::before {
-  position: absolute;
-  z-index: var(--zi-1);
-  top: 0;
-  width: 100%;
-  height: 7.5rem;
-  content: "";
-  background-color: var(--color-bg-btn-secondary);
-  border-radius: 0.25rem;
-}
-
-.feature-svg {
-  z-index: var(--zi-2);
-  align-self: center;
-  width: 4.375rem;
-  height: 4.375rem;
-  margin-top: 1.5625rem;
-  margin-bottom: 3.4375rem;
-  /* .antenna-circle, .clock-ticks, .diagram-bars, .astronaut-stars */
-  color: var(--color-accent);
-}
-
-/* Внимание к деталям, Пунктуальность, Планирование, Современные технологии, h16.41px */
-.feature-heading {
-  max-height: 2.0475rem;
-  /* 1.17 × 14px × 2 = 32.76px / 16px = 2.0475rem */
-  margin-bottom: var(--uni-margin-min);
-  overflow: hidden;
-  font-size: inherit;
-  /* from body font-size: 14px; color: #212121; */
-  line-height: 1.17;
-  /* from h3 font-weight: 700; */
-  text-transform: uppercase;
-}
-
-.feature-heading:hover, .feature-heading:focus {
-  overflow-y: auto;
-}
-
-/*Идейные соображения, а также начало повседневной работы по формированию позиции.
-Задача организации, в особенности же рамки и место обучения кадров влечет за собой.
-Равным образом консультация с широким активом в значительной степени обуславливает.
-Значимость этих проблем настолько очевидна, что реализация плановых заданий. w270px, h75px */
-.feature-paragraph {
-  min-width: 15.625rem;
-  max-height: 4.6875rem;
-  /* 75px */
-  overflow: hidden;
-  color: var(--color-text-secondary);
-  /* #757575 */
-  /* from browser font-weight: 400; */
-}
-
-.feature-paragraph:hover, .feature-paragraph:focus {
-  overflow-y: auto;
 }
 
 /* ------------------------------------------------------ */
@@ -1212,62 +1643,8 @@ main > .features {
 /* ------------------------------------------------------ */
 /* .activities { } */
 /* .activities-container { } */
-main > .activities {
+.main__activities {
   padding-top: 2.9375rem;
-}
-
-.activities-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: calc(-1 * var(--uni-margin));
-  margin-left: calc(-1 * var(--uni-margin));
-}
-
-.activity-list-item {
-  position: relative;
-  flex-basis: calc(100% / var(--cards-per-line-3) - var(--uni-margin));
-  min-width: 15.625rem;
-  justify-content: center;
-  margin-top: var(--uni-margin);
-  margin-left: var(--uni-margin);
-}
-
-.activity-image {
-  width: clamp(15.625rem, 100%, 23.125rem);
-  height: 18.375rem;
-  object-fit: contain;
-  object-position: bottom;
-}
-
-/* bg - activity-overlay-label */
-.activity-overlay {
-  position: absolute;
-  /* label */
-  bottom: 0;
-  min-width: 100%;
-  padding-top: calc(1rem + 11px);
-  padding-right: clamp((0.4rem + 1px), 2vw, (1rem - 1px));
-  padding-bottom: calc(1rem + 11px);
-  padding-left: clamp((0.4rem + 1px), 2vw, (1rem - 1px));
-  overflow: hidden;
-  word-wrap: break-word;
-  background-color: rgba(47, 48, 58, 0.8);
-}
-
-.activity-overlay:hover, .activity-overlay:focus, .activity-overlay:active {
-  overflow-y: auto;
-}
-
-/* Десктопные приложения, Мобильные приложения, Дизайнерские решения, h16px */
-.activity-list-label {
-  font-size: 0.875rem;
-  font-weight: 700;
-  line-height: 1.17;
-  color: var(--color-white);
-  text-align: center;
-  text-transform: uppercase;
 }
 
 /* ------------------------------------------------------ */
@@ -1276,336 +1653,18 @@ main > .activities {
 /* ------------------------------------------------------ */
 /* || ------------- START "НАША КОМАНДА" ---------------- */
 /* ------------------------------------------------------ */
-.team {
-  background-color: var(--color-bg-btn-secondary);
-}
-
-/* team */
-.designers-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: calc(-1 * var(--uni-margin));
-  margin-left: calc(-1 * var(--uni-margin));
-}
-
-/* team card 1-4 or "designer card" */
-.designer-list-item {
-  flex-basis: calc(100% / var(--cards-per-line-4) - var(--uni-margin));
-  /* flex-grow: 1; FIXME for mobile */
-  min-width: 15.625rem;
-  max-width: 28.125rem;
-  min-height: 26.75rem;
-  /* 428px */
-  max-height: 42.45rem;
-  /* 679.2px */
-  margin-top: var(--uni-margin);
-  /* 30px top and left */
-  margin-left: var(--uni-margin);
-  word-wrap: break-word;
-}
-
-.designer-card {
-  padding-bottom: 1.5rem;
-  background-color: var(--color-white);
-  /* card bg */
-  border-radius: 0 0 4px 4px;
-  /* Тень для Карточки дизайнера (статическая) - material shadow v1 */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px rgba(0, 0, 0, 0.2);
-}
-
-.designer-photo {
-  object-fit: contain;
-  object-position: top;
-  width: 100%;
-  min-width: clamp(15.625rem, 100%, 28.125rem);
-  /* 250...450px */
-  height: 100%;
-  min-height: clamp(16.25rem, 100%, 28.75rem);
-  /* 260...460px */
-  margin: 0 auto;
-  /* w450px img-h460px title-h162px card-h622px
-     w354px img-h374px title-h162px card-h536px
-     w270px img-h260px title-h168px card-h428px */
-}
-
-.designer-card-title {
-  min-height: 4.88rem;
-  /* 78.08px */
-  max-height: 8.45rem;
-  /* 135.2px */
-  padding-top: var(--uni-margin);
-  /* Заполнение между именем/ролью дизайнера и их контейнером */
-  padding-right: calc(var(--uni-margin) + 0.125rem);
-  padding-bottom: calc(1.5rem, 4.5vw, var(--uni-margin));
-  padding-left: calc(var(--uni-margin) + 0.125rem);
-  margin-bottom: 1rem;
-  overflow: hidden;
-}
-
-/* Игорь Демьяненко, Ольга Репина, Николай Тарасов, Михаил Ермаков, h19px */
-.designer-name {
-  min-height: 1.1875rem;
-  margin-bottom: var(--uni-margin-min);
-  max-height: 2.38rem;
-  overflow: hidden;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.19;
-  /* 19px = box */
-  text-align: center;
-  /* inherits color: #212121; */
-}
-
-.designer-name:hover {
-  overflow-y: auto;
-}
-
-/* Product Designer, Frontend Developer, Marketing, UI Designer, h19px */
-.designer-role {
-  min-height: 1.1875rem;
-  max-height: 3.57rem;
-  overflow: hidden;
-  font-size: 1rem;
-  /* from browser font-weight: 400; */
-  line-height: 1.19;
-  /* 19px = box */
-  color: var(--color-text-secondary);
-  /* color: #757575; */
-  text-align: center;
-}
-
-.designer-role:hover {
-  overflow-y: auto;
-}
-
 /* ------------------------------------------------------ */
 /* || --------------- END "НАША КОМАНДА" ---------------- */
 /* ------------------------------------------------------ */
 /* ------------------------------------------------------ */
 /* || ---------------- START "КЛИЕНТЫ" ------------------ */
 /* ------------------------------------------------------ */
-/* Постоянные клиенты */
-.clients-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin-top: calc(-1 * var(--uni-margin));
-  /* 30px top left */
-  margin-left: calc(-1 * var(--uni-margin));
-}
-
-.client-item {
-  /*  Ширина карточки постоянного клиента */
-  flex-basis: calc(100% / var(--cards-per-line-6) - var(--uni-margin));
-  /* 6 cards */
-  min-width: 10.625rem;
-  max-width: 14.125rem;
-  /* flex-grow: 1; FIXME for mobile */
-  height: 5.75rem;
-  margin-top: var(--uni-margin);
-  /* 30px top and left */
-  margin-left: var(--uni-margin);
-}
-
-.client-link {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100%;
-  border-width: 1px;
-  border-style: solid;
-  border-color: var(--color-icon);
-  border-radius: 0.25rem;
-  transition: border-color var(--time) var(--cubic);
-}
-
-.client-icon {
-  fill: var(--color-icon);
-  transition: fill var(--time) var(--cubic);
-}
-
-.client-link:hover,
-.client-link:focus {
-  border-color: var(--color-accent);
-}
-
-.client-link:hover .client-icon,
-.client-link:focus .client-icon {
-  fill: var(--color-accent);
-}
-
 /* ------------------------------------------------------ */
 /* || ----------------- END "КЛИЕНТЫ" ------------------- */
 /* ------------------------------------------------------ */
 /* ------------------------------------------------------ */
 /* || --- START "ПОРТФОЛИО - СПИСОК КАРТОЧЕК ПРОЕКТОВ" -- */
 /* ------------------------------------------------------ */
-.portfolio-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: calc(-1 * var(--uni-margin));
-  margin-left: calc(-1 * var(--uni-margin));
-}
-
-/* project 4 */
-.portfolio-list-item {
-  /* Макс. ширина карточки Проекта */
-  flex-basis: calc(100% / var(--cards-per-line-3) - var(--uni-margin));
-  flex-grow: 1;
-  min-width: 15.625rem;
-  /* 250px */
-  width: clamp(15.625rem, 100%, var(--width-portfolio-image));
-  /* 250px, 100%, 450px */
-  max-width: var(--width-portfolio-image);
-  /* 450px */
-  min-height: calc( clamp(11.875rem, 30.29vw, 18.375rem) + ( (var(--line-height-project-name) * 1.125rem * 2) + (var(--line-height-project-type) * 1rem * 2) + 2.875rem ));
-  max-height: calc( 23.125rem + ( (var(--line-height-project-name) * 1.125rem * 2) + (var(--line-height-project-type) * 1rem * 2) + 2.875rem ));
-  /* 370px + 178.16px = 548.16px */
-  word-wrap: break-word;
-  margin-top: var(--uni-margin);
-  /* 30px top and left */
-  margin-left: var(--uni-margin);
-}
-
-.portfolio-card {
-  background-color: var(--color-white);
-}
-
-.portfolio-project-link {
-  display: block;
-  transition: box-shadow var(--time) var(--cubic);
-}
-
-.portfolio-project-link:focus, .portfolio-project-link:hover {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-.portfolio-card > .links:hover,
-.portfolio-card > .links:focus {
-  color: inherit;
-}
-
-.project-thumb {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.project-thumb::before {
-  z-index: var(--zi-2);
-  content: "";
-  background-color: rgba(33, 150, 243, 0.9);
-}
-
-/* hover overlay */
-.project-thumb::before, .portfolio-project-desc {
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-  opacity: 0;
-  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic), visibility var(--time) var(--cubic);
-}
-
-.portfolio-project-link:hover .portfolio-project-desc,
-.portfolio-project-link:focus .portfolio-project-desc,
-.portfolio-project-link:hover .project-thumb::before,
-.portfolio-project-link:focus .project-thumb::before {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(-100%);
-}
-
-.portfolio-image {
-  width: 100%;
-  /* 22.125rem=354px if need later */
-  height: 18.375rem;
-  min-width: clamp(15.625rem, 100%, var(--width-portfolio-image));
-  /* 250px, 100%, 450px */
-}
-
-/* Description = Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для цифрового шпионажа и атак на защищённые сервера конкурентов. */
-.portfolio-project-desc {
-  z-index: var(--zi-3);
-  padding-top: clamp(15px, 5.3vw, 63px);
-  padding-right: 1.5rem;
-  padding-bottom: clamp(15px, 5.3vw, 63px);
-  padding-left: 1.5rem;
-  overflow: hidden;
-  overflow-y: auto;
-  font-size: 1.125rem;
-  /* 18px */
-  line-height: 1.56;
-  /* 28px */
-  color: var(--color-white);
-  letter-spacing: 0.03em;
-}
-
-.project-title {
-  min-height: 110px;
-  max-height: calc( (var(--line-height-project-name) * 18px * 2) + (var(--line-height-project-type) * 16px * 2) + 46px);
-  padding-top: clamp(0.625rem, 3.5vh, var(--uni-margin-med));
-  padding-right: 1.4375rem;
-  /* 23xp */
-  padding-bottom: 1.1875rem;
-  /* 19px */
-  padding-left: 1.4375rem;
-  overflow: hidden;
-  border-right: 1px solid var(--color-bg-project-card);
-  border-bottom: 1px solid var(--color-bg-project-card);
-  border-left: 1px solid var(--color-bg-project-card);
-}
-
-.project-title:hover, .project-title:focus {
-  overflow-y: auto;
-}
-
-/* "Технокряк, Постер New Orlean vs Golden Star, Ресторан Seafood, Проект Prime, Проект Boxes, Inspiration has no Borders, Издание Limited Edition, Проект LAB, Growing Business", h36px */
-.portfolio-project-name {
-  min-height: calc(6px + var(--uni-margin));
-  max-height: calc(var(--line-height-project-name) * 18px * 2);
-  margin-bottom: 4px;
-  overflow: hidden;
-  font-size: 18px;
-  /* от h3 font-weight: 700; */
-  line-height: var(--line-height-project-name);
-  /* 2 = 36px = box */
-  letter-spacing: 0.06em;
-  /* От body color: #212121; */
-  /* white-space: nowrap; */
-}
-
-.portfolio-project-name:hover, .portfolio-project-name:focus, .portfolio-project-name:active {
-  overflow-y: auto;
-}
-
-/* Тип проекта: Веб-сайт, Дизайн, Приложение, Маркетинг, h30px */
-.portfolio-project-type {
-  min-height: var(--uni-margin);
-  max-height: calc(var(--line-height-project-type) * 1rem * 2);
-  margin-bottom: 0.25rem;
-  overflow: hidden;
-  font-size: 16px;
-  /* from body font-weight: 400; */
-  line-height: var(--line-height-project-type);
-  /* 1.88 = 30px = box */
-  color: var(--color-text-secondary);
-  /* color: #757575; */
-}
-
-.portfolio-project-type:hover, .portfolio-project-type:focus, .portfolio-project-type:active {
-  overflow-y: auto;
-}
-
 /* ------------------------------------------------------ */
 /* || --- END "ПОРТФОЛИО - СПИСОК КАРТОЧЕК ПРОЕКТОВ" ---- */
 /* ------------------------------------------------------ */
@@ -1619,15 +1678,14 @@ main > .activities {
 }
 
 /* START Футер-адрес */
-/* .footer-address-wrapper { } */
-.footer-address {
+/* .page-footer__address-wrapper { } */
+.page-footer__address {
   margin-top: var(--uni-margin-small);
   font-style: inherit;
 }
 
-/* .footer-address-list { } */
-/* .footer-address-list-item { } */
-.footer-address-list .footer-address-item + .footer-address-item {
+/* .page-footer__address-list-item { } */
+.page-footer__address-item:not(:first-child) {
   margin-top: 9px;
   /* Верхний отступ между ссылками в адресе */
 }
@@ -1635,14 +1693,14 @@ main > .activities {
 /* г. Киев, пр-т Леси Украинки, 26; LH24px; */
 .footer-map-pointer {
   position: relative;
-  /* from browser - font-weight: 400; from .footer-address - font-style: normal; */
+  /* from browser - font-weight: 400; from .page-footer__address - font-style: normal; */
   color: var(--color-white);
 }
 
 /* info@example.com, +38 099 111 11 11, h21px */
 .footer-contact {
   position: relative;
-  /* from browser - font-weight: 400; from .footer-address - font-style: normal; */
+  /* from browser - font-weight: 400; from .page-footer__address - font-style: normal; */
   color: rgba(255, 255, 255, 0.6);
 }
 
@@ -1651,46 +1709,78 @@ main > .activities {
  *
 */
 /* START "Футер cоц. ссылки" */
-.footer-social-container {
-  /* margin-top: 60px; for mobile */
-  margin-left: 4.375rem;
-  /* 70px */
+.page-footer__social-container {
+  /* ml70px from $mobile+1px */
+  margin: 3.75rem auto 0;
+  /* for mobile */
+}
+
+@media screen and (min-width: 481px) and (max-width: 100vw) {
+  .page-footer__social-container {
+    margin-top: 0;
+    margin-right: initial;
+    margin-bottom: initial;
+    margin-left: 4.375rem;
+  }
 }
 
 /* присоединяйтесь, h16.41px */
-.footer-social-title {
-  /* margin-top: 60px; for mobile only */
+.page-footer__social-title {
   margin-bottom: var(--uni-margin-med);
-  /* text-align: center; for mobile and tablet only */
   font-weight: 700;
   line-height: 1.17;
   /* from body font-size: 14px; */
   color: var(--color-white);
   text-transform: uppercase;
+  text-align: center;
+  /* for mobile and tablet only */
 }
 
-.footer-social-list__link {
+@media screen and (min-width: 769px) {
+  .page-footer__social-title {
+    text-align: unset;
+  }
+}
+
+.page-footer__social-link {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.footer-social-list__icon {
+.page-footer__social-icon {
   fill: var(--color-white);
 }
 
 /* END "Футер cоц. ссылки" */
 /* START Форма подписки на рассылку */
-.subscribe-form-wrapper {
-  margin-left: 5.8125rem;
+.page-footer__subscribe-form {
+  margin: 3.75rem auto 0;
+  /* for mobile */
   /* 93px for desktop only, mobile = 0; */
 }
 
+@media screen and (min-width: 768px) and (max-width: 100vw) {
+  .page-footer__subscribe-form {
+    margin-top: initial;
+    margin-right: 0;
+    margin-bottom: initial;
+    margin-left: 5.8125rem;
+  }
+}
+
 .subscribe-form {
-  /* text-align: center; for mobile only */
+  text-align: center;
+  /* for mobile only */
+}
+
+@media screen and (min-width: 481px) {
+  .subscribe-form {
+    text-align: unset;
+  }
 }
 
 /* Подпишитесь на рассылку */
-/* .subscribe-title { mb20 w219 h16 fw700 fz14 lh15 lsp0.03em ttup c#FFF } */
-.subscribe-title {
+/* .subscribe-form__title { mb20 w219 h16 fw700 fz14 lh15 lsp0.03em ttup c#FFF } */
+.subscribe-form__title {
   display: block;
   min-width: 13.6875rem;
   /* margin-top: 60px; for mobile */
@@ -1701,16 +1791,14 @@ main > .activities {
   text-transform: uppercase;
 }
 
-.subscribe-form > .group {
-  margin-bottom: 0;
+@media screen and (min-width: 481px) {
+  .subscribe__group {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
-.group.subscribe {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.subscribe > .form-field {
+.subscribe-form__field {
   border: none;
 }
 
@@ -1771,6 +1859,15 @@ main > .activities {
   letter-spacing: 0.06em;
 }
 
+@media screen and (min-width: 0) and (max-width: 768px) {
+  .subscribe-btn {
+    margin-top: var(--uni-margin-med);
+    margin-right: initial;
+    margin-bottom: initial;
+    margin-left: initial;
+  }
+}
+
 .subscribe-btn .send-icon {
   margin-left: 0.625rem;
   fill: currentColor;
@@ -1790,6 +1887,41 @@ main > .activities {
 /* ------------------------------------------------------ */
 /* || -------------- END "ПОДВАЛ САЙТА" ----------------- */
 /* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* || ------------------ END "LAYOUT" ------------------- */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* || ------------------ START "MEDIA" ------------------ */
+/* ------------------------------------------------------ */
+/* @media screen and (max-width: $upToMobile) { } */
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 480px;
+  }
+  .nav__menu,
+  .page-header__contacts-list,
+  .features {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-overlay,
+  .btn-burger {
+    display: none;
+  }
+  .feature-card__heading {
+    margin-bottom: var(--uni-margin-min);
+  }
+}
+
+/* ------------------------------------------------------ */
+/* || ------------------- END "MEDIA" ------------------- */
+/* ------------------------------------------------------ */
+.nav__menu, .page-header__contacts-list, .social-list, .features-list, .activities-list, .designers-list, .clients-list, .portfolio-filters-list, .portfolio-list, .page-footer__address-list {
+  list-style: none;
+}
+
 /* Студия, Портфолио, Контакты, h16px */
 .nav__link, .header-contact {
   position: relative;
@@ -1835,7 +1967,15 @@ main > .activities {
   background-color: var(--color-bg-hero-btn);
 }
 
-/* ------------------------------------------------------ */
-/* || ------------------ END "LAYOUT" ------------------- */
-/* ------------------------------------------------------ */
+/* hover overlay */
+.portfolio-card__thumb::before, .portfolio-card__desc {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic), visibility var(--time) var(--cubic);
+}
 /*# sourceMappingURL=main.css.map */

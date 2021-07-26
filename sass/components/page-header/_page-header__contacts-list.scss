@@ -1,6 +1,8 @@
 /* START "Шапка сайта - Контакты" */
 
 .page-header__contacts-list {
+  @extend %list;
+
   display: flex;
   flex-wrap: wrap;
   align-items: center;

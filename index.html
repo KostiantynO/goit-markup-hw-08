@@ -10,9 +10,14 @@
       content="Studio - showcases WebStudio's index page with features, activities, team, clients. The site is a Training project of the GoIT student of FullStack Dev online course"
     />
 
-    <style>
+    <style class="critical-css">
       .list:empty::after {
         content: attr(data-placeholder);
+      }
+
+      .image {
+        width: initial;
+        height: initial;
       }
     </style>
 
@@ -39,7 +44,7 @@
     <!-- Пропустить к Основному Контенту -->
     <a class="skip-link links" href="#main-content">Skip to main content</a>
 
-    <!-- Шапка сайта 2021-07-23 15:12 -->
+    <!-- Шапка сайта 2021-07-26 02:35 -->
     <header class="page-header">
       <div class="container page-header__container">
         <nav class="nav page-header__nav">
@@ -48,7 +53,7 @@
             ><span class="logo__web-studio logo__last-part">Studio</span>
           </a>
 
-          <ul class="nav__menu list">
+          <ul class="nav__menu">
             <li class="nav__item">
               <a
                 class="nav__link nav__link--current"
@@ -77,14 +82,15 @@
             </li>
           </ul>
 
+          <!-- Mobile menu - burger button -->
           <button
             type="button"
-            class="btn btn--secondary nav__btn-mobile is-hidden"
+            class="btn btn--secondary btn-burger nav__btn-mobile btn-mobile is-hidden"
             aria-labelledby="burger-id-label"
           >
             <!-- 40x40 -->
             <svg
-              class="nav__icon svg icon-burger"
+              class="btn-mobile__icon svg icon-burger"
               aria-hidden="true"
               width="2.5rem"
               height="2.5rem"
@@ -94,24 +100,9 @@
 
             <span class="tooltip sr-only" id="burger-id-label" tabindex="-1"> Меню </span>
           </button>
-
-          <button
-            type="button"
-            class="btn btn--secondary nav__btn-mobile is-hidden"
-            aria-labelledby="close-nav__menu-id-label"
-          >
-            <!-- 40x40 -->
-            <svg class="nav__icon svg icon-close" aria-hidden="true" width="2.5rem" height="2.5rem">
-              <use href="./images/icomoon-svgomg/icons.svg#icon-close-40px"></use>
-            </svg>
-
-            <span class="tooltip sr-only" id="close-nav__menu-id-label" tabindex="-1">
-              Закрыть
-            </span>
-          </button>
         </nav>
 
-        <ul class="page-header__contacts-list list">
+        <ul class="page-header__contacts-list">
           <li class="contact-item">
             <a
               class="header-contact links"
@@ -161,6 +152,28 @@
           </li>
         </ul>
       </div>
+
+      <!-- Главная (бургер, шаг 2) -->
+      <div class="mobile-overlay">
+        <!-- Кнопка закрытия мобильного меню -->
+        <button
+          type="button"
+          class="btn btn--secondary btn-mobile btn-mobile-close is-hidden"
+          aria-labelledby="close-nav__menu-id-label"
+        >
+          <!-- 40x40 -->
+          <svg
+            class="btn-mobile__icon svg icon-close"
+            aria-hidden="true"
+            width="2.5rem"
+            height="2.5rem"
+          >
+            <use href="./images/icomoon-svgomg/icons.svg#icon-close-40px"></use>
+          </svg>
+
+          <span class="tooltip sr-only" id="close-nav__menu-id-label" tabindex="-1"> Закрыть </span>
+        </button>
+      </div>
     </header>
 
     <main>
@@ -179,123 +192,148 @@
       </section>
 
       <!-- "Особенности" и h2 sr-only -->
-      <section class="features section" aria-labelledby="features-title-id">
+      <section class="features main__features section" aria-labelledby="features-title-id">
         <div class="features-container container">
           <h2 class="sr-only" id="features-title-id">Особенности</h2>
 
-          <ul class="features-list list">
+          <ul class="features-list">
             <!-- 70x70 -->
-            <li class="feature-list-item">
-              <svg class="feature-svg svg" aria-hidden="true" width="4.375rem" height="4.375rem">
-                <use
-                  class="feature-svg-use"
-                  href="./images/icomoon-svgomg/icons.svg#icon-antenna"
-                ></use>
-              </svg>
-
-              <h3 class="feature-heading">Внимание к деталям</h3>
-              <p class="feature-paragraph">
-                Идейные соображения, а также начало повседневной работы по формированию позиции.
-              </p>
+            <li class="features-list__item">
+              <div class="feature-card features__feature-card">
+                <div class="feature-card__svg-wrapper">
+                  <svg
+                    class="feature-card__svg svg"
+                    aria-hidden="true"
+                    width="4.375rem"
+                    height="4.375rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-antenna"></use>
+                  </svg>
+                </div>
+                <h3 class="feature-card__heading">Внимание к деталям</h3>
+                <p class="feature-card__paragraph">
+                  Идейные соображения, а также начало повседневной работы по формированию позиции.
+                </p>
+              </div>
             </li>
 
             <!-- 70x70 -->
-            <li class="feature-list-item">
-              <svg class="feature-svg svg" aria-hidden="true" width="4.375rem" height="4.375rem">
-                <use
-                  class="feature-svg-use"
-                  href="./images/icomoon-svgomg/icons.svg#icon-clock"
-                ></use>
-              </svg>
-
-              <h3 class="feature-heading">Пунктуальность</h3>
-              <p class="feature-paragraph">
-                Задача организации, в особенности же рамки и место обучения кадров влечет за собой.
-              </p>
+            <li class="features-list__item">
+              <div class="feature-card features__feature-card">
+                <div class="feature-card__svg-wrapper">
+                  <svg
+                    class="feature-card__svg svg"
+                    aria-hidden="true"
+                    width="4.375rem"
+                    height="4.375rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-clock"></use>
+                  </svg>
+                </div>
+                <h3 class="feature-card__heading">Пунктуальность</h3>
+                <p class="feature-card__paragraph">
+                  Задача организации, в особенности же рамки и место обучения кадров влечет за
+                  собой.
+                </p>
+              </div>
             </li>
 
             <!-- 70x70 -->
-            <li class="feature-list-item">
-              <svg class="feature-svg svg" aria-hidden="true" width="4.375rem" height="4.375rem">
-                <use
-                  class="feature-svg-use"
-                  href="./images/icomoon-svgomg/icons.svg#icon-diagram"
-                ></use>
-              </svg>
-
-              <h3 class="feature-heading">Планирование</h3>
-              <p class="feature-paragraph">
-                Равным образом консультация с широким активом в значительной степени обуславливает.
-              </p>
+            <li class="features-list__item">
+              <div class="feature-card features__feature-card">
+                <div class="feature-card__svg-wrapper">
+                  <svg
+                    class="feature-card__svg svg"
+                    aria-hidden="true"
+                    width="4.375rem"
+                    height="4.375rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-diagram"></use>
+                  </svg>
+                </div>
+                <h3 class="feature-card__heading">Планирование</h3>
+                <p class="feature-card__paragraph">
+                  Равным образом консультация с широким активом в значительной степени
+                  обуславливает.
+                </p>
+              </div>
             </li>
 
             <!-- 70x70 -->
-            <li class="feature-list-item">
-              <svg class="feature-svg svg" aria-hidden="true" width="4.375rem" height="4.375rem">
-                <use
-                  class="feature-svg-use"
-                  href="./images/icomoon-svgomg/icons.svg#icon-astronaut"
-                ></use>
-              </svg>
-
-              <h3 class="feature-heading">Современные технологии</h3>
-              <p class="feature-paragraph">
-                Значимость этих проблем настолько очевидна, что реализация плановых заданий.
-              </p>
+            <li class="features-list__item">
+              <div class="feature-card features__feature-card">
+                <div class="feature-card__svg-wrapper">
+                  <svg
+                    class="feature-card__svg svg"
+                    aria-hidden="true"
+                    width="4.375rem"
+                    height="4.375rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-astronaut"></use>
+                  </svg>
+                </div>
+                <h3 class="feature-card__heading">Современные технологии</h3>
+                <p class="feature-card__paragraph">
+                  Значимость этих проблем настолько очевидна, что реализация плановых заданий.
+                </p>
+              </div>
             </li>
           </ul>
         </div>
       </section>
 
       <!-- Чем мы занимаемся -->
-      <section class="activities section" aria-labelledby="activities-title-id">
+      <section class="activities main__activities section" aria-labelledby="activities-title-id">
         <div class="activities-container container">
-          <h2 class="section-title" id="activities-title-id">Чем мы занимаемся</h2>
+          <h2 class="section__title" id="activities-title-id">Чем мы занимаемся</h2>
 
           <!-- Сжатые *.jpg активностей -->
-          <ul class="activities-list list" data-placeholder="Заполнитель">
-            <li class="activity-list-item">
-              <!-- 370x294 -->
-              <img
-                class="activity-image image"
-                src="./images/squooshed/activities/activity-1.jpg"
-                alt="Разработчик делает разметку веб-страницы за ноутбуком"
-                width="23.125rem"
-                height="18.375rem"
-              />
-
-              <div class="activity-overlay">
-                <p class="activity-list-label">Десктопные приложения</p>
+          <ul class="activities-list" data-placeholder="Заполнитель">
+            <li class="activities-list__item">
+              <div class="activity-card">
+                <!-- 370x294 -->
+                <img
+                  class="activity-card__image image"
+                  src="./images/squooshed/activities/activity-1.jpg"
+                  alt="Разработчик делает разметку веб-страницы за ноутбуком"
+                  width="23.125rem"
+                  height="18.375rem"
+                />
+                <div class="activity-card__overlay">
+                  <p class="activity-card__title">Десктопные приложения</p>
+                </div>
               </div>
             </li>
 
-            <li class="activity-list-item">
-              <!-- 370x294 -->
-              <img
-                class="activity-image image"
-                src="./images/squooshed/activities/activity-2.jpg"
-                alt="Дизайнер сверяет макет UI интерфейса со смартфоном"
-                width="23.125rem"
-                height="18.375rem"
-              />
-
-              <div class="activity-overlay">
-                <p class="activity-list-label">Мобильные приложения</p>
+            <li class="activities-list__item">
+              <div class="activity-card">
+                <!-- 370x294 -->
+                <img
+                  class="activity-card__image image"
+                  src="./images/squooshed/activities/activity-2.jpg"
+                  alt="Дизайнер сверяет макет UI интерфейса со смартфоном"
+                  width="23.125rem"
+                  height="18.375rem"
+                />
+                <div class="activity-card__overlay">
+                  <p class="activity-card__title">Мобильные приложения</p>
+                </div>
               </div>
             </li>
 
-            <li class="activity-list-item">
-              <!-- 370x294 -->
-              <img
-                class="activity-image image"
-                src="./images/squooshed/activities/activity-3.jpg"
-                alt="Дизайнер выбирает цвет из палитры на планшете"
-                width="23.125rem"
-                height="18.375rem"
-              />
-
-              <div class="activity-overlay">
-                <p class="activity-list-label">Дизайнерские решения</p>
+            <li class="activities-list__item">
+              <div class="activity-card">
+                <!-- 370x294 -->
+                <img
+                  class="activity-card__image image"
+                  src="./images/squooshed/activities/activity-3.jpg"
+                  alt="Дизайнер выбирает цвет из палитры на планшете"
+                  width="23.125rem"
+                  height="18.375rem"
+                />
+                <div class="activity-card__overlay">
+                  <p class="activity-card__title">Дизайнерские решения</p>
+                </div>
               </div>
             </li>
           </ul>
@@ -305,28 +343,28 @@
       <!-- Наша команда -->
       <section class="team section" aria-labelledby="team-title-id">
         <div class="container">
-          <h2 class="section-title" id="team-title-id">Наша команда</h2>
+          <h2 class="section__title" id="team-title-id">Наша команда</h2>
 
           <!-- Ужатые *.jpg участников -->
-          <ul class="designers-list list" data-placeholder="Заполнитель">
-            <li class="designer-list-item">
+          <ul class="designers-list" data-placeholder="Заполнитель">
+            <li class="designers-list__item">
               <div class="designer-card">
                 <!-- 270x260 -->
                 <img
-                  class="image designer-photo"
+                  class="image designer-card__photo"
                   src="./images/squooshed/team/designer-1.jpg"
                   alt="Молодой дизайнер в очках, с приветливой улыбкой, со стриженной бородой и в рубашке"
                   width="16.875rem"
                   height="16.25rem"
                 />
 
-                <div class="designer-card-title">
-                  <h3 class="designer-name">Игорь Демьяненко</h3>
-                  <p class="designer-role" lang="en">Product Designer</p>
+                <div class="designer-card__meta">
+                  <h3 class="designer-card__name">Игорь Демьяненко</h3>
+                  <p class="designer-card__role" lang="en">Product Designer</p>
                 </div>
 
                 <!-- Social links -->
-                <ul class="social-list list">
+                <ul class="social-list">
                   <li class="social-list__item">
                     <a
                       class="social-list__link"
@@ -434,23 +472,23 @@
               </div>
             </li>
 
-            <li class="designer-list-item">
+            <li class="designers-list__item">
               <div class="designer-card">
                 <!-- 270x260 -->
                 <img
-                  class="image designer-photo"
+                  class="image designer-card__photo"
                   src="./images/squooshed/team/designer-2.jpg"
                   alt="Молодая улыбающаяся девушка-разработчик в очках и в деловом костюме"
                   width="16.875rem"
                   height="16.25rem"
                 />
 
-                <div class="designer-card-title">
-                  <h3 class="designer-name">Ольга Репина</h3>
-                  <p class="designer-role" lang="en">Frontend Developer</p>
+                <div class="designer-card__meta">
+                  <h3 class="designer-card__name">Ольга Репина</h3>
+                  <p class="designer-card__role" lang="en">Frontend Developer</p>
                 </div>
                 <!-- Social links -->
-                <ul class="social-list list">
+                <ul class="social-list">
                   <li class="social-list__item">
                     <a
                       class="social-list__link"
@@ -558,24 +596,24 @@
               </div>
             </li>
 
-            <li class="designer-list-item">
+            <li class="designers-list__item">
               <div class="designer-card">
                 <!-- 270x260 -->
                 <img
-                  class="image designer-photo"
+                  class="image designer-card__photo"
                   src="./images/squooshed/team/designer-3.jpg"
                   alt="Молодой маркетолог с уверенной улыбкой, легкой бородой и в рубашке"
                   width="16.875rem"
                   height="16.25rem"
                 />
 
-                <div class="designer-card-title">
-                  <h3 class="designer-name">Николай Тарасов</h3>
-                  <p class="designer-role" lang="en">Marketing</p>
+                <div class="designer-card__meta">
+                  <h3 class="designer-card__name">Николай Тарасов</h3>
+                  <p class="designer-card__role" lang="en">Marketing</p>
                 </div>
 
                 <!-- Social links -->
-                <ul class="social-list list">
+                <ul class="social-list">
                   <li class="social-list__item">
                     <a
                       class="social-list__link"
@@ -683,24 +721,24 @@
               </div>
             </li>
 
-            <li class="designer-list-item">
+            <li class="designers-list__item">
               <div class="designer-card">
                 <!-- 270x260 -->
                 <img
-                  class="image designer-photo"
+                  class="image designer-card__photo"
                   src="./images/squooshed/team/designer-4.jpg"
                   alt="Молодой дизайнер в очках, со сдержанной уверенной ухмылкой, с бородой и в футболке"
                   width="16.875rem"
                   height="16.25rem"
                 />
 
-                <div class="designer-card-title">
-                  <h3 class="designer-name">Михаил Ермаков</h3>
-                  <p class="designer-role" lang="en">UI Designer</p>
+                <div class="designer-card__meta">
+                  <h3 class="designer-card__name">Михаил Ермаков</h3>
+                  <p class="designer-card__role" lang="en">UI Designer</p>
                 </div>
 
                 <!-- Social links -->
-                <ul class="social-list list">
+                <ul class="social-list">
                   <li class="social-list__item">
                     <a
                       class="social-list__link"
@@ -814,114 +852,150 @@
       <!-- Постоянные клиенты -->
       <section class="clients section" aria-labelledby="clients-title-id">
         <div class="container">
-          <h2 class="section-title" id="clients-title-id">Постоянные клиенты</h2>
-          <ul class="clients-list list">
-            <li class="client-item">
-              <a
-                class="client-link"
-                rel="noopener nofollow noreferrer"
-                href="#0"
-                aria-labelledby="client-id-label-1"
-              >
-                <!-- 106x60 -->
-                <svg class="client-icon" aria-hidden="true" width="6.625rem" height="3.75rem">
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-client-1"></use>
-                </svg>
-
-                <span class="tooltip sr-only" id="client-id-label-1" tabindex="-1" lang="en">
-                  YA & CO
-                </span>
-              </a>
+          <h2 class="section__title" id="clients-title-id">Постоянные клиенты</h2>
+          <ul class="clients-list">
+            <li class="clients-list__item">
+              <div class="client-card">
+                <a
+                  class="client-card__link"
+                  rel="noopener nofollow noreferrer"
+                  href="#0"
+                  aria-labelledby="client-id-label-1"
+                >
+                  <!-- 106x60 -->
+                  <svg
+                    class="client-card__icon"
+                    aria-hidden="true"
+                    width="6.625rem"
+                    height="3.75rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-client-1"></use>
+                  </svg>
+                  <span class="tooltip sr-only" id="client-id-label-1" tabindex="-1" lang="en">
+                    YA & CO
+                  </span>
+                </a>
+              </div>
             </li>
 
-            <li class="client-item">
-              <a
-                class="client-link"
-                rel="noopener nofollow noreferrer"
-                href="#0"
-                aria-labelledby="client-id-label-2"
-              >
-                <!-- 106x60 -->
-                <svg class="client-icon" aria-hidden="true" width="6.625rem" height="3.75rem">
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-client-2"></use>
-                </svg>
-
-                <span class="tooltip sr-only" id="client-id-label-2" tabindex="-1" lang="en">
-                  COMPANY
-
-                  <span class="small">Tag line here</span>
-                </span>
-              </a>
+            <li class="clients-list__item">
+              <div class="client-card">
+                <a
+                  class="client-card__link"
+                  rel="noopener nofollow noreferrer"
+                  href="#0"
+                  aria-labelledby="client-id-label-2"
+                >
+                  <!-- 106x60 -->
+                  <svg
+                    class="client-card__icon"
+                    aria-hidden="true"
+                    width="6.625rem"
+                    height="3.75rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-client-2"></use>
+                  </svg>
+                  <span class="tooltip sr-only" id="client-id-label-2" tabindex="-1" lang="en">
+                    COMPANY
+                    <span class="small">Tag line here</span>
+                  </span>
+                </a>
+              </div>
             </li>
 
-            <li class="client-item">
-              <a
-                class="client-link"
-                rel="noopener nofollow noreferrer"
-                href="#0"
-                aria-labelledby="client-id-label-3"
-              >
-                <!-- 106x60 -->
-                <svg class="client-icon" aria-hidden="true" width="6.625rem" height="3.75rem">
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-client-3"></use>
-                </svg>
-
-                <span class="tooltip sr-only" id="client-id-label-3" tabindex="-1"> COMPANY </span>
-              </a>
+            <li class="clients-list__item">
+              <div class="client-card">
+                <a
+                  class="client-card__link"
+                  rel="noopener nofollow noreferrer"
+                  href="#0"
+                  aria-labelledby="client-id-label-3"
+                >
+                  <!-- 106x60 -->
+                  <svg
+                    class="client-card__icon"
+                    aria-hidden="true"
+                    width="6.625rem"
+                    height="3.75rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-client-3"></use>
+                  </svg>
+                  <span class="tooltip sr-only" id="client-id-label-3" tabindex="-1">
+                    COMPANY
+                  </span>
+                </a>
+              </div>
             </li>
 
-            <li class="client-item">
-              <a
-                class="client-link"
-                rel="noopener nofollow noreferrer"
-                href="#0"
-                aria-labelledby="client-id-label-4"
-              >
-                <!-- 106x60 -->
-                <svg class="client-icon" aria-hidden="true" width="6.625rem" height="3.75rem">
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-client-4"></use>
-                </svg>
-
-                <span class="tooltip sr-only" id="client-id-label-4" tabindex="-1">
-                  FOSTER PETERS
-                </span>
-              </a>
+            <li class="clients-list__item">
+              <div class="client-card">
+                <a
+                  class="client-card__link"
+                  rel="noopener nofollow noreferrer"
+                  href="#0"
+                  aria-labelledby="client-id-label-4"
+                >
+                  <!-- 106x60 -->
+                  <svg
+                    class="client-card__icon"
+                    aria-hidden="true"
+                    width="6.625rem"
+                    height="3.75rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-client-4"></use>
+                  </svg>
+                  <span class="tooltip sr-only" id="client-id-label-4" tabindex="-1">
+                    FOSTER PETERS
+                  </span>
+                </a>
+              </div>
             </li>
 
-            <li class="client-item">
-              <a
-                class="client-link"
-                rel="noopener nofollow noreferrer"
-                href="#0"
-                aria-labelledby="client-id-label-5"
-              >
-                <!-- 106x60 -->
-                <svg class="client-icon" aria-hidden="true" width="6.625rem" height="3.75rem">
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-client-5"></use>
-                </svg>
-
-                <span class="tooltip sr-only" id="client-id-label-5" tabindex="-1"> BRAND </span>
-              </a>
+            <li class="clients-list__item">
+              <div class="client-card">
+                <a
+                  class="client-card__link"
+                  rel="noopener nofollow noreferrer"
+                  href="#0"
+                  aria-labelledby="client-id-label-5"
+                >
+                  <!-- 106x60 -->
+                  <svg
+                    class="client-card__icon"
+                    aria-hidden="true"
+                    width="6.625rem"
+                    height="3.75rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-client-5"></use>
+                  </svg>
+                  <span class="tooltip sr-only" id="client-id-label-5" tabindex="-1"> BRAND </span>
+                </a>
+              </div>
             </li>
 
-            <li class="client-item">
-              <a
-                class="client-link"
-                rel="noopener nofollow noreferrer"
-                href="#0"
-                aria-labelledby="client-id-label-6"
-              >
-                <!-- 106x60 -->
-                <svg class="client-icon" aria-hidden="true" width="6.625rem" height="3.75rem">
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-client-6"></use>
-                </svg>
-
-                <span class="tooltip sr-only" id="client-id-label-6" tabindex="-1" lang="en">
-                  COMPANY
-
-                  <span class="small">Tag line</span>
-                </span>
-              </a>
+            <li class="clients-list__item">
+              <div class="client-card">
+                <a
+                  class="client-card__link"
+                  rel="noopener nofollow noreferrer"
+                  href="#0"
+                  aria-labelledby="client-id-label-6"
+                >
+                  <!-- 106x60 -->
+                  <svg
+                    class="client-card__icon"
+                    aria-hidden="true"
+                    width="6.625rem"
+                    height="3.75rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-client-6"></use>
+                  </svg>
+                  <span class="tooltip sr-only" id="client-id-label-6" tabindex="-1" lang="en">
+                    COMPANY
+                    <span class="small">Tag line</span>
+                  </span>
+                </a>
+              </div>
             </li>
           </ul>
         </div>
@@ -931,14 +1005,14 @@
     <!-- Footer Updated on 2021-07-23 15:15 -->
     <footer class="page-footer">
       <div class="container page-footer__container">
-        <div class="footer-address-wrapper">
+        <div class="page-footer__address-wrapper">
           <a class="logo links" href="./" lang="en">
             <span class="logo__web-studio logo__first-part"> Web</span
             ><span class="logo__web-studio logo__last-part--inverse">Studio </span>
           </a>
-          <address class="footer-address">
-            <ul class="footer-address-list list">
-              <li class="footer-address-item">
+          <address class="page-footer__address">
+            <ul class="page-footer__address-list">
+              <li class="page-footer__address-item">
                 <a
                   class="footer-map-pointer links"
                   rel="noopener noreferrer nofollow"
@@ -954,7 +1028,7 @@
                 </a>
               </li>
 
-              <li class="footer-address-item">
+              <li class="page-footer__address-item">
                 <a
                   class="footer-contact links"
                   href="mailto:info@example.com"
@@ -968,7 +1042,7 @@
                 </a>
               </li>
 
-              <li class="footer-address-item">
+              <li class="page-footer__address-item">
                 <a
                   class="footer-contact links"
                   href="tel:+380991111111"
@@ -985,21 +1059,21 @@
           </address>
         </div>
 
-        <div class="footer-social-container">
+        <div class="page-footer__social-container">
           <!-- Footer Social links -->
-          <p class="footer-social-title">Присоединяйтесь</p>
+          <p class="page-footer__social-title social-list__title">Присоединяйтесь</p>
 
-          <ul class="social-list list">
+          <ul class="social-list">
             <li class="social-list__item">
               <a
-                class="social-list__link footer-social-list__link"
+                class="social-list__link page-footer__social-link"
                 rel="noopener nofollow noreferrer"
                 href="#0"
                 aria-labelledby="webstudio-instagram-id-label"
               >
                 <!-- 20x20 -->
                 <svg
-                  class="social-list__icon svg footer-social-list__icon"
+                  class="social-list__icon svg page-footer__social-icon"
                   aria-hidden="true"
                   width="1.25rem"
                   height="1.25rem"
@@ -1015,14 +1089,14 @@
 
             <li class="social-list__item">
               <a
-                class="social-list__link footer-social-list__link"
+                class="social-list__link page-footer__social-link"
                 rel="noopener nofollow noreferrer"
                 href="#0"
                 aria-labelledby="webstudio-twitter-id-label"
               >
                 <!-- 20x20 -->
                 <svg
-                  class="social-list__icon svg footer-social-list__icon"
+                  class="social-list__icon svg page-footer__social-icon"
                   aria-hidden="true"
                   width="1.25rem"
                   height="1.25rem"
@@ -1038,14 +1112,14 @@
 
             <li class="social-list__item">
               <a
-                class="social-list__link footer-social-list__link"
+                class="social-list__link page-footer__social-link"
                 rel="noopener nofollow noreferrer"
                 href="#0"
                 aria-labelledby="webstudio-facebook-id-label"
               >
                 <!-- 20x20 -->
                 <svg
-                  class="social-list__icon svg footer-social-list__icon"
+                  class="social-list__icon svg page-footer__social-icon"
                   aria-hidden="true"
                   width="1.25rem"
                   height="1.25rem"
@@ -1061,14 +1135,14 @@
 
             <li class="social-list__item">
               <a
-                class="social-list__link footer-social-list__link"
+                class="social-list__link page-footer__social-link"
                 rel="noopener nofollow noreferrer"
                 href="#0"
                 aria-labelledby="webstudio-linkedin-id-label"
               >
                 <!-- 20x20 -->
                 <svg
-                  class="social-list__icon svg footer-social-list__icon"
+                  class="social-list__icon svg page-footer__social-icon"
                   aria-hidden="true"
                   width="1.25rem"
                   height="1.25rem"
@@ -1085,40 +1159,42 @@
         </div>
 
         <!-- Форма подписки на рассылку (email input) -->
-        <div class="subscribe-form-wrapper">
-          <form class="subscribe-form" aria-labelledby="subscribe-title-id">
-            <b class="subscribe-title" id="subscribe-title-id">Подпишитесь на рассылку</b>
 
-            <div class="group subscribe">
-              <!-- E-mail -->
-              <div class="form-field">
-                <input
-                  type="email"
-                  name="subscribe-user-email"
-                  class="subscribe-input"
-                  id="subscribe-user-email-id"
-                  maxlength="80"
-                  placeholder="E-mail"
-                  required
-                />
+        <form
+          class="subscribe-form page-footer__subscribe-form"
+          aria-labelledby="subscribe-form__title-id"
+        >
+          <b class="subscribe-form__title" id="subscribe-form__title-id">Подпишитесь на рассылку</b>
 
-                <label class="subscribe-label tooltip sr-only" for="subscribe-user-email-id">
-                  Ваша почта
-                </label>
-              </div>
+          <div class="subscribe__group">
+            <!-- E-mail -->
+            <div class="subscribe-form__field">
+              <input
+                type="email"
+                name="subscribe-user-email"
+                class="subscribe-input"
+                id="subscribe-user-email-id"
+                maxlength="80"
+                placeholder="E-mail"
+                required
+              />
 
-              <!-- Отправляем форму подписки -->
-              <button type="submit" class="subscribe-btn btn btn--primary" id="subscribe-btn-id">
-                <span class="btn__label">Подписаться</span>
-
-                <!-- 24x24 -->
-                <svg class="send-icon svg" aria-hidden="true" width="1.5rem" height="1.5rem">
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-send"></use>
-                </svg>
-              </button>
+              <label class="subscribe-label tooltip sr-only" for="subscribe-user-email-id">
+                Ваша почта
+              </label>
             </div>
-          </form>
-        </div>
+
+            <!-- Отправляем форму подписки -->
+            <button type="submit" class="subscribe-btn btn btn--primary" id="subscribe-btn-id">
+              <span class="btn__label">Подписаться</span>
+
+              <!-- 24x24 -->
+              <svg class="send-icon svg" aria-hidden="true" width="1.5rem" height="1.5rem">
+                <use href="./images/icomoon-svgomg/icons.svg#icon-send"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
       </div>
     </footer>
 
@@ -1315,15 +1391,3 @@
     <script src="./js/focus-trap.js"></script>
   </body>
 </html>
-
-<!--
-.page-header
-.container
-.page-header__nav
-
-.logo
-.nav__item
-.modal-btn
-.menu__item
-.item-link
--->

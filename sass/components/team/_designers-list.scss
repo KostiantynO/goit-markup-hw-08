@@ -1,0 +1,29 @@
+/* team */
+.designers-list {
+  @extend %list;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  margin-top: calc(-1 * var(--uni-margin));
+  margin-left: calc(-1 * var(--uni-margin));
+}
+
+/* team card 1-4 or "designer card" */
+.designers-list__item {
+  flex-basis: calc(100% / var(--cards-per-line-4) - var(--uni-margin));
+  /* flex-grow: 1; FIXME for mobile */
+
+  min-width: 15.625rem;
+  max-width: 28.125rem;
+  min-height: 26.75rem; /* 428px */
+  max-height: 42.45rem; /* 679.2px */
+
+  margin-top: var(--uni-margin); /* 30px top and left */
+  margin-left: var(--uni-margin);
+
+  word-wrap: break-word;
+}

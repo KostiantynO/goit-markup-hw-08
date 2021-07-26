@@ -1,0 +1,25 @@
+.portfolio-card__meta {
+  flex-grow: 1;
+
+  min-height: 110px;
+  max-height: calc(
+    (var(--line-height-project-name) * 18px * 2) + (var(--line-height-project-type) * 16px * 2) +
+      46px
+  );
+
+  padding-top: clamp(0.625rem, 3.5vh, var(--uni-margin-med));
+  padding-right: 1.4375rem; /* 23xp */
+  padding-bottom: 1.1875rem; /* 19px */
+  padding-left: 1.4375rem;
+
+  overflow: hidden;
+
+  border-right: 1px solid var(--color-bg-project-card);
+  border-bottom: 1px solid var(--color-bg-project-card);
+  border-left: 1px solid var(--color-bg-project-card);
+
+  &:hover,
+  &:focus {
+    overflow-y: auto;
+  }
+}

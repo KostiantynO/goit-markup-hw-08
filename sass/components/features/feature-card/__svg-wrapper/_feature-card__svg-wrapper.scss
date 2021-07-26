@@ -1,0 +1,19 @@
+.feature-card__svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7.5rem;
+
+  margin-bottom: 1.875rem;
+
+  background-color: var(--color-bg-btn-secondary);
+  border-radius: 0.25rem;
+}
+
+.feature-card__svg {
+  width: 4.375rem;
+  height: 4.375rem;
+
+  /* .antenna-circle, .clock-ticks, .diagram-bars, .astronaut-stars */
+  color: var(--color-accent);
+}

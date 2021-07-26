@@ -1,0 +1,15 @@
+@extend %list;
+
+nav__menu DONE.
+page-header__contacts-list DONE.
+features-list DONE.
+activities-list DONE.
+designers-list DONE.
+social-list DONE.
+clients-list DONE.
+
+portfolio-filters-list DONE.
+portfolio-list DONE.
+
+social-list DONE.
+page-footer__address-list DONE.

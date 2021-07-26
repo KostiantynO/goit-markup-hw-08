@@ -1,16 +1,19 @@
 /* START "Главная навигация сайта" */
-.page-header__nav {
+
+.nav {
   position: relative;
 
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
 }
 
+// .page-header__nav { }
+
 .nav__menu {
+  @extend %list;
+
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
 

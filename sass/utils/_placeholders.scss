@@ -1,3 +1,7 @@
+%list {
+  list-style: none;
+}
+
 /* Студия, Портфолио, Контакты, h16px */
 %header-link {
   position: relative;
@@ -42,4 +46,19 @@
 /* Главная кнопка - активна */
 %btn--primary-active {
   background-color: var(--color-bg-hero-btn);
+}
+
+/* hover overlay */
+%portfolio-card-overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic),
+    visibility var(--time) var(--cubic);
 }

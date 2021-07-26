@@ -8,8 +8,9 @@
 }
 
 /* Чем мы занимаемся, Наша команда, Постоянные клиенты h42px */
-.section-title {
+.section__title {
   margin-bottom: var(--uni-margin-big);
+
   font-size: 2.25rem; /* 36px */
   line-height: 1.17; /* 42.19px */
   text-align: center; /* from body color: #212121; from h2 = font-weight: 700; */

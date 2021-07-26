@@ -1,0 +1,17 @@
+/* Внимание к деталям, Пунктуальность, Планирование, Современные технологии, h16.41px */
+.feature-card__heading {
+  max-height: 2.0475rem; /* 1.17 × 14px × 2 = 32.76px / 16px = 2.0475rem */
+
+  margin-bottom: var(--uni-margin-min);
+
+  overflow: hidden;
+
+  font-size: inherit; /* from body font-size: 14px; color: #212121; */
+  line-height: 1.17; /* from h3 font-weight: 700; */
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    overflow-y: auto;
+  }
+}

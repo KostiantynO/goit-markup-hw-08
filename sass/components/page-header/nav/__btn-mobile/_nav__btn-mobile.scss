@@ -1,5 +1,5 @@
 /* START Mobile button */
-.nav__btn-mobile {
+.btn-mobile {
   position: absolute;
   top: 0%;
   left: 100%;
@@ -7,15 +7,10 @@
   max-width: 2.5rem;
   max-height: 2.5rem;
   padding: 0;
-  margin: 0.625rem 0.9375rem;
-  margin-left: auto;
 
   color: var(--color-text-primary);
 
   background-color: #fff;
-  border: none;
-
-  transform: translateY(-50%);
 
   &:hover,
   &:focus,
@@ -29,7 +24,16 @@
   }
 }
 
-.nav__icon {
+.btn-mobile__icon {
   fill: currentColor;
 }
 /* END Mobile button */
+
+.nav__btn-mobile {
+  margin: 0.625rem 0.9375rem;
+  margin-left: auto;
+
+  border: none;
+
+  transform: translateY(-50%);
+}

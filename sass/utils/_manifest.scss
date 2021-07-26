@@ -18,9 +18,6 @@ li
 /* MIX */
 
 /* HARD SELECTORS */
-
-
-:root {
   --color-text-primary: #212121;
   --color-text-secondary: #757575;
   --color-accent: #2196f3;
@@ -49,7 +46,7 @@ li
   --cards-per-line-3: 3;
   --line-height-project-name: 2;
   --line-height-project-type: 1.88;
-  --width-portfolio-image: 28.125rem;
+  --width-portfolio-card__image: 28.125rem;
   --zi-1: 1;
   --zi-2: 2;
   --zi-3: 3;
@@ -62,7 +59,7 @@ li
   --zi-10: 10;
   --time: 250ms;
   --cubic: cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 .is-hidden
 body .sr-only
 body,
@@ -84,7 +81,7 @@ p
 .btn:focus,
 .btn--primary:focus,
 .btn--secondary:focus,
-.nav__btn-mobile:focus,
+.btn-mobile:focus,
 .skip-link:focus,
 .page-header .links:focus,
 .page-header .nav__link:focus
@@ -97,9 +94,9 @@ p
 .page-footer .links:focus,
 .page-footer .social-list__link:focus,
 .page-footer .btn:focus,
-.client-link:focus,
+.client-card__link:focus,
 .clients .links:focus,
-.clients .client-link:focus
+.clients .client-card__link:focus
 .accent,
 .links:hover,
 .links:focus
@@ -114,7 +111,7 @@ body
 .page-footer > .container
 .section
 .section:nth-child(2n + 4)
-.section-title
+.section__title
 rotate {}
 rotate-box {}
 scalingUp {}
@@ -123,9 +120,9 @@ body > .skip-link:focus
 .page-header__nav
 .nav__menu
 .nav__item:not(:first-child)
-.nav__btn-mobile
-.nav__btn-mobile.is-hidden
-.nav__icon
+.btn-mobile
+.btn-mobile.is-hidden
+.btn-mobile__icon
 .logo
 .logo:hover,
 .logo:focus
@@ -202,92 +199,92 @@ body > .skip-link:focus
 .submit-btn-wrapper
 .portfolio-filters
 .portfolio-filters-list
-.portfolio-filter-list-item
+.portfolio-filters-list__item
 .page-header
 .main__hero
 .hero__title
 .hero__btn
-main > .features
+.main__features
 .features-list
-.feature-list-item
-.feature-list-item::before
-.feature-svg
-.feature-heading
-.feature-heading:hover,
-.feature-heading:focus
-.feature-paragraph
-.feature-paragraph:hover,
-.feature-paragraph:focus
-main > .activities
+.features-list__item
+.features-list__item::before
+.feature-card__svg
+.feature-card__heading
+.feature-card__heading:hover,
+.feature-card__heading:focus
+.feature-card__paragraph
+.feature-card__paragraph:hover,
+.feature-card__paragraph:focus
+.main__activities
 .activities-list
-.activity-list-item
-.activity-image
-.activity-overlay
-.activity-overlay:hover,
-.activity-overlay:focus,
-.activity-overlay:active
-.activity-list-label
+.activities-list__item
+.activity-card__image
+.activity-card__overlay
+.activity-card__overlay:hover,
+.activity-card__overlay:focus,
+.activity-card__overlay:active
+.activity-card__title
 .team
 .designers-list
-.designer-list-item
+.designers-list__item
 .designer-card
-.designer-photo
-.designer-card-title
-.designer-name
-.designer-name:hover
-.designer-role
-.designer-role:hover
+.designer-card__photo
+.designer-card__meta
+.designer-card__name
+.designer-card__name:hover
+.designer-card__role
+.designer-card__role:hover
 .clients-list
-.client-item
-.client-link
-.client-icon
-.client-link:hover,
-.client-link:focus
-.client-link:hover .client-icon,
-.client-link:focus .client-icon
+.clients-list__item
+.client-card__link
+.client-card__icon
+.client-card__link:hover,
+.client-card__link:focus
+.client-card__link:hover .client-card__icon,
+.client-card__link:focus .client-card__icon
 .portfolio-list
-.portfolio-list-item
+.portfolio-list__item
 .portfolio-card
-.portfolio-project-link
-.portfolio-project-link:focus,
-.portfolio-project-link:hover
+.portfolio-card__link
+.portfolio-card__link:focus,
+.portfolio-card__link:hover
 .portfolio-card > .links:hover,
 .portfolio-card > .links:focus
-.project-thumb
-.project-thumb::before
-.project-thumb::before,
-.portfolio-project-desc
-.portfolio-project-link:hover .portfolio-project-desc,
-.portfolio-project-link:focus .portfolio-project-desc,
-.portfolio-project-link:hover .project-thumb::before,
-.portfolio-project-link:focus .project-thumb::before
-.portfolio-image
-.portfolio-project-desc
-.project-title
-.project-title:hover,
-.project-title:focus
-.portfolio-project-name
-.portfolio-project-name:hover,
-.portfolio-project-name:focus,
-.portfolio-project-name:active
-.portfolio-project-type
-.portfolio-project-type:hover,
-.portfolio-project-type:focus,
-.portfolio-project-type:active
+.portfolio-card__thumb
+.portfolio-card__thumb::before
+.portfolio-card__thumb::before,
+.portfolio-card__desc
+.portfolio-card__link:hover .portfolio-card__desc,
+.portfolio-card__link:focus .portfolio-card__desc,
+.portfolio-card__link:hover .portfolio-card__thumb::before,
+.portfolio-card__link:focus .portfolio-card__thumb::before
+.portfolio-card__image
+.portfolio-card__desc
+.portfolio-card__meta
+.portfolio-card__meta:hover,
+.portfolio-card__meta:focus
+.portfolio-card__name
+.portfolio-card__name:hover,
+.portfolio-card__name:focus,
+.portfolio-card__name:active
+.portfolio-card__type
+.portfolio-card__type:hover,
+.portfolio-card__type:focus,
+.portfolio-card__type:active
 .page-footer
-.footer-address
-.footer-address-list .footer-address-item + .footer-address-item
+.page-footer__address
+.page-footer__address-list .page-footer__address-item + .page-footer__address-item
 .footer-map-pointer
 .footer-contact
-.footer-social-container
-.footer-social-title
-.footer-social-list__link
-.footer-social-list__icon
+.page-footer__social-container
+.page-footer__social-title
+.page-footer__social-link
+.page-footer__social-icon
 .subscribe-form-wrapper
-.subscribe-title
+.subscribe-form__title
 .subscribe-form > .group
 .group.subscribe
-.subscribe > .form-field
+.subscribe-form__field
 .subscribe-input
 .subscribe-input::placeholder
 .subscribe-btn

@@ -3,6 +3,7 @@
   max-width: 75rem;
   padding-right: 0.9375rem; /* 15px, Отдаляет от границы экрана */
   padding-left: 0.9375rem;
+
   margin-right: auto; /* Центрирует по ширине */
   margin-left: auto;
 }
@@ -14,8 +15,10 @@
 }
 
 .page-footer__container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+  }
 }

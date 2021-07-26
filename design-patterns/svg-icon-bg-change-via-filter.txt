@@ -12,7 +12,7 @@ Loss: 0.1. This is a perfect result.
 path fill="#2196F3" d="M30.35
 
 сделать картинку
-.portfolio-image {
+.portfolio-card__image {
   object-fit: contain;
   object-position: bottom;
   height: clamp(190px, 30.29vw, 294px);

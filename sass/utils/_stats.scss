@@ -1,4 +1,4 @@
-$lines-count: (
+$stats: (
   "_page-header.scss": 16,
   "_hero.scss": 65,
   "_features.scss": 100,
@@ -11,10 +11,8 @@ $lines-count: (
   "_common.scss": 100,
 );
 
-@function get($key) {
+@function getStat($key) {
   @return map-get($stats, $key);
 }
 
-body {
-  background-color: get("background");
-}
+// body { background-color: get("background"); }

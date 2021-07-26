@@ -1,5 +1,7 @@
 /* START "Ссылки на соц. сети" */
 .social-list {
+  @extend %list;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

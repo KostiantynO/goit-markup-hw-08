@@ -23,10 +23,6 @@ p {
 
 /* END "Обнуление" */
 
-.list {
-  list-style: none;
-}
-
 .image {
   display: block;
 }
@@ -54,12 +50,23 @@ p {
   max-height: 2rem;
 }
 
-/* OUTLINES */
+/* START Подсветка ссылок */
+
+.accent,
+.links:hover,
+.links:focus {
+  color: var(--color-accent);
+  /* Акцент #2196F3 */
+}
+
+/* END Подсветка ссылок */
+
+/* OUTLINES - no-no-no do not change them 78) */
 // .svg:focus,
 // .btn:focus,
 // .btn--primary:focus,
 // .btn--secondary:focus,
-// .nav__btn-mobile:focus,
+// .btn-mobile:focus,
 // .skip-link:focus,
 // .page-header .links:focus,
 // .page-header .nav__link:focus {
@@ -73,7 +80,6 @@ p {
 //   box-shadow: 0 0 2px 4px rgba(221, 221, 21, 0.79);
 // }
 
-/* anchor */
 // .btn:focus .links:focus,
 // .hero-btn:focus,
 // .activities .links:focus,
@@ -82,23 +88,12 @@ p {
 // .page-footer .links:focus,
 // .page-footer .social-list__link:focus,
 // .page-footer .btn:focus,
-// .client-link:focus,
+// .client-card__link:focus,
 // .clients .links:focus,
-// .clients .client-link:focus {
+// .clients .client-card__link:focus {
 //   outline: none;
 //   box-shadow: 0 0 3px 2px rgba(33, 150, 243, 0.5);
 // }
-
-/* START Подсветка ссылок */
-
-.accent,
-.links:hover,
-.links:focus {
-  color: var(--color-accent);
-  /* Акцент #2196F3 */
-}
-
-/* END Подсветка ссылок */
 
 /* ------------------------------------------------------ */
 /* || -------------- END "ОБЩИЕ НАСТРОЙКИ" -------------- */

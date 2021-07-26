@@ -1,0 +1,15 @@
+.portfolio-card__link {
+  display: flex; /* Магия флексов :) */
+  flex-direction: column;
+  flex-grow: 1;
+
+  transition: box-shadow var(--time) var(--cubic);
+
+  &:focus,
+  &:hover {
+    color: inherit;
+
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+}

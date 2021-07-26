@@ -1,7 +1,23 @@
+@mixin media(
+  $start: $mobile,
+  $end: $tablet,
+  $mt: initial,
+  $mr: initial,
+  $mb: initial,
+  $ml: initial
+) {
+  @media screen and (min-width: #{$start}) and (max-width: #{$end}) {
+    margin-top: $mt;
+    margin-right: $mr;
+    margin-bottom: $mb;
+    margin-left: $ml;
+  }
+}
+
 @mixin font($fs: 18px, $fw: 400, $lh: 24px) {
   font-size: $fs;
   font-weight: $fw;
-  line-height: $lh/$fs;
+  line-height: (round($lh * 1000 / $fs)) / 1000;
 }
 
 .mixin-title {
@@ -23,3 +39,19 @@
   @include font();
   color: tomato;
 }
+
+@mixin colorize($colors-second, $baseSelector) {
+  @each $color in $colors-second {
+    $idx: index($colors-second, $color);
+
+    #{$baseSelector}:nth-child(#{$idx}) {
+      background-color: #{$color};
+    }
+  }
+}
+
+$colors-second: "#795548", "#607D8B", "#7B1FA2";
+@include colorize($colors-second, ".reviews-item");
+
+$colors-second: "#F44336", "#3F51B5", "#4CAf50", "#00BCD4", "#E91E63", "#009688";
+@include colorize($colors-second, ".features-item");

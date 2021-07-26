@@ -1,0 +1,34 @@
+/* Особенности */ /* .features-container { } */
+.features-list {
+  @extend %list;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  margin-top: calc(-1 * var(--uni-margin));
+  margin-left: calc(-1 * var(--uni-margin));
+}
+
+.features-list__item {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  flex-basis: calc(100% / var(--cards-per-line-4) - var(--uni-margin));
+  /* flex-grow: 1; FIXME for mobile */
+
+  min-width: 15.625rem;
+  max-width: 28.125rem;
+  max-height: 16.735rem; /* 267.76px */
+
+  margin-top: var(--uni-margin); /* 30px top and left */
+  margin-left: var(--uni-margin);
+
+  overflow: hidden;
+
+  word-wrap: break-word;
+}
