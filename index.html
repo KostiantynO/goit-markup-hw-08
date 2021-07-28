@@ -1021,6 +1021,7 @@
             </ul>
           </address>
         </div>
+
         <!-- Footer Social links -->
         <div class="page-footer__social-container">
           <p class="page-footer__social-title social-list__title">Присоединяйтесь</p>
@@ -1119,6 +1120,7 @@
             </li>
           </ul>
         </div>
+
         <!-- Форма подписки на рассылку (email input) -->
         <form
           class="subscribe-form page-footer__subscribe-form"
@@ -1133,7 +1135,9 @@
                 name="subscribe-user-email"
                 class="subscribe-input"
                 id="subscribe-user-email-id"
-                maxlength="80"
+                data-placeholder="your@email.com"
+                title="your@email.com, до 64-х символов"
+                maxlength="64"
                 placeholder="E-mail"
                 required
               />
@@ -1153,6 +1157,7 @@
         </form>
       </div>
     </footer>
+
     <!-- Backdrop (Overlay) -->
     <div
       class="backdrop is-hidden"
@@ -1197,11 +1202,11 @@
                 name="user-name"
                 class="form-input"
                 id="user-name-id"
+                data-placeholder="Иван Иванович"
                 title="Ваше имя, до 50-и символов"
                 placeholder=" "
                 required
                 maxlength="50"
-                data-placeholder="Иван Иванович"
               />
               <label class="form-label" for="user-name-id" aria-label="Ваше имя">Имя</label>
               <div class="svg-wrapper">
@@ -1223,12 +1228,12 @@
                 name="user-tel"
                 class="form-input"
                 id="user-tel-id"
+                data-placeholder="0123456789"
                 title="Десять цифр 0123456789"
                 placeholder=" "
                 required
                 pattern="[0-9]{10}"
                 maxlength="10"
-                data-placeholder="0123456789"
               />
               <label class="form-label" for="user-tel-id" aria-label="Ваш телефон"> Телефон </label>
               <div class="svg-wrapper">
@@ -1250,10 +1255,10 @@
                 name="user-email"
                 class="form-input"
                 id="user-email-id"
+                data-placeholder="your@email.com"
                 title="your@email.com, до 64-х символов"
                 maxlength="64"
                 placeholder=" "
-                data-placeholder="your@email.com"
                 required
               />
               <label class="form-label" for="user-email-id" aria-label="Ваша почта">Почта</label>
@@ -1320,10 +1325,15 @@
         </form>
       </div>
     </div>
+
     <!-- Скрипт модального окна -->
     <script src="./js/modal.js"></script>
     <!-- <script src="./js/modal.min.js" ></script> -->
+
+    <!-- Скрипт спикера формы модалки  -->
     <script src="./js/form.min.js"></script>
+
+    <!-- Скрипт держит фокус в модальном окне -->
     <script src="./js/focus-trap.js"></script>
   </body>
 </html>

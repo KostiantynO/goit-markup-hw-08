@@ -1,0 +1,32 @@
+/* START Футер-адрес */ /* .page-footer__address-wrapper { } */
+.address {
+  font-style: inherit;
+}
+
+.page-footer__address {
+  margin-top: var(--uni-margin-small);
+}
+
+.address-list {
+  @extend %list;
+}
+/* .address-list-item { } */
+
+.address-list__item:not(:last-child) {
+  margin-bottom: 9px; /* Нижний отступ между ссылками в адресе */
+}
+
+/* г. Киев, пр-т Леси Украинки, 26; LH24px; */
+.address-card__map-pointer {
+  position: relative;
+  /* from browser - font-weight: 400; from .page-footer__address - font-style: normal; */
+  color: var(--color-white);
+}
+
+/* info@example.com, +38 099 111 11 11, h21px */
+.address-card__contact {
+  position: relative;
+  /* from browser - font-weight: 400; from .page-footer__address - font-style: normal; */
+  color: rgba(255, 255, 255, 0.6);
+}
+/* END Футер-адрес */

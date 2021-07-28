@@ -7,99 +7,27 @@
   background-color: var(--color-bg-hero);
 }
 
-/* START Футер-адрес */ /* .page-footer__address-wrapper { } */
-.address {
-  font-style: inherit;
-}
-
-.page-footer__address {
-  margin-top: var(--uni-margin-small);
-}
-
-.address-list {
-  @extend %list;
-}
-/* .address-list-item { } */
-
-.address-list__item:not(:first-child) {
-  margin-top: 9px; /* Верхний отступ между ссылками в адресе */
-}
-
-/* г. Киев, пр-т Леси Украинки, 26; LH24px; */
-.address-card__map-pointer {
-  position: relative;
-  /* from browser - font-weight: 400; from .page-footer__address - font-style: normal; */
-  color: var(--color-white);
-}
-
-/* info@example.com, +38 099 111 11 11, h21px */
-.address-card__contact {
-  position: relative;
-  /* from browser - font-weight: 400; from .page-footer__address - font-style: normal; */
-  color: rgba(255, 255, 255, 0.6);
-}
-/* END Футер-адрес */
-
-/*
- *
-*/
-
-/* START "Футер cоц. ссылки" */
-.page-footer__social-container {
-  @include media($mobile + 1px, $viewPort, $mt: 0, $ml: 4.375rem); /* ml70px from $mobile+1px */
-  margin: 3.75rem auto 0; /* for mobile */
-}
-
-/* присоединяйтесь, h16.41px */
-.page-footer__social-title {
-  margin-bottom: var(--uni-margin-med);
-
-  font-weight: 700;
-  line-height: 1.17; /* from body font-size: 14px; */
-  color: var(--color-white);
-  text-transform: uppercase;
-  text-align: center; /* for mobile and tablet only */
-
-  @media screen and (min-width: $tablet + 1px) {
-    text-align: unset;
-  }
-}
-
-.page-footer__social-link {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.page-footer__social-icon {
-  fill: var(--color-white);
-}
-/* END "Футер cоц. ссылки" */
-
 /* START Форма подписки на рассылку */
-.page-footer__subscribe-form {
-  margin: 3.75rem auto 0; /* for mobile */
-
-  @include media(
-    $tablet,
-    $viewPort,
-    $mr: 0,
-    $ml: 5.8125rem
-  ); /* 93px for desktop only, mobile = 0; */
-}
-
 .subscribe-form {
   text-align: center; /* for mobile only */
 
-  @media screen and (min-width: $mobile + 1px) {
+  @media screen and (min-width: $tablet) {
     text-align: unset;
   }
+}
+
+.page-footer__subscribe-form {
+  margin: 3.75rem auto 0; /* mt60, ml=mr=auto, mb0; for mobile */
+
+  @include media($tablet, $viewPort, $mr: 0, $ml: 5.8125rem); /* ml93 for desktop only */
 }
 
 /* Подпишитесь на рассылку */
 /* .subscribe-form__title { mb20 w219 h16 fw700 fz14 lh15 lsp0.03em ttup c#FFF } */
 .subscribe-form__title {
   display: block;
-
   min-width: 13.6875rem;
+
   /* margin-top: 60px; for mobile */
   margin-bottom: 20px;
 
@@ -110,7 +38,7 @@
 }
 
 .subscribe__group {
-  @media screen and (min-width: $mobile + 1px) {
+  @media screen and (min-width: $tablet) {
     display: flex;
     flex-wrap: wrap;
   }

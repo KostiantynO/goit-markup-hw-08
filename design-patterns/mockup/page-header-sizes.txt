@@ -1,0 +1,22 @@
+header WebStudio
+.page-header
+  /* .logo { w134; h28; l15; t16; fw700; fs24; lh28; ls0.03em; m16px15px  } */
+
+  /* .burger-menu_40px { posa; w40; h40; r15; t10; } */
+    /* icon/navigation/menu_24px w24 h16 */
+
+
+mobile:
+XXX section	  w480  x h400
+XXX-title  	  w360  x  h84   mt118 mb30 ml=mr=60
+XXX-btn     	w200  x  h50   mb118 ml=mr=140
+
+tablet:
+XXX section	  w768  x h400
+XXX-title  	  w360  x  h84   mt118 mb30 ml=mr=60 fz26 lh42
+XXX-btn 	    w200  x  h50   mb284 ml=mr=140
+
+desktop:
+XXX section 	w1600 x h600
+XXX-title  	   w696 x h120  mt118 mb30 ml=mr=60 fz44 lh60
+XXX-btn    	   w200 x  h50   mb200 ml=mr=700

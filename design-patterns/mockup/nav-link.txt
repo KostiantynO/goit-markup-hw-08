@@ -1,24 +1,3 @@
-mobile:
-hero section	w480  x h400
-hero-title	w360  x h84   mt118 mb30 ml=mr=60
-hero-btn 	w200  x h50   mb118 ml=mr=140
-
-tablet:
-hero section	w768  x h400
-hero-title	w360  x h84   mt118 mb30 ml=mr=60 fz26 lh42
-hero-btn 	w200  x h50   mb284 ml=mr=140
-
-desktop:
-hero section	w1600 x h600
-hero-title	w696  x h120  mt118 mb30 ml=mr=60 fz44 lh60
-hero-btn 	w200  x h50   mb200 ml=mr=700
-
-73.4094
-
-33 150 243 1
-
-
-
 /* Result: link color = #2196f3 (accent) */
 .nav-link         { color: black; background-color: white; }
 .nav-link::before { background-color: #2196f3; mix-blend-mode: screen; }
