@@ -1,0 +1,16 @@
+#wrapper {
+    height: 100px;
+    overflow-y: visible;
+}
+#content {
+    width: 200px;
+    overflow-x: hidden;
+}
+
+.sidebar { position: fixed; top: 0; right: 0; height: 100%;  width: 200px;
+  overflow: visible;  /* Just apply overflow-x */
+  background-color: DarkOrange; }
+
+.sidebarWrapper { padding: 10px; height: 100%; width: 100%;  overflow-y: auto; /* overflow-y */ }
+
+.element { position: absolute; top: 0; right: 100%; padding: 10px; width: 200px; }

@@ -12,4 +12,4 @@ portfolio-filters-list DONE.
 portfolio-list DONE.
 
 social-list DONE.
-page-footer__address-list DONE.
+address-list DONE.

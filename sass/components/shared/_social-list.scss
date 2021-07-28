@@ -15,7 +15,7 @@
   margin-left: 0.625rem;
 }
 
-.social-list__link {
+.social-card__link {
   position: relative;
 
   display: flex;
@@ -38,11 +38,11 @@
   }
 }
 
-.social-list__icon {
+.social-card__icon {
   fill: currentColor;
 
-  .social-list__link:focus &,
-  .social-list__link:hover & {
+  .social-card__link:focus &,
+  .social-card__link:hover & {
     animation-name: rotate-box;
     animation-duration: var(--time);
     animation-timing-function: var(--cubic);

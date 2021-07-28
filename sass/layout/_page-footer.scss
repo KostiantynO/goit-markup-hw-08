@@ -8,29 +8,32 @@
 }
 
 /* START Футер-адрес */ /* .page-footer__address-wrapper { } */
-.page-footer__address {
-  margin-top: var(--uni-margin-small);
+.address {
   font-style: inherit;
 }
 
-.page-footer__address-list {
+.page-footer__address {
+  margin-top: var(--uni-margin-small);
+}
+
+.address-list {
   @extend %list;
 }
-/* .page-footer__address-list-item { } */
+/* .address-list-item { } */
 
-.page-footer__address-item:not(:first-child) {
+.address-list__item:not(:first-child) {
   margin-top: 9px; /* Верхний отступ между ссылками в адресе */
 }
 
 /* г. Киев, пр-т Леси Украинки, 26; LH24px; */
-.footer-map-pointer {
+.address-card__map-pointer {
   position: relative;
   /* from browser - font-weight: 400; from .page-footer__address - font-style: normal; */
   color: var(--color-white);
 }
 
 /* info@example.com, +38 099 111 11 11, h21px */
-.footer-contact {
+.address-card__contact {
   position: relative;
   /* from browser - font-weight: 400; from .page-footer__address - font-style: normal; */
   color: rgba(255, 255, 255, 0.6);

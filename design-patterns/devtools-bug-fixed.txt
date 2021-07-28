@@ -1,0 +1,3 @@
+White vertical band to the right of the html in mobile view in Chrome Devtools.
+Solved: body { position: relative; }
+https://stackoverflow.com/questions/46012482/unwanted-white-space-on-right-side-in-mobile-view/46012924

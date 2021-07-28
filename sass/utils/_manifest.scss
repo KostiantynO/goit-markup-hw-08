@@ -82,17 +82,17 @@ p
 .btn--primary:focus,
 .btn--secondary:focus,
 .btn-mobile:focus,
-.skip-link:focus,
+.skip-btn:focus,
 .page-header .links:focus,
 .page-header .nav__link:focus
 .btn:focus .links:focus,
 .hero-btn:focus,
 .activities .links:focus,
 .team .links:focus,
-.team .social-list__link:focus,
+.team .social-card__link:focus,
 .portfolio .links:focus,
 .page-footer .links:focus,
-.page-footer .social-list__link:focus,
+.page-footer .social-card__link:focus,
 .page-footer .btn:focus,
 .client-card__link:focus,
 .clients .links:focus,
@@ -115,8 +115,8 @@ body
 rotate {}
 rotate-box {}
 scalingUp {}
-body > .skip-link
-body > .skip-link:focus
+.skip-btn
+.skip-btn:focus
 .page-header__nav
 .nav__menu
 .nav__item:not(:first-child)
@@ -153,12 +153,12 @@ body > .skip-link:focus
 .icon-envelope
 .social-list
 .social-list__item
-.social-list__link
-.social-list__link:focus,
-.social-list__link:hover
-.social-list__icon
-.social-list__link:focus .social-list__icon,
-.social-list__link:hover .social-list__icon
+.social-card__link
+.social-card__link:focus,
+.social-card__link:hover
+.social-card__icon
+.social-card__link:focus .social-card__icon,
+.social-card__link:hover .social-card__icon
 .backdrop
 .modal
 .backdrop.is-hidden > .modal
@@ -273,9 +273,9 @@ body > .skip-link:focus
 .portfolio-card__type:active
 .page-footer
 .page-footer__address
-.page-footer__address-list .page-footer__address-item + .page-footer__address-item
-.footer-map-pointer
-.footer-contact
+.address-list .address-list__item + .address-list__item
+.address-card__map-pointer
+.address-card__contact
 .page-footer__social-container
 .page-footer__social-title
 .page-footer__social-link

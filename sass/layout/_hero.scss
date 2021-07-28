@@ -17,6 +17,14 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  @media screen and (min-width: 480px) {
+    // width: 360px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    // width: 643px;
+  }
 }
 
 .main__hero {

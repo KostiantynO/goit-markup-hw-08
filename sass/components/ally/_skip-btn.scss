@@ -1,19 +1,20 @@
-body > .skip-link {
+.skip-btn {
   position: absolute;
-  top: 0;
+  --skip-btn-max-height: 3.125rem; /* 50px */
+  top: calc(-1 * var(--skip-btn-max-height));
   left: 0;
-
   z-index: var(--zi-2);
 
   max-width: 18.75rem; /* 300px */
-  max-height: 3.125rem; /* 50px */
+  max-height: var(--skip-btn-max-height);
   padding: 0.5rem; /* 8px */
+
   margin-left: 0.5rem;
   overflow: hidden;
 
-  font-weight: bold;
   font-size: 1.21rem;
-  line-height: 1.21rem;
+  font-weight: 700;
+  line-height: 1.21;
   color: var(--color-text-primary);
   word-wrap: break-word;
 
@@ -21,10 +22,9 @@ body > .skip-link {
   border: 1px solid transparent;
   border-radius: 3px;
 
-  transform: translateY(-100%);
   transition: transform var(--time) var(--cubic);
 
   &:focus {
-    transform: translateY(21%);
+    transform: translateY(100%);
   }
 }

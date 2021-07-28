@@ -1,22 +1,33 @@
+.page-html,
+.portfolio-body,
+.studio-body {
+  // margin: 0px !important;
+  // padding: 0px !important;
+  // width: 100% !important;
+  // height: 100% !important;
+
+  overflow-x: hidden !important;
+}
+
 .page-html {
-  overflow-x: hidden;
+  // padding-left: 15px;
+}
+
+.page-html {
   overflow-y: scroll;
 
   &.no-scroll {
-    overflow: hidden; /* STOP MOVING AROUND! */
+    overflow-y: hidden; /* STOP MOVING AROUND! */
   }
 }
 
 .studio-body {
-  overflow: hidden;
+  overflow-y: hidden;
+  position: relative;
 
   &.no-scroll {
     overflow-y: scroll;
   }
-}
-
-.portfolio-body {
-  overflow-x: hidden;
 }
 
 /* Главная */
@@ -31,6 +42,4 @@
 
   background-color: var(--color-white);
   fill: var(--color-text-primary);
-
-  transition: transform var(--time) var(--cubic);
 }

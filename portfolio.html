@@ -42,7 +42,9 @@
 
   <body class="portfolio-body">
     <!-- Пропустить к Основному Контенту -->
-    <a class="skip-link links" href="#main-content">Skip to main content</a>
+    <button class="skip-btn links" onclick="window.location.href='#main-content';">
+      Skip to main content
+    </button>
 
     <!-- Шапка сайта 2021-07-26 02:35 -->
     <header class="page-header">
@@ -530,158 +532,165 @@
       </section>
     </main>
 
-    <!-- Footer Updated on 2021-07-23 15:15 -->
+    <!-- Footer Updated on 2021-07-27 11:16 -->
     <footer class="page-footer">
       <div class="container page-footer__container">
-        <div class="page-footer__address-wrapper">
+        <div class="address-wrapper page-footer__address-wrapper">
           <a class="logo links" href="./" lang="en">
             <span class="logo__web-studio logo__first-part"> Web</span
             ><span class="logo__web-studio logo__last-part--inverse">Studio </span>
           </a>
-          <address class="page-footer__address">
-            <ul class="page-footer__address-list">
-              <li class="page-footer__address-item">
-                <a
-                  class="footer-map-pointer links"
-                  rel="noopener noreferrer nofollow"
-                  href="https://goo.gl/maps/HiSWEAjoAeCsFwUL7"
-                  aria-labelledby="webstudio-map-pointer-id-label"
-                  target="_blank"
-                >
-                  <span class="tooltip sr-only" id="webstudio-map-pointer-id-label" tabindex="-1">
-                    Адрес студии
-                  </span>
-
-                  г. Киев, пр-т Леси Украинки, 26
-                </a>
+          <address class="address page-footer__address">
+            <ul class="address-list address__list">
+              <li class="address-list__item">
+                <div class="address-card">
+                  <a
+                    class="address-card__map-pointer links"
+                    rel="noopener noreferrer nofollow"
+                    href="https://goo.gl/maps/HiSWEAjoAeCsFwUL7"
+                    aria-labelledby="webstudio-map-pointer-id-label"
+                    target="_blank"
+                  >
+                    <span class="tooltip sr-only" id="webstudio-map-pointer-id-label" tabindex="-1">
+                      Адрес студии
+                    </span>
+                    г. Киев, пр-т Леси Украинки, 26
+                  </a>
+                </div>
               </li>
 
-              <li class="page-footer__address-item">
-                <a
-                  class="footer-contact links"
-                  href="mailto:info@example.com"
-                  aria-labelledby="webstudio-email-id-label"
-                >
-                  <span class="tooltip sr-only" id="webstudio-email-id-label" tabindex="-1">
-                    Почта для вопросов
-                  </span>
-
-                  info@example.com
-                </a>
+              <li class="address-list__item">
+                <div class="address-card">
+                  <a
+                    class="address-card__contact links"
+                    href="mailto:info@example.com"
+                    aria-labelledby="webstudio-email-id-label"
+                  >
+                    <span class="tooltip sr-only" id="webstudio-email-id-label" tabindex="-1">
+                      Почта для вопросов
+                    </span>
+                    info@example.com
+                  </a>
+                </div>
               </li>
 
-              <li class="page-footer__address-item">
-                <a
-                  class="footer-contact links"
-                  href="tel:+380991111111"
-                  aria-labelledby="webstudio-phone-id-label-2"
-                >
-                  <span class="tooltip sr-only" id="webstudio-phone-id-label-2" tabindex="-1">
-                    Мобильный студии
-                  </span>
-
-                  +38 099 111 11 11
-                </a>
+              <li class="address-list__item">
+                <div class="address-card">
+                  <a
+                    class="address-card__contact links"
+                    href="tel:+380991111111"
+                    aria-labelledby="webstudio-phone-id-label-2"
+                  >
+                    <span class="tooltip sr-only" id="webstudio-phone-id-label-2" tabindex="-1">
+                      Мобильный студии
+                    </span>
+                    +38 099 111 11 11
+                  </a>
+                </div>
               </li>
             </ul>
           </address>
         </div>
 
+        <!-- Footer Social links -->
         <div class="page-footer__social-container">
-          <!-- Footer Social links -->
           <p class="page-footer__social-title social-list__title">Присоединяйтесь</p>
 
           <ul class="social-list">
             <li class="social-list__item">
-              <a
-                class="social-list__link page-footer__social-link"
-                rel="noopener nofollow noreferrer"
-                href="#0"
-                aria-labelledby="webstudio-instagram-id-label"
-              >
-                <!-- 20x20 -->
-                <svg
-                  class="social-list__icon svg page-footer__social-icon"
-                  aria-hidden="true"
-                  width="1.25rem"
-                  height="1.25rem"
+              <div class="social-card">
+                <a
+                  class="social-card__link page-footer__social-link"
+                  rel="noopener nofollow noreferrer"
+                  href="#0"
+                  aria-labelledby="webstudio-instagram-id-label"
                 >
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
-                </svg>
-
-                <span class="tooltip sr-only" id="webstudio-instagram-id-label" tabindex="-1"
-                  >Инстаграм</span
-                >
-              </a>
+                  <!-- 20x20 -->
+                  <svg
+                    class="social-card__icon svg page-footer__social-icon"
+                    aria-hidden="true"
+                    width="1.25rem"
+                    height="1.25rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
+                  </svg>
+                  <span class="tooltip sr-only" id="webstudio-instagram-id-label" tabindex="-1"
+                    >Инстаграм</span
+                  >
+                </a>
+              </div>
             </li>
 
             <li class="social-list__item">
-              <a
-                class="social-list__link page-footer__social-link"
-                rel="noopener nofollow noreferrer"
-                href="#0"
-                aria-labelledby="webstudio-twitter-id-label"
-              >
-                <!-- 20x20 -->
-                <svg
-                  class="social-list__icon svg page-footer__social-icon"
-                  aria-hidden="true"
-                  width="1.25rem"
-                  height="1.25rem"
+              <div class="social-card">
+                <a
+                  class="social-card__link page-footer__social-link"
+                  rel="noopener nofollow noreferrer"
+                  href="#0"
+                  aria-labelledby="webstudio-twitter-id-label"
                 >
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
-                </svg>
-
-                <span class="tooltip sr-only" id="webstudio-twitter-id-label" tabindex="-1"
-                  >Твиттер</span
-                >
-              </a>
+                  <!-- 20x20 -->
+                  <svg
+                    class="social-card__icon svg page-footer__social-icon"
+                    aria-hidden="true"
+                    width="1.25rem"
+                    height="1.25rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
+                  </svg>
+                  <span class="tooltip sr-only" id="webstudio-twitter-id-label" tabindex="-1"
+                    >Твиттер</span
+                  >
+                </a>
+              </div>
             </li>
 
             <li class="social-list__item">
-              <a
-                class="social-list__link page-footer__social-link"
-                rel="noopener nofollow noreferrer"
-                href="#0"
-                aria-labelledby="webstudio-facebook-id-label"
-              >
-                <!-- 20x20 -->
-                <svg
-                  class="social-list__icon svg page-footer__social-icon"
-                  aria-hidden="true"
-                  width="1.25rem"
-                  height="1.25rem"
+              <div class="social-card">
+                <a
+                  class="social-card__link page-footer__social-link"
+                  rel="noopener nofollow noreferrer"
+                  href="#0"
+                  aria-labelledby="webstudio-facebook-id-label"
                 >
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
-                </svg>
-
-                <span class="tooltip sr-only" id="webstudio-facebook-id-label" tabindex="-1"
-                  >Фейсбук</span
-                >
-              </a>
+                  <!-- 20x20 -->
+                  <svg
+                    class="social-card__icon svg page-footer__social-icon"
+                    aria-hidden="true"
+                    width="1.25rem"
+                    height="1.25rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
+                  </svg>
+                  <span class="tooltip sr-only" id="webstudio-facebook-id-label" tabindex="-1"
+                    >Фейсбук</span
+                  >
+                </a>
+              </div>
             </li>
 
             <li class="social-list__item">
-              <a
-                class="social-list__link page-footer__social-link"
-                rel="noopener nofollow noreferrer"
-                href="#0"
-                aria-labelledby="webstudio-linkedin-id-label"
-              >
-                <!-- 20x20 -->
-                <svg
-                  class="social-list__icon svg page-footer__social-icon"
-                  aria-hidden="true"
-                  width="1.25rem"
-                  height="1.25rem"
+              <div class="social-card">
+                <a
+                  class="social-card__link page-footer__social-link"
+                  rel="noopener nofollow noreferrer"
+                  href="#0"
+                  aria-labelledby="webstudio-linkedin-id-label"
                 >
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
-                </svg>
-
-                <span class="tooltip sr-only" id="webstudio-linkedin-id-label" tabindex="-1"
-                  >LinkedIn</span
-                >
-              </a>
+                  <!-- 20x20 -->
+                  <svg
+                    class="social-card__icon svg page-footer__social-icon"
+                    aria-hidden="true"
+                    width="1.25rem"
+                    height="1.25rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
+                  </svg>
+                  <span class="tooltip sr-only" id="webstudio-linkedin-id-label" tabindex="-1"
+                    >LinkedIn</span
+                  >
+                </a>
+              </div>
             </li>
           </ul>
         </div>

@@ -292,26 +292,28 @@ p {
 /* ------------------------------------------------------ */
 /* || -------------- END "ОБЩИЕ НАСТРОЙКИ" -------------- */
 /* ------------------------------------------------------ */
+.page-html,
+.portfolio-body,
+.studio-body {
+  overflow-x: hidden !important;
+}
+
 .page-html {
-  overflow-x: hidden;
   overflow-y: scroll;
 }
 
 .page-html.no-scroll {
-  overflow: hidden;
+  overflow-y: hidden;
   /* STOP MOVING AROUND! */
 }
 
 .studio-body {
-  overflow: hidden;
+  overflow-y: hidden;
+  position: relative;
 }
 
 .studio-body.no-scroll {
   overflow-y: scroll;
-}
-
-.portfolio-body {
-  overflow-x: hidden;
 }
 
 /* Главная */
@@ -327,7 +329,6 @@ p {
   letter-spacing: 0.03em;
   background-color: var(--color-white);
   fill: var(--color-text-primary);
-  transition: transform var(--time) var(--cubic);
 }
 
 .container {
@@ -446,33 +447,33 @@ p {
 }
 
 /* END Анимация */
-body > .skip-link {
+.skip-btn {
   position: absolute;
-  top: 0;
+  --skip-btn-max-height: 3.125rem;
+  /* 50px */
+  top: calc(-1 * var(--skip-btn-max-height));
   left: 0;
   z-index: var(--zi-2);
   max-width: 18.75rem;
   /* 300px */
-  max-height: 3.125rem;
-  /* 50px */
+  max-height: var(--skip-btn-max-height);
   padding: 0.5rem;
   /* 8px */
   margin-left: 0.5rem;
   overflow: hidden;
-  font-weight: bold;
   font-size: 1.21rem;
-  line-height: 1.21rem;
+  font-weight: 700;
+  line-height: 1.21;
   color: var(--color-text-primary);
   word-wrap: break-word;
   background-color: var(--color-white);
   border: 1px solid transparent;
   border-radius: 3px;
-  transform: translateY(-100%);
   transition: transform var(--time) var(--cubic);
 }
 
-body > .skip-link:focus {
-  transform: translateY(21%);
+.skip-btn:focus {
+  transform: translateY(100%);
 }
 
 /* START "Главная навигация сайта" */
@@ -724,7 +725,7 @@ body > .skip-link:focus {
   margin-left: 0.625rem;
 }
 
-.social-list__link {
+.social-card__link {
   position: relative;
   display: flex;
   align-items: center;
@@ -736,17 +737,17 @@ body > .skip-link:focus {
   transition: color var(--time) var(--cubic), background-color var(--time) var(--cubic);
 }
 
-.social-list__link:focus, .social-list__link:hover {
+.social-card__link:focus, .social-card__link:hover {
   color: var(--color-white);
   background-color: var(--color-accent);
 }
 
-.social-list__icon {
+.social-card__icon {
   fill: currentColor;
 }
 
-.social-list__link:focus .social-list__icon,
-.social-list__link:hover .social-list__icon {
+.social-card__link:focus .social-card__icon,
+.social-card__link:hover .social-card__icon {
   animation-name: rotate-box;
   animation-duration: var(--time);
   animation-timing-function: var(--cubic);
@@ -1679,26 +1680,29 @@ body > .skip-link:focus {
 
 /* START Футер-адрес */
 /* .page-footer__address-wrapper { } */
-.page-footer__address {
-  margin-top: var(--uni-margin-small);
+.address {
   font-style: inherit;
 }
 
-/* .page-footer__address-list-item { } */
-.page-footer__address-item:not(:first-child) {
+.page-footer__address {
+  margin-top: var(--uni-margin-small);
+}
+
+/* .address-list-item { } */
+.address-list__item:not(:first-child) {
   margin-top: 9px;
   /* Верхний отступ между ссылками в адресе */
 }
 
 /* г. Киев, пр-т Леси Украинки, 26; LH24px; */
-.footer-map-pointer {
+.address-card__map-pointer {
   position: relative;
   /* from browser - font-weight: 400; from .page-footer__address - font-style: normal; */
   color: var(--color-white);
 }
 
 /* info@example.com, +38 099 111 11 11, h21px */
-.footer-contact {
+.address-card__contact {
   position: relative;
   /* from browser - font-weight: 400; from .page-footer__address - font-style: normal; */
   color: rgba(255, 255, 255, 0.6);
@@ -1918,7 +1922,7 @@ body > .skip-link:focus {
 /* ------------------------------------------------------ */
 /* || ------------------- END "MEDIA" ------------------- */
 /* ------------------------------------------------------ */
-.nav__menu, .page-header__contacts-list, .social-list, .features-list, .activities-list, .designers-list, .clients-list, .portfolio-filters-list, .portfolio-list, .page-footer__address-list {
+.nav__menu, .page-header__contacts-list, .social-list, .features-list, .activities-list, .designers-list, .clients-list, .portfolio-filters-list, .portfolio-list, .address-list {
   list-style: none;
 }
 

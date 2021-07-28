@@ -42,8 +42,9 @@
 
   <body class="studio-body" data-no-scroll>
     <!-- Пропустить к Основному Контенту -->
-    <a class="skip-link links" href="#main-content">Skip to main content</a>
-
+    <button class="skip-btn links" onclick="window.location.href='#main-content';">
+      Skip to main content
+    </button>
     <!-- Шапка сайта 2021-07-26 02:35 -->
     <header class="page-header">
       <div class="container page-header__container">
@@ -52,7 +53,6 @@
             <span class="logo__web-studio logo__first-part">Web</span
             ><span class="logo__web-studio logo__last-part">Studio</span>
           </a>
-
           <ul class="nav__menu">
             <li class="nav__item">
               <a
@@ -64,13 +64,11 @@
                 >Студия<span class="nav__link-overlay nav__link-overlay--current"></span>
               </a>
             </li>
-
             <li class="nav__item">
               <a class="nav__link" data-content="Портфолио" href="./portfolio.html" hreflang="ru"
                 >Портфолио<span class="nav__link-overlay"></span
               ></a>
             </li>
-
             <li class="nav__item">
               <a
                 class="nav__link"
@@ -81,7 +79,6 @@
               ></a>
             </li>
           </ul>
-
           <!-- Mobile menu - burger button -->
           <button
             type="button"
@@ -97,11 +94,9 @@
             >
               <use href="./images/icomoon-svgomg/icons.svg#icon-burger"></use>
             </svg>
-
             <span class="tooltip sr-only" id="burger-id-label" tabindex="-1"> Меню </span>
           </button>
         </nav>
-
         <ul class="page-header__contacts-list">
           <li class="contact-item">
             <a
@@ -118,15 +113,12 @@
               >
                 <use href="./images/icomoon-svgomg/icons.svg#icon-envelope"></use>
               </svg>
-
               <span class="tooltip sr-only" id="devstudio-email-id-label" tabindex="-1">
                 Почта студии
               </span>
-
               info@devstudio.com
             </a>
           </li>
-
           <li class="contact-item">
             <a
               class="header-contact links"
@@ -142,17 +134,14 @@
               >
                 <use href="./images/icomoon-svgomg/icons.svg#icon-smartphone"></use>
               </svg>
-
               <span class="tooltip sr-only" id="webstudio-phone-id-label-1" tabindex="-1">
                 Мобильный студии
               </span>
-
               +38 096 111 11 11
             </a>
           </li>
         </ul>
       </div>
-
       <!-- Главная (бургер, шаг 2) -->
       <div class="mobile-overlay">
         <!-- Кнопка закрытия мобильного меню -->
@@ -170,12 +159,10 @@
           >
             <use href="./images/icomoon-svgomg/icons.svg#icon-close-40px"></use>
           </svg>
-
           <span class="tooltip sr-only" id="close-nav__menu-id-label" tabindex="-1"> Закрыть </span>
         </button>
       </div>
     </header>
-
     <main>
       <!-- Герой -->
       <section class="section hero main__hero" aria-labelledby="hero__title_id">
@@ -184,18 +171,15 @@
             Эффективные решения <br />
             для вашего бизнеса
           </h1>
-
           <button type="button" class="btn btn--primary hero__btn" data-modal-open>
             <span class="btn__label">Заказать услугу</span>
           </button>
         </div>
       </section>
-
       <!-- "Особенности" и h2 sr-only -->
       <section class="features main__features section" aria-labelledby="features-title-id">
         <div class="features-container container">
           <h2 class="sr-only" id="features-title-id">Особенности</h2>
-
           <ul class="features-list">
             <!-- 70x70 -->
             <li class="features-list__item">
@@ -216,7 +200,6 @@
                 </p>
               </div>
             </li>
-
             <!-- 70x70 -->
             <li class="features-list__item">
               <div class="feature-card features__feature-card">
@@ -237,7 +220,6 @@
                 </p>
               </div>
             </li>
-
             <!-- 70x70 -->
             <li class="features-list__item">
               <div class="feature-card features__feature-card">
@@ -258,7 +240,6 @@
                 </p>
               </div>
             </li>
-
             <!-- 70x70 -->
             <li class="features-list__item">
               <div class="feature-card features__feature-card">
@@ -281,12 +262,10 @@
           </ul>
         </div>
       </section>
-
       <!-- Чем мы занимаемся -->
       <section class="activities main__activities section" aria-labelledby="activities-title-id">
         <div class="activities-container container">
           <h2 class="section__title" id="activities-title-id">Чем мы занимаемся</h2>
-
           <!-- Сжатые *.jpg активностей -->
           <ul class="activities-list" data-placeholder="Заполнитель">
             <li class="activities-list__item">
@@ -304,7 +283,6 @@
                 </div>
               </div>
             </li>
-
             <li class="activities-list__item">
               <div class="activity-card">
                 <!-- 370x294 -->
@@ -320,7 +298,6 @@
                 </div>
               </div>
             </li>
-
             <li class="activities-list__item">
               <div class="activity-card">
                 <!-- 370x294 -->
@@ -339,12 +316,10 @@
           </ul>
         </div>
       </section>
-
       <!-- Наша команда -->
       <section class="team section" aria-labelledby="team-title-id">
         <div class="container">
           <h2 class="section__title" id="team-title-id">Наша команда</h2>
-
           <!-- Ужатые *.jpg участников -->
           <ul class="designers-list" data-placeholder="Заполнитель">
             <li class="designers-list__item">
@@ -357,121 +332,119 @@
                   width="16.875rem"
                   height="16.25rem"
                 />
-
                 <div class="designer-card__meta">
                   <h3 class="designer-card__name">Игорь Демьяненко</h3>
                   <p class="designer-card__role" lang="en">Product Designer</p>
                 </div>
-
                 <!-- Social links -->
                 <ul class="social-list">
                   <li class="social-list__item">
-                    <a
-                      class="social-list__link"
-                      rel="noopener nofollow noreferrer"
-                      href="#0"
-                      aria-labelledby="designer-instagram-id-label-1"
-                    >
-                      <!-- 20x20 -->
-                      <svg
-                        class="social-list__icon svg"
-                        aria-hidden="true"
-                        width="1.25rem"
-                        height="1.25rem"
+                    <div class="social-card">
+                      <a
+                        class="social-card__link"
+                        rel="noopener nofollow noreferrer"
+                        href="#0"
+                        aria-labelledby="designer-instagram-id-label-1"
                       >
-                        <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
-                      </svg>
-
-                      <span
-                        class="tooltip social-list__tooltip sr-only"
-                        id="designer-instagram-id-label-1"
-                        tabindex="-1"
-                        >Инстаграм</span
-                      >
-                    </a>
+                        <!-- 20x20 -->
+                        <svg
+                          class="social-card__icon svg"
+                          aria-hidden="true"
+                          width="1.25rem"
+                          height="1.25rem"
+                        >
+                          <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
+                        </svg>
+                        <span
+                          class="tooltip social-list__tooltip sr-only"
+                          id="designer-instagram-id-label-1"
+                          tabindex="-1"
+                          >Инстаграм</span
+                        >
+                      </a>
+                    </div>
                   </li>
-
                   <li class="social-list__item">
-                    <a
-                      class="social-list__link"
-                      rel="noopener nofollow noreferrer"
-                      href="#0"
-                      aria-labelledby="designer-twitter-id-label-1"
-                    >
-                      <!-- 20x20 -->
-                      <svg
-                        class="social-list__icon svg"
-                        aria-hidden="true"
-                        width="1.25rem"
-                        height="1.25rem"
+                    <div class="social-card">
+                      <a
+                        class="social-card__link"
+                        rel="noopener nofollow noreferrer"
+                        href="#0"
+                        aria-labelledby="designer-twitter-id-label-1"
                       >
-                        <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
-                      </svg>
-
-                      <span
-                        class="tooltip social-list__tooltip sr-only"
-                        id="designer-twitter-id-label-1"
-                        tabindex="-1"
-                        >Твиттер</span
-                      >
-                    </a>
+                        <!-- 20x20 -->
+                        <svg
+                          class="social-card__icon svg"
+                          aria-hidden="true"
+                          width="1.25rem"
+                          height="1.25rem"
+                        >
+                          <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
+                        </svg>
+                        <span
+                          class="tooltip social-list__tooltip sr-only"
+                          id="designer-twitter-id-label-1"
+                          tabindex="-1"
+                          >Твиттер</span
+                        >
+                      </a>
+                    </div>
                   </li>
-
                   <li class="social-list__item">
-                    <a
-                      class="social-list__link"
-                      rel="noopener nofollow noreferrer"
-                      href="#0"
-                      aria-labelledby="designer-facebook-id-label-1"
-                    >
-                      <!-- 20x20 -->
-                      <svg
-                        class="social-list__icon svg"
-                        aria-hidden="true"
-                        width="1.25rem"
-                        height="1.25rem"
+                    <div class="social-card">
+                      <a
+                        class="social-card__link"
+                        rel="noopener nofollow noreferrer"
+                        href="#0"
+                        aria-labelledby="designer-facebook-id-label-1"
                       >
-                        <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
-                      </svg>
-
-                      <span
-                        class="tooltip social-list__tooltip sr-only"
-                        id="designer-facebook-id-label-1"
-                        tabindex="-1"
-                        >Фейсбук</span
-                      >
-                    </a>
+                        <!-- 20x20 -->
+                        <svg
+                          class="social-card__icon svg"
+                          aria-hidden="true"
+                          width="1.25rem"
+                          height="1.25rem"
+                        >
+                          <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
+                        </svg>
+                        <span
+                          class="tooltip social-list__tooltip sr-only"
+                          id="designer-facebook-id-label-1"
+                          tabindex="-1"
+                          >Фейсбук</span
+                        >
+                      </a>
+                    </div>
                   </li>
-
                   <li class="social-list__item">
-                    <a
-                      class="social-list__link"
-                      rel="noopener nofollow noreferrer"
-                      href="#0"
-                      aria-labelledby="designer-linkedIn-id-label-1"
-                    >
-                      <!-- 20x20 -->
-                      <svg
-                        class="social-list__icon svg"
-                        aria-hidden="true"
-                        width="1.25rem"
-                        height="1.25rem"
+                    <div class="social-card">
+                      <a
+                        class="social-card__link"
+                        rel="noopener nofollow noreferrer"
+                        href="#0"
+                        aria-labelledby="designer-linkedIn-id-label-1"
                       >
-                        <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
-                      </svg>
-
-                      <span
-                        class="tooltip social-list__tooltip sr-only"
-                        id="designer-linkedIn-id-label-1"
-                        tabindex="-1"
-                        >LinkedIn</span
-                      >
-                    </a>
+                        <!-- 20x20 -->
+                        <svg
+                          class="social-card__icon svg"
+                          aria-hidden="true"
+                          width="1.25rem"
+                          height="1.25rem"
+                        >
+                          <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
+                        </svg>
+                        <span
+                          class="tooltip social-list__tooltip sr-only"
+                          id="designer-linkedIn-id-label-1"
+                          tabindex="-1"
+                          >LinkedIn</span
+                        >
+                      </a>
+                    </div>
                   </li>
                 </ul>
               </div>
             </li>
-
             <li class="designers-list__item">
               <div class="designer-card">
                 <!-- 270x260 -->
@@ -482,7 +455,6 @@
                   width="16.875rem"
                   height="16.25rem"
                 />
-
                 <div class="designer-card__meta">
                   <h3 class="designer-card__name">Ольга Репина</h3>
                   <p class="designer-card__role" lang="en">Frontend Developer</p>
@@ -490,112 +462,112 @@
                 <!-- Social links -->
                 <ul class="social-list">
                   <li class="social-list__item">
-                    <a
-                      class="social-list__link"
-                      rel="noopener nofollow noreferrer"
-                      href="#0"
-                      aria-labelledby="designer-instagram-id-label-2"
-                    >
-                      <!-- 20x20 -->
-                      <svg
-                        class="social-list__icon svg"
-                        aria-hidden="true"
-                        width="1.25rem"
-                        height="1.25rem"
+                    <div class="social-card">
+                      <a
+                        class="social-card__link"
+                        rel="noopener nofollow noreferrer"
+                        href="#0"
+                        aria-labelledby="designer-instagram-id-label-2"
                       >
-                        <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
-                      </svg>
-
-                      <span
-                        class="tooltip social-list__tooltip sr-only"
-                        id="designer-instagram-id-label-2"
-                        tabindex="-1"
-                        >Инстаграм</span
-                      >
-                    </a>
+                        <!-- 20x20 -->
+                        <svg
+                          class="social-card__icon svg"
+                          aria-hidden="true"
+                          width="1.25rem"
+                          height="1.25rem"
+                        >
+                          <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
+                        </svg>
+                        <span
+                          class="tooltip social-list__tooltip sr-only"
+                          id="designer-instagram-id-label-2"
+                          tabindex="-1"
+                          >Инстаграм</span
+                        >
+                      </a>
+                    </div>
                   </li>
-
                   <li class="social-list__item">
-                    <a
-                      class="social-list__link"
-                      rel="noopener nofollow noreferrer"
-                      href="#0"
-                      aria-labelledby="designer-twitter-id-label-2"
-                    >
-                      <!-- 20x20 -->
-                      <svg
-                        class="social-list__icon svg"
-                        aria-hidden="true"
-                        width="1.25rem"
-                        height="1.25rem"
+                    <div class="social-card">
+                      <a
+                        class="social-card__link"
+                        rel="noopener nofollow noreferrer"
+                        href="#0"
+                        aria-labelledby="designer-twitter-id-label-2"
                       >
-                        <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
-                      </svg>
-
-                      <span
-                        class="tooltip social-list__tooltip sr-only"
-                        id="designer-twitter-id-label-2"
-                        tabindex="-1"
-                        >Твиттер</span
-                      >
-                    </a>
+                        <!-- 20x20 -->
+                        <svg
+                          class="social-card__icon svg"
+                          aria-hidden="true"
+                          width="1.25rem"
+                          height="1.25rem"
+                        >
+                          <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
+                        </svg>
+                        <span
+                          class="tooltip social-list__tooltip sr-only"
+                          id="designer-twitter-id-label-2"
+                          tabindex="-1"
+                          >Твиттер</span
+                        >
+                      </a>
+                    </div>
                   </li>
-
                   <li class="social-list__item">
-                    <a
-                      class="social-list__link"
-                      rel="noopener nofollow noreferrer"
-                      href="#0"
-                      aria-labelledby="designer-facebook-id-label-2"
-                    >
-                      <!-- 20x20 -->
-                      <svg
-                        class="social-list__icon svg"
-                        aria-hidden="true"
-                        width="1.25rem"
-                        height="1.25rem"
+                    <div class="social-card">
+                      <a
+                        class="social-card__link"
+                        rel="noopener nofollow noreferrer"
+                        href="#0"
+                        aria-labelledby="designer-facebook-id-label-2"
                       >
-                        <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
-                      </svg>
-
-                      <span
-                        class="tooltip social-list__tooltip sr-only"
-                        id="designer-facebook-id-label-2"
-                        tabindex="-1"
-                        >Фейсбук</span
-                      >
-                    </a>
+                        <!-- 20x20 -->
+                        <svg
+                          class="social-card__icon svg"
+                          aria-hidden="true"
+                          width="1.25rem"
+                          height="1.25rem"
+                        >
+                          <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
+                        </svg>
+                        <span
+                          class="tooltip social-list__tooltip sr-only"
+                          id="designer-facebook-id-label-2"
+                          tabindex="-1"
+                          >Фейсбук</span
+                        >
+                      </a>
+                    </div>
                   </li>
-
                   <li class="social-list__item">
-                    <a
-                      class="social-list__link"
-                      rel="noopener nofollow noreferrer"
-                      href="#0"
-                      aria-labelledby="designer-linkedIn-id-label-2"
-                    >
-                      <!-- 20x20 -->
-                      <svg
-                        class="social-list__icon svg"
-                        aria-hidden="true"
-                        width="1.25rem"
-                        height="1.25rem"
+                    <div class="social-card">
+                      <a
+                        class="social-card__link"
+                        rel="noopener nofollow noreferrer"
+                        href="#0"
+                        aria-labelledby="designer-linkedIn-id-label-2"
                       >
-                        <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
-                      </svg>
-
-                      <span
-                        class="tooltip social-list__tooltip sr-only"
-                        id="designer-linkedIn-id-label-2"
-                        tabindex="-1"
-                        >LinkedIn</span
-                      >
-                    </a>
+                        <!-- 20x20 -->
+                        <svg
+                          class="social-card__icon svg"
+                          aria-hidden="true"
+                          width="1.25rem"
+                          height="1.25rem"
+                        >
+                          <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
+                        </svg>
+                        <span
+                          class="tooltip social-list__tooltip sr-only"
+                          id="designer-linkedIn-id-label-2"
+                          tabindex="-1"
+                          >LinkedIn</span
+                        >
+                      </a>
+                    </div>
                   </li>
                 </ul>
               </div>
             </li>
-
             <li class="designers-list__item">
               <div class="designer-card">
                 <!-- 270x260 -->
@@ -606,121 +578,119 @@
                   width="16.875rem"
                   height="16.25rem"
                 />
-
                 <div class="designer-card__meta">
                   <h3 class="designer-card__name">Николай Тарасов</h3>
                   <p class="designer-card__role" lang="en">Marketing</p>
                 </div>
-
                 <!-- Social links -->
                 <ul class="social-list">
                   <li class="social-list__item">
-                    <a
-                      class="social-list__link"
-                      rel="noopener nofollow noreferrer"
-                      href="#0"
-                      aria-labelledby="designer-instagram-id-label-3"
-                    >
-                      <!-- 20x20 -->
-                      <svg
-                        class="social-list__icon svg"
-                        aria-hidden="true"
-                        width="1.25rem"
-                        height="1.25rem"
+                    <div class="social-card">
+                      <a
+                        class="social-card__link"
+                        rel="noopener nofollow noreferrer"
+                        href="#0"
+                        aria-labelledby="designer-instagram-id-label-3"
                       >
-                        <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
-                      </svg>
-
-                      <span
-                        class="tooltip social-list__tooltip sr-only"
-                        id="designer-instagram-id-label-3"
-                        tabindex="-1"
-                        >Инстаграм</span
-                      >
-                    </a>
+                        <!-- 20x20 -->
+                        <svg
+                          class="social-card__icon svg"
+                          aria-hidden="true"
+                          width="1.25rem"
+                          height="1.25rem"
+                        >
+                          <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
+                        </svg>
+                        <span
+                          class="tooltip social-list__tooltip sr-only"
+                          id="designer-instagram-id-label-3"
+                          tabindex="-1"
+                          >Инстаграм</span
+                        >
+                      </a>
+                    </div>
                   </li>
-
                   <li class="social-list__item">
-                    <a
-                      class="social-list__link"
-                      rel="noopener nofollow noreferrer"
-                      href="#0"
-                      aria-labelledby="designer-twitter-id-label-3"
-                    >
-                      <!-- 20x20 -->
-                      <svg
-                        class="social-list__icon svg"
-                        aria-hidden="true"
-                        width="1.25rem"
-                        height="1.25rem"
+                    <div class="social-card">
+                      <a
+                        class="social-card__link"
+                        rel="noopener nofollow noreferrer"
+                        href="#0"
+                        aria-labelledby="designer-twitter-id-label-3"
                       >
-                        <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
-                      </svg>
-
-                      <span
-                        class="tooltip social-list__tooltip sr-only"
-                        id="designer-twitter-id-label-3"
-                        tabindex="-1"
-                        >Твиттер</span
-                      >
-                    </a>
+                        <!-- 20x20 -->
+                        <svg
+                          class="social-card__icon svg"
+                          aria-hidden="true"
+                          width="1.25rem"
+                          height="1.25rem"
+                        >
+                          <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
+                        </svg>
+                        <span
+                          class="tooltip social-list__tooltip sr-only"
+                          id="designer-twitter-id-label-3"
+                          tabindex="-1"
+                          >Твиттер</span
+                        >
+                      </a>
+                    </div>
                   </li>
-
                   <li class="social-list__item">
-                    <a
-                      class="social-list__link"
-                      rel="noopener nofollow noreferrer"
-                      href="#0"
-                      aria-labelledby="designer-facebook-id-label-3"
-                    >
-                      <!-- 20x20 -->
-                      <svg
-                        class="social-list__icon svg"
-                        aria-hidden="true"
-                        width="1.25rem"
-                        height="1.25rem"
+                    <div class="social-card">
+                      <a
+                        class="social-card__link"
+                        rel="noopener nofollow noreferrer"
+                        href="#0"
+                        aria-labelledby="designer-facebook-id-label-3"
                       >
-                        <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
-                      </svg>
-
-                      <span
-                        class="tooltip social-list__tooltip sr-only"
-                        id="designer-facebook-id-label-3"
-                        tabindex="-1"
-                        >Фейсбук</span
-                      >
-                    </a>
+                        <!-- 20x20 -->
+                        <svg
+                          class="social-card__icon svg"
+                          aria-hidden="true"
+                          width="1.25rem"
+                          height="1.25rem"
+                        >
+                          <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
+                        </svg>
+                        <span
+                          class="tooltip social-list__tooltip sr-only"
+                          id="designer-facebook-id-label-3"
+                          tabindex="-1"
+                          >Фейсбук</span
+                        >
+                      </a>
+                    </div>
                   </li>
-
                   <li class="social-list__item">
-                    <a
-                      class="social-list__link"
-                      rel="noopener nofollow noreferrer"
-                      href="#0"
-                      aria-labelledby="designer-linkedIn-id-label-3"
-                    >
-                      <!-- 20x20 -->
-                      <svg
-                        class="social-list__icon svg"
-                        aria-hidden="true"
-                        width="1.25rem"
-                        height="1.25rem"
+                    <div class="social-card">
+                      <a
+                        class="social-card__link"
+                        rel="noopener nofollow noreferrer"
+                        href="#0"
+                        aria-labelledby="designer-linkedIn-id-label-3"
                       >
-                        <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
-                      </svg>
-
-                      <span
-                        class="tooltip social-list__tooltip sr-only"
-                        id="designer-linkedIn-id-label-3"
-                        tabindex="-1"
-                        >LinkedIn</span
-                      >
-                    </a>
+                        <!-- 20x20 -->
+                        <svg
+                          class="social-card__icon svg"
+                          aria-hidden="true"
+                          width="1.25rem"
+                          height="1.25rem"
+                        >
+                          <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
+                        </svg>
+                        <span
+                          class="tooltip social-list__tooltip sr-only"
+                          id="designer-linkedIn-id-label-3"
+                          tabindex="-1"
+                          >LinkedIn</span
+                        >
+                      </a>
+                    </div>
                   </li>
                 </ul>
               </div>
             </li>
-
             <li class="designers-list__item">
               <div class="designer-card">
                 <!-- 270x260 -->
@@ -731,116 +701,115 @@
                   width="16.875rem"
                   height="16.25rem"
                 />
-
                 <div class="designer-card__meta">
                   <h3 class="designer-card__name">Михаил Ермаков</h3>
                   <p class="designer-card__role" lang="en">UI Designer</p>
                 </div>
-
                 <!-- Social links -->
                 <ul class="social-list">
                   <li class="social-list__item">
-                    <a
-                      class="social-list__link"
-                      rel="noopener nofollow noreferrer"
-                      href="#0"
-                      aria-labelledby="designer-instagram-id-label-4"
-                    >
-                      <!-- 20x20 -->
-                      <svg
-                        class="social-list__icon svg"
-                        aria-hidden="true"
-                        width="1.25rem"
-                        height="1.25rem"
+                    <div class="social-card">
+                      <a
+                        class="social-card__link"
+                        rel="noopener nofollow noreferrer"
+                        href="#0"
+                        aria-labelledby="designer-instagram-id-label-4"
                       >
-                        <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
-                      </svg>
-
-                      <span
-                        class="tooltip social-list__tooltip sr-only"
-                        id="designer-instagram-id-label-4"
-                        tabindex="-1"
-                        >Инстаграм</span
-                      >
-                    </a>
+                        <!-- 20x20 -->
+                        <svg
+                          class="social-card__icon svg"
+                          aria-hidden="true"
+                          width="1.25rem"
+                          height="1.25rem"
+                        >
+                          <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
+                        </svg>
+                        <span
+                          class="tooltip social-list__tooltip sr-only"
+                          id="designer-instagram-id-label-4"
+                          tabindex="-1"
+                          >Инстаграм</span
+                        >
+                      </a>
+                    </div>
                   </li>
-
                   <li class="social-list__item">
-                    <a
-                      class="social-list__link"
-                      rel="noopener nofollow noreferrer"
-                      href="#0"
-                      aria-labelledby="designer-twitter-id-label-4"
-                    >
-                      <!-- 20x20 -->
-                      <svg
-                        class="social-list__icon svg"
-                        aria-hidden="true"
-                        width="1.25rem"
-                        height="1.25rem"
+                    <div class="social-card">
+                      <a
+                        class="social-card__link"
+                        rel="noopener nofollow noreferrer"
+                        href="#0"
+                        aria-labelledby="designer-twitter-id-label-4"
                       >
-                        <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
-                      </svg>
-
-                      <span
-                        class="tooltip social-list__tooltip sr-only"
-                        id="designer-twitter-id-label-4"
-                        tabindex="-1"
-                        >Твиттер</span
-                      >
-                    </a>
+                        <!-- 20x20 -->
+                        <svg
+                          class="social-card__icon svg"
+                          aria-hidden="true"
+                          width="1.25rem"
+                          height="1.25rem"
+                        >
+                          <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
+                        </svg>
+                        <span
+                          class="tooltip social-list__tooltip sr-only"
+                          id="designer-twitter-id-label-4"
+                          tabindex="-1"
+                          >Твиттер</span
+                        >
+                      </a>
+                    </div>
                   </li>
-
                   <li class="social-list__item">
-                    <a
-                      class="social-list__link"
-                      rel="noopener nofollow noreferrer"
-                      href="#0"
-                      aria-labelledby="designer-facebook-id-label-4"
-                    >
-                      <!-- 20x20 -->
-                      <svg
-                        class="social-list__icon svg"
-                        aria-hidden="true"
-                        width="1.25rem"
-                        height="1.25rem"
+                    <div class="social-card">
+                      <a
+                        class="social-card__link"
+                        rel="noopener nofollow noreferrer"
+                        href="#0"
+                        aria-labelledby="designer-facebook-id-label-4"
                       >
-                        <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
-                      </svg>
-
-                      <span
-                        class="tooltip social-list__tooltip sr-only"
-                        id="designer-facebook-id-label-4"
-                        tabindex="-1"
-                        >Фейсбук</span
-                      >
-                    </a>
+                        <!-- 20x20 -->
+                        <svg
+                          class="social-card__icon svg"
+                          aria-hidden="true"
+                          width="1.25rem"
+                          height="1.25rem"
+                        >
+                          <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
+                        </svg>
+                        <span
+                          class="tooltip social-list__tooltip sr-only"
+                          id="designer-facebook-id-label-4"
+                          tabindex="-1"
+                          >Фейсбук</span
+                        >
+                      </a>
+                    </div>
                   </li>
-
                   <li class="social-list__item">
-                    <a
-                      class="social-list__link"
-                      rel="noopener nofollow noreferrer"
-                      href="#0"
-                      aria-labelledby="designer-linkedIn-id-label-4"
-                    >
-                      <!-- 20x20 -->
-                      <svg
-                        class="social-list__icon svg"
-                        aria-hidden="true"
-                        width="1.25rem"
-                        height="1.25rem"
+                    <div class="social-card">
+                      <a
+                        class="social-card__link"
+                        rel="noopener nofollow noreferrer"
+                        href="#0"
+                        aria-labelledby="designer-linkedIn-id-label-4"
                       >
-                        <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
-                      </svg>
-
-                      <span
-                        class="tooltip social-list__tooltip sr-only"
-                        id="designer-linkedIn-id-label-4"
-                        tabindex="-1"
-                        >LinkedIn</span
-                      >
-                    </a>
+                        <!-- 20x20 -->
+                        <svg
+                          class="social-card__icon svg"
+                          aria-hidden="true"
+                          width="1.25rem"
+                          height="1.25rem"
+                        >
+                          <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
+                        </svg>
+                        <span
+                          class="tooltip social-list__tooltip sr-only"
+                          id="designer-linkedIn-id-label-4"
+                          tabindex="-1"
+                          >LinkedIn</span
+                        >
+                      </a>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -848,7 +817,6 @@
           </ul>
         </div>
       </section>
-
       <!-- Постоянные клиенты -->
       <section class="clients section" aria-labelledby="clients-title-id">
         <div class="container">
@@ -877,7 +845,6 @@
                 </a>
               </div>
             </li>
-
             <li class="clients-list__item">
               <div class="client-card">
                 <a
@@ -902,7 +869,6 @@
                 </a>
               </div>
             </li>
-
             <li class="clients-list__item">
               <div class="client-card">
                 <a
@@ -926,7 +892,6 @@
                 </a>
               </div>
             </li>
-
             <li class="clients-list__item">
               <div class="client-card">
                 <a
@@ -950,7 +915,6 @@
                 </a>
               </div>
             </li>
-
             <li class="clients-list__item">
               <div class="client-card">
                 <a
@@ -972,7 +936,6 @@
                 </a>
               </div>
             </li>
-
             <li class="clients-list__item">
               <div class="client-card">
                 <a
@@ -1001,171 +964,167 @@
         </div>
       </section>
     </main>
-
-    <!-- Footer Updated on 2021-07-23 15:15 -->
+    <!-- Footer Updated on 2021-07-27 11:16 -->
     <footer class="page-footer">
       <div class="container page-footer__container">
-        <div class="page-footer__address-wrapper">
+        <div class="address-wrapper page-footer__address-wrapper">
           <a class="logo links" href="./" lang="en">
             <span class="logo__web-studio logo__first-part"> Web</span
             ><span class="logo__web-studio logo__last-part--inverse">Studio </span>
           </a>
-          <address class="page-footer__address">
-            <ul class="page-footer__address-list">
-              <li class="page-footer__address-item">
-                <a
-                  class="footer-map-pointer links"
-                  rel="noopener noreferrer nofollow"
-                  href="https://goo.gl/maps/HiSWEAjoAeCsFwUL7"
-                  aria-labelledby="webstudio-map-pointer-id-label"
-                  target="_blank"
-                >
-                  <span class="tooltip sr-only" id="webstudio-map-pointer-id-label" tabindex="-1">
-                    Адрес студии
-                  </span>
-
-                  г. Киев, пр-т Леси Украинки, 26
-                </a>
+          <address class="address page-footer__address">
+            <ul class="address-list address__list">
+              <li class="address-list__item">
+                <div class="address-card">
+                  <a
+                    class="address-card__map-pointer links"
+                    rel="noopener noreferrer nofollow"
+                    href="https://goo.gl/maps/HiSWEAjoAeCsFwUL7"
+                    aria-labelledby="webstudio-map-pointer-id-label"
+                    target="_blank"
+                  >
+                    <span class="tooltip sr-only" id="webstudio-map-pointer-id-label" tabindex="-1">
+                      Адрес студии
+                    </span>
+                    г. Киев, пр-т Леси Украинки, 26
+                  </a>
+                </div>
               </li>
-
-              <li class="page-footer__address-item">
-                <a
-                  class="footer-contact links"
-                  href="mailto:info@example.com"
-                  aria-labelledby="webstudio-email-id-label"
-                >
-                  <span class="tooltip sr-only" id="webstudio-email-id-label" tabindex="-1">
-                    Почта для вопросов
-                  </span>
-
-                  info@example.com
-                </a>
+              <li class="address-list__item">
+                <div class="address-card">
+                  <a
+                    class="address-card__contact links"
+                    href="mailto:info@example.com"
+                    aria-labelledby="webstudio-email-id-label"
+                  >
+                    <span class="tooltip sr-only" id="webstudio-email-id-label" tabindex="-1">
+                      Почта для вопросов
+                    </span>
+                    info@example.com
+                  </a>
+                </div>
               </li>
-
-              <li class="page-footer__address-item">
-                <a
-                  class="footer-contact links"
-                  href="tel:+380991111111"
-                  aria-labelledby="webstudio-phone-id-label-2"
-                >
-                  <span class="tooltip sr-only" id="webstudio-phone-id-label-2" tabindex="-1">
-                    Мобильный студии
-                  </span>
-
-                  +38 099 111 11 11
-                </a>
+              <li class="address-list__item">
+                <div class="address-card">
+                  <a
+                    class="address-card__contact links"
+                    href="tel:+380991111111"
+                    aria-labelledby="webstudio-phone-id-label-2"
+                  >
+                    <span class="tooltip sr-only" id="webstudio-phone-id-label-2" tabindex="-1">
+                      Мобильный студии
+                    </span>
+                    +38 099 111 11 11
+                  </a>
+                </div>
               </li>
             </ul>
           </address>
         </div>
-
+        <!-- Footer Social links -->
         <div class="page-footer__social-container">
-          <!-- Footer Social links -->
           <p class="page-footer__social-title social-list__title">Присоединяйтесь</p>
-
           <ul class="social-list">
             <li class="social-list__item">
-              <a
-                class="social-list__link page-footer__social-link"
-                rel="noopener nofollow noreferrer"
-                href="#0"
-                aria-labelledby="webstudio-instagram-id-label"
-              >
-                <!-- 20x20 -->
-                <svg
-                  class="social-list__icon svg page-footer__social-icon"
-                  aria-hidden="true"
-                  width="1.25rem"
-                  height="1.25rem"
+              <div class="social-card">
+                <a
+                  class="social-card__link page-footer__social-link"
+                  rel="noopener nofollow noreferrer"
+                  href="#0"
+                  aria-labelledby="webstudio-instagram-id-label"
                 >
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
-                </svg>
-
-                <span class="tooltip sr-only" id="webstudio-instagram-id-label" tabindex="-1"
-                  >Инстаграм</span
-                >
-              </a>
+                  <!-- 20x20 -->
+                  <svg
+                    class="social-card__icon svg page-footer__social-icon"
+                    aria-hidden="true"
+                    width="1.25rem"
+                    height="1.25rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
+                  </svg>
+                  <span class="tooltip sr-only" id="webstudio-instagram-id-label" tabindex="-1"
+                    >Инстаграм</span
+                  >
+                </a>
+              </div>
             </li>
-
             <li class="social-list__item">
-              <a
-                class="social-list__link page-footer__social-link"
-                rel="noopener nofollow noreferrer"
-                href="#0"
-                aria-labelledby="webstudio-twitter-id-label"
-              >
-                <!-- 20x20 -->
-                <svg
-                  class="social-list__icon svg page-footer__social-icon"
-                  aria-hidden="true"
-                  width="1.25rem"
-                  height="1.25rem"
+              <div class="social-card">
+                <a
+                  class="social-card__link page-footer__social-link"
+                  rel="noopener nofollow noreferrer"
+                  href="#0"
+                  aria-labelledby="webstudio-twitter-id-label"
                 >
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
-                </svg>
-
-                <span class="tooltip sr-only" id="webstudio-twitter-id-label" tabindex="-1"
-                  >Твиттер</span
-                >
-              </a>
+                  <!-- 20x20 -->
+                  <svg
+                    class="social-card__icon svg page-footer__social-icon"
+                    aria-hidden="true"
+                    width="1.25rem"
+                    height="1.25rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
+                  </svg>
+                  <span class="tooltip sr-only" id="webstudio-twitter-id-label" tabindex="-1"
+                    >Твиттер</span
+                  >
+                </a>
+              </div>
             </li>
-
             <li class="social-list__item">
-              <a
-                class="social-list__link page-footer__social-link"
-                rel="noopener nofollow noreferrer"
-                href="#0"
-                aria-labelledby="webstudio-facebook-id-label"
-              >
-                <!-- 20x20 -->
-                <svg
-                  class="social-list__icon svg page-footer__social-icon"
-                  aria-hidden="true"
-                  width="1.25rem"
-                  height="1.25rem"
+              <div class="social-card">
+                <a
+                  class="social-card__link page-footer__social-link"
+                  rel="noopener nofollow noreferrer"
+                  href="#0"
+                  aria-labelledby="webstudio-facebook-id-label"
                 >
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
-                </svg>
-
-                <span class="tooltip sr-only" id="webstudio-facebook-id-label" tabindex="-1"
-                  >Фейсбук</span
-                >
-              </a>
+                  <!-- 20x20 -->
+                  <svg
+                    class="social-card__icon svg page-footer__social-icon"
+                    aria-hidden="true"
+                    width="1.25rem"
+                    height="1.25rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
+                  </svg>
+                  <span class="tooltip sr-only" id="webstudio-facebook-id-label" tabindex="-1"
+                    >Фейсбук</span
+                  >
+                </a>
+              </div>
             </li>
-
             <li class="social-list__item">
-              <a
-                class="social-list__link page-footer__social-link"
-                rel="noopener nofollow noreferrer"
-                href="#0"
-                aria-labelledby="webstudio-linkedin-id-label"
-              >
-                <!-- 20x20 -->
-                <svg
-                  class="social-list__icon svg page-footer__social-icon"
-                  aria-hidden="true"
-                  width="1.25rem"
-                  height="1.25rem"
+              <div class="social-card">
+                <a
+                  class="social-card__link page-footer__social-link"
+                  rel="noopener nofollow noreferrer"
+                  href="#0"
+                  aria-labelledby="webstudio-linkedin-id-label"
                 >
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
-                </svg>
-
-                <span class="tooltip sr-only" id="webstudio-linkedin-id-label" tabindex="-1"
-                  >LinkedIn</span
-                >
-              </a>
+                  <!-- 20x20 -->
+                  <svg
+                    class="social-card__icon svg page-footer__social-icon"
+                    aria-hidden="true"
+                    width="1.25rem"
+                    height="1.25rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
+                  </svg>
+                  <span class="tooltip sr-only" id="webstudio-linkedin-id-label" tabindex="-1"
+                    >LinkedIn</span
+                  >
+                </a>
+              </div>
             </li>
           </ul>
         </div>
-
         <!-- Форма подписки на рассылку (email input) -->
-
         <form
           class="subscribe-form page-footer__subscribe-form"
           aria-labelledby="subscribe-form__title-id"
         >
           <b class="subscribe-form__title" id="subscribe-form__title-id">Подпишитесь на рассылку</b>
-
           <div class="subscribe__group">
             <!-- E-mail -->
             <div class="subscribe-form__field">
@@ -1178,16 +1137,13 @@
                 placeholder="E-mail"
                 required
               />
-
               <label class="subscribe-label tooltip sr-only" for="subscribe-user-email-id">
                 Ваша почта
               </label>
             </div>
-
             <!-- Отправляем форму подписки -->
             <button type="submit" class="subscribe-btn btn btn--primary" id="subscribe-btn-id">
               <span class="btn__label">Подписаться</span>
-
               <!-- 24x24 -->
               <svg class="send-icon svg" aria-hidden="true" width="1.5rem" height="1.5rem">
                 <use href="./images/icomoon-svgomg/icons.svg#icon-send"></use>
@@ -1197,7 +1153,6 @@
         </form>
       </div>
     </footer>
-
     <!-- Backdrop (Overlay) -->
     <div
       class="backdrop is-hidden"
@@ -1226,17 +1181,14 @@
             >
               <use href="./images/icomoon-svgomg/icons.svg#icon-close-18px"></use>
             </svg>
-
             <span class="tooltip sr-only" id="modal-close-id-label">Закрыть</span>
           </button>
         </div>
-
         <!-- Контактная форма (Form) -->
         <form class="form js-speaker-form">
           <b class="form-title" id="form-title-id" data-modal-title>
             Оставьте свои данные, мы вам перезвоним</b
           >
-
           <!-- Вводим имя, телефон и почту (Inputs) -->
           <div class="group user-info">
             <div class="form-field">
@@ -1251,9 +1203,7 @@
                 maxlength="50"
                 data-placeholder="Иван Иванович"
               />
-
               <label class="form-label" for="user-name-id" aria-label="Ваше имя">Имя</label>
-
               <div class="svg-wrapper">
                 <!-- 18x18 -->
                 <svg
@@ -1267,7 +1217,6 @@
                 </svg>
               </div>
             </div>
-
             <div class="form-field">
               <input
                 type="tel"
@@ -1281,9 +1230,7 @@
                 maxlength="10"
                 data-placeholder="0123456789"
               />
-
               <label class="form-label" for="user-tel-id" aria-label="Ваш телефон"> Телефон </label>
-
               <div class="svg-wrapper">
                 <!-- 18x18 -->
                 <svg
@@ -1297,7 +1244,6 @@
                 </svg>
               </div>
             </div>
-
             <div class="form-field">
               <input
                 type="email"
@@ -1310,9 +1256,7 @@
                 data-placeholder="your@email.com"
                 required
               />
-
               <label class="form-label" for="user-email-id" aria-label="Ваша почта">Почта</label>
-
               <div class="svg-wrapper">
                 <!-- 18x18 -->
                 <svg
@@ -1327,11 +1271,9 @@
               </div>
             </div>
           </div>
-
           <!-- Оставляем комментарий -->
           <div class="form-field user-comment">
             <label class="form-label" for="comment-id">Комментарий</label>
-
             <textarea
               name="comment"
               class="form-comment"
@@ -1340,7 +1282,6 @@
               rows="10"
             ></textarea>
           </div>
-
           <!-- Подтверждаем политику конфиденциальности (checkbox) -->
           <div class="group policy">
             <input
@@ -1351,7 +1292,6 @@
               id="policy-id"
               required
             />
-
             <label class="form-label" for="policy-id"
               ><div
                 class="custom-checkbox"
@@ -1367,13 +1307,10 @@
                   <use href="./images/icomoon-svgomg/icons.svg#icon-check"></use>
                 </svg>
               </div>
-
               Соглашаюсь с рассылкой и принимаю
-
               <a class="tac-link" href="#0">Условия договора</a>
             </label>
           </div>
-
           <!-- Отправляем форму (Btn) -->
           <div class="group submit-btn-wrapper">
             <button type="submit" class="form-submit-btn btn btn--primary">
@@ -1383,7 +1320,6 @@
         </form>
       </div>
     </div>
-
     <!-- Скрипт модального окна -->
     <script src="./js/modal.js"></script>
     <!-- <script src="./js/modal.min.js" ></script> -->
