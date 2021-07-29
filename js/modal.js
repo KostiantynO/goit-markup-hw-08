@@ -8,7 +8,7 @@
       .querySelectorAll(
         "button, a[href], input, select, textarea, [tabindex]:not([tabindex='-1'])",
       ),
-    modalInputs: document.querySelectorAll(".form-input"),
+    modalInputs: document.querySelectorAll(".hero-form__input"),
     modalTitle: document.querySelector("[data-modal-title]"),
     htmlAndBody: document.querySelectorAll("[data-no-scroll]"),
   };

@@ -79,11 +79,10 @@
   transition: fill var(--time) var(--cubic);
 }
 
-.modal-close-btn-container > .modal-close-btn:hover,
-.modal-close-btn-container > .modal-close-btn:focus {
+.modal-close-btn:hover,
+.modal-close-btn:focus {
   color: var(--color-accent);
   background-color: var(--color-white);
-  box-shadow: none;
 }
 
 /* ------------------------------------------------------ */

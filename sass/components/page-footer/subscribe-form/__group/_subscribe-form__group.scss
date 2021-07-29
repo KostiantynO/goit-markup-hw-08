@@ -1,0 +1,7 @@
+.subscribe-form__group {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  flex-grow: 1;
+}

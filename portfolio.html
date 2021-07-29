@@ -66,8 +66,8 @@
               <a
                 class="nav__link nav__link--current"
                 data-content="Портфолио"
-                aria-current="page"
                 href="./portfolio.html"
+                aria-current="page"
                 hreflang="ru"
                 >Портфолио<span class="nav__link-overlay nav__link-overlay--current"></span
               ></a>
@@ -86,8 +86,8 @@
 
           <!-- Mobile menu - burger button -->
           <button
-            type="button"
             class="btn btn--secondary btn-burger nav__btn-mobile btn-mobile is-hidden"
+            type="button"
             aria-labelledby="burger-id-label"
           >
             <!-- 40x40 -->
@@ -159,8 +159,8 @@
       <div class="mobile-overlay">
         <!-- Кнопка закрытия мобильного меню -->
         <button
-          type="button"
           class="btn btn--secondary btn-mobile btn-mobile-close is-hidden"
+          type="button"
           aria-labelledby="close-nav__menu-id-label"
         >
           <!-- 40x40 -->
@@ -191,9 +191,9 @@
             <ul class="portfolio-filters-list" role="radiogroup">
               <li class="portfolio-filters-list__item">
                 <button
-                  type="button"
                   class="btn btn--secondary current-btn filter-btn"
                   id="filter-1"
+                  type="button"
                   aria-current="true"
                 >
                   <span class="btn__label">Все</span>
@@ -201,25 +201,25 @@
               </li>
 
               <li class="portfolio-filters-list__item">
-                <button type="button" class="btn btn--secondary filter-btn" id="filter-2">
+                <button class="btn btn--secondary filter-btn" id="filter-2" type="button">
                   <span class="btn__label">Веб-сайты</span>
                 </button>
               </li>
 
               <li class="portfolio-filters-list__item">
-                <button type="button" class="btn btn--secondary filter-btn" id="filter-3">
+                <button class="btn btn--secondary filter-btn" id="filter-3" type="button">
                   <span class="btn__label">Приложения</span>
                 </button>
               </li>
 
               <li class="portfolio-filters-list__item">
-                <button type="button" class="btn btn--secondary filter-btn" id="filter-4">
+                <button class="btn btn--secondary filter-btn" id="filter-4" type="button">
                   <span class="btn__label">Дизайн</span>
                 </button>
               </li>
 
               <li class="portfolio-filters-list__item">
-                <button type="button" class="btn btn--secondary filter-btn" id="filter-5">
+                <button class="btn btn--secondary filter-btn" id="filter-5" type="button">
                   <span class="btn__label">Маркетинг</span>
                 </button>
               </li>
@@ -703,14 +703,14 @@
         >
           <b class="subscribe-form__title" id="subscribe-form__title-id">Подпишитесь на рассылку</b>
 
-          <div class="subscribe__group">
+          <div class="subscribe-form__group">
             <!-- E-mail -->
             <div class="subscribe-form__field">
               <input
-                type="email"
-                name="subscribe-user-email"
-                class="subscribe-input"
+                class="subscribe-form__input"
                 id="subscribe-user-email-id"
+                name="subscribe-user-email"
+                type="email"
                 maxlength="80"
                 placeholder="E-mail"
                 required
@@ -722,11 +722,16 @@
             </div>
 
             <!-- Отправляем форму подписки -->
-            <button type="submit" class="subscribe-btn btn btn--primary" id="subscribe-btn-id">
+            <button class="subscribe-btn btn btn--primary" id="subscribe-btn-id" type="submit">
               <span class="btn__label">Подписаться</span>
 
               <!-- 24x24 -->
-              <svg class="send-icon svg" aria-hidden="true" width="1.5rem" height="1.5rem">
+              <svg
+                class="subscribe-btn__send-icon svg"
+                aria-hidden="true"
+                width="1.5rem"
+                height="1.5rem"
+              >
                 <use href="./images/icomoon-svgomg/icons.svg#icon-send"></use>
               </svg>
             </button>

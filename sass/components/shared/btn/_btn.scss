@@ -1,0 +1,25 @@
+/* Шаблон кнопки - "Все", "Веб-сайты", "Приложения", "Дизайн", "Маркетинг", h26px */
+.btn {
+  position: relative;
+
+  max-width: 31.25rem; /* 500px */
+  min-height: 2.25rem; /* 36px */
+  max-height: 3.125rem; /* 50px */
+
+  padding: 0.3125rem 1.3125rem; /* pt=pb=5px */ /* pr=pl=21px */
+  text-overflow: ellipsis;
+
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.625; /* 26px */
+  letter-spacing: 0.03em;
+  word-wrap: break-word;
+
+  cursor: pointer;
+  border: 1px solid transparent;
+
+  border-radius: 4px;
+  /* Inherits color: #212121; and background-color: #f5f4fa; in normal state and color: #ffffff; and background-color: #2196f3; on Hover Focus from .btn--secondary */
+
+  transition: background-color var(--time) var(--cubic);
+}

@@ -1,0 +1,8 @@
+.subscribe-form__field {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 0.75rem;
+  }
+}

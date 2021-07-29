@@ -167,35 +167,35 @@ scalingUp {}
 .modal-close-icon
 .modal-close-btn-container > .modal-close-btn:hover,
 .modal-close-btn-container > .modal-close-btn:focus
-.form-title
-.form-field
-.user-info > .form-field + .form-field
-.user-comment
-.form-label
-.form-input
-.form-input:focus,
+.hero-form__title
+.hero-form__field
+.user-info > .hero-form__field + .hero-form__field
+.hero-form__user-comment
+.hero-form__label
+.hero-form__input
+.hero-form__input:focus,
 .form-comment:focus
-.form-input::placeholder
+.hero-form__input::placeholder
 .user-info .svg-wrapper,
-.user-info .form-label
+.user-info .hero-form__label
 .user-info .svg-wrapper
-.user-info .form-label
-.form-input:not(:placeholder-shown) + .form-label,
-.form-input:focus + .form-label
-.form-input:focus ~ .svg-wrapper
+.user-info .hero-form__label
+.hero-form__input:not(:placeholder-shown) + .hero-form__label,
+.hero-form__input:focus + .hero-form__label
+.hero-form__input:focus ~ .svg-wrapper
 .form-svg
-.form-input:focus + label
+.hero-form__input:focus + label
 .form-comment
 .form-comment::placeholder
 .policy
 .custom-checkbox
-.form-input-checkbox:focus:not(:checked) + .form-label > .custom-checkbox
-.form-input-checkbox:focus:checked + .form-label > .custom-checkbox
-.form-input-checkbox:checked + .form-label > .custom-checkbox
+.hero-form__input-checkbox:focus:not(:checked) + .hero-form__label > .custom-checkbox
+.hero-form__input-checkbox:focus:checked + .hero-form__label > .custom-checkbox
+.hero-form__input-checkbox:checked + .hero-form__label > .custom-checkbox
 .custom-checkbox > .form-svg
-.form-input-checkbox:checked + .form-label > .custom-checkbox > .form-svg
-.policy > .form-label
-.form-label > .tac-link
+.hero-form__input-checkbox:checked + .hero-form__label > .custom-checkbox > .form-svg
+.policy > .hero-form__label
+.hero-form__label > .tac-link
 .submit-btn-wrapper
 .portfolio-filters
 .portfolio-filters-list
@@ -285,12 +285,12 @@ scalingUp {}
 .subscribe-form > .group
 .group.subscribe
 .subscribe-form__field
-.subscribe-input
-.subscribe-input::placeholder
+.subscribe-form__input
+.subscribe-form__input::placeholder
 .subscribe-btn
-.subscribe-btn .send-icon
-.subscribe-btn:hover > .send-icon,
-.subscribe-btn:focus > .send-icon
+.subscribe-btn .subscribe-btn__send-icon
+.subscribe-btn:hover > .subscribe-btn__send-icon,
+.subscribe-btn:focus > .subscribe-btn__send-icon
 send-icon-fly {}
 send-icon-return {}
 .nav__link,

@@ -81,8 +81,8 @@
           </ul>
           <!-- Mobile menu - burger button -->
           <button
-            type="button"
             class="btn btn--secondary btn-burger nav__btn-mobile btn-mobile is-hidden"
+            type="button"
             aria-labelledby="burger-id-label"
           >
             <!-- 40x40 -->
@@ -146,8 +146,8 @@
       <div class="mobile-overlay">
         <!-- Кнопка закрытия мобильного меню -->
         <button
-          type="button"
           class="btn btn--secondary btn-mobile btn-mobile-close is-hidden"
+          type="button"
           aria-labelledby="close-nav__menu-id-label"
         >
           <!-- 40x40 -->
@@ -171,7 +171,7 @@
             Эффективные решения <br />
             для вашего бизнеса
           </h1>
-          <button type="button" class="btn btn--primary hero__btn" data-modal-open>
+          <button class="btn btn--primary hero__btn" data-modal-open type="button">
             <span class="btn__label">Заказать услугу</span>
           </button>
         </div>
@@ -1127,15 +1127,15 @@
           aria-labelledby="subscribe-form__title-id"
         >
           <b class="subscribe-form__title" id="subscribe-form__title-id">Подпишитесь на рассылку</b>
-          <div class="subscribe__group">
+          <div class="subscribe-form__group">
             <!-- E-mail -->
             <div class="subscribe-form__field">
               <input
-                type="email"
-                name="subscribe-user-email"
-                class="subscribe-input"
+                class="subscribe-form__input"
                 id="subscribe-user-email-id"
+                name="subscribe-user-email"
                 data-placeholder="your@email.com"
+                type="email"
                 title="your@email.com, до 64-х символов"
                 maxlength="64"
                 placeholder="E-mail"
@@ -1146,10 +1146,15 @@
               </label>
             </div>
             <!-- Отправляем форму подписки -->
-            <button type="submit" class="subscribe-btn btn btn--primary" id="subscribe-btn-id">
+            <button class="subscribe-btn btn btn--primary" id="subscribe-btn-id" type="submit">
               <span class="btn__label">Подписаться</span>
               <!-- 24x24 -->
-              <svg class="send-icon svg" aria-hidden="true" width="1.5rem" height="1.5rem">
+              <svg
+                class="subscribe-btn__send-icon svg"
+                aria-hidden="true"
+                width="1.5rem"
+                height="1.5rem"
+              >
                 <use href="./images/icomoon-svgomg/icons.svg#icon-send"></use>
               </svg>
             </button>
@@ -1163,7 +1168,7 @@
       class="backdrop is-hidden"
       data-modal
       role="dialog"
-      aria-labelledby="form-title-id"
+      aria-labelledby="hero-form__title-id"
       tabindex="-1"
     >
       <!-- Модальное окно -->
@@ -1171,9 +1176,9 @@
         <!-- Кнопка "Закрыть" (close) -->
         <div class="modal-close-btn-container">
           <button
-            type="button"
             class="modal-close-btn btn btn--secondary"
             data-modal-close
+            type="button"
             aria-labelledby="modal-close-id-label"
           >
             <!-- 18x18 -->
@@ -1191,24 +1196,25 @@
         </div>
         <!-- Контактная форма (Form) -->
         <form class="form js-speaker-form">
-          <b class="form-title" id="form-title-id" data-modal-title>
+          <b class="hero-form__title" id="hero-form__title-id" data-modal-title>
             Оставьте свои данные, мы вам перезвоним</b
           >
           <!-- Вводим имя, телефон и почту (Inputs) -->
           <div class="group user-info">
-            <div class="form-field">
+            <div class="hero-form__field user-info__field">
               <input
-                type="text"
-                name="user-name"
-                class="form-input"
+                class="hero-form__input"
                 id="user-name-id"
+                name="user-name"
                 data-placeholder="Иван Иванович"
+                type="text"
                 title="Ваше имя, до 50-и символов"
                 placeholder=" "
                 required
                 maxlength="50"
+                data-modal-input
               />
-              <label class="form-label" for="user-name-id" aria-label="Ваше имя">Имя</label>
+              <label class="hero-form__label" for="user-name-id" aria-label="Ваше имя">Имя</label>
               <div class="svg-wrapper">
                 <!-- 18x18 -->
                 <svg
@@ -1222,20 +1228,23 @@
                 </svg>
               </div>
             </div>
-            <div class="form-field">
+            <div class="hero-form__field user-info__field">
               <input
-                type="tel"
-                name="user-tel"
-                class="form-input"
+                class="hero-form__input"
                 id="user-tel-id"
+                name="user-tel"
                 data-placeholder="0123456789"
-                title="Десять цифр 0123456789"
+                type="tel"
+                title="Ваш мобильный номер, 0123456789"
                 placeholder=" "
                 required
-                pattern="[0-9]{10}"
+                pattern="[0-9 ]{10}"
                 maxlength="10"
+                data-modal-input
               />
-              <label class="form-label" for="user-tel-id" aria-label="Ваш телефон"> Телефон </label>
+              <label class="hero-form__label" for="user-tel-id" aria-label="Ваш телефон">
+                Телефон
+              </label>
               <div class="svg-wrapper">
                 <!-- 18x18 -->
                 <svg
@@ -1249,19 +1258,22 @@
                 </svg>
               </div>
             </div>
-            <div class="form-field">
+            <div class="hero-form__field user-info__field">
               <input
-                type="email"
-                name="user-email"
-                class="form-input"
+                class="hero-form__input"
                 id="user-email-id"
+                name="user-email"
                 data-placeholder="your@email.com"
+                type="email"
                 title="your@email.com, до 64-х символов"
                 maxlength="64"
                 placeholder=" "
                 required
+                data-modal-input
               />
-              <label class="form-label" for="user-email-id" aria-label="Ваша почта">Почта</label>
+              <label class="hero-form__label" for="user-email-id" aria-label="Ваша почта"
+                >Почта</label
+              >
               <div class="svg-wrapper">
                 <!-- 18x18 -->
                 <svg
@@ -1277,12 +1289,12 @@
             </div>
           </div>
           <!-- Оставляем комментарий -->
-          <div class="form-field user-comment">
-            <label class="form-label" for="comment-id">Комментарий</label>
+          <div class="hero-form__field hero-form__user-comment">
+            <label class="hero-form__label" for="comment-id">Комментарий</label>
             <textarea
-              name="comment"
               class="form-comment"
               id="comment-id"
+              name="comment"
               placeholder="Введите текст"
               rows="10"
             ></textarea>
@@ -1290,14 +1302,14 @@
           <!-- Подтверждаем политику конфиденциальности (checkbox) -->
           <div class="group policy">
             <input
-              type="checkbox"
-              name="policy"
-              value="accepted"
-              class="form-input-checkbox sr-only"
+              class="hero-form__input-checkbox sr-only"
               id="policy-id"
+              name="policy"
+              type="checkbox"
+              value="accepted"
               required
             />
-            <label class="form-label" for="policy-id"
+            <label class="hero-form__label" for="policy-id"
               ><div
                 class="custom-checkbox"
                 title="Пожалуйста, установите этот флажок, если Вы хотите продолжить."
@@ -1318,7 +1330,7 @@
           </div>
           <!-- Отправляем форму (Btn) -->
           <div class="group submit-btn-wrapper">
-            <button type="submit" class="form-submit-btn btn btn--primary">
+            <button class="form-submit-btn btn btn--primary" type="submit">
               <span class="btn__label">Отправить</span>
             </button>
           </div>

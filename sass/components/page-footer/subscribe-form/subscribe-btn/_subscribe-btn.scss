@@ -1,0 +1,20 @@
+/* Подписаться */
+.subscribe-btn {
+  @include media(0, $tablet, var(--uni-margin-med)); /* mt20; mobile */
+
+  & .subscribe-btn__send-icon {
+    margin-left: 0.625rem;
+    fill: currentColor;
+    /* anchor */
+    animation: send-icon-return var(--time) var(--cubic) 1 backwards;
+
+    /* transform: rotate(-1deg) scale(1); */
+    transform-origin: top left;
+    transition: currentColor var(--time) var(--cubic);
+  }
+
+  &:hover &__send-icon,
+  &:focus &__send-icon {
+    animation: send-icon-fly var(--time) var(--cubic) 1 forwards;
+  }
+}

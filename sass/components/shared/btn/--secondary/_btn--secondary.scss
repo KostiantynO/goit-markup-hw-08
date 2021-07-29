@@ -1,0 +1,25 @@
+/* START "Фильтры-Кнопки" - Все, Веб-сайты, Приложения, Дизайн, Маркетинг */
+
+/* Вторичная кнопка: цвет - темный #212121, фон - серый #f5f4fa, + тень динамическая по наведению */
+.btn--secondary {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-btn-secondary);
+
+  transition: color var(--time) var(--cubic), box-shadow var(--time) var(--cubic);
+
+  &:hover,
+  &:focus {
+    @extend %btn--secondary-active;
+  }
+}
+
+.current-btn {
+  @extend %btn--secondary-active;
+
+  &:focus,
+  &:hover {
+    @extend %btn--primary-active;
+  }
+}
+
+/* END "Фильтры-Кнопки" */

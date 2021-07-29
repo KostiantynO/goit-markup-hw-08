@@ -1,0 +1,14 @@
+/* Подпишитесь на рассылку */
+/* .subscribe-form__title { mb20 w219 h16 fw700 fz14 lh15 lsp0.03em ttup c#FFF } */
+.subscribe-form__title {
+  display: block;
+  min-width: 13.6875rem;
+
+  /* margin-top: 60px; for mobile */
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  line-height: 1.07;
+  color: var(--color-white);
+  text-transform: uppercase;
+}

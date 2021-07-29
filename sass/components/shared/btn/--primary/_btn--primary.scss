@@ -1,0 +1,28 @@
+/* Главная кнопка: фон - акцент,  цвет - белый #ffffff. + тень статическая */
+.btn--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 12.5rem; /* 200px */
+  max-width: 18.75rem;
+  min-height: 3.125rem; /* 50px */
+  padding-top: 0.5625rem; /* 9px */
+  padding-right: 1.6875rem; /* 27px */
+  padding-bottom: 0.5625rem; /* 9px */
+  padding-left: 1.75rem; /* 28px */
+
+  font-weight: 700;
+  line-height: 1.875; /* identical to box height, or 187% */
+  color: var(--color-white);
+  letter-spacing: 0.06em;
+
+  background-color: var(--color-accent);
+  box-shadow: var(--shadow-hero-btn);
+
+  // Hero-Button (Hover)
+  &:focus,
+  &:hover {
+    @extend %btn--primary-active;
+  }
+}

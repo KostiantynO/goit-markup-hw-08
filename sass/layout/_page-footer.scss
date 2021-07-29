@@ -1,122 +1,16 @@
 /* ------------------------------------------------------ */
 /* || -------------- START "ПОДВАЛ САЙТА" --------------- */
 /* ------------------------------------------------------ */
+
 .page-footer {
   padding-top: 3.75rem;
   padding-bottom: 3.75rem;
   background-color: var(--color-bg-hero);
-}
 
-/* START Форма подписки на рассылку */
-.subscribe-form {
-  text-align: center; /* for mobile only */
-
-  @media screen and (min-width: $tablet) {
-    text-align: unset;
+  @media screen and (max-width: $upToTablet) {
+    text-align: center;
   }
 }
-
-.page-footer__subscribe-form {
-  margin: 3.75rem auto 0; /* mt60, ml=mr=auto, mb0; for mobile */
-
-  @include media($tablet, $viewPort, $mr: 0, $ml: 5.8125rem); /* ml93 for desktop only */
-}
-
-/* Подпишитесь на рассылку */
-/* .subscribe-form__title { mb20 w219 h16 fw700 fz14 lh15 lsp0.03em ttup c#FFF } */
-.subscribe-form__title {
-  display: block;
-  min-width: 13.6875rem;
-
-  /* margin-top: 60px; for mobile */
-  margin-bottom: 20px;
-
-  font-weight: 700;
-  line-height: 1.07;
-  color: var(--color-white);
-  text-transform: uppercase;
-}
-
-.subscribe__group {
-  @media screen and (min-width: $tablet) {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
-.subscribe-form__field {
-  border: none;
-}
-
-/* { mr12 mb94 w358 x h50  brad4 bdr1px solid rgba(255, 255, 255, 0.3); */
-.subscribe-input {
-  position: relative;
-
-  min-width: 22.375rem; /* 358px */
-  min-height: 3.125rem; /* 50px */
-  padding: 0.75rem; /* 12px */
-  margin-right: 0.75rem; /* margin-top: var(--uni-margin-med); for mobile */
-
-  font-size: 1rem;
-  line-height: 1.25rem;
-  color: #ffffff;
-  letter-spacing: 0.03em;
-
-  background-color: var(--color-bg-hero);
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-
-  /* E-mail */
-  /* { pt=pb=15 pl=16 w47 h20 fz16 lh20 df alic lsp0.03em crgba(255, 255, 255, 0.6); } */
-  &::placeholder {
-    display: flex;
-    align-items: center;
-    min-height: 1.25rem; /* 20px */
-    padding: 0.9375rem 0 0.9375rem 1rem;
-    font-size: 1rem; /* 16px */
-    line-height: 1.25rem; /* 20px */
-    color: rgba(255, 255, 255, 0.6);
-    letter-spacing: 0.03em;
-  }
-}
-
-/* Подписаться */
-.subscribe-btn {
-  @include media(0, $tablet, var(--uni-margin-med));
-
-  display: inline-flex;
-  align-items: center;
-
-  padding-top: 0.5625rem; /* 9px */
-  padding-right: 1.6875rem; /* 27px */
-  padding-bottom: 0.5625rem; /* 9px */
-  padding-left: 1.75rem; /* 28px */
-  /* margin-top: var(--uni-margin-med); for mobile */
-
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.875; /* = box */
-  letter-spacing: 0.06em;
-}
-
-.subscribe-btn .send-icon {
-  margin-left: 0.625rem;
-  fill: currentColor;
-  /* anchor */
-  animation: send-icon-return var(--time) var(--cubic) 1 backwards;
-
-  /* transform: rotate(-1deg) scale(1); */
-  transform-origin: top left;
-  transition: currentColor var(--time) var(--cubic);
-}
-
-.subscribe-btn:hover > .send-icon,
-.subscribe-btn:focus > .send-icon {
-  animation: send-icon-fly var(--time) var(--cubic) 1 forwards;
-}
-
-/* END Форма подписки на рассылку */
 
 /* ------------------------------------------------------ */
 /* || -------------- END "ПОДВАЛ САЙТА" ----------------- */

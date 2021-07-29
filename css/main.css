@@ -6,6 +6,10 @@
 /* || --------------- START "ПЕРЕМЕННЫЕ" ---------------- */
 /* ------------------------------------------------------ */
 :root {
+  /* || --------------- START "ТИПОГРАФИЯ" ---------------- */
+  --body-sans-serif: "Roboto", sans-serif;
+  --logo-sans-serif: "Raleway", sans-serif;
+  /* || ---------------- END "ТИПОГРАФИЯ" ----------------- */
   /* || ----------------- START "ПАЛИТРА" ----------------- */
   --color-text-primary: #212121;
   /* Основной текст #212121 (nav, h2, h3, filters-btn) */
@@ -27,10 +31,6 @@
   --shadow-hero-btn: 0 4px 4px rgba(0, 0, 0, 0.15);
   /* Тень Кнопки-героя (статическая) */
   /* || ------------------ END "ПАЛИТРА" ------------------ */
-  /* || --------------- START "ТИПОГРАФИЯ" ---------------- */
-  --body-sans-serif: "Roboto", sans-serif;
-  --logo-sans-serif: "Raleway", sans-serif;
-  /* || ---------------- END "ТИПОГРАФИЯ" ----------------- */
   /* || ----------------- START "ОТСТУПЫ" ----------------- */
   --mob: 480px;
   --tab: 768px;
@@ -269,6 +269,7 @@ p {
 
 .svg {
   display: inline-block;
+  outline: none;
 }
 
 .tooltip {
@@ -292,12 +293,6 @@ p {
 /* ------------------------------------------------------ */
 /* || -------------- END "ОБЩИЕ НАСТРОЙКИ" -------------- */
 /* ------------------------------------------------------ */
-.page-html,
-.portfolio-body,
-.studio-body {
-  overflow-x: hidden !important;
-}
-
 .page-html {
   overflow-y: scroll;
 }
@@ -614,13 +609,21 @@ p {
 /* Главная кнопка: фон - акцент,  цвет - белый #ffffff. + тень статическая */
 .btn--primary {
   display: inline-flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   min-width: 12.5rem;
   /* 200px */
   max-width: 18.75rem;
   min-height: 3.125rem;
   /* 50px */
+  padding-top: 0.5625rem;
+  /* 9px */
+  padding-right: 1.6875rem;
+  /* 27px */
+  padding-bottom: 0.5625rem;
+  /* 9px */
+  padding-left: 1.75rem;
+  /* 28px */
   font-weight: 700;
   line-height: 1.875;
   /* identical to box height, or 187% */
@@ -635,7 +638,6 @@ p {
 .btn--secondary {
   color: var(--color-text-primary);
   background-color: var(--color-bg-btn-secondary);
-  box-shadow: none;
   transition: color var(--time) var(--cubic), box-shadow var(--time) var(--cubic);
 }
 
@@ -1075,329 +1077,6 @@ p {
   fill: var(--color-accent);
 }
 
-/* Studio - Modal */
-/* Overlay */
-.backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: var(--zi-7);
-  padding: 0 15px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic), visibility var(--time) var(--cubic), background-color var(--time) var(--cubic);
-  /* Fading is smooth after deleting excessive is-hidden parts. */
-}
-
-.backdrop.is-hidden {
-  overflow: hidden;
-}
-
-/* ------------------------------------------------------ */
-/* || ------------- START "МОДАЛЬНОЕ ОКНО" -------------- */
-/* ------------------------------------------------------ */
-/* Modal window */
-/* mobile.modal  { w450 x h609 mt93   ml=mr15  mb94  p40 } */
-/* tablet.modal  { w450 x h609 mt208  ml=mr159 mb207 p40 } */
-/* desktop.modal { w528 x h581 mt221  ml=mr536 mb222 p40 } */
-.modal {
-  position: relative;
-  /* need to catch close button */
-  width: clamp(15.625rem, 100%, 33rem);
-  /* max w528px */
-  /* min-mobile w250px, min-w450px, min-h609px */
-  padding: 2.5rem;
-  margin: 93px auto 94px;
-  overflow: hidden;
-  background-color: var(--color-white);
-  /* Form bg */
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px rgba(0, 0, 0, 0.2);
-  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic);
-}
-
-@media (min-width: 480px) {
-  .modal {
-    margin-top: calc(40vw - 99px);
-    margin-bottom: calc(39.24vw - 94px);
-  }
-}
-
-@media (min-width: 768px) {
-  .modal {
-    margin-top: calc(3.01vw + 185px);
-    margin-bottom: calc(3.47vw + 180px);
-  }
-}
-
-@media (min-width: 1200px) {
-  .modal {
-    margin-top: 221px;
-    margin-bottom: 222px;
-  }
-}
-
-.backdrop.is-hidden > .modal {
-  opacity: 0;
-  transform: scale(0.5);
-}
-
-.modal-close-btn-container {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-}
-
-/* Ellipse 1 */
-.modal-close-btn-container > .modal-close-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 1.875rem;
-  /* 30px */
-  max-width: 1.875rem;
-  min-height: 1.875rem;
-  max-height: 1.875rem;
-  color: var(--color-black);
-  padding: 0;
-  background-color: var(--color-white);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-}
-
-.modal-close-icon {
-  fill: currentColor;
-  transition: fill var(--time) var(--cubic);
-}
-
-.modal-close-btn-container > .modal-close-btn:hover,
-.modal-close-btn-container > .modal-close-btn:focus {
-  color: var(--color-accent);
-  background-color: var(--color-white);
-  box-shadow: none;
-}
-
-/* ------------------------------------------------------ */
-/* || -------------- END "МОДАЛЬНОЕ ОКНО" --------------- */
-/* ------------------------------------------------------ */
-/* ------------------------------------------------------ */
-/* || ------------- START "СТУДИЯ - ФОРМА" -------------- */
-/* .form {} */
-/* mb12 w370 x h60 fw700 fz20 lh30 talcenter lsp0.03em c#212121 */
-.form-title {
-  display: block;
-  margin-bottom: calc(0.75rem + 1.125rem);
-  /* 12px */
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.5;
-  text-align: center;
-}
-
-/* mb10 after input */
-.form-field {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.user-info > .form-field + .form-field {
-  margin-top: 1.75rem;
-  /* 10px + 14px + 4px */
-}
-
-.user-comment {
-  margin-top: 10px;
-}
-
-/* name|tel|email|comment { mb4 fz12 lh14 lsp0.01em c#757575 } */
-.form-label {
-  margin-bottom: 0.25rem;
-  /* 4px */
-  font-size: 0.75rem;
-  /* 12px */
-  line-height: 1.17;
-  letter-spacing: 0.01em;
-  color: var(--color-text-secondary);
-  cursor: pointer;
-  transition: transform var(--time) var(--cubic);
-}
-
-/* name|tel|email { fz16 lh16  pl42 pt=pb12 pr=12 w370 x h40 brrad4 brdr:1px solid rgba(33, 33, 33, 0.2); } */
-.form-input {
-  height: 2.5rem;
-  /* 40px */
-  padding: 0.75rem 0.75rem 0.75rem 2.625rem;
-  line-height: 1;
-  color: var(--color-text-primary);
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 0.25rem;
-  transition: border-color var(--time) var(--cubic);
-}
-
-.form-input:focus,
-.form-comment:focus {
-  border-color: var(--color-accent);
-}
-
-.form-input::placeholder {
-  margin-bottom: 0.25rem;
-  /* 4px */
-  font-size: 0.75rem;
-  /* 12px */
-  line-height: 1.17;
-  letter-spacing: 0.01em;
-  color: var(--color-text-secondary);
-  opacity: 0;
-  transition: opacity var(--time) var(--cubic);
-}
-
-.form-input:focus::placeholder {
-  opacity: 1;
-}
-
-.user-info .svg-wrapper,
-.user-info .form-label {
-  position: absolute;
-  top: 50%;
-  display: inline-flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  margin-bottom: 0;
-  pointer-events: none;
-  transform: translateY(-50%);
-}
-
-.user-info .svg-wrapper {
-  left: 0%;
-  padding: 0.6875rem 0 0.6875rem 0.75rem;
-}
-
-.user-info .form-label {
-  left: 0%;
-  padding: 0.75rem 0.75rem 0.75rem 2.625rem;
-}
-
-.form-input:not(:placeholder-shown) + .form-label,
-.form-input:focus + .form-label {
-  transform: translate(-2.625rem, calc(-50% - 31px));
-}
-
-.form-input:focus ~ .svg-wrapper {
-  fill: var(--color-accent);
-}
-
-/* { mr12 w18 x h18 pt=pb=11 pl12 pr340 } */
-.form-svg {
-  transition: fill var(--time) var(--cubic);
-}
-
-.form-input:focus + label {
-  fill: var(--color-accent);
-}
-
-/* textarea { mb20 p12px16px w370 x h120 fz14 lh16 lsp0.01em c: rgba(117, 117, 117, 0.5);  brd: 1px solid rgba(33, 33, 33, 0.2); b-rad4 } */
-.form-comment {
-  height: 7.5rem;
-  padding: 0.75rem 1rem;
-  line-height: 1.14;
-  color: var(--color-text-primary);
-  letter-spacing: 0.01em;
-  resize: none;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 0.25rem;
-  transition: border-color var(--time) var(--cubic);
-}
-
-.form-comment::placeholder {
-  color: rgba(117, 117, 117, 0.5);
-}
-
-/* .group.policy { df aifs mb30} */
-.policy {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  margin-top: 20px;
-  justify-content: center;
-}
-
-/* .form-input-checkbox { mr8 pt4 pr2 pb3 pl3  w16 x h15 c#212121} */
-.custom-checkbox {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 1rem;
-  max-width: 1rem;
-  min-height: 0.9375rem;
-  max-height: 0.9375rem;
-  margin-right: 0.21rem;
-  background-color: var(--color-white);
-  border-radius: 0.125rem;
-  border: 0.125rem solid var(--color-text-primary);
-  transition: background-color var(--time) var(--cubic), color var(--time) var(--cubic), border var(--time) var(--cubic), outline-color var(--time) var(--cubic);
-}
-
-.form-input-checkbox:focus + .form-label > .custom-checkbox {
-  /* border-color: var(--color-accent); */
-}
-
-.form-input-checkbox:focus:not(:checked) + .form-label > .custom-checkbox {
-  box-shadow: 0 0 4px 4px rgba(33, 150, 243, 0.5);
-}
-
-.form-input-checkbox:focus:checked + .form-label > .custom-checkbox {
-  box-shadow: 0 0 3px 2px rgba(33, 150, 243, 0.5);
-}
-
-/* .form-label:hover > .custom-checkbox */
-.form-input-checkbox:checked + .form-label > .custom-checkbox {
-  background-color: var(--color-accent);
-  border-color: transparent;
-}
-
-/* .form-input-checkbox > icon { w11.4 h8.4 bg#fff brd0.2px solid #fff; } */
-.custom-checkbox > .form-svg {
-  color: var(--color-white);
-  pointer-events: none;
-  visibility: hidden;
-  opacity: 0;
-  fill: currentColor;
-  transition: visibility var(--time) var(--cubic), opacity var(--time) var(--cubic);
-}
-
-.form-input-checkbox:checked + .form-label > .custom-checkbox > .form-svg {
-  pointer-events: auto;
-  visibility: visible;
-  opacity: 1;
-}
-
-/* .form-label-checkbox {w346 x h14 fz12 lh14 lsp0.03em c#757575 } */
-/* 12 / 480  = 0.025
-   12 / 768  = 0.015625
-   14 / 1600 = 0.00875 */
-/* 14 / 480  = 0.029167
-   14 / 768  = 1.823vw
-   24 / 1600 = 0.015 */
-.policy > .form-label {
-  font-size: clamp(12px, 2.5vw, 14px);
-  line-height: clamp(14px, 2.9vw, 24px);
-  letter-spacing: 0.03em;
-  color: var(--color-text-secondary);
-}
-
-.form-label > .tac-link {
-  color: var(--color-accent);
-}
-
-.submit-btn-wrapper {
-  margin-top: 30px;
-  text-align: center;
-}
-
-/* || -------------- END "СТУДИЯ - ФОРМА" --------------- */
-/* ------------------------------------------------------ */
 /* Portfolio - Filters */
 /* ------------------------------------------------------ */
 /* || ------- START "ПОРТФОЛИО - ФИЛЬТРЫ-КНОПКИ" -------- */
@@ -1583,6 +1262,544 @@ p {
   overflow-y: auto;
 }
 
+/* Studio - Page-footer */
+/* START Футер-адрес */
+/* .page-footer__address-wrapper { } */
+.address {
+  font-style: inherit;
+}
+
+.page-footer__address {
+  margin-top: var(--uni-margin-small);
+}
+
+/* .address-list-item { } */
+.address-list__item:not(:last-child) {
+  margin-bottom: 9px;
+  /* Нижний отступ между ссылками в адресе */
+}
+
+/* г. Киев, пр-т Леси Украинки, 26; LH24px; */
+.address-card__map-pointer {
+  position: relative;
+  /* from browser - font-weight: 400; from .page-footer__address - font-style: normal; */
+  color: var(--color-white);
+}
+
+/* info@example.com, +38 099 111 11 11, h21px */
+.address-card__contact {
+  position: relative;
+  /* from browser - font-weight: 400; from .page-footer__address - font-style: normal; */
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* END Футер-адрес */
+/* START "Футер cоц. ссылки" */
+.page-footer__social-container {
+  margin: 3.75rem auto 0;
+  /* for mobile */
+}
+
+@media screen and (min-width: 1200px) {
+  .page-footer__social-container {
+    text-align: unset;
+    margin-top: 0;
+    margin-left: 4.375rem;
+    /* ml70px from $mobile+1px */
+  }
+}
+
+/* присоединяйтесь, h16.41px */
+.page-footer__social-title {
+  margin-bottom: var(--uni-margin-med);
+  font-weight: 700;
+  line-height: 1.17;
+  /* from body font-size: 14px; */
+  color: var(--color-white);
+  text-transform: uppercase;
+  text-align: center;
+  /* for mobile and tablet only */
+}
+
+@media screen and (min-width: 768px) {
+  .page-footer__social-title {
+    text-align: unset;
+  }
+}
+
+.page-footer__social-link {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.page-footer__social-icon {
+  fill: var(--color-white);
+}
+
+/* END "Футер cоц. ссылки" */
+/* Studio - Page-footer - subscribe-form */
+/* START Форма подписки на рассылку */
+.subscribe-form {
+  flex-grow: 1;
+  max-width: 35.625rem;
+  /* 570px */
+}
+
+.page-footer__subscribe-form {
+  margin-top: 3.75rem;
+  /* m60 auto 0; for mobile */
+}
+
+@media screen and (min-width: 1200px) {
+  .page-footer__subscribe-form {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 5.8125rem;
+    /* m0 0 0 93; for desktop only */
+  }
+}
+
+/* END Форма подписки на рассылку */
+/* Подпишитесь на рассылку */
+/* .subscribe-form__title { mb20 w219 h16 fw700 fz14 lh15 lsp0.03em ttup c#FFF } */
+.subscribe-form__title {
+  display: block;
+  min-width: 13.6875rem;
+  /* margin-top: 60px; for mobile */
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.07;
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.subscribe-form__group {
+  flex-grow: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .subscribe-form__group {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.subscribe-form__field {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1200px) {
+  .subscribe-form__field {
+    margin-right: 0.75rem;
+  }
+}
+
+/* { mr12 mb94 w358 x h50  brad4 bdr1px solid rgba(255, 255, 255, 0.3); */
+.subscribe-form__input {
+  position: relative;
+  flex-grow: 1;
+  max-width: 450px;
+  min-height: 3.125rem;
+  /* 50px */
+  max-height: 3.125rem;
+  /* 50px */
+  padding: 0.75rem;
+  /* 12px */
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+  background-color: var(--color-bg-hero);
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  /* E-mail */
+  /* { pt=pb=15 pl=16 w47 h20 fz16 lh20 df alic lsp0.03em crgba(255, 255, 255, 0.6); } */
+}
+
+.subscribe-form__input::placeholder {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.25rem;
+  /* 20px */
+  padding: 0.9375rem 0 0.9375rem 1rem;
+  font-size: 1rem;
+  /* 16px */
+  line-height: 1.25rem;
+  /* 20px */
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.03em;
+}
+
+/* Подписаться */
+.subscribe-btn {
+  /* mt20; mobile */
+}
+
+@media screen and (min-width: 0) and (max-width: 768px) {
+  .subscribe-btn {
+    margin-top: var(--uni-margin-med);
+    margin-right: initial;
+    margin-bottom: initial;
+    margin-left: initial;
+  }
+}
+
+.subscribe-btn .subscribe-btn__send-icon {
+  margin-left: 0.625rem;
+  fill: currentColor;
+  /* anchor */
+  animation: send-icon-return var(--time) var(--cubic) 1 backwards;
+  /* transform: rotate(-1deg) scale(1); */
+  transform-origin: top left;
+  transition: currentColor var(--time) var(--cubic);
+}
+
+.subscribe-btn:hover .subscribe-btn__send-icon,
+.subscribe-btn:focus .subscribe-btn__send-icon {
+  animation: send-icon-fly var(--time) var(--cubic) 1 forwards;
+}
+
+/* Studio - Modal */
+/* Overlay */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--zi-7);
+  padding: 0 15px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic), visibility var(--time) var(--cubic), background-color var(--time) var(--cubic);
+  /* Fading is smooth after deleting excessive is-hidden parts. */
+}
+
+.backdrop.is-hidden {
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------ */
+/* || ------------- START "МОДАЛЬНОЕ ОКНО" -------------- */
+/* ------------------------------------------------------ */
+/* Modal window */
+/* mobile.modal  { w450 x h609 mt93   ml=mr15  mb94  p40 } */
+/* tablet.modal  { w450 x h609 mt208  ml=mr159 mb207 p40 } */
+/* desktop.modal { w528 x h581 mt221  ml=mr536 mb222 p40 } */
+.modal {
+  position: relative;
+  /* need to catch close button */
+  width: clamp(15.625rem, 100%, 33rem);
+  /* max w528px */
+  /* min-mobile w250px, min-w450px, min-h609px */
+  padding: 2.5rem;
+  margin: 93px auto 94px;
+  overflow: hidden;
+  background-color: var(--color-white);
+  /* Form bg */
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic);
+}
+
+@media (min-width: 480px) {
+  .modal {
+    margin-top: calc(40vw - 99px);
+    margin-bottom: calc(39.24vw - 94px);
+  }
+}
+
+@media (min-width: 768px) {
+  .modal {
+    margin-top: calc(3.01vw + 185px);
+    margin-bottom: calc(3.47vw + 180px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .modal {
+    margin-top: 221px;
+    margin-bottom: 222px;
+  }
+}
+
+.backdrop.is-hidden > .modal {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.modal-close-btn-container {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+/* Ellipse 1 */
+.modal-close-btn-container > .modal-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.875rem;
+  /* 30px */
+  max-width: 1.875rem;
+  min-height: 1.875rem;
+  max-height: 1.875rem;
+  color: var(--color-black);
+  padding: 0;
+  background-color: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.modal-close-icon {
+  fill: currentColor;
+  transition: fill var(--time) var(--cubic);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  color: var(--color-accent);
+  background-color: var(--color-white);
+}
+
+/* ------------------------------------------------------ */
+/* || -------------- END "МОДАЛЬНОЕ ОКНО" --------------- */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* || ------------- START "СТУДИЯ - ФОРМА" -------------- */
+/* .form {} */
+/* mb10 after input */
+.hero-form__field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info__field:not(:first-child) {
+  margin-top: 1.75rem;
+  /* 28px = 10px + 14px + 4px */
+}
+
+.hero-form__user-comment {
+  margin-top: 10px;
+}
+
+/* name|tel|email { fz16 lh16  pl42 pt=pb12 pr=12 w370 x h40 brrad4 brdr:1px solid rgba(33, 33, 33, 0.2); } */
+.hero-form__input {
+  height: 2.5rem;
+  /* 40px */
+  padding: 0.75rem 0.75rem 0.75rem 2.625rem;
+  line-height: 1;
+  color: var(--color-text-primary);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 0.25rem;
+  transition: border-color var(--time) var(--cubic);
+}
+
+.hero-form__input:required:not(:placeholder-shown),
+.hero-form__input:focus,
+.form-comment:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 3px 2px rgba(33, 150, 243, 0.5);
+  outline: none;
+}
+
+.modal-close-btn:focus {
+  box-shadow: 0 0 3px 2px rgba(33, 150, 243, 0.5);
+  outline: none;
+}
+
+.hero-form__input::placeholder {
+  margin-bottom: 0.25rem;
+  /* 4px */
+  font-size: 0.75rem;
+  /* 12px */
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--color-text-secondary);
+  opacity: 0;
+  transition: opacity var(--time) var(--cubic);
+}
+
+.hero-form__input:focus::placeholder {
+  opacity: 1;
+}
+
+/* name|tel|email|comment { mb4 fz12 lh14 lsp0.01em c#757575 } */
+.hero-form__label {
+  margin-bottom: 0.25rem;
+  /* 4px */
+  font-size: 0.75rem;
+  /* 12px */
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: transform var(--time) var(--cubic);
+}
+
+.hero-form__input:focus + .hero-form__label {
+  color: var(--color-accent);
+}
+
+@media screen and (min-width: 768px) {
+  .hero-form__input:focus + .hero-form__label {
+    color: var(--color-text-secondary);
+  }
+}
+
+.user-info .svg-wrapper,
+.user-info .hero-form__label {
+  position: absolute;
+  top: 50%;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.user-info .svg-wrapper {
+  left: 0%;
+  padding: 0.6875rem 0 0.6875rem 0.75rem;
+}
+
+.user-info .hero-form__label {
+  left: 0%;
+  padding: 0.75rem 0.75rem 0.75rem 2.625rem;
+}
+
+.hero-form__input:not(:placeholder-shown) + .hero-form__label,
+.hero-form__input:focus + .hero-form__label {
+  transform: translate(-2.625rem, calc(-50% - 31px));
+}
+
+.hero-form__input:focus ~ .svg-wrapper {
+  fill: var(--color-accent);
+}
+
+/* { mr12 w18 x h18 pt=pb=11 pl12 pr340 } */
+.form-svg {
+  transition: fill var(--time) var(--cubic);
+}
+
+.hero-form__input:focus + label {
+  fill: var(--color-accent);
+}
+
+/* textarea { mb20 p12px16px w370 x h120 fz14 lh16 lsp0.01em c: rgba(117, 117, 117, 0.5);  brd: 1px solid rgba(33, 33, 33, 0.2); b-rad4 } */
+.form-comment {
+  height: 7.5rem;
+  padding: 0.75rem 1rem;
+  line-height: 1.14;
+  color: var(--color-text-primary);
+  letter-spacing: 0.01em;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 0.25rem;
+  transition: border-color var(--time) var(--cubic);
+}
+
+.form-comment::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+/* .group.policy { df aifs mb30} */
+.policy {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+/* .hero-form__input-checkbox { mr8 pt4 pr2 pb3 pl3  w16 x h15 c#212121} */
+.custom-checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 1rem;
+  max-width: 1rem;
+  min-height: 0.9375rem;
+  max-height: 0.9375rem;
+  margin-right: 0.21rem;
+  background-color: var(--color-white);
+  border-radius: 0.125rem;
+  border: 0.125rem solid var(--color-text-primary);
+  transition: background-color var(--time) var(--cubic), color var(--time) var(--cubic), border var(--time) var(--cubic), outline-color var(--time) var(--cubic);
+}
+
+.hero-form__input-checkbox:focus + .hero-form__label > .custom-checkbox {
+  /* border-color: var(--color-accent); */
+}
+
+.hero-form__input-checkbox:focus:not(:checked) + .hero-form__label > .custom-checkbox {
+  box-shadow: 0 0 4px 4px rgba(33, 150, 243, 0.5);
+}
+
+.hero-form__input-checkbox:focus:checked + .hero-form__label > .custom-checkbox {
+  box-shadow: 0 0 3px 2px rgba(33, 150, 243, 0.5);
+}
+
+/* .hero-form__label:hover > .custom-checkbox */
+.hero-form__input-checkbox:checked + .hero-form__label > .custom-checkbox {
+  background-color: var(--color-accent);
+  border-color: transparent;
+}
+
+/* .hero-form__input-checkbox > icon { w11.4 h8.4 bg#fff brd0.2px solid #fff; } */
+.custom-checkbox > .form-svg {
+  color: var(--color-white);
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  fill: currentColor;
+  transition: visibility var(--time) var(--cubic), opacity var(--time) var(--cubic);
+}
+
+.hero-form__input-checkbox:checked + .hero-form__label > .custom-checkbox > .form-svg {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* .hero-form__label-checkbox {w346 x h14 fz12 lh14 lsp0.03em c#757575 } */
+/* 12 / 480  = 0.025
+   12 / 768  = 0.015625
+   14 / 1600 = 0.00875 */
+/* 14 / 480  = 0.029167
+   14 / 768  = 1.823vw
+   24 / 1600 = 0.015 */
+.policy > .hero-form__label {
+  font-size: clamp(12px, 2.5vw, 14px);
+  line-height: clamp(14px, 2.9vw, 24px);
+  letter-spacing: 0.03em;
+  color: var(--color-text-secondary);
+}
+
+.hero-form__label > .tac-link {
+  color: var(--color-accent);
+}
+
+.submit-btn-wrapper {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* || -------------- END "СТУДИЯ - ФОРМА" --------------- */
+/* ------------------------------------------------------ */
+/* mb12 w370 x h60 fw700 fz20 lh30 talcenter lsp0.03em c#212121 */
+.hero-form__title {
+  display: block;
+  margin-bottom: 1.875rem;
+  /* 30px */
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+}
+
 /* ------------------------------------------------------ */
 /* || ---------------- END "COMPONENTS" ----------------- */
 /* ------------------------------------------------------ */
@@ -1678,216 +1895,12 @@ p {
   background-color: var(--color-bg-hero);
 }
 
-/* START Футер-адрес */
-/* .page-footer__address-wrapper { } */
-.address {
-  font-style: inherit;
-}
-
-.page-footer__address {
-  margin-top: var(--uni-margin-small);
-}
-
-/* .address-list-item { } */
-.address-list__item:not(:first-child) {
-  margin-top: 9px;
-  /* Верхний отступ между ссылками в адресе */
-}
-
-/* г. Киев, пр-т Леси Украинки, 26; LH24px; */
-.address-card__map-pointer {
-  position: relative;
-  /* from browser - font-weight: 400; from .page-footer__address - font-style: normal; */
-  color: var(--color-white);
-}
-
-/* info@example.com, +38 099 111 11 11, h21px */
-.address-card__contact {
-  position: relative;
-  /* from browser - font-weight: 400; from .page-footer__address - font-style: normal; */
-  color: rgba(255, 255, 255, 0.6);
-}
-
-/* END Футер-адрес */
-/*
- *
-*/
-/* START "Футер cоц. ссылки" */
-.page-footer__social-container {
-  /* ml70px from $mobile+1px */
-  margin: 3.75rem auto 0;
-  /* for mobile */
-}
-
-@media screen and (min-width: 481px) and (max-width: 100vw) {
-  .page-footer__social-container {
-    margin-top: 0;
-    margin-right: initial;
-    margin-bottom: initial;
-    margin-left: 4.375rem;
+@media screen and (max-width: 767px) {
+  .page-footer {
+    text-align: center;
   }
 }
 
-/* присоединяйтесь, h16.41px */
-.page-footer__social-title {
-  margin-bottom: var(--uni-margin-med);
-  font-weight: 700;
-  line-height: 1.17;
-  /* from body font-size: 14px; */
-  color: var(--color-white);
-  text-transform: uppercase;
-  text-align: center;
-  /* for mobile and tablet only */
-}
-
-@media screen and (min-width: 769px) {
-  .page-footer__social-title {
-    text-align: unset;
-  }
-}
-
-.page-footer__social-link {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.page-footer__social-icon {
-  fill: var(--color-white);
-}
-
-/* END "Футер cоц. ссылки" */
-/* START Форма подписки на рассылку */
-.page-footer__subscribe-form {
-  margin: 3.75rem auto 0;
-  /* for mobile */
-  /* 93px for desktop only, mobile = 0; */
-}
-
-@media screen and (min-width: 768px) and (max-width: 100vw) {
-  .page-footer__subscribe-form {
-    margin-top: initial;
-    margin-right: 0;
-    margin-bottom: initial;
-    margin-left: 5.8125rem;
-  }
-}
-
-.subscribe-form {
-  text-align: center;
-  /* for mobile only */
-}
-
-@media screen and (min-width: 481px) {
-  .subscribe-form {
-    text-align: unset;
-  }
-}
-
-/* Подпишитесь на рассылку */
-/* .subscribe-form__title { mb20 w219 h16 fw700 fz14 lh15 lsp0.03em ttup c#FFF } */
-.subscribe-form__title {
-  display: block;
-  min-width: 13.6875rem;
-  /* margin-top: 60px; for mobile */
-  margin-bottom: 20px;
-  font-weight: 700;
-  line-height: 1.07;
-  color: var(--color-white);
-  text-transform: uppercase;
-}
-
-@media screen and (min-width: 481px) {
-  .subscribe__group {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
-.subscribe-form__field {
-  border: none;
-}
-
-/* { mr12 mb94 w358 x h50  brad4 bdr1px solid rgba(255, 255, 255, 0.3); */
-.subscribe-input {
-  position: relative;
-  min-width: 22.375rem;
-  /* 358px */
-  min-height: 3.125rem;
-  /* 50px */
-  padding: 0.75rem;
-  /* 12px */
-  margin-right: 0.75rem;
-  /* margin-top: var(--uni-margin-med); for mobile */
-  font-size: 1rem;
-  line-height: 1.25rem;
-  color: #ffffff;
-  letter-spacing: 0.03em;
-  background-color: var(--color-bg-hero);
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-  /* E-mail */
-  /* { pt=pb=15 pl=16 w47 h20 fz16 lh20 df alic lsp0.03em crgba(255, 255, 255, 0.6); } */
-}
-
-.subscribe-input::placeholder {
-  display: flex;
-  align-items: center;
-  min-height: 1.25rem;
-  /* 20px */
-  padding: 0.9375rem 0 0.9375rem 1rem;
-  font-size: 1rem;
-  /* 16px */
-  line-height: 1.25rem;
-  /* 20px */
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 0.03em;
-}
-
-/* Подписаться */
-.subscribe-btn {
-  display: inline-flex;
-  align-items: center;
-  padding-top: 0.5625rem;
-  /* 9px */
-  padding-right: 1.6875rem;
-  /* 27px */
-  padding-bottom: 0.5625rem;
-  /* 9px */
-  padding-left: 1.75rem;
-  /* 28px */
-  /* margin-top: var(--uni-margin-med); for mobile */
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.875;
-  /* = box */
-  letter-spacing: 0.06em;
-}
-
-@media screen and (min-width: 0) and (max-width: 768px) {
-  .subscribe-btn {
-    margin-top: var(--uni-margin-med);
-    margin-right: initial;
-    margin-bottom: initial;
-    margin-left: initial;
-  }
-}
-
-.subscribe-btn .send-icon {
-  margin-left: 0.625rem;
-  fill: currentColor;
-  /* anchor */
-  animation: send-icon-return var(--time) var(--cubic) 1 backwards;
-  /* transform: rotate(-1deg) scale(1); */
-  transform-origin: top left;
-  transition: currentColor var(--time) var(--cubic);
-}
-
-.subscribe-btn:hover > .send-icon,
-.subscribe-btn:focus > .send-icon {
-  animation: send-icon-fly var(--time) var(--cubic) 1 forwards;
-}
-
-/* END Форма подписки на рассылку */
 /* ------------------------------------------------------ */
 /* || -------------- END "ПОДВАЛ САЙТА" ----------------- */
 /* ------------------------------------------------------ */

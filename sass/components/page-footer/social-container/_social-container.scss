@@ -1,7 +1,12 @@
 /* START "Футер cоц. ссылки" */
 .page-footer__social-container {
-  @include media($mobile + 1px, $viewPort, $mt: 0, $ml: 4.375rem); /* ml70px from $mobile+1px */
   margin: 3.75rem auto 0; /* for mobile */
+
+  @media screen and (min-width: $desktop) {
+    text-align: unset;
+    margin-top: 0;
+    margin-left: 4.375rem; /* ml70px from $mobile+1px */
+  }
 }
 
 /* присоединяйтесь, h16.41px */
@@ -14,7 +19,7 @@
   text-transform: uppercase;
   text-align: center; /* for mobile and tablet only */
 
-  @media screen and (min-width: $tablet + 1px) {
+  @media screen and (min-width: $tablet) {
     text-align: unset;
   }
 }
