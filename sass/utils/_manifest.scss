@@ -170,11 +170,11 @@ scalingUp {}
 .hero-form__title
 .hero-form__field
 .user-info > .hero-form__field + .hero-form__field
-.hero-form__user-comment
+.hero-form__customer-comment
 .hero-form__label
 .hero-form__input
 .hero-form__input:focus,
-.form-comment:focus
+.hero-form__textarea:focus
 .hero-form__input::placeholder
 .user-info .svg-wrapper,
 .user-info .hero-form__label
@@ -185,8 +185,8 @@ scalingUp {}
 .hero-form__input:focus ~ .svg-wrapper
 .form-svg
 .hero-form__input:focus + label
-.form-comment
-.form-comment::placeholder
+.hero-form__textarea
+.hero-form__textarea::placeholder
 .policy
 .custom-checkbox
 .hero-form__input-checkbox:focus:not(:checked) + .hero-form__label > .custom-checkbox

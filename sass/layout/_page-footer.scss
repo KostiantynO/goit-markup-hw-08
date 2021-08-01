@@ -7,7 +7,7 @@
   padding-bottom: 3.75rem;
   background-color: var(--color-bg-hero);
 
-  @media screen and (max-width: $upToTablet) {
+  @include mq($end: $tablet) {
     text-align: center;
   }
 }

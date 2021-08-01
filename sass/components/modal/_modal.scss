@@ -24,19 +24,21 @@
   transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic);
 }
 
-@media (min-width: 480px) {
+@include mq($mobile) {
   .modal {
     margin-top: calc(40vw - 99px);
     margin-bottom: calc(39.24vw - 94px);
   }
 }
-@media (min-width: 768px) {
+
+@include mq($tablet) {
   .modal {
     margin-top: calc(3.01vw + 185px);
     margin-bottom: calc(3.47vw + 180px);
   }
 }
-@media (min-width: 1200px) {
+
+@include mq($desktop) {
   .modal {
     margin-top: 221px;
     margin-bottom: 222px;
@@ -83,6 +85,12 @@
 .modal-close-btn:focus {
   color: var(--color-accent);
   background-color: var(--color-white);
+}
+
+.modal-close-btn:focus {
+  box-shadow: 0 0 3px 2px rgba(33, 150, 243, 0.5);
+
+  outline: none;
 }
 
 /* ------------------------------------------------------ */

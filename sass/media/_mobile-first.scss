@@ -1,19 +1,9 @@
-// $upToMobile: 479px;
-// $mobile: 480px;
-// $upToTablet: 767px;
+// [0 - 479px], container width: 100%, responsive. // @include mq($end: $mobile) {}
 
-// [0 - 479px], container width: 100%, responsive.
-/* @media screen and (max-width: $upToMobile) { } */
-
-// [480px - ♾] - container width: 480px, adaptive.
-// @media screen and (min-width: $mobile) { .container { width: 480px; } }
+// [480px - ♾] - container width: 480px, adaptive. // @include mq($mobile) {.container { width: 480px; } }
 
 // [0 - 767px], hide.
-@media screen and (max-width: $upToTablet) {
-  .container {
-    max-width: 480px;
-  }
-
+@include mq($end: $tablet) {
   .nav__menu,
   .page-header__contacts-list,
   .features {
@@ -21,13 +11,10 @@
   }
 }
 
-// [480px - 767px] @media screen and (min-width: $mobile) and (max-width: $upToTablet) { }
-
-// $tablet: 768px;
-// $upToDesktop: 1199px;
+// [480px - 767px] // @include mq($mobile, $tablet) {}
 
 // [768px - ♾], Same as 768px, but container width is fixed at 768px, adaptive.
-@media screen and (min-width: $tablet) {
+@include mq($tablet) {
   .mobile-overlay,
   .btn-burger {
     display: none;
@@ -37,11 +24,9 @@
     margin-bottom: var(--uni-margin-min);
   }
 }
-// [768px - 1199px], for specific rules.
-// @media screen and (min-width: $tablet) and (max-width: $upToDesktop) { }
 
-// $desktop: 1200px;
-// $viewPort: 100vw;
+// [768px - 1199px], for specific rules.
+// @include mq($tablet, $desktop) {}
 
 // [1200px - ♾], container width: 1200px, adaptive.
-// @media screen and (min-width: $desktop) { }
+// @include mq($desktop) {}

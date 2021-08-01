@@ -1,7 +1,7 @@
 .subscribe-form__group {
-  @media screen and (min-width: $tablet) {
+  @include mq($tablet) {
     display: flex;
     flex-wrap: wrap;
+    flex-grow: 1;
   }
-  flex-grow: 1;
 }

@@ -3,11 +3,13 @@
 /* ------------------------------------------------------ */
 @import "./variables";
 @import "./breakpoints";
+@import "./functions";
 @import "./mixins";
+@import "./placeholders";
 @import "./colors";
 
-@import "./is-hidden";
 @import "./sr-only";
+@import "./is-hidden";
 @import "./site-testing";
 /* ------------------------------------------------------ */
 /* || ------------------- END "UTILS" ------------------- */

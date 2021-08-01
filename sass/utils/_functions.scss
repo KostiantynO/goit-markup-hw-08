@@ -1,0 +1,8 @@
+/* ------------------------- START "FUNCTIONS" ------------------------- */
+// || ---------- Converts px to rem ----------
+
+@function px2rem($val, $base: $base-fz) {
+  @return (($val / $base) * 1rem);
+}
+
+/* -------------------------- END "FUNCTIONS" -------------------------- */

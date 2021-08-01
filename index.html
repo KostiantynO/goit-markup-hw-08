@@ -1194,27 +1194,30 @@
             <span class="tooltip sr-only" id="modal-close-id-label">Закрыть</span>
           </button>
         </div>
+
         <!-- Контактная форма (Form) -->
         <form class="form js-speaker-form">
           <b class="hero-form__title" id="hero-form__title-id" data-modal-title>
             Оставьте свои данные, мы вам перезвоним</b
           >
+
           <!-- Вводим имя, телефон и почту (Inputs) -->
-          <div class="group user-info">
-            <div class="hero-form__field user-info__field">
+          <div class="group user-info hero-form__user-info">
+            <label class="hero-form__field user-info__field" aria-label="Ваше имя">
+              <span class="hero-form__label">Имя</span>
+
               <input
                 class="hero-form__input"
-                id="user-name-id"
                 name="user-name"
+                data-modal-input
                 data-placeholder="Иван Иванович"
                 type="text"
                 title="Ваше имя, до 50-и символов"
                 placeholder=" "
                 required
                 maxlength="50"
-                data-modal-input
               />
-              <label class="hero-form__label" for="user-name-id" aria-label="Ваше имя">Имя</label>
+
               <div class="svg-wrapper">
                 <!-- 18x18 -->
                 <svg
@@ -1227,12 +1230,15 @@
                   <use href="./images/icomoon-svgomg/icons.svg#icon-person"></use>
                 </svg>
               </div>
-            </div>
-            <div class="hero-form__field user-info__field">
+            </label>
+
+            <label class="hero-form__field user-info__field" aria-label="Ваш телефон">
+              <span class="hero-form__label">Телефон</span>
+
               <input
                 class="hero-form__input"
-                id="user-tel-id"
                 name="user-tel"
+                data-modal-input
                 data-placeholder="0123456789"
                 type="tel"
                 title="Ваш мобильный номер, 0123456789"
@@ -1240,11 +1246,8 @@
                 required
                 pattern="[0-9 ]{10}"
                 maxlength="10"
-                data-modal-input
               />
-              <label class="hero-form__label" for="user-tel-id" aria-label="Ваш телефон">
-                Телефон
-              </label>
+
               <div class="svg-wrapper">
                 <!-- 18x18 -->
                 <svg
@@ -1257,23 +1260,23 @@
                   <use href="./images/icomoon-svgomg/icons.svg#icon-phone"></use>
                 </svg>
               </div>
-            </div>
-            <div class="hero-form__field user-info__field">
+            </label>
+
+            <label class="hero-form__field user-info__field" aria-label="Ваша почта">
+              <span class="hero-form__label">Почта</span>
+
               <input
                 class="hero-form__input"
-                id="user-email-id"
                 name="user-email"
+                data-modal-input
                 data-placeholder="your@email.com"
                 type="email"
                 title="your@email.com, до 64-х символов"
                 maxlength="64"
                 placeholder=" "
                 required
-                data-modal-input
               />
-              <label class="hero-form__label" for="user-email-id" aria-label="Ваша почта"
-                >Почта</label
-              >
+
               <div class="svg-wrapper">
                 <!-- 18x18 -->
                 <svg
@@ -1286,48 +1289,49 @@
                   <use href="./images/icomoon-svgomg/icons.svg#icon-email"></use>
                 </svg>
               </div>
-            </div>
+            </label>
           </div>
+
           <!-- Оставляем комментарий -->
-          <div class="hero-form__field hero-form__user-comment">
-            <label class="hero-form__label" for="comment-id">Комментарий</label>
+          <label class="hero-form__field hero-form__customer-comment">
+            <span class="hero-form__label">Комментарий </span>
+
             <textarea
-              class="form-comment"
-              id="comment-id"
+              class="hero-form__textarea"
               name="comment"
               placeholder="Введите текст"
               rows="10"
             ></textarea>
-          </div>
+          </label>
+
           <!-- Подтверждаем политику конфиденциальности (checkbox) -->
-          <div class="group policy">
+
+          <label class="group policy">
             <input
               class="hero-form__input-checkbox sr-only"
-              id="policy-id"
               name="policy"
               type="checkbox"
               value="accepted"
               required
             />
-            <label class="hero-form__label" for="policy-id"
-              ><div
-                class="custom-checkbox"
-                title="Пожалуйста, установите этот флажок, если Вы хотите продолжить."
-              >
-                <svg
-                  class="form-svg check-icon"
-                  aria-hidden="true"
-                  tabindex="-1"
-                  width=" 11.4"
-                  height="8.4"
-                >
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-check"></use>
-                </svg>
-              </div>
-              Соглашаюсь с рассылкой и принимаю
+
+            <div
+              class="custom-checkbox"
+              title="Пожалуйста, установите этот флажок, если Вы хотите продолжить."
+              aria-hidden="true"
+            >
+              <svg class="form-svg check-icon" tabindex="-1" width=" 11.4" height="8.4">
+                <use href="./images/icomoon-svgomg/icons.svg#icon-check"></use>
+              </svg>
+            </div>
+
+            <span class="hero-form__label policy__label"
+              >Соглашаюсь с рассылкой и принимаю
+
               <a class="tac-link" href="#0">Условия договора</a>
-            </label>
-          </div>
+            </span>
+          </label>
+
           <!-- Отправляем форму (Btn) -->
           <div class="group submit-btn-wrapper">
             <button class="form-submit-btn btn btn--primary" type="submit">
@@ -1346,6 +1350,6 @@
     <script src="./js/form.min.js"></script>
 
     <!-- Скрипт держит фокус в модальном окне -->
-    <script src="./js/focus-trap.js"></script>
+    <script src="./js/focus-catch.js"></script>
   </body>
 </html>

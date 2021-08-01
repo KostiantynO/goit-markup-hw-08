@@ -1,6 +1,6 @@
 /* Подписаться */
 .subscribe-btn {
-  @include media(0, $tablet, var(--uni-margin-med)); /* mt20; mobile */
+  @include mq($end: $tablet, $mt: $uni-margin-med); /* mt20; mobile */
 
   & .subscribe-btn__send-icon {
     margin-left: 0.625rem;

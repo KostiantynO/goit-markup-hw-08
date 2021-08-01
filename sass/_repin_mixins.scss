@@ -1,0 +1,23 @@
+// ========== Для перевода px в rem ==========
+@mixin font-size($size, $base: 16) {
+  font-size: $size; // fallback для старых браузеров
+  font-size: ($size / $base) * 1rem;
+}
+// Использование
+// .title {
+//     @include font-size(24px);
+// }
+
+// ========== Для retina изображений ==========
+@mixin retina($image, $width) {
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: $width),
+    screen and (min-resolution: 192dpi) and (min-width: $width),
+    screen and (min-resolution: 2dppx) and (min-width: $width) {
+    background-image: url($image);
+  }
+}
+// Использование
+// .logo {
+//     background-image: url('img/logo.png');
+//     @include retina('img/logo@2x.png', 768px);
+// }

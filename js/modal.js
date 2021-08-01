@@ -8,7 +8,7 @@
       .querySelectorAll(
         "button, a[href], input, select, textarea, [tabindex]:not([tabindex='-1'])",
       ),
-    modalInputs: document.querySelectorAll(".hero-form__input"),
+    formInputs: document.querySelectorAll("[data-modal-input]"),
     modalTitle: document.querySelector("[data-modal-title]"),
     htmlAndBody: document.querySelectorAll("[data-no-scroll]"),
   };
@@ -19,12 +19,12 @@
       refs.htmlAndBody[1].classList.toggle("no-scroll");
   }
 
-  for (let i = 0; i < refs.modalInputs.length; i++) {
-    refs.modalInputs[i].addEventListener("focusin", e => {
+  for (let i = 0; i < refs.formInputs.length; i++) {
+    refs.formInputs[i].addEventListener("focusin", e => {
       e.currentTarget.placeholder = e.currentTarget.dataset.placeholder;
     });
 
-    refs.modalInputs[i].addEventListener("focusout", e => {
+    refs.formInputs[i].addEventListener("focusout", e => {
       e.currentTarget.placeholder = ` `;
     });
   }

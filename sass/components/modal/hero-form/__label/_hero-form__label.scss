@@ -1,0 +1,21 @@
+/* name|tel|email|comment { mb4 fz12 lh14 lsp0.01em c#757575 } */
+.hero-form__label {
+  margin-bottom: 0.25rem; /* 4px */
+  font-size: 0.75rem; /* 12px */
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+
+  transition: transform var(--time) var(--cubic);
+
+  .hero-form__input:focus + & {
+    color: var(--color-accent);
+  }
+
+  @include mq("tablet") {
+    .hero-form__input:focus + & {
+      color: var(--color-text-secondary);
+    }
+  }
+}

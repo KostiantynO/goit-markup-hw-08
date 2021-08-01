@@ -7,11 +7,7 @@
 .page-footer__subscribe-form {
   margin-top: 3.75rem; /* m60 auto 0; for mobile */
 
-  @media screen and (min-width: $desktop) {
-    margin-top: 0;
-    margin-right: 0;
-    margin-left: 5.8125rem; /* m0 0 0 93; for desktop only */
-  }
+  @include mq($desktop, null, 0, 0, null, 5.8125rem); /* m0 0 0 93; for desktop only */
 }
 
 /* END Форма подписки на рассылку */

@@ -1,21 +1,6 @@
-.page-html,
-.portfolio-body,
-.studio-body {
-  // margin: 0px !important;
-  // padding: 0px !important;
-  // width: 100% !important;
-  // height: 100% !important;
-
-  // overflow-x: hidden !important;
-}
-
 .page-html {
-  // padding-left: 15px;
-}
-
-.page-html {
+  height: 100vh;
   overflow-y: scroll;
-
   &.no-scroll {
     overflow-y: hidden; /* STOP MOVING AROUND! */
   }
@@ -24,7 +9,6 @@
 .studio-body {
   overflow-y: hidden;
   position: relative;
-
   &.no-scroll {
     overflow-y: scroll;
   }
@@ -34,6 +18,11 @@
 
 .studio-body,
 .portfolio-body {
+  // width: 100% !important;
+  // overflow-x: hidden !important;
+  width: 100%;
+  min-height: 100vh;
+
   font-family: var(--body-sans-serif);
   font-size: 0.875rem; /* 14px */
   line-height: 1.71; /* h24px */

@@ -1,57 +1,103 @@
-@mixin media(
-  $start: $mobile,
-  $end: $tablet,
-  $mt: initial,
-  $mr: initial,
-  $mb: initial,
-  $ml: initial
-) {
-  @media screen and (min-width: #{$start}) and (max-width: #{$end}) {
-    margin-top: $mt;
-    margin-right: $mr;
-    margin-bottom: $mb;
-    margin-left: $ml;
-  }
-}
+/* ------------------------- START "MIXINS" ------------------------- */
 
-@mixin font($fs: 18px, $fw: 400, $lh: 24px) {
-  font-size: $fs;
-  font-weight: $fw;
-  line-height: (round($lh * 1000 / $fs)) / 1000;
-}
+@mixin mq($start: null, $end: null, $mt: null, $mr: null, $mb: null, $ml: null) {
+  @if map_has_key($breakpoints, $end) and $end {
+    $maxWidth: map_get($breakpoints, $end);
+    $upToMaxWidth: $maxWidth - 1px;
 
-.mixin-title {
-  @include font();
-  color: tomato;
-}
+    @if map_has_key($breakpoints, $start) and $start {
+      $minWidth: map_get($breakpoints, $start);
 
-.mixin-title2 {
-  @include font(24px, 700, 28.8px);
-  color: tomato;
-}
+      @media screen and (min-width: $minWidth) and (max-width: $upToMaxWidth) {
+        @include margins($mt, $mr, $mb, $ml);
 
-.mixin-title3 {
-  @include font($fw: 700);
-  color: tomato;
-}
+        @content;
+      }
+    } @else {
+      @media screen and (max-width: $upToMaxWidth) {
+        @include margins($mt, $mr, $mb, $ml);
 
-.mixin-title4 {
-  @include font();
-  color: tomato;
-}
+        @content;
+      }
+    }
+  } @else if (map_has_key($breakpoints, $start) and $start) {
+    $minWidth: map_get($breakpoints, $start);
 
-@mixin colorize($colors-second, $baseSelector) {
-  @each $color in $colors-second {
-    $idx: index($colors-second, $color);
+    @media screen and (min-width: $minWidth) {
+      @include margins($mt, $mr, $mb, $ml);
 
-    #{$baseSelector}:nth-child(#{$idx}) {
-      background-color: #{$color};
+      @content;
     }
   }
 }
 
-$colors-second: "#795548", "#607D8B", "#7B1FA2";
-@include colorize($colors-second, ".reviews-item");
+/* Margin converter */
+@mixin margins($mt: null, $mr: null, $mb: null, $ml: null) {
+  $margins: (
+    "top": $mt,
+    "right": $mr,
+    "bottom": $mb,
+    "left": $ml,
+  );
 
-$colors-second: "#F44336", "#3F51B5", "#4CAf50", "#00BCD4", "#E91E63", "#009688";
-@include colorize($colors-second, ".features-item");
+  @each $side, $direction in $margins {
+    @if map-get($margins, $side) {
+      #{margin-#{$side}}: px2rem(map-get($margins, $side));
+    }
+  }
+
+  // @if $mt { margin-top: $mt; }
+  // @if $mr { margin-right: $mr; }
+  // @if $mb { margin-bottom: $mb; }
+  // @if $ml { margin-left: $ml; }
+}
+
+// ========== Для media запросов ==========
+// @mixin mq_Repin($width, $type: min) {
+//   @if map_has_key($breakpoints, $width) {
+//     $width: map_get($breakpoints, $width);
+//     @if $type == max { $width: $width - 1px; }
+//     @media only screen and (#{$type}-width: $width) { @content; }
+//   }
+// }
+
+// Использование
+// .wrapper { margin: 0 auto; width: 100%;
+//   @include mq_Repin('tablet')  { width:  90%; }
+//   @include mq_Repin('desktop') { width:  85%; }
+// }
+
+/* MEDIA */
+
+// .mixin-title  { @include font();                  color: tomato; }
+// .mixin-title2 { @include font(24px, 700, 28.8px); color: tomato; }
+// .mixin-title3 { @include font($fw: 700);          color: tomato; }
+
+// @mixin colorize($colors-second, $baseSelector) {
+//   @each $color in $colors-second {
+//     $idx: index($colors-second, $color);
+
+//     #{$baseSelector}:nth-child(#{$idx}) {
+//       background-color: #{$color};
+//     }
+//   }
+// }
+
+// $colors-second: "#795548", "#607D8B", "#7B1FA2";
+// @include colorize($colors-second, ".reviews-item");
+
+// $colors-second: "#F44336", "#3F51B5", "#4CAf50", "#00BCD4", "#E91E63", "#009688";
+// @include colorize($colors-second, ".features-list__item");
+
+@mixin fz-lh-fw($fz: null, $lh: null, $fw: null) {
+  @if $fz {
+    font-size: $fz;
+  }
+  @if $lh and comparable($number1: $fz, $number2: $lh) {
+    line-height: (round($lh * 1000 / $fz)) / 1000;
+  }
+  @if $fw {
+    font-weight: $fw;
+  }
+}
+/* -------------------------- END "MIXINS" -------------------------- */

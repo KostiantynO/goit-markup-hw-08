@@ -1,12 +1,8 @@
 /* START "Футер cоц. ссылки" */
 .page-footer__social-container {
-  margin: 3.75rem auto 0; /* for mobile */
-
-  @media screen and (min-width: $desktop) {
-    text-align: unset;
-    margin-top: 0;
-    margin-left: 4.375rem; /* ml70px from $mobile+1px */
-  }
+  margin-top: px2rem(60px); /* for mobile */
+  @include mq($tablet, $desktop, 5px, 89px, null, 165px);
+  @include mq($desktop, null, 0, 93px);
 }
 
 /* присоединяйтесь, h16.41px */
@@ -19,7 +15,7 @@
   text-transform: uppercase;
   text-align: center; /* for mobile and tablet only */
 
-  @media screen and (min-width: $tablet) {
+  @include mq($desktop) {
     text-align: unset;
   }
 }

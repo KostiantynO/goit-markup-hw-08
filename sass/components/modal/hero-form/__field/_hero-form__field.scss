@@ -1,0 +1,10 @@
+/* mb10 after input */
+.hero-form__field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info__field:not(:first-child) {
+  margin-top: 1.75rem; /* 28px = 10px + 14px + 4px */
+}
