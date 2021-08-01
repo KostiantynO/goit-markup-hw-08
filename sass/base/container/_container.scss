@@ -17,18 +17,3 @@
     max-width: map_get($breakpoints, $desktop);
   }
 }
-
-.page-header__container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.page-footer__container {
-  @include mq($tablet) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-}

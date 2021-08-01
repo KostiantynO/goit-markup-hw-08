@@ -1,7 +1,5 @@
 /* Подписаться */
 .subscribe-btn {
-  @include mq($end: $tablet, $mt: $uni-margin-med); /* mt20; mobile */
-
   & .subscribe-btn__send-icon {
     margin-left: 0.625rem;
     fill: currentColor;

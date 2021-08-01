@@ -5,16 +5,16 @@
   flex-wrap: wrap;
   justify-content: center;
 
-  margin-top: calc(-1 * var(--uni-margin));
-  margin-left: calc(-1 * var(--uni-margin));
+  margin-top: calc(-1 * var(--gap));
+  margin-left: calc(-1 * var(--gap));
 }
 
 /* project 4 */
 .portfolio-list__item {
   display: flex;
-  flex-direction: column;
-
   flex-basis: calc(100% / var(--cards-per-line-3) - var(--uni-margin));
+  flex-direction: column;
+  flex-grow: 1;
 
   width: clamp(15.625rem, 100%, var(--width-portfolio-card__image)); /* 250px, 100%, 450px */
   min-width: 15.625rem; /* 250px */

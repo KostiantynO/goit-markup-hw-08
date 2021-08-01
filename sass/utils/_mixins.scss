@@ -42,7 +42,7 @@
 
   @each $side, $direction in $margins {
     @if map-get($margins, $side) {
-      #{margin-#{$side}}: px2rem(map-get($margins, $side));
+      #{margin-#{$side}}: rem(map-get($margins, $side));
     }
   }
 
@@ -91,9 +91,9 @@
 
 @mixin fz-lh-fw($fz: null, $lh: null, $fw: null) {
   @if $fz {
-    font-size: $fz;
+    font-size: rem($fz);
   }
-  @if $lh and comparable($number1: $fz, $number2: $lh) {
+  @if ($fz and $lh and comparable($fz, $lh)) {
     line-height: (round($lh * 1000 / $fz)) / 1000;
   }
   @if $fw {

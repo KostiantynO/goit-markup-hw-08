@@ -6,8 +6,8 @@
   flex-wrap: wrap;
   justify-content: center;
 
-  margin-top: calc(-1 * var(--uni-margin));
-  margin-left: calc(-1 * var(--uni-margin));
+  margin-top: calc(-1 * var(--gap));
+  margin-left: calc(-1 * var(--gap));
 }
 
 .activities-list__item {

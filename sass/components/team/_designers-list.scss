@@ -8,19 +8,19 @@
 
   justify-content: center;
 
-  margin-top: calc(-1 * var(--uni-margin));
-  margin-left: calc(-1 * var(--uni-margin));
+  margin-top: calc(-1 * var(--gap));
+  margin-left: calc(-1 * var(--gap));
 }
 
 /* team card 1-4 or "designer card" */
 .designers-list__item {
   flex-basis: calc(100% / var(--cards-per-line-4) - var(--uni-margin));
-  /* flex-grow: 1; FIXME for mobile */
+  flex-grow: 1; /* for mobile */
 
-  min-width: 15.625rem;
-  max-width: 28.125rem;
-  min-height: 26.75rem; /* 428px */
-  max-height: 42.45rem; /* 679.2px */
+  min-width: rem(250px); /* 15.625rem */
+  max-width: rem(450px); /* 28.125rem */
+  min-height: rem(428px); /* 26.75rem */
+  max-height: rem(679.2px); /* 42.45rem */
 
   margin-top: var(--uni-margin); /* 30px top and left */
   margin-left: var(--uni-margin);

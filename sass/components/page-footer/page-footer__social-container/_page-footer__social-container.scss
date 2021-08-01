@@ -1,7 +1,7 @@
 /* START "Футер cоц. ссылки" */
 .page-footer__social-container {
-  margin-top: px2rem(60px); /* for mobile */
-  @include mq($tablet, $desktop, 5px, 89px, null, 165px);
+  margin-top: rem(60px); /* for mobile */
+  @include mq($tablet, $desktop, 5px, 74px);
   @include mq($desktop, null, 0, 93px);
 }
 
@@ -13,11 +13,6 @@
   line-height: 1.17; /* from body font-size: 14px; */
   color: var(--color-white);
   text-transform: uppercase;
-  text-align: center; /* for mobile and tablet only */
-
-  @include mq($desktop) {
-    text-align: unset;
-  }
 }
 
 .page-footer__social-link {

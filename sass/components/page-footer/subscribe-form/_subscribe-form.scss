@@ -1,13 +1,6 @@
 /* START Форма подписки на рассылку */
 .subscribe-form {
-  flex-grow: 1;
-  max-width: 35.625rem; /* 570px */
-}
-
-.page-footer__subscribe-form {
-  margin-top: 3.75rem; /* m60 auto 0; for mobile */
-
-  @include mq($desktop, null, 0, 0, null, 5.8125rem); /* m0 0 0 93; for desktop only */
+  max-width: rem(570px); /* 570px */
 }
 
 /* END Форма подписки на рассылку */

@@ -1,0 +1,4 @@
+.page-footer__address-wrapper {
+  @include mq($tablet, $desktop, $ml: 61px);
+  @include mq($desktop, $mr: 70px);
+}

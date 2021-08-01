@@ -1,8 +1,31 @@
 /* ------------------------- START "FUNCTIONS" ------------------------- */
 // || ---------- Converts px to rem ----------
+// $base-fz: 16px;
+// $uni-margin-med: 20px;
+@function rem($val, $base: $base-fz) {
+  @if (($val == auto) and $base) {
+    @return (auto);
+  }
 
-@function px2rem($val, $base: $base-fz) {
-  @return (($val / $base) * 1rem);
+  $val: ($val / ($val * 0 + 1));
+  $base: ($base / ($base * 0 + 1));
+
+  $varUnitless: ($val / $base);
+  $varRem: ($varUnitless * 1rem);
+
+  @if $varRem == 0rem {
+    $varRem: (0);
+  }
+
+  @return ($varRem);
+}
+
+@function vw($var, $vw) {
+  @if ($vw and map_has_key($breakpoints, $vw)) {
+    $vwValue: map-get($breakpoints, $vw);
+    $result: ((($var * 1000 / ($vwValue)) / 1000) * 100 * 1vw);
+    @return $result;
+  }
 }
 
 /* -------------------------- END "FUNCTIONS" -------------------------- */

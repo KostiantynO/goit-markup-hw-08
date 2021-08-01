@@ -1,7 +1,4 @@
 /* START Футер-адрес */
-.page-footer__address-wrapper {
-  @include mq($desktop, $mr: 93px);
-}
 
 .address {
   font-style: inherit;

@@ -7,9 +7,10 @@
   width: 9.0625rem;
 
   font-family: var(--logo-sans-serif);
-  font-size: 1.625rem; /* "Web" color: #2196F3; from .accent */
+  font-size: clamp(rem(24px), vw(24px, $tablet), rem(26px));
+  /* 1.625rem "Web" color: #2196F3; from .accent */
   font-weight: 700; /* "Studio" color: var(--color-black); from .black */
-  line-height: 1.193; /* 31px = box */
+  line-height: clamp(rem(28px), vw(28px, $tablet), rem(31px)); /* 31px = box */
 
   animation-duration: var(--time);
   animation-timing-function: var(--cubic);

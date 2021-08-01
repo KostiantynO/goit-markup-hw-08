@@ -5,6 +5,8 @@
 /* Studio and Portfolio - Page-header */
 @import "./shared/animations";
 @import "./ally/skip-btn";
+@import "./page-header/__container/page-header__container";
+
 @import "./page-header/nav/nav";
 @import "./shared/logo";
 
@@ -60,11 +62,14 @@
 @import "./portfolio/portfolio-projects/portfolio-card/__meta/__type/portfolio-card__type";
 
 /* Studio - Page-footer */
+@import "./page-footer/__container/page-footer__container";
 @import "./page-footer/address/address";
-@import "./page-footer/social-container/social-container";
+@import "./page-footer/address/page-footer__address-wrapper/page-footer__address-wrapper";
+@import "./page-footer/page-footer__social-container/page-footer__social-container";
 
 /* Studio - Page-footer - subscribe-form */
 @import "./page-footer/subscribe-form/subscribe-form";
+@import "./page-footer/subscribe-form/page-footer__subscribe-form/page-footer__subscribe-form";
 @import "./page-footer/subscribe-form/__title/subscribe-form__title";
 @import "./page-footer/subscribe-form/__group/subscribe-form__group";
 @import "./page-footer/subscribe-form/__field/subscribe-form__field";

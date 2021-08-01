@@ -1,6 +1,9 @@
 .subscribe-form__field {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
 
-  @include mq($desktop, $mr: 0.75rem);
+  @include mq($end: $desktop, $mb: $uni-margin-med); /* mt20; mobile */
+
+  @include mq($desktop, $mr: 12px); // mr.75rem
 }

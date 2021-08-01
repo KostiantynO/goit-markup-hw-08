@@ -1,6 +1,8 @@
 .section {
-  padding-top: 5.875rem; /* 94px */
-  padding-bottom: 5.875rem;
+  padding-top: clamp(rem($uni-pad-med), 7.8vw, rem($uni-pad-big));
+
+  /* 94px = 5.875rem; */
+  padding-bottom: clamp(rem($uni-pad-med), 7.8vw, rem($uni-pad-big));
 
   &:nth-child(2n + 4) {
     background-color: var(--color-bg-btn-secondary);
@@ -9,9 +11,16 @@
 
 /* Чем мы занимаемся, Наша команда, Постоянные клиенты h42px */
 .section__title {
-  margin-bottom: var(--uni-margin-big);
+  margin-bottom: clamp(var(--uni-margin), vw(30px, $tablet), var(--uni-margin-big));
 
-  font-size: 2.25rem; /* 36px */
-  line-height: 1.17; /* 42.19px */
-  text-align: center; /* from body color: #212121; from h2 = font-weight: 700; */
+  /* Постоянные клиенты h33px mobile + tablet */
+
+  font-size: clamp(rem(28px), 3.6vw, rem(36px));
+  line-height: clamp(rem(33px), 4.2vw, rem(42px));
+  text-align: center; /* body c#212121; h2=fw700;*/
+
+  // @include mq($desktop) { @include fz-lh-fw(36px, 42.19px); }
+  /* fz2.25rem  */
+
+  @include mq($desktop, $mb: $uni-margin-big); /* fz2.25rem  */
 }

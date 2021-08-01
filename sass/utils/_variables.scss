@@ -2,7 +2,13 @@
 /* || --------------- START "ПЕРЕМЕННЫЕ" ---------------- */
 /* ------------------------------------------------------ */
 $base-fz: 16px;
+$uni-margin-big: 50px;
+$uni-margin: 30px;
 $uni-margin-med: 20px;
+$uni-margin-min: 10px;
+
+$uni-pad-big: 94px;
+$uni-pad-med: 60px;
 
 :root {
   /* || --------------- START "ТИПОГРАФИЯ" ---------------- */
@@ -42,7 +48,7 @@ $uni-margin-med: 20px;
   --uni-margin-med: 1.25rem; /* 1.25rem */
   /* Верхний отступ между адресом и Лого в Футере */
   /* Левый отступ между контейнерами ссылок на соц. сети и адресом в Футере */
-  --uni-margin-small: 1.25rem;
+
   /* Нижний отступ между именем и ролью дизайнера, and между оглавлением (h3) и параграфом Особенностей */
   --uni-margin-min: 0.625rem;
 
@@ -55,6 +61,7 @@ $uni-margin-med: 20px;
   /* Кол-во карточек Активностей, Проектов на одной линии. */
   --cards-per-line-3: 3;
 
+  --gap: 1.875rem;
   --line-height-project-name: 2;
   --line-height-project-type: 1.88;
   --width-portfolio-card__image: 28.125rem;

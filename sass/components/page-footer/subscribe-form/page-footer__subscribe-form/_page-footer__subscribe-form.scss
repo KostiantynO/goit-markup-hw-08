@@ -1,0 +1,5 @@
+.page-footer__subscribe-form {
+  flex-grow: 1;
+  @include mq(null, $desktop, 60px, auto, null, auto) /* m60 auto 0; for mobile */
+    /* m0 0 0 0; for desktop only */;
+}

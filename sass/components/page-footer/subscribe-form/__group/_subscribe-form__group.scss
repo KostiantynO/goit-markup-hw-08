@@ -1,5 +1,5 @@
 .subscribe-form__group {
-  @include mq($tablet) {
+  @include mq($desktop) {
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
