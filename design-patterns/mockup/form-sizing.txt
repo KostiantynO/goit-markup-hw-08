@@ -34,8 +34,8 @@ mb 1600 222px 13.87vw
 .form-textarea { mb20 p12px16px w370 x h120 fz14 lh16 lsp0.01em c: rgba(117, 117, 117, 0.5);  brd: 1px solid rgba(33, 33, 33, 0.2); b-rad4 }
 
 .group.policy { df aifs mb30}
-.hero-form__input-checkbox { mr8 pt4 pr2 pb3 pl3  w16 x h15 c#212121}
-.hero-form__input-checkbox > icon { w11.4 h8.4 bg#fff brd0.2px solid #fff; }
+.hero-form__checkbox { mr8 pt4 pr2 pb3 pl3  w16 x h15 c#212121}
+.hero-form__checkbox > icon { w11.4 h8.4 bg#fff brd0.2px solid #fff; }
 
   /* Соглашаюсь с рассылкой и принимаю Условия договора */
 .hero-form__label-checkbox {w346 x h14 fz12 lh14 lsp0.03em c#757575 }

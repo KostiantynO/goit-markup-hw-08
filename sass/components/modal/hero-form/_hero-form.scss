@@ -1,117 +1,19 @@
 /* ------------------------------------------------------ */
 /* || ------------- START "СТУДИЯ - ФОРМА" -------------- */
 
-/* .form {} */
-
-.hero-form__input:not(:placeholder-shown) + .hero-form__label,
-.hero-form__input:focus + .hero-form__label {
-  transform: translate(-2.625rem, calc(-50% - 31px));
-}
-
-.hero-form__input:focus ~ .svg-wrapper {
-  fill: var(--color-accent);
+.form {
+  &__svg {
+    transition: fill var(--time) var(--cubic);
+  }
 }
 
 /* { mr12 w18 x h18 pt=pb=11 pl12 pr340 } */
-.form-svg {
-  transition: fill var(--time) var(--cubic);
-}
 
 .hero-form__input:focus + label {
   fill: var(--color-accent);
 }
 
 /* HERE WAS CUSTOMER COMMENT */
-
-/* .group.policy { df aifs mb30} */
-.policy {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-
-  margin-bottom: 30px;
-}
-
-.policy__label {
-  margin-bottom: 0;
-}
-
-/* .hero-form__input-checkbox { mr8 pt4 pr2 pb3 pl3  w16 x h15 c#212121} */
-.custom-checkbox {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-
-  min-width: 1rem;
-  max-width: 1rem;
-  min-height: 0.9375rem;
-  max-height: 0.9375rem;
-
-  margin-right: 0.21rem;
-  background-color: var(--color-white);
-  border-radius: 0.125rem;
-  border: 0.125rem solid var(--color-text-primary);
-
-  transition: background-color var(--time) var(--cubic), color var(--time) var(--cubic),
-    border var(--time) var(--cubic), outline-color var(--time) var(--cubic);
-}
-
-.hero-form__input-checkbox:focus + .hero-form__label > .custom-checkbox {
-  /* border-color: var(--color-accent); */
-}
-
-.hero-form__input-checkbox:focus:not(:checked) + .hero-form__label > .custom-checkbox {
-  box-shadow: 0 0 4px 4px rgba(33, 150, 243, 0.5);
-}
-
-.hero-form__input-checkbox:focus:checked + .hero-form__label > .custom-checkbox {
-  box-shadow: 0 0 3px 2px rgba(33, 150, 243, 0.5);
-}
-
-/* .hero-form__label:hover > .custom-checkbox */
-.hero-form__input-checkbox:checked + .hero-form__label > .custom-checkbox {
-  background-color: var(--color-accent);
-  border-color: transparent;
-}
-
-/* .hero-form__input-checkbox > icon { w11.4 h8.4 bg#fff brd0.2px solid #fff; } */
-.custom-checkbox > .form-svg {
-  color: var(--color-white);
-  pointer-events: none;
-
-  visibility: hidden;
-
-  opacity: 0;
-  fill: currentColor;
-  transition: visibility var(--time) var(--cubic), opacity var(--time) var(--cubic);
-}
-
-.hero-form__input-checkbox:checked + .hero-form__label > .custom-checkbox > .form-svg {
-  pointer-events: auto;
-  visibility: visible;
-  opacity: 1;
-}
-
-/* .hero-form__label-checkbox {w346 x h14 fz12 lh14 lsp0.03em c#757575 } */
-/* 12 / 480  = 0.025
-   12 / 768  = 0.015625
-   14 / 1600 = 0.00875 */
-
-/* 14 / 480  = 0.029167
-   14 / 768  = 1.823vw
-   24 / 1600 = 0.015 */
-.policy > .hero-form__label {
-  font-size: clamp(12px, 2.5vw, 14px);
-  line-height: clamp(14px, 2.9vw, 24px);
-
-  letter-spacing: 0.03em;
-  color: var(--color-text-secondary);
-}
-
-.hero-form__label > .tac-link {
-  color: var(--color-accent);
-}
 
 .submit-btn-wrapper {
   text-align: center;

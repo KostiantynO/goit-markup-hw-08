@@ -1,0 +1,34 @@
+.customer-info {
+  &__label,
+  &__svg-wrapper {
+    position: absolute;
+    top: 50%;
+
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 0;
+
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+
+  &__label {
+    margin-bottom: 0;
+    width: 100%;
+    left: rem(42px); /* 42px = 2.625rem */
+  }
+
+  .hero-form__input:not(:placeholder-shown) + &__label,
+  .hero-form__input:focus + &__label {
+    transform: translate(calc(-1 * #{rem(42px)}), calc(-50% - #{rem(31px)}));
+  }
+
+  &__svg-wrapper {
+    left: rem(12px);
+
+    .hero-form__input:focus ~ & {
+      fill: var(--color-accent);
+    }
+  }
+}

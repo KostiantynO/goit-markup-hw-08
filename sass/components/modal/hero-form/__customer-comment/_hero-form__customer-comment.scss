@@ -1,3 +1,17 @@
+.customer-comment__label {
+  margin-bottom: rem(4px); /* 0.25rem */
+
+  .hero-form__textarea:focus + & {
+    color: var(--color-accent);
+  }
+}
+
+.hero-form__customer-comment {
+  flex-direction: column-reverse;
+
+  margin-bottom: 20px;
+}
+
 /* textarea { mb20 p12px16px w370 x h120 fz14 lh16 lsp0.01em c: rgba(117, 117, 117, 0.5);  brd: 1px solid rgba(33, 33, 33, 0.2); b-rad4 } */
 .hero-form__textarea {
   height: 7.5rem;
@@ -28,8 +42,4 @@
 
     outline: none;
   }
-}
-
-.hero-form__customer-comment {
-  margin-bottom: 20px;
 }

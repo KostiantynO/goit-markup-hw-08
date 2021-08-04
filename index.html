@@ -1208,10 +1208,8 @@
           >
 
           <!-- Вводим имя, телефон и почту (Inputs) -->
-          <div class="group user-info hero-form__user-info">
-            <label class="hero-form__field user-info__field" aria-label="Ваше имя">
-              <span class="hero-form__label">Имя</span>
-
+          <div class="group customer-info hero-form__customer-info">
+            <label class="hero-form__field customer-info__field" aria-label="Ваше имя">
               <input
                 class="hero-form__input"
                 name="user-name"
@@ -1224,7 +1222,9 @@
                 maxlength="50"
               />
 
-              <div class="svg-wrapper">
+              <span class="hero-form__label customer-info__label">Имя</span>
+
+              <div class="svg-wrapper customer-info__svg-wrapper">
                 <!-- 18x18 -->
                 <svg
                   class="form-svg"
@@ -1238,9 +1238,7 @@
               </div>
             </label>
 
-            <label class="hero-form__field user-info__field" aria-label="Ваш телефон">
-              <span class="hero-form__label">Телефон</span>
-
+            <label class="hero-form__field customer-info__field" aria-label="Ваш телефон">
               <input
                 class="hero-form__input"
                 name="user-tel"
@@ -1254,10 +1252,12 @@
                 maxlength="10"
               />
 
-              <div class="svg-wrapper">
+              <span class="hero-form__label customer-info__label">Телефон</span>
+
+              <div class="svg-wrapper customer-info__svg-wrapper">
                 <!-- 18x18 -->
                 <svg
-                  class="form-svg"
+                  class="form-svg svg"
                   aria-hidden="true"
                   tabindex="-1"
                   width="1.125rem"
@@ -1268,9 +1268,7 @@
               </div>
             </label>
 
-            <label class="hero-form__field user-info__field" aria-label="Ваша почта">
-              <span class="hero-form__label">Почта</span>
-
+            <label class="hero-form__field customer-info__field" aria-label="Ваша почта">
               <input
                 class="hero-form__input"
                 name="user-email"
@@ -1283,10 +1281,12 @@
                 required
               />
 
-              <div class="svg-wrapper">
+              <span class="hero-form__label customer-info__label">Почта</span>
+
+              <div class="svg-wrapper customer-info__svg-wrapper">
                 <!-- 18x18 -->
                 <svg
-                  class="form-svg"
+                  class="form-svg svg"
                   aria-hidden="true"
                   tabindex="-1"
                   width="1.125rem"
@@ -1299,42 +1299,49 @@
           </div>
 
           <!-- Оставляем комментарий -->
-          <label class="hero-form__field hero-form__customer-comment">
-            <span class="hero-form__label">Комментарий </span>
-
+          <label class="hero-form__field customer-comment hero-form__customer-comment">
             <textarea
               class="hero-form__textarea"
               name="comment"
               placeholder="Введите текст"
               rows="10"
             ></textarea>
+
+            <span class="hero-form__label customer-comment__label">Комментарий </span>
           </label>
 
           <!-- Подтверждаем политику конфиденциальности (checkbox) -->
-
           <label class="group policy">
-            <input
-              class="hero-form__input-checkbox sr-only"
-              name="policy"
-              type="checkbox"
-              value="accepted"
-              required
-            />
+            <div class="custom-checkbox-wrapper policy__custom-checkbox-wrapper">
+              <input
+                class="hero-form__checkbox sr-only"
+                name="policy"
+                type="checkbox"
+                value="accepted"
+                required
+              />
 
-            <div
-              class="custom-checkbox"
-              title="Пожалуйста, установите этот флажок, если Вы хотите продолжить."
-              aria-hidden="true"
-            >
-              <svg class="form-svg check-icon" tabindex="-1" width=" 11.4" height="8.4">
-                <use href="./images/icomoon-svgomg/icons.svg#icon-check"></use>
-              </svg>
+              <div
+                class="custom-checkbox policy__custom-checkbox"
+                title="Пожалуйста, установите этот флажок, если Вы хотите продолжить."
+                aria-hidden="true"
+              >
+                <!-- 12x9 -->
+                <svg
+                  class="form-svg svg custom-checkbox__check-icon"
+                  tabindex="-1"
+                  width="0.75rem"
+                  height="0.5625rem"
+                >
+                  <use href="./images/icomoon-svgomg/icons.svg#icon-check"></use>
+                </svg>
+              </div>
             </div>
 
             <span class="hero-form__label policy__label"
               >Соглашаюсь с рассылкой и принимаю
 
-              <a class="tac-link" href="#0">Условия договора</a>
+              <a class="policy__tac-link" href="#0">Условия договора</a>
             </span>
           </label>
 

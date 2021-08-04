@@ -81,13 +81,17 @@
 @import "./modal/modal";
 @import "./modal/hero-form/hero-form";
 @import "./modal/hero-form/__title/hero-form__title";
+@import "./modal/hero-form/customer-info/customer-info";
+@import "./modal/hero-form/__customer-info/hero-form__customer-info";
 
 @import "./modal/hero-form/__field/hero-form__field";
 
 @import "./modal/hero-form/__label/hero-form__label";
 @import "./modal/hero-form/__input/hero-form__input";
 
-@import "./modal/hero-form/__textarea/hero-form__textarea";
+@import "./modal/hero-form/__customer-comment/hero-form__customer-comment";
+@import "./modal/hero-form/policy/policy";
+@import "./modal/hero-form/policy/custom-checkbox/custom-checkbox";
 
 /* ------------------------------------------------------ */
 /* || ---------------- END "COMPONENTS" ----------------- */

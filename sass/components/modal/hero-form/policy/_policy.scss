@@ -1,0 +1,41 @@
+/* .group.policy { df aifs mb30} */
+.policy {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  margin-bottom: rem(30px);
+
+  &__custom-checkbox-wrapper {
+    margin-right: rem(8px);
+  }
+
+  &__label {
+    margin-bottom: 0;
+  }
+}
+
+/* .hero-form__label-checkbox {w346 x h14 fz12 lh14 lsp0.03em c#757575 } */
+/* fz 12 / 480  = 0.025
+      12 / 768  = 0.015625
+      14 / 1200 = 0.011667 */
+
+/* lh 14 / 480  = 0.029167
+      14 / 768  = 1.823vw
+      24 / 1200 = 0.02 */
+
+/* Соглашаюсь с рассылкой и принимаю Условия договора */
+.policy__label {
+  font-size: clamp(rem(12px), vw(14px, $desktop), rem(14px));
+  line-height: clamp(rem(14px), vw(14px, $tablet), rem(24px));
+  letter-spacing: 0.03em;
+
+  @include mq($desktop) {
+    @include fz-lh-fw(14px, 24px);
+  }
+}
+
+.policy__tac-link {
+  color: var(--color-accent);
+}

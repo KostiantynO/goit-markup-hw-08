@@ -23,7 +23,7 @@
 @function vw($var, $vw) {
   @if ($vw and map_has_key($breakpoints, $vw)) {
     $vwValue: map-get($breakpoints, $vw);
-    $result: ((($var * 1000 / ($vwValue)) / 1000) * 100 * 1vw);
+    $result: ((($var * 10000000 / ($vwValue)) / 10000000) * 100 * 1vw);
     @return $result;
   }
 }
