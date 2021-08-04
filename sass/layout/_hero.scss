@@ -85,11 +85,11 @@
   $mobile-bg-jpg: url(../images/squooshed/hero-bg/mobile/hero-bg-mobile-480x400.jpg);
   $mobile-bg-jpg-2x: url(../images/squooshed/hero-bg/mobile/hero-bg-mobile-960x800@2x.jpg);
   $mobile-bg-webp: url(../images/squooshed/hero-bg/mobile/hero-bg-mobile-480x400.webp);
-  $mobile-bg-webp-2x: url(../../images/squooshed/hero-bg/mobile/hero-bg-mobile-960x800@2x.webp);
+  $mobile-bg-webp-2x: url(../images/squooshed/hero-bg/mobile/hero-bg-mobile-960x800@2x.webp);
 
   background-image: $gradient, $mobile-bg-jpg;
 
-  @media only screen and (max-width: (map-get($breakpoints, $tablet) - 0.0625rem)) and (min-device-pixel-ratio: 2),
+  @media only screen and (max-width: calc(rem(768px) - rem(1px))) and (min-device-pixel-ratio: 2),
     (-webkit-min-device-pixel-ratio: 2),
     (-o-min-device-pixel-ratio: 2/1),
     (min-resolution: 192dpi),
@@ -99,13 +99,13 @@
     }
   }
 
-  @media only screen and (max-width: (map-get($breakpoints, $tablet) - 0.0625rem)) {
+  @media only screen and (max-width: calc(rem(768px) - rem(1px))) {
     .box {
       background-image: $gradient, $mobile-bg-webp;
     }
   }
 
-  @media only screen and (max-width: (map-get($breakpoints, $tablet) - 0.0625rem)) and (min-device-pixel-ratio: 2),
+  @media only screen and (max-width: calc(rem(768px) - rem(1px))) and (min-device-pixel-ratio: 2),
     (-webkit-min-device-pixel-ratio: 2),
     (-o-min-device-pixel-ratio: 2/1),
     (min-resolution: 192dpi),

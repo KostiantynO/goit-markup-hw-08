@@ -1959,21 +1959,21 @@ p {
   }
 }
 
-@media only screen and (max-width: 47.9375rem) and (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2 / 1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+@media only screen and (max-width: calc(rem(768px) - rem(1px))) and (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2 / 1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .hero .box {
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/squooshed/hero-bg/mobile/hero-bg-mobile-960x800@2x.jpg);
   }
 }
 
-@media only screen and (max-width: 47.9375rem) {
+@media only screen and (max-width: calc(rem(768px) - rem(1px))) {
   .hero .box {
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/squooshed/hero-bg/mobile/hero-bg-mobile-480x400.webp);
   }
 }
 
-@media only screen and (max-width: 47.9375rem) and (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2 / 1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+@media only screen and (max-width: calc(rem(768px) - rem(1px))) and (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2 / 1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .hero .box {
-    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../../images/squooshed/hero-bg/mobile/hero-bg-mobile-960x800@2x.webp);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/squooshed/hero-bg/mobile/hero-bg-mobile-960x800@2x.webp);
   }
 }
 
