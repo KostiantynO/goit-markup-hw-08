@@ -3,21 +3,21 @@
   position: relative;
   flex-grow: 1;
 
-  max-width: 450px;
-  min-height: 3.125rem; /* 50px */
-  max-height: 3.125rem; /* 50px */
+  max-width: rem(450px);
+  min-height: rem(50px); /* 3.125rem */
+  max-height: rem(50px);
 
-  padding: 0.75rem; /* 12px */
+  padding: rem(15px) rem(16px); /* 0.9375rem 0.875rem */
 
-  font-size: 1rem;
-  line-height: 1.25rem;
+  font-size: rem(16px); /* 1rem */
+  line-height: rem(20px); /* 1.25rem */
   color: #ffffff;
   letter-spacing: 0.03em;
 
   background-color: var(--color-bg-hero);
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
+  border: rem(1px) solid rgba(255, 255, 255, 0.3); /* 0.0625rem */
+  border-radius: rem(4px); /* 0.25rem */
 
   /* E-mail */
   /* { pt=pb=15 pl=16 w47 h20 fz16 lh20 df alic lsp0.03em crgba(255, 255, 255, 0.6); } */
@@ -25,7 +25,6 @@
     display: inline-flex;
     align-items: center;
     min-height: rem(20px); /* 1.25rem */
-    padding: rem(15px) 0 rem(15px) rem(14px);
     font-size: rem(16px); /* 1rem */
     line-height: rem(20px); /* 1.25rem */
     color: rgba(255, 255, 255, 0.6);

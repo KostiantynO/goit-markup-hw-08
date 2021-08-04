@@ -77,72 +77,12 @@
 /* || ---------------- END "ПЕРЕМЕННЫЕ" ----------------- */
 /* ------------------------------------------------------ */
 /* ------------------------- START "FUNCTIONS" ------------------------- */
+/* vw(30px, (rem768px)) */
 /* -------------------------- END "FUNCTIONS" -------------------------- */
 /* ------------------------- START "MIXINS" ------------------------- */
 /* Margin converter */
 /* MEDIA */
 /* -------------------------- END "MIXINS" -------------------------- */
-.nav__menu, .page-header__contacts-list, .social-list, .features-list, .activities-list, .designers-list, .clients-list, .portfolio-filters-list, .portfolio-list, .address-list {
-  list-style: none;
-}
-
-/* Студия, Портфолио, Контакты, h16px */
-.nav__link, .header-contact {
-  position: relative;
-  padding-right: 3px;
-  padding-bottom: 0.5rem;
-  padding-left: 3px;
-  font-weight: 500;
-  line-height: 1.14;
-  /* 16px, color: #2196f3; Hover Focus */
-  letter-spacing: 0.02em;
-  /* white-space: nowrap; */
-}
-
-/* nav-link overlays for centered color fill on :hover */
-.nav__link::before, .nav__link-overlay {
-  position: absolute;
-  inset: 0;
-  display: inline-block;
-  mix-blend-mode: screen;
-  transition: transform var(--time) var(--cubic);
-}
-
-/* Hide standard overlay over active nav-link */
-.nav__link::before, .nav__link:focus > .nav__link-overlay,
-.nav__link:hover > .nav__link-overlay, .nav__link-overlay--current {
-  transform: scaleX(0);
-}
-
-/* Show overlay over active nav-link */
-.nav__link:focus::before, .nav__link:hover::before, .nav__link--current::before, .nav__link-overlay {
-  transform: scaleX(100%);
-}
-
-/* Вторичная кнопка по наведению: текст белый, фон - акцент, + тень (динамическая) */
-.btn--secondary:hover, .btn--secondary:focus, .current-btn {
-  color: var(--color-white);
-  background-color: var(--color-accent);
-  box-shadow: var(--shadow-middle);
-}
-
-/* Главная кнопка - активна */
-.btn--primary:focus, .btn--primary:hover, .current-btn:focus, .current-btn:hover {
-  background-color: var(--color-bg-hero-btn);
-}
-
-/* hover overlay */
-.portfolio-card__thumb::before, .portfolio-card__desc {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-  opacity: 0;
-  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic), visibility var(--time) var(--cubic);
-}
-
 /* || ----------------- START "COLORS" ------------------ */
 /* || ------------------ END "COLORS" ------------------- */
 /* map-get($colors, $key) */
@@ -262,6 +202,8 @@ p {
 /* END "Обнуление" */
 .image {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
 .links {
@@ -293,7 +235,6 @@ p {
 }
 
 /* END Подсветка ссылок */
-/* OUTLINES - no-no-no do not change them 78) */
 /* ------------------------------------------------------ */
 /* || -------------- END "ОБЩИЕ НАСТРОЙКИ" -------------- */
 /* ------------------------------------------------------ */
@@ -334,32 +275,33 @@ p {
 }
 
 .container {
-  min-width: 16.875rem;
-  /* 270px Мин. и 1200px макс. ширина контейнера */
+  min-width: 15.625rem;
+  /* 250px Мин. и 1200px макс. ширина контейнера */
   max-width: 75rem;
+  /* 75rem */
   padding-right: 0.9375rem;
-  /* 15px, Отдаляет от границы экрана */
+  /* 0.9375rem, падинг от границы экрана */
   padding-left: 0.9375rem;
   margin-right: auto;
   /* Центрирует по ширине */
   margin-left: auto;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 47.9375rem) {
   .container {
-    max-width: 480px;
+    max-width: 30rem;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
   .container {
-    max-width: 768px;
+    max-width: 48rem;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75rem) {
   .container {
-    max-width: 1200px;
+    max-width: 75rem;
   }
 }
 
@@ -385,7 +327,7 @@ p {
   /* fz2.25rem  */
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75rem) {
   .section__title {
     margin-bottom: 3.125rem;
   }
@@ -489,6 +431,7 @@ p {
 }
 
 .page-header__container {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -667,10 +610,8 @@ p {
 /* END "Фильтры-Кнопки" */
 /* START Mobile button */
 .btn-mobile {
-  position: absolute;
-  top: 0%;
-  left: 100%;
   max-width: 2.5rem;
+  /* 2.5rem */
   max-height: 2.5rem;
   padding: 0;
   color: var(--color-text-primary);
@@ -692,10 +633,14 @@ p {
 
 /* END Mobile button */
 .nav__btn-mobile {
-  margin: 0.625rem 0.9375rem;
   margin-left: auto;
   border: none;
-  transform: translateY(-50%);
+}
+
+.btn-mobile-close {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.9375rem;
 }
 
 /* START "Шапка сайта - Контакты" */
@@ -786,14 +731,13 @@ p {
 /* Эффективные решения для вашего бизнеса */
 .hero__title {
   position: relative;
-  min-width: clamp(15.625rem, 100%, 43.5rem);
-  /* 250px to 696px */
   min-height: clamp(5.25rem, 1vw, 7.5rem);
+  /* 5.25rem, 7.5rem */
   margin-bottom: var(--uni-margin);
   font-size: clamp(1.625rem, max(3.38vw, 1.625rem), 2.75rem);
-  /* 26px, 44px */
+  /* 1.625rem, 2.75rem  */
   line-height: clamp(2.625rem, max(5.47vw, 2.625rem), 3.75rem);
-  /* 42px, 60px */
+  /* 2.625rem, 3.75rem */
   font-weight: 900;
   color: var(--color-white);
   text-transform: uppercase;
@@ -974,22 +918,15 @@ p {
 
 .designer-card {
   padding-bottom: 1.5rem;
+  /* 1.5rem */
   background-color: var(--color-white);
   /* card bg */
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 0.25rem 0.25rem;
   /* Тень для Карточки дизайнера (статическая) - material shadow v1 */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.12), 0 0.0625rem 0.0625rem rgba(0, 0, 0, 0.14), 0 0.125rem 0.0625rem rgba(0, 0, 0, 0.2);
 }
 
 .designer-card__photo {
-  object-fit: contain;
-  object-position: top;
-  width: 100%;
-  min-width: clamp(15.625rem, 100%, 28.125rem);
-  /* 250...450px */
-  height: 100%;
-  min-height: clamp(16.25rem, 100%, 28.75rem);
-  /* 260...460px */
   margin: 0 auto;
   /* w450px img-h460px title-h162px card-h622px
      w354px img-h374px title-h162px card-h536px
@@ -1291,7 +1228,7 @@ p {
 }
 
 /* Studio - Page-footer */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75rem) {
   .page-footer__container {
     display: flex;
     flex-wrap: wrap;
@@ -1299,7 +1236,7 @@ p {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48rem) {
   .page-footer__top-row-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -1308,7 +1245,7 @@ p {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75rem) {
   .page-footer__top-row-wrapper {
     justify-content: flex-start;
   }
@@ -1344,13 +1281,13 @@ p {
 }
 
 /* END Футер-адрес */
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
   .page-footer__address-wrapper {
     margin-left: 3.8125rem;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75rem) {
   .page-footer__address-wrapper {
     margin-right: 4.375rem;
   }
@@ -1362,14 +1299,14 @@ p {
   /* for mobile */
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
   .page-footer__social-container {
     margin-top: 0.3125rem;
     margin-right: 4.625rem;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75rem) {
   .page-footer__social-container {
     margin-top: 0;
     margin-right: 5.8125rem;
@@ -1409,7 +1346,7 @@ p {
   /* m0 0 0 0; for desktop only */
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 74.9375rem) {
   .page-footer__subscribe-form {
     margin-top: 3.75rem;
     margin-right: auto;
@@ -1430,7 +1367,7 @@ p {
   text-transform: uppercase;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75rem) {
   .subscribe-form__group {
     display: flex;
     flex-wrap: wrap;
@@ -1445,13 +1382,13 @@ p {
   /* mt20; mobile */
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 74.9375rem) {
   .subscribe-form__field {
     margin-bottom: 1.25rem;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75rem) {
   .subscribe-form__field {
     margin-right: 0.75rem;
   }
@@ -1461,21 +1398,24 @@ p {
 .subscribe-form__input {
   position: relative;
   flex-grow: 1;
-  max-width: 450px;
+  max-width: 28.125rem;
   min-height: 3.125rem;
-  /* 50px */
+  /* 3.125rem */
   max-height: 3.125rem;
-  /* 50px */
-  padding: 0.75rem;
-  /* 12px */
+  padding: 0.9375rem 1rem;
+  /* 0.9375rem 0.875rem */
   font-size: 1rem;
+  /* 1rem */
   line-height: 1.25rem;
+  /* 1.25rem */
   color: #ffffff;
   letter-spacing: 0.03em;
   background-color: var(--color-bg-hero);
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.3);
+  /* 0.0625rem */
+  border-radius: 0.25rem;
+  /* 0.25rem */
   /* E-mail */
   /* { pt=pb=15 pl=16 w47 h20 fz16 lh20 df alic lsp0.03em crgba(255, 255, 255, 0.6); } */
 }
@@ -1485,7 +1425,6 @@ p {
   align-items: center;
   min-height: 1.25rem;
   /* 1.25rem */
-  padding: 0.9375rem 0 0.9375rem 0.875rem;
   font-size: 1rem;
   /* 1rem */
   line-height: 1.25rem;
@@ -1551,21 +1490,21 @@ p {
   transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic);
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 30rem) {
   .modal {
     margin-top: calc(40vw - 99px);
     margin-bottom: calc(39.24vw - 94px);
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48rem) {
   .modal {
     margin-top: calc(3.01vw + 185px);
     margin-bottom: calc(3.47vw + 180px);
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75rem) {
   .modal {
     margin-top: 221px;
     margin-bottom: 222px;
@@ -1624,12 +1563,6 @@ p {
   transition: fill var(--time) var(--cubic);
 }
 
-/* { mr12 w18 x h18 pt=pb=11 pl12 pr340 } */
-.hero-form__input:focus + label {
-  fill: var(--color-accent);
-}
-
-/* HERE WAS CUSTOMER COMMENT */
 .submit-btn-wrapper {
   text-align: center;
 }
@@ -1681,7 +1614,7 @@ p {
 }
 
 .hero-form__customer-info {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 /* mb10 after input */
@@ -1705,6 +1638,7 @@ p {
   letter-spacing: 0.01em;
   cursor: pointer;
   transition: transform var(--time) var(--cubic);
+  /* { mr12 w18 x h18 pt=pb=11 pl12 pr340 } */
 }
 
 .hero-form__input:focus + .hero-form__label {
@@ -1723,7 +1657,15 @@ p {
   transition: border-color var(--time) var(--cubic);
 }
 
-.hero-form__input:required:not(:placeholder-shown), .hero-form__input:focus {
+.hero-form__input:valid:not(:focus):not(:placeholder-shown) {
+  border-color: green;
+}
+
+.hero-form__input:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: red;
+}
+
+.hero-form__input:focus {
   border-color: var(--color-accent);
   box-shadow: 0 0 3px 2px rgba(33, 150, 243, 0.5);
   outline: none;
@@ -1794,7 +1736,6 @@ p {
 .policy {
   position: relative;
   display: flex;
-  align-items: flex-start;
   justify-content: center;
   margin-bottom: 1.875rem;
 }
@@ -1803,8 +1744,10 @@ p {
   margin-right: 0.5rem;
 }
 
-.policy__label {
-  margin-bottom: 0;
+@media screen and (min-width: 75rem) {
+  .policy {
+    align-items: center;
+  }
 }
 
 /* .hero-form__label-checkbox {w346 x h14 fz12 lh14 lsp0.03em c#757575 } */
@@ -1819,12 +1762,14 @@ p {
   font-size: clamp(0.75rem, 1.16667vw, 0.875rem);
   line-height: clamp(0.875rem, 1.82292vw, 1.5rem);
   letter-spacing: 0.03em;
+  margin-bottom: 0;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75rem) {
   .policy__label {
     font-size: 0.875rem;
     line-height: 1.71429;
+    padding-top: 0.1875rem;
   }
 }
 
@@ -1848,6 +1793,12 @@ p {
   margin-right: 0.5rem;
 }
 
+@media screen and (min-width: 75rem) {
+  .custom-checkbox-wrapper {
+    margin-right: 0.4375rem;
+  }
+}
+
 .hero-form__checkbox {
   top: 100%;
   left: 50%;
@@ -1856,19 +1807,15 @@ p {
 
 /* .hero-form__checkbox { mr8 pt4 pr2 pb3 pl3  w16 x h15 c#212121} */
 .custom-checkbox {
-  height: 100%;
-  min-width: 1rem;
-  /* 1rem */
-  max-width: 1rem;
-  min-height: 0.9375rem;
-  /* 0.9375rem */
-  max-height: 0.9375rem;
   background-color: var(--color-white);
   border-radius: 0.125rem;
   /* 2px */
-  border: 0.125rem solid var(--color-text-primary);
-  transition: background-color var(--time) var(--cubic), color var(--time) var(--cubic), border var(--time) var(--cubic), outline-color var(--time) var(--cubic);
+  transition: background-color var(--time) var(--cubic), color var(--time) var(--cubic), border-color var(--time) var(--cubic), box-shadow var(--time) var(--cubic);
   /* .hero-form__label:hover > &, */
+}
+
+.hero-form__checkbox:not(:checked) + .custom-checkbox {
+  border: 0.125rem solid var(--color-text-primary);
 }
 
 .hero-form__checkbox:focus + .custom-checkbox {
@@ -1876,11 +1823,11 @@ p {
 }
 
 .hero-form__checkbox:focus:not(:checked) + .custom-checkbox {
-  box-shadow: 0 0 0.25rem 0.25rem rgba(33, 150, 243, 0.5);
+  box-shadow: 0 0 0.1875rem 0.1875rem rgba(33, 150, 243, 0.5);
 }
 
 .hero-form__checkbox:focus:checked + .custom-checkbox {
-  box-shadow: 0 0 0.1875rem 0.125rem rgba(33, 150, 243, 0.5);
+  box-shadow: 0 0 0.125rem 0.1875rem rgba(33, 150, 243, 0.5);
 }
 
 .hero-form__checkbox:checked + .custom-checkbox {
@@ -1895,13 +1842,19 @@ p {
   visibility: hidden;
   opacity: 0;
   fill: currentColor;
-  transition: visibility var(--time) var(--cubic), opacity var(--time) var(--cubic);
+  transition: visibility var(--time) var(--cubic), opacity var(--time) var(--cubic), currentColor 5s var(--cubic);
 }
 
-.hero-form__checkbox:checked + .custom-checkbox__check-icon {
+.hero-form__checkbox:checked + .custom-checkbox > .custom-checkbox__check-icon {
   pointer-events: auto;
   visibility: visible;
   opacity: 1;
+}
+
+/* Studio and Portfolio - Mobile overlay */
+.mobile-overlay {
+  position: relative;
+  height: 100vh;
 }
 
 /* ------------------------------------------------------ */
@@ -1914,12 +1867,20 @@ p {
 /* || --------------- START "ШАПКА САЙТА" --------------- */
 /* ------------------------------------------------------ */
 .page-header {
-  padding-top: 1.5rem;
-  /* 24px */
-  padding-bottom: 1.5rem;
+  padding-top: 0.625rem;
+  /* 16px */
+  padding-bottom: 0.5625rem;
   background-color: var(--color-white);
-  border-bottom: 1px solid #ececec;
+  border-bottom: 0.0625rem solid #ececec;
   /* Line - Декор линия*/
+}
+
+@media screen and (min-width: 75rem) {
+  .page-header {
+    padding-top: 1.5rem;
+    /* 1.5rem */
+    padding-bottom: 1.5rem;
+  }
 }
 
 /* ------------------------------------------------------ */
@@ -1999,7 +1960,7 @@ p {
   background-color: var(--color-bg-hero);
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 74.9375rem) {
   .page-footer {
     text-align: center;
     /* till desktop */
@@ -2012,18 +1973,89 @@ p {
 /* ------------------------------------------------------ */
 /* || ------------------ END "LAYOUT" ------------------- */
 /* ------------------------------------------------------ */
+/* placeholders */
+.nav__menu, .page-header__contacts-list, .social-list, .features-list, .activities-list, .designers-list, .clients-list, .portfolio-filters-list, .portfolio-list, .address-list {
+  list-style: none;
+}
+
+/* Студия, Портфолио, Контакты, h16px */
+.nav__link, .header-contact {
+  position: relative;
+  padding-right: 3px;
+  padding-bottom: 0.5rem;
+  padding-left: 3px;
+  font-weight: 500;
+  line-height: 1.14;
+  /* 16px, color: #2196f3; Hover Focus */
+  letter-spacing: 0.02em;
+  /* white-space: nowrap; */
+}
+
+/* nav-link overlays for centered color fill on :hover */
+.nav__link::before, .nav__link-overlay {
+  position: absolute;
+  inset: 0;
+  display: inline-block;
+  mix-blend-mode: screen;
+  transition: transform var(--time) var(--cubic);
+}
+
+/* Hide standard overlay over active nav-link */
+.nav__link::before, .nav__link:focus > .nav__link-overlay,
+.nav__link:hover > .nav__link-overlay, .nav__link-overlay--current {
+  transform: scaleX(0);
+}
+
+/* Show overlay over active nav-link */
+.nav__link:focus::before, .nav__link:hover::before, .nav__link--current::before, .nav__link-overlay {
+  transform: scaleX(100%);
+}
+
+/* Вторичная кнопка по наведению: текст белый, фон - акцент, + тень (динамическая) */
+.btn--secondary:hover, .btn--secondary:focus, .current-btn {
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  box-shadow: var(--shadow-middle);
+}
+
+/* Главная кнопка - активна */
+.btn--primary:focus, .btn--primary:hover, .current-btn:focus, .current-btn:hover {
+  background-color: var(--color-bg-hero-btn);
+}
+
+/* hover overlay */
+.portfolio-card__thumb::before, .portfolio-card__desc {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic), visibility var(--time) var(--cubic);
+}
+
 /* ------------------------------------------------------ */
 /* || ------------------ START "MEDIA" ------------------ */
 /* ------------------------------------------------------ */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 47.9375rem) {
   .nav__menu,
-  .page-header__contacts-list,
-  .features {
+  .page-header__contacts-list {
     display: none;
   }
 }
 
-@media screen and (min-width: 768px) {
+.activities {
+  display: none;
+}
+
+@media screen and (min-width: 75rem) {
+  .activities {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 48rem) {
   .mobile-overlay,
   .btn-burger {
     display: none;

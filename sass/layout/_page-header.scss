@@ -3,11 +3,16 @@
 /* ------------------------------------------------------ */
 
 .page-header {
-  padding-top: 1.5rem; /* 24px */
-  padding-bottom: 1.5rem;
+  padding-top: rem(10px); /* 16px */
+  padding-bottom: rem(9px);
+
+  @include mq($desktop) {
+    padding-top: rem(24px); /* 1.5rem */
+    padding-bottom: rem(24px);
+  }
 
   background-color: var(--color-white);
-  border-bottom: 1px solid #ececec; /* Line - Декор линия*/
+  border-bottom: rem(1px) solid #ececec; /* Line - Декор линия*/
 }
 
 /* ------------------------------------------------------ */

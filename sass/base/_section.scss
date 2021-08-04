@@ -11,7 +11,7 @@
 
 /* Чем мы занимаемся, Наша команда, Постоянные клиенты h42px */
 .section__title {
-  margin-bottom: clamp(var(--uni-margin), vw(30px, $tablet), var(--uni-margin-big));
+  margin-bottom: clamp(var(--uni-margin), vw(rem(30px), $tablet), var(--uni-margin-big));
 
   /* Постоянные клиенты h33px mobile + tablet */
 

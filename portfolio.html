@@ -14,11 +14,6 @@
       .list:empty::after {
         content: attr(data-placeholder);
       }
-
-      .image {
-        width: initial;
-        height: initial;
-      }
     </style>
 
     <link
@@ -46,137 +41,8 @@
       Skip to main content
     </button>
 
-    <!-- Шапка сайта 2021-07-26 02:35 -->
-    <header class="page-header">
-      <div class="container page-header__container">
-        <nav class="nav page-header__nav">
-          <a class="logo links" href="./" hreflang="ru" lang="en">
-            <span class="logo__web-studio logo__first-part">Web</span
-            ><span class="logo__web-studio logo__last-part">Studio</span>
-          </a>
-
-          <ul class="nav__menu">
-            <li class="nav__item">
-              <a class="nav__link" data-content="Студия" href="./" hreflang="ru"
-                >Студия<span class="nav__link-overlay"></span>
-              </a>
-            </li>
-
-            <li class="nav__item">
-              <a
-                class="nav__link nav__link--current"
-                data-content="Портфолио"
-                href="./portfolio.html"
-                aria-current="page"
-                hreflang="ru"
-                >Портфолио<span class="nav__link-overlay nav__link-overlay--current"></span
-              ></a>
-            </li>
-
-            <li class="nav__item">
-              <a
-                class="nav__link"
-                data-content="Контакты"
-                rel="noopener nofollow noreferrer"
-                href="#0"
-                >Контакты<span class="nav__link-overlay"></span
-              ></a>
-            </li>
-          </ul>
-
-          <!-- Mobile menu - burger button -->
-          <button
-            class="btn btn--secondary btn-burger nav__btn-mobile btn-mobile is-hidden"
-            type="button"
-            aria-labelledby="burger-id-label"
-          >
-            <!-- 40x40 -->
-            <svg
-              class="btn-mobile__icon svg icon-burger"
-              aria-hidden="true"
-              width="2.5rem"
-              height="2.5rem"
-            >
-              <use href="./images/icomoon-svgomg/icons.svg#icon-burger"></use>
-            </svg>
-
-            <span class="tooltip sr-only" id="burger-id-label" tabindex="-1"> Меню </span>
-          </button>
-        </nav>
-
-        <ul class="page-header__contacts-list">
-          <li class="contact-item">
-            <a
-              class="header-contact links"
-              href="mailto:info@devstudio.com"
-              aria-labelledby="devstudio-email-id-label"
-            >
-              <!-- 16x12 -->
-              <svg
-                class="header-contact-icon svg icon-envelope"
-                aria-hidden="true"
-                width="1rem"
-                height="0.75rem"
-              >
-                <use href="./images/icomoon-svgomg/icons.svg#icon-envelope"></use>
-              </svg>
-
-              <span class="tooltip sr-only" id="devstudio-email-id-label" tabindex="-1">
-                Почта студии
-              </span>
-
-              info@devstudio.com
-            </a>
-          </li>
-
-          <li class="contact-item">
-            <a
-              class="header-contact links"
-              href="tel:+380961111111"
-              aria-labelledby="webstudio-phone-id-label-1"
-            >
-              <!-- 10x16 -->
-              <svg
-                class="header-contact-icon svg icon-smartphone"
-                aria-hidden="true"
-                width="0.625rem"
-                height="1rem"
-              >
-                <use href="./images/icomoon-svgomg/icons.svg#icon-smartphone"></use>
-              </svg>
-
-              <span class="tooltip sr-only" id="webstudio-phone-id-label-1" tabindex="-1">
-                Мобильный студии
-              </span>
-
-              +38 096 111 11 11
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Главная (бургер, шаг 2) -->
-      <div class="mobile-overlay">
-        <!-- Кнопка закрытия мобильного меню -->
-        <button
-          class="btn btn--secondary btn-mobile btn-mobile-close is-hidden"
-          type="button"
-          aria-labelledby="close-nav__menu-id-label"
-        >
-          <!-- 40x40 -->
-          <svg
-            class="btn-mobile__icon svg icon-close"
-            aria-hidden="true"
-            width="2.5rem"
-            height="2.5rem"
-          >
-            <use href="./images/icomoon-svgomg/icons.svg#icon-close-40px"></use>
-          </svg>
-
-          <span class="tooltip sr-only" id="close-nav__menu-id-label" tabindex="-1"> Закрыть </span>
-        </button>
-      </div>
-    </header>
+    <!-- Шапка сайта 2021-08-04 18:38 -->
+    <header class="page-header"></header>
 
     <main>
       <!-- Портфолио -->
@@ -239,14 +105,47 @@
                     href="#0"
                   >
                     <div class="portfolio-card__thumb">
-                      <!-- 370x294 -->
-                      <img
-                        class="portfolio-card__image image"
-                        src="./images/squooshed/portfolio/project-1.jpg"
-                        alt="На экране MacBook Pro открыт веб-сайт Технокряк с фото команды"
-                        width="23.125rem"
-                        height="18.375rem"
-                      />
+                      <picture class="portfolio__picture">
+                        <!-- 1200px -->
+                        <source
+                          media="(min-width: 75rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/desktop/project-1-desktop-370x294.webp    1x,
+                            ./images/squooshed/portfolio/desktop/project-1-desktop-740x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/desktop/project-1-desktop-370x294.jpg     1x,
+                            ./images/squooshed/portfolio/desktop/project-1-desktop-740x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 768px -->
+                        <source
+                          media="(min-width: 48rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/tablet/project-1-tablet-354x294.webp    1x,
+                            ./images/squooshed/portfolio/tablet/project-1-tablet-708x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/tablet/project-1-tablet-354x294.jpg     1x,
+                            ./images/squooshed/portfolio/tablet/project-1-tablet-708x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 480px -->
+                        <source
+                          media="(max-width: 47.9375rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/mobile/project-1-mobile-450x294.webp    1x,
+                            ./images/squooshed/portfolio/mobile/project-1-mobile-900x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/mobile/project-1-mobile-450x294.jpg     1x,
+                            ./images/squooshed/portfolio/mobile/project-1-mobile-900x588@2x.jpg  2x
+                          "
+                        />
+
+                        <img
+                          class="portfolio-card__image image"
+                          src="#"
+                          alt="На экране MacBook Pro открыт веб-сайт Технокряк с фото команды"
+                        />
+                      </picture>
+                      <!-- width="23.125rem" height="18.375rem" -->
 
                       <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -271,14 +170,46 @@
                     href="#0"
                   >
                     <div class="portfolio-card__thumb">
-                      <!-- 370x294 -->
-                      <img
-                        class="portfolio-card__image image"
-                        src="./images/squooshed/portfolio/project-2.jpg"
-                        alt="Баскетболист Golden Star блокирует бросок игрока New Orlean"
-                        width="23.125rem"
-                        height="18.375rem"
-                      />
+                      <picture class="portfolio__picture">
+                        <!-- 1200px -->
+                        <source
+                          media="(min-width: 75rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/desktop/project-2-desktop-370x294.webp    1x,
+                            ./images/squooshed/portfolio/desktop/project-2-desktop-740x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/desktop/project-2-desktop-370x294.jpg     1x,
+                            ./images/squooshed/portfolio/desktop/project-2-desktop-740x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 768px -->
+                        <source
+                          media="(min-width: 48rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/tablet/project-2-tablet-354x294.webp    1x,
+                            ./images/squooshed/portfolio/tablet/project-2-tablet-708x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/tablet/project-2-tablet-354x294.jpg     1x,
+                            ./images/squooshed/portfolio/tablet/project-2-tablet-708x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 480px -->
+                        <source
+                          media="(max-width: 47.9375rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/mobile/project-2-mobile-450x294.webp    1x,
+                            ./images/squooshed/portfolio/mobile/project-2-mobile-900x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/mobile/project-2-mobile-450x294.jpg     1x,
+                            ./images/squooshed/portfolio/mobile/project-2-mobile-900x588@2x.jpg  2x
+                          "
+                        />
+
+                        <img
+                          class="portfolio-card__image image"
+                          src="#"
+                          alt="Баскетболист Golden Star блокирует бросок игрока New Orlean"
+                        />
+                      </picture>
 
                       <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -305,14 +236,46 @@
                     href="#0"
                   >
                     <div class="portfolio-card__thumb">
-                      <!-- 370x294 -->
-                      <img
-                        class="portfolio-card__image image"
-                        src="./images/squooshed/portfolio/project-3.jpg"
-                        alt
-                        width="23.125rem"
-                        height="18.375rem"
-                      />
+                      <picture class="portfolio__picture">
+                        <!-- 1200px -->
+                        <source
+                          media="(min-width: 75rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/desktop/project-3-desktop-370x294.webp    1x,
+                            ./images/squooshed/portfolio/desktop/project-3-desktop-740x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/desktop/project-3-desktop-370x294.jpg     1x,
+                            ./images/squooshed/portfolio/desktop/project-3-desktop-740x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 768px -->
+                        <source
+                          media="(min-width: 48rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/tablet/project-3-tablet-354x294.webp    1x,
+                            ./images/squooshed/portfolio/tablet/project-3-tablet-708x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/tablet/project-3-tablet-354x294.jpg     1x,
+                            ./images/squooshed/portfolio/tablet/project-3-tablet-708x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 480px -->
+                        <source
+                          media="(max-width: 47.9375rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/mobile/project-3-mobile-450x294.webp    1x,
+                            ./images/squooshed/portfolio/mobile/project-3-mobile-900x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/mobile/project-3-mobile-450x294.jpg     1x,
+                            ./images/squooshed/portfolio/mobile/project-3-mobile-900x588@2x.jpg  2x
+                          "
+                        />
+
+                        <img
+                          class="portfolio-card__image image"
+                          src="#"
+                          alt="Ресторан морской еды, открыт в 2001г, большая рыба на логотипе"
+                        />
+                      </picture>
 
                       <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -337,14 +300,42 @@
                     href="#0"
                   >
                     <div class="portfolio-card__thumb">
-                      <!-- 370x294 -->
-                      <img
-                        class="portfolio-card__image image"
-                        src="./images/squooshed/portfolio/project-4.jpg"
-                        alt
-                        width="23.125rem"
-                        height="18.375rem"
-                      />
+                      <picture class="portfolio__picture">
+                        <!-- 1200px -->
+                        <source
+                          media="(min-width: 75rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/desktop/project-4-desktop-370x294.webp    1x,
+                            ./images/squooshed/portfolio/desktop/project-4-desktop-740x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/desktop/project-4-desktop-370x294.jpg     1x,
+                            ./images/squooshed/portfolio/desktop/project-4-desktop-740x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 768px -->
+                        <source
+                          media="(min-width: 48rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/tablet/project-4-tablet-354x294.webp    1x,
+                            ./images/squooshed/portfolio/tablet/project-4-tablet-708x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/tablet/project-4-tablet-354x294.jpg     1x,
+                            ./images/squooshed/portfolio/tablet/project-4-tablet-708x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 480px -->
+                        <source
+                          media="(max-width: 47.9375rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/mobile/project-4-mobile-450x294.webp    1x,
+                            ./images/squooshed/portfolio/mobile/project-4-mobile-900x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/mobile/project-4-mobile-450x294.jpg     1x,
+                            ./images/squooshed/portfolio/mobile/project-4-mobile-900x588@2x.jpg  2x
+                          "
+                        />
+
+                        <img class="portfolio-card__image image" src="#" alt="Студийные наушники" />
+                      </picture>
 
                       <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -369,14 +360,46 @@
                     href="#0"
                   >
                     <div class="portfolio-card__thumb">
-                      <!-- 370x294 -->
-                      <img
-                        class="portfolio-card__image image"
-                        src="./images/squooshed/portfolio/project-5.jpg"
-                        alt
-                        width="23.125rem"
-                        height="18.375rem"
-                      />
+                      <picture class="portfolio__picture">
+                        <!-- 1200px -->
+                        <source
+                          media="(min-width: 75rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/desktop/project-5-desktop-370x294.webp    1x,
+                            ./images/squooshed/portfolio/desktop/project-5-desktop-740x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/desktop/project-5-desktop-370x294.jpg     1x,
+                            ./images/squooshed/portfolio/desktop/project-5-desktop-740x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 768px -->
+                        <source
+                          media="(min-width: 48rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/tablet/project-5-tablet-354x294.webp    1x,
+                            ./images/squooshed/portfolio/tablet/project-5-tablet-708x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/tablet/project-5-tablet-354x294.jpg     1x,
+                            ./images/squooshed/portfolio/tablet/project-5-tablet-708x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 480px -->
+                        <source
+                          media="(max-width: 47.9375rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/mobile/project-5-mobile-450x294.webp    1x,
+                            ./images/squooshed/portfolio/mobile/project-5-mobile-900x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/mobile/project-5-mobile-450x294.jpg     1x,
+                            ./images/squooshed/portfolio/mobile/project-5-mobile-900x588@2x.jpg  2x
+                          "
+                        />
+
+                        <img
+                          class="portfolio-card__image image"
+                          src="#"
+                          alt="Две коробки-упаковки - большая квадратная и маленькая продолговатая"
+                        />
+                      </picture>
 
                       <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -401,14 +424,46 @@
                     href="#0"
                   >
                     <div class="portfolio-card__thumb">
-                      <!-- 370x294 -->
-                      <img
-                        class="portfolio-card__image image"
-                        src="./images/squooshed/portfolio/project-6.jpg"
-                        alt
-                        width="23.125rem"
-                        height="18.375rem"
-                      />
+                      <picture class="portfolio__picture">
+                        <!-- 1200px -->
+                        <source
+                          media="(min-width: 75rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/desktop/project-6-desktop-370x294.webp    1x,
+                            ./images/squooshed/portfolio/desktop/project-6-desktop-740x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/desktop/project-6-desktop-370x294.jpg     1x,
+                            ./images/squooshed/portfolio/desktop/project-6-desktop-740x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 768px -->
+                        <source
+                          media="(min-width: 48rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/tablet/project-6-tablet-354x294.webp    1x,
+                            ./images/squooshed/portfolio/tablet/project-6-tablet-708x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/tablet/project-6-tablet-354x294.jpg     1x,
+                            ./images/squooshed/portfolio/tablet/project-6-tablet-708x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 480px -->
+                        <source
+                          media="(max-width: 47.9375rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/mobile/project-6-mobile-450x294.webp    1x,
+                            ./images/squooshed/portfolio/mobile/project-6-mobile-900x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/mobile/project-6-mobile-450x294.jpg     1x,
+                            ./images/squooshed/portfolio/mobile/project-6-mobile-900x588@2x.jpg  2x
+                          "
+                        />
+
+                        <img
+                          class="portfolio-card__image image"
+                          src="#"
+                          alt="Большой настольный монитор от Apple с отчетами о продажах по миру"
+                        />
+                      </picture>
 
                       <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -435,14 +490,46 @@
                     href="#0"
                   >
                     <div class="portfolio-card__thumb">
-                      <!-- 370x294 -->
-                      <img
-                        class="portfolio-card__image image"
-                        src="./images/squooshed/portfolio/project-7.jpg"
-                        alt
-                        width="23.125rem"
-                        height="18.375rem"
-                      />
+                      <picture class="portfolio__picture">
+                        <!-- 1200px -->
+                        <source
+                          media="(min-width: 75rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/desktop/project-7-desktop-370x294.webp    1x,
+                            ./images/squooshed/portfolio/desktop/project-7-desktop-740x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/desktop/project-7-desktop-370x294.jpg     1x,
+                            ./images/squooshed/portfolio/desktop/project-7-desktop-740x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 768px -->
+                        <source
+                          media="(min-width: 48rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/tablet/project-7-tablet-354x294.webp    1x,
+                            ./images/squooshed/portfolio/tablet/project-7-tablet-708x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/tablet/project-7-tablet-354x294.jpg     1x,
+                            ./images/squooshed/portfolio/tablet/project-7-tablet-708x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 480px -->
+                        <source
+                          media="(max-width: 47.9375rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/mobile/project-7-mobile-450x294.webp    1x,
+                            ./images/squooshed/portfolio/mobile/project-7-mobile-900x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/mobile/project-7-mobile-450x294.jpg     1x,
+                            ./images/squooshed/portfolio/mobile/project-7-mobile-900x588@2x.jpg  2x
+                          "
+                        />
+
+                        <img
+                          class="portfolio-card__image image"
+                          src="#"
+                          alt="Печатное издание 'Ограниченный тираж'"
+                        />
+                      </picture>
 
                       <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -469,14 +556,46 @@
                     href="#0"
                   >
                     <div class="portfolio-card__thumb">
-                      <!-- 370x294 -->
-                      <img
-                        class="portfolio-card__image image"
-                        src="./images/squooshed/portfolio/project-8.jpg"
-                        alt
-                        width="23.125rem"
-                        height="18.375rem"
-                      />
+                      <picture class="portfolio__picture">
+                        <!-- 1200px -->
+                        <source
+                          media="(min-width: 75rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/desktop/project-8-desktop-370x294.webp    1x,
+                            ./images/squooshed/portfolio/desktop/project-8-desktop-740x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/desktop/project-8-desktop-370x294.jpg     1x,
+                            ./images/squooshed/portfolio/desktop/project-8-desktop-740x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 768px -->
+                        <source
+                          media="(min-width: 48rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/tablet/project-8-tablet-354x294.webp    1x,
+                            ./images/squooshed/portfolio/tablet/project-8-tablet-708x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/tablet/project-8-tablet-354x294.jpg     1x,
+                            ./images/squooshed/portfolio/tablet/project-8-tablet-708x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 480px -->
+                        <source
+                          media="(max-width: 47.9375rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/mobile/project-8-mobile-450x294.webp    1x,
+                            ./images/squooshed/portfolio/mobile/project-8-mobile-900x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/mobile/project-8-mobile-450x294.jpg     1x,
+                            ./images/squooshed/portfolio/mobile/project-8-mobile-900x588@2x.jpg  2x
+                          "
+                        />
+
+                        <img
+                          class="portfolio-card__image image"
+                          src="#"
+                          alt="Этикетка 'Label Tag' на шнурке"
+                        />
+                      </picture>
 
                       <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании
@@ -501,14 +620,46 @@
                     href="#0"
                   >
                     <div class="portfolio-card__thumb">
-                      <!-- 370x294 -->
-                      <img
-                        class="portfolio-card__image image"
-                        src="./images/squooshed/portfolio/project-9.jpg"
-                        alt
-                        width="23.125rem"
-                        height="18.375rem"
-                      />
+                      <picture class="portfolio__picture">
+                        <!-- 1200px -->
+                        <source
+                          media="(min-width: 75rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/desktop/project-9-desktop-370x294.webp    1x,
+                            ./images/squooshed/portfolio/desktop/project-9-desktop-740x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/desktop/project-9-desktop-370x294.jpg     1x,
+                            ./images/squooshed/portfolio/desktop/project-9-desktop-740x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 768px -->
+                        <source
+                          media="(min-width: 48rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/tablet/project-9-tablet-354x294.webp    1x,
+                            ./images/squooshed/portfolio/tablet/project-9-tablet-708x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/tablet/project-9-tablet-354x294.jpg     1x,
+                            ./images/squooshed/portfolio/tablet/project-9-tablet-708x588@2x.jpg  2x
+                          "
+                        />
+
+                        <!-- 480px -->
+                        <source
+                          media="(max-width: 47.9375rem)"
+                          srcset="
+                            ./images/squooshed/portfolio/mobile/project-9-mobile-450x294.webp    1x,
+                            ./images/squooshed/portfolio/mobile/project-9-mobile-900x588@2x.webp 2x,
+                            ./images/squooshed/portfolio/mobile/project-9-mobile-450x294.jpg     1x,
+                            ./images/squooshed/portfolio/mobile/project-9-mobile-900x588@2x.jpg  2x
+                          "
+                        />
+
+                        <img
+                          class="portfolio-card__image image"
+                          src="#"
+                          alt="Бизнесмен работает за ноутбуком"
+                        />
+                      </picture>
 
                       <p class="portfolio-card__desc" tabindex="-1">
                         Технокряк это современная площадка распространения коронавируса. Компании

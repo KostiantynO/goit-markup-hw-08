@@ -7,14 +7,6 @@
   }
 }
 
-/* { mr12 w18 x h18 pt=pb=11 pl12 pr340 } */
-
-.hero-form__input:focus + label {
-  fill: var(--color-accent);
-}
-
-/* HERE WAS CUSTOMER COMMENT */
-
 .submit-btn-wrapper {
   text-align: center;
 }

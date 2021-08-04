@@ -3,7 +3,7 @@
 @mixin mq($start: null, $end: null, $mt: null, $mr: null, $mb: null, $ml: null) {
   @if map_has_key($breakpoints, $end) and $end {
     $maxWidth: map_get($breakpoints, $end);
-    $upToMaxWidth: $maxWidth - 1px;
+    $upToMaxWidth: $maxWidth - rem(1px);
 
     @if map_has_key($breakpoints, $start) and $start {
       $minWidth: map_get($breakpoints, $start);

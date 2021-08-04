@@ -1,12 +1,11 @@
 /* Эффективные решения для вашего бизнеса */
 .hero__title {
   position: relative;
-  min-width: clamp(15.625rem, 100%, 43.5rem); /* 250px to 696px */
-  min-height: #{"clamp(5.25rem, 1vw, 7.5rem)"};
+  min-height: clamp(rem(84px), 1vw, rem(120px)); /* 5.25rem, 7.5rem */
   margin-bottom: var(--uni-margin);
 
-  font-size: clamp(1.625rem, #{"max(3.38vw, 1.625rem)"}, 2.75rem); /* 26px, 44px */
-  line-height: clamp(2.625rem, #{"max(5.47vw, 2.625rem)"}, 3.75rem); /* 42px, 60px */
+  font-size: clamp(rem(26px), #{"max(3.38vw, 1.625rem)"}, rem(44px)); /* 1.625rem, 2.75rem  */
+  line-height: clamp(rem(42px), #{"max(5.47vw, 2.625rem)"}, rem(60px)); /* 2.625rem, 3.75rem */
   font-weight: 900;
 
   color: var(--color-white);

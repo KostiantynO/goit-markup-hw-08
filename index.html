@@ -14,11 +14,6 @@
       .list:empty::after {
         content: attr(data-placeholder);
       }
-
-      .image {
-        width: initial;
-        height: initial;
-      }
     </style>
 
     <link
@@ -45,7 +40,8 @@
     <button class="skip-btn links" onclick="window.location.href='#main-content';">
       Skip to main content
     </button>
-    <!-- Шапка сайта 2021-07-26 02:35 -->
+
+    <!-- Шапка сайта 2021-08-04 18:38 -->
     <header class="page-header">
       <div class="container page-header__container">
         <nav class="nav page-header__nav">
@@ -79,23 +75,6 @@
               ></a>
             </li>
           </ul>
-          <!-- Mobile menu - burger button -->
-          <button
-            class="btn btn--secondary btn-burger nav__btn-mobile btn-mobile is-hidden"
-            type="button"
-            aria-labelledby="burger-id-label"
-          >
-            <!-- 40x40 -->
-            <svg
-              class="btn-mobile__icon svg icon-burger"
-              aria-hidden="true"
-              width="2.5rem"
-              height="2.5rem"
-            >
-              <use href="./images/icomoon-svgomg/icons.svg#icon-burger"></use>
-            </svg>
-            <span class="tooltip sr-only" id="burger-id-label" tabindex="-1"> Меню </span>
-          </button>
         </nav>
         <ul class="page-header__contacts-list">
           <li class="contact-item">
@@ -141,28 +120,27 @@
             </a>
           </li>
         </ul>
-      </div>
-      <!-- Главная (бургер, шаг 2) -->
-      <div class="mobile-overlay">
-        <!-- Кнопка закрытия мобильного меню -->
+
+        <!-- Mobile menu - burger button -->
         <button
-          class="btn btn--secondary btn-mobile btn-mobile-close is-hidden"
+          class="btn btn-burger nav__btn-mobile btn-mobile"
           type="button"
-          aria-labelledby="close-nav__menu-id-label"
+          aria-labelledby="burger-id-label"
         >
           <!-- 40x40 -->
           <svg
-            class="btn-mobile__icon svg icon-close"
+            class="btn-mobile__icon svg icon-burger"
             aria-hidden="true"
             width="2.5rem"
             height="2.5rem"
           >
-            <use href="./images/icomoon-svgomg/icons.svg#icon-close-40px"></use>
+            <use href="./images/icomoon-svgomg/icons.svg#icon-burger"></use>
           </svg>
-          <span class="tooltip sr-only" id="close-nav__menu-id-label" tabindex="-1"> Закрыть </span>
+          <span class="tooltip sr-only" id="burger-id-label" tabindex="-1"> Меню </span>
         </button>
       </div>
     </header>
+
     <main>
       <!-- Герой -->
       <section class="section hero main__hero" aria-labelledby="hero__title_id">
@@ -262,22 +240,34 @@
           </ul>
         </div>
       </section>
+
       <!-- Чем мы занимаемся -->
       <section class="activities main__activities section" aria-labelledby="activities-title-id">
         <div class="activities-container container">
           <h2 class="section__title" id="activities-title-id">Чем мы занимаемся</h2>
+
           <!-- Сжатые *.jpg активностей -->
           <ul class="activities-list" data-placeholder="Заполнитель">
             <li class="activities-list__item">
               <div class="activity-card">
-                <!-- 370x294 -->
-                <img
-                  class="activity-card__image image"
-                  src="./images/squooshed/activities/activity-1.jpg"
-                  alt="Разработчик делает разметку веб-страницы за ноутбуком"
-                  width="23.125rem"
-                  height="18.375rem"
-                />
+                <picture class="activity__picture">
+                  <!-- 1200px -->
+                  <source
+                    media="(min-width: 75rem)"
+                    srcset="
+                      ./images/squooshed/activities/desktop/activity-1-desktop-370x294.webp    1x,
+                      ./images/squooshed/activities/desktop/activity-1-desktop-740x588@2x.webp 2x,
+                      ./images/squooshed/activities/desktop/activity-1-desktop-370x294.jpg     1x,
+                      ./images/squooshed/activities/desktop/activity-1-desktop-740x588@2x.jpg  2x
+                    "
+                  />
+
+                  <img
+                    class="activity-card__image image"
+                    src="#"
+                    alt="Разработчик делает разметку веб-страницы за ноутбуком"
+                  />
+                </picture>
                 <div class="activity-card__overlay">
                   <p class="activity-card__title">Десктопные приложения</p>
                 </div>
@@ -285,14 +275,24 @@
             </li>
             <li class="activities-list__item">
               <div class="activity-card">
-                <!-- 370x294 -->
-                <img
-                  class="activity-card__image image"
-                  src="./images/squooshed/activities/activity-2.jpg"
-                  alt="Дизайнер сверяет макет UI интерфейса со смартфоном"
-                  width="23.125rem"
-                  height="18.375rem"
-                />
+                <picture class="activity__picture">
+                  <!-- 1200px -->
+                  <source
+                    media="(min-width: 75rem)"
+                    srcset="
+                      ./images/squooshed/activities/desktop/activity-2-desktop-370x294.webp    1x,
+                      ./images/squooshed/activities/desktop/activity-2-desktop-740x588@2x.webp 2x,
+                      ./images/squooshed/activities/desktop/activity-2-desktop-370x294.jpg     1x,
+                      ./images/squooshed/activities/desktop/activity-2-desktop-740x588@2x.jpg  2x
+                    "
+                  />
+
+                  <img
+                    class="activity-card__image image"
+                    src="#"
+                    alt="Дизайнер сверяет макет UI интерфейса со смартфоном"
+                  />
+                </picture>
                 <div class="activity-card__overlay">
                   <p class="activity-card__title">Мобильные приложения</p>
                 </div>
@@ -300,14 +300,24 @@
             </li>
             <li class="activities-list__item">
               <div class="activity-card">
-                <!-- 370x294 -->
-                <img
-                  class="activity-card__image image"
-                  src="./images/squooshed/activities/activity-3.jpg"
-                  alt="Дизайнер выбирает цвет из палитры на планшете"
-                  width="23.125rem"
-                  height="18.375rem"
-                />
+                <picture class="activity__picture">
+                  <!-- 1200px -->
+                  <source
+                    media="(min-width: 75rem)"
+                    srcset="
+                      ./images/squooshed/activities/desktop/activity-3-desktop-370x294.webp    1x,
+                      ./images/squooshed/activities/desktop/activity-3-desktop-740x588@2x.webp 2x,
+                      ./images/squooshed/activities/desktop/activity-3-desktop-370x294.jpg     1x,
+                      ./images/squooshed/activities/desktop/activity-3-desktop-740x588@2x.jpg  2x
+                    "
+                  />
+
+                  <img
+                    class="activity-card__image image"
+                    src="#"
+                    alt="Дизайнер выбирает цвет из палитры на планшете"
+                  />
+                </picture>
                 <div class="activity-card__overlay">
                   <p class="activity-card__title">Дизайнерские решения</p>
                 </div>
@@ -324,14 +334,50 @@
           <ul class="designers-list" data-placeholder="Заполнитель">
             <li class="designers-list__item">
               <div class="designer-card">
-                <!-- 270x260 -->
-                <img
-                  class="image designer-card__photo"
-                  src="./images/squooshed/team/designer-1.jpg"
-                  alt="Молодой дизайнер в очках, с приветливой улыбкой, со стриженной бородой и в рубашке"
-                  width="16.875rem"
-                  height="16.25rem"
-                />
+                <picture class="designer__picture">
+                  <!-- 1200px -->
+                  <source
+                    media="(min-width: 75rem)"
+                    srcset="
+                      ./images/squooshed/team/desktop/designer-1-desktop-270x260.webp    1x,
+                      ./images/squooshed/team/desktop/designer-1-desktop-540x520@2x.webp 2x,
+                      ./images/squooshed/team/desktop/designer-1-desktop-270x260.jpg     1x,
+                      ./images/squooshed/team/desktop/designer-1-desktop-540x520@2x.jpg  2x
+                    "
+                  />
+
+                  <!-- 768px -->
+                  <source
+                    media="(min-width: 48rem)"
+                    srcset="
+                      ./images/squooshed/team/tablet/designer-1-tablet-354x374.webp    1x,
+                      ./images/squooshed/team/tablet/designer-1-tablet-708x748@2x.webp 2x,
+                      ./images/squooshed/team/tablet/designer-1-tablet-354x374.jpg     1x,
+                      ./images/squooshed/team/tablet/designer-1-tablet-708x748@2x.jpg  2x
+                    "
+                  />
+
+                  <!-- 480px -->
+                  <source
+                    media="(max-width: 47.9375rem)"
+                    srcset="
+                      ./images/squooshed/team/mobile/designer-1-mobile-450x460.webp    1x,
+                      ./images/squooshed/team/mobile/designer-1-mobile-900x920@2x.webp 2x,
+                      ./images/squooshed/team/mobile/designer-1-mobile-450x460.jpg     1x,
+                      ./images/squooshed/team/mobile/designer-1-mobile-900x920@2x.jpg  2x
+                    "
+                  />
+
+                  <img
+                    class="image designer-card__photo"
+                    src="#"
+                    alt="Молодой дизайнер в очках, с приветливой улыбкой, со стриженной бородой и в рубашке"
+                  />
+                </picture>
+
+                <!-- width="16.875rem"
+                    height="16.25rem" -->
+
                 <div class="designer-card__meta">
                   <h3 class="designer-card__name">Игорь Демьяненко</h3>
                   <p class="designer-card__role" lang="en">Product Designer</p>
@@ -447,14 +493,46 @@
             </li>
             <li class="designers-list__item">
               <div class="designer-card">
-                <!-- 270x260 -->
-                <img
-                  class="image designer-card__photo"
-                  src="./images/squooshed/team/designer-2.jpg"
-                  alt="Молодая улыбающаяся девушка-разработчик в очках и в деловом костюме"
-                  width="16.875rem"
-                  height="16.25rem"
-                />
+                <picture class="designer__picture">
+                  <!-- 1200px -->
+                  <source
+                    media="(min-width: 75rem)"
+                    srcset="
+                      ./images/squooshed/team/desktop/designer-2-desktop-270x260.webp    1x,
+                      ./images/squooshed/team/desktop/designer-2-desktop-540x520@2x.webp 2x,
+                      ./images/squooshed/team/desktop/designer-2-desktop-270x260.jpg     1x,
+                      ./images/squooshed/team/desktop/designer-2-desktop-540x520@2x.jpg  2x
+                    "
+                  />
+
+                  <!-- 768px -->
+                  <source
+                    media="(min-width: 48rem)"
+                    srcset="
+                      ./images/squooshed/team/tablet/designer-2-tablet-354x374.webp    1x,
+                      ./images/squooshed/team/tablet/designer-2-tablet-708x748@2x.webp 2x,
+                      ./images/squooshed/team/tablet/designer-2-tablet-354x374.jpg     1x,
+                      ./images/squooshed/team/tablet/designer-2-tablet-708x748@2x.jpg  2x
+                    "
+                  />
+
+                  <!-- 480px -->
+                  <source
+                    media="(max-width: 47.9375rem)"
+                    srcset="
+                      ./images/squooshed/team/mobile/designer-2-mobile-450x460.webp    1x,
+                      ./images/squooshed/team/mobile/designer-2-mobile-900x920@2x.webp 2x,
+                      ./images/squooshed/team/mobile/designer-2-mobile-450x460.jpg     1x,
+                      ./images/squooshed/team/mobile/designer-2-mobile-900x920@2x.jpg  2x
+                    "
+                  />
+
+                  <img
+                    class="image designer-card__photo"
+                    src="#"
+                    alt="Молодая улыбающаяся девушка-разработчик в очках и в деловом костюме"
+                  />
+                </picture>
                 <div class="designer-card__meta">
                   <h3 class="designer-card__name">Ольга Репина</h3>
                   <p class="designer-card__role" lang="en">Frontend Developer</p>
@@ -570,14 +648,46 @@
             </li>
             <li class="designers-list__item">
               <div class="designer-card">
-                <!-- 270x260 -->
-                <img
-                  class="image designer-card__photo"
-                  src="./images/squooshed/team/designer-3.jpg"
-                  alt="Молодой маркетолог с уверенной улыбкой, легкой бородой и в рубашке"
-                  width="16.875rem"
-                  height="16.25rem"
-                />
+                <picture class="designer__picture">
+                  <!-- 1200px -->
+                  <source
+                    media="(min-width: 75rem)"
+                    srcset="
+                      ./images/squooshed/team/desktop/designer-3-desktop-270x260.webp    1x,
+                      ./images/squooshed/team/desktop/designer-3-desktop-540x520@2x.webp 2x,
+                      ./images/squooshed/team/desktop/designer-3-desktop-270x260.jpg     1x,
+                      ./images/squooshed/team/desktop/designer-3-desktop-540x520@2x.jpg  2x
+                    "
+                  />
+
+                  <!-- 768px -->
+                  <source
+                    media="(min-width: 48rem)"
+                    srcset="
+                      ./images/squooshed/team/tablet/designer-3-tablet-354x374.webp    1x,
+                      ./images/squooshed/team/tablet/designer-3-tablet-708x748@2x.webp 2x,
+                      ./images/squooshed/team/tablet/designer-3-tablet-354x374.jpg     1x,
+                      ./images/squooshed/team/tablet/designer-3-tablet-708x748@2x.jpg  2x
+                    "
+                  />
+
+                  <!-- 480px -->
+                  <source
+                    media="(max-width: 47.9375rem)"
+                    srcset="
+                      ./images/squooshed/team/mobile/designer-3-mobile-450x460.webp    1x,
+                      ./images/squooshed/team/mobile/designer-3-mobile-900x920@2x.webp 2x,
+                      ./images/squooshed/team/mobile/designer-3-mobile-450x460.jpg     1x,
+                      ./images/squooshed/team/mobile/designer-3-mobile-900x920@2x.jpg  2x
+                    "
+                  />
+
+                  <img
+                    class="image designer-card__photo"
+                    src="#"
+                    alt="Молодой маркетолог с уверенной улыбкой, легкой бородой и в рубашке"
+                  />
+                </picture>
                 <div class="designer-card__meta">
                   <h3 class="designer-card__name">Николай Тарасов</h3>
                   <p class="designer-card__role" lang="en">Marketing</p>
@@ -693,14 +803,46 @@
             </li>
             <li class="designers-list__item">
               <div class="designer-card">
-                <!-- 270x260 -->
-                <img
-                  class="image designer-card__photo"
-                  src="./images/squooshed/team/designer-4.jpg"
-                  alt="Молодой дизайнер в очках, со сдержанной уверенной ухмылкой, с бородой и в футболке"
-                  width="16.875rem"
-                  height="16.25rem"
-                />
+                <picture class="designer__picture">
+                  <!-- 1200px -->
+                  <source
+                    media="(min-width: 75rem)"
+                    srcset="
+                      ./images/squooshed/team/desktop/designer-4-desktop-270x260.webp    1x,
+                      ./images/squooshed/team/desktop/designer-4-desktop-540x520@2x.webp 2x,
+                      ./images/squooshed/team/desktop/designer-4-desktop-270x260.jpg     1x,
+                      ./images/squooshed/team/desktop/designer-4-desktop-540x520@2x.jpg  2x
+                    "
+                  />
+
+                  <!-- 768px -->
+                  <source
+                    media="(min-width: 48rem)"
+                    srcset="
+                      ./images/squooshed/team/tablet/designer-4-tablet-354x374.webp    1x,
+                      ./images/squooshed/team/tablet/designer-4-tablet-708x748@2x.webp 2x,
+                      ./images/squooshed/team/tablet/designer-4-tablet-354x374.jpg     1x,
+                      ./images/squooshed/team/tablet/designer-4-tablet-708x748@2x.jpg  2x
+                    "
+                  />
+
+                  <!-- 480px -->
+                  <source
+                    media="(max-width: 47.9375rem)"
+                    srcset="
+                      ./images/squooshed/team/mobile/designer-4-mobile-450x460.webp    1x,
+                      ./images/squooshed/team/mobile/designer-4-mobile-900x920@2x.webp 2x,
+                      ./images/squooshed/team/mobile/designer-4-mobile-450x460.jpg     1x,
+                      ./images/squooshed/team/mobile/designer-4-mobile-900x920@2x.jpg  2x
+                    "
+                  />
+
+                  <img
+                    class="image designer-card__photo"
+                    src="#"
+                    alt="Молодой дизайнер в очках, со сдержанной уверенной ухмылкой, с бородой и в футболке"
+                  />
+                </picture>
                 <div class="designer-card__meta">
                   <h3 class="designer-card__name">Михаил Ермаков</h3>
                   <p class="designer-card__role" lang="en">UI Designer</p>
@@ -1182,7 +1324,7 @@
         <!-- Кнопка "Закрыть" (close) -->
         <div class="modal-close-btn-container">
           <button
-            class="modal-close-btn btn btn--secondary"
+            class="modal-close-btn btn"
             data-modal-close
             type="button"
             aria-labelledby="modal-close-id-label"
@@ -1227,7 +1369,7 @@
               <div class="svg-wrapper customer-info__svg-wrapper">
                 <!-- 18x18 -->
                 <svg
-                  class="form-svg"
+                  class="form-svg svg customer-info__svg"
                   aria-hidden="true"
                   tabindex="-1"
                   width="1.125rem"
@@ -1257,7 +1399,7 @@
               <div class="svg-wrapper customer-info__svg-wrapper">
                 <!-- 18x18 -->
                 <svg
-                  class="form-svg svg"
+                  class="form-svg svg customer-info__svg"
                   aria-hidden="true"
                   tabindex="-1"
                   width="1.125rem"
@@ -1286,7 +1428,7 @@
               <div class="svg-wrapper customer-info__svg-wrapper">
                 <!-- 18x18 -->
                 <svg
-                  class="form-svg svg"
+                  class="form-svg svg customer-info__svg"
                   aria-hidden="true"
                   tabindex="-1"
                   width="1.125rem"
@@ -1321,21 +1463,21 @@
                 required
               />
 
-              <div
-                class="custom-checkbox policy__custom-checkbox"
+              <!-- 16x15 -->
+              <svg
+                class="custom-checkbox policy__custom-checkbox svg"
                 title="Пожалуйста, установите этот флажок, если Вы хотите продолжить."
                 aria-hidden="true"
+                tabindex="-1"
+                width="1rem"
+                height="0.9375rem"
               >
-                <!-- 12x9 -->
-                <svg
-                  class="form-svg svg custom-checkbox__check-icon"
-                  tabindex="-1"
-                  width="0.75rem"
-                  height="0.5625rem"
-                >
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-check"></use>
-                </svg>
-              </div>
+                <!-- 11x8 -->
+                <use
+                  class="custom-checkbox__check-icon"
+                  href="./images/icomoon-svgomg/icons.svg#icon-checkbox-checked"
+                ></use>
+              </svg>
             </div>
 
             <span class="hero-form__label policy__label"
@@ -1353,6 +1495,27 @@
           </div>
         </form>
       </div>
+    </div>
+
+    <!-- Мобильное меню - Главная (бургер, шаг 2) -->
+    <div class="mobile-overlay">
+      <!-- Кнопка закрытия мобильного меню -->
+      <button
+        class="btn btn-mobile btn-mobile-close"
+        type="button"
+        aria-labelledby="close-nav__menu-id-label"
+      >
+        <!-- 40x40 -->
+        <svg
+          class="btn-mobile__icon svg icon-close"
+          aria-hidden="true"
+          width="2.5rem"
+          height="2.5rem"
+        >
+          <use href="./images/icomoon-svgomg/icons.svg#icon-close-40px"></use>
+        </svg>
+        <span class="tooltip sr-only" id="close-nav__menu-id-label" tabindex="-1"> Закрыть </span>
+      </button>
     </div>
 
     <!-- Скрипт модального окна -->

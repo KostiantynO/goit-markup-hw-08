@@ -1,8 +1,8 @@
 .container {
-  min-width: 16.875rem; /* 270px Мин. и 1200px макс. ширина контейнера */
-  max-width: 75rem;
-  padding-right: 0.9375rem; /* 15px, Отдаляет от границы экрана */
-  padding-left: 0.9375rem;
+  min-width: rem(250px); /* 250px Мин. и 1200px макс. ширина контейнера */
+  max-width: rem(1200px); /* 75rem */
+  padding-right: rem(15px); /* 0.9375rem, падинг от границы экрана */
+  padding-left: rem(15px);
 
   margin-right: auto; /* Центрирует по ширине */
   margin-left: auto;

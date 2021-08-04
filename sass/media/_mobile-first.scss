@@ -5,9 +5,18 @@
 // [0 - 767px], hide.
 @include mq($end: $tablet) {
   .nav__menu,
-  .page-header__contacts-list,
-  .features {
+  .page-header__contacts-list {
     display: none;
+  }
+}
+
+.activities {
+  display: none;
+}
+
+@include mq($desktop) {
+  .activities {
+    display: block;
   }
 }
 

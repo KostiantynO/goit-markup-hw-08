@@ -8,6 +8,7 @@
 
   transition: transform var(--time) var(--cubic);
 
+  /* { mr12 w18 x h18 pt=pb=11 pl12 pr340 } */
   .hero-form__input:focus + & {
     color: var(--color-accent);
   }

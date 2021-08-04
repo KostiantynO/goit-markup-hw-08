@@ -12,7 +12,14 @@
 
   transition: border-color var(--time) var(--cubic);
 
-  &:required:not(:placeholder-shown),
+  &:valid:not(:focus):not(:placeholder-shown) {
+    border-color: green;
+  }
+
+  &:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: red;
+  }
+
   &:focus {
     border-color: var(--color-accent);
     box-shadow: 0 0 3px 2px rgba(33, 150, 243, 0.5);

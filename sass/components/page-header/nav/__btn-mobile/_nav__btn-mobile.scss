@@ -1,11 +1,7 @@
 /* START Mobile button */
 .btn-mobile {
-  position: absolute;
-  top: 0%;
-  left: 100%;
-
-  max-width: 2.5rem;
-  max-height: 2.5rem;
+  max-width: rem(40px); /* 2.5rem */
+  max-height: rem(40px);
   padding: 0;
 
   color: var(--color-text-primary);
@@ -30,10 +26,13 @@
 /* END Mobile button */
 
 .nav__btn-mobile {
-  margin: 0.625rem 0.9375rem;
   margin-left: auto;
 
   border: none;
+}
 
-  transform: translateY(-50%);
+.btn-mobile-close {
+  position: absolute;
+  top: rem(10px);
+  right: rem(15px);
 }

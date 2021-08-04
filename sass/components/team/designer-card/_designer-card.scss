@@ -1,21 +1,19 @@
 .designer-card {
-  padding-bottom: 1.5rem;
+  padding-bottom: rem(24px); /* 1.5rem */
 
   background-color: var(--color-white); /* card bg */
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 rem(4px) rem(4px);
   /* Тень для Карточки дизайнера (статическая) - material shadow v1 */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14),
-    0 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 rem(1px) rem(3px) rgba(0, 0, 0, 0.12), 0 rem(1px) rem(1px) rgba(0, 0, 0, 0.14),
+    0 rem(2px) rem(1px) rgba(0, 0, 0, 0.2);
 }
 
 .designer-card__photo {
-  object-fit: contain;
-  object-position: top;
+  // object-fit: contain;
+  // object-position: top;
 
-  width: 100%;
-  min-width: clamp(15.625rem, 100%, 28.125rem); /* 250...450px */
-  height: 100%;
-  min-height: clamp(16.25rem, 100%, 28.75rem); /* 260...460px */
+  // min-width: clamp(rem(250px), 100%, rem(450px)); /* 15.625rem...28.125rem */
+  // min-height: clamp( rem(260px), 100%, rem(460px)); /* 16.25rem...28.75rem */
   margin: 0 auto;
 
   /* w450px img-h460px title-h162px card-h622px

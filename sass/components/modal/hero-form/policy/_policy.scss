@@ -2,7 +2,7 @@
 .policy {
   position: relative;
   display: flex;
-  align-items: flex-start;
+
   justify-content: center;
 
   margin-bottom: rem(30px);
@@ -11,8 +11,8 @@
     margin-right: rem(8px);
   }
 
-  &__label {
-    margin-bottom: 0;
+  @include mq($desktop) {
+    align-items: center;
   }
 }
 
@@ -27,12 +27,15 @@
 
 /* Соглашаюсь с рассылкой и принимаю Условия договора */
 .policy__label {
-  font-size: clamp(rem(12px), vw(14px, $desktop), rem(14px));
-  line-height: clamp(rem(14px), vw(14px, $tablet), rem(24px));
+  font-size: clamp(rem(12px), vw(rem(14px), $desktop), rem(14px));
+  line-height: clamp(rem(14px), vw(rem(14px), $tablet), rem(24px));
   letter-spacing: 0.03em;
+
+  margin-bottom: 0;
 
   @include mq($desktop) {
     @include fz-lh-fw(14px, 24px);
+    padding-top: rem(3px);
   }
 }
 
