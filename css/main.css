@@ -144,7 +144,7 @@ body .sr-only {
 }
 
 /* END "Скрытый класс для скрин-ридеров" */
-/* "Мобильное меню, Бекдроп и Модальное окно скрыто от всех (и скрин-ридеров) до нажатия на кнопку-героя" */
+/* "Бекдроп и Модальное окно скрыто от всех (и скрин-ридеров) до нажатия на кнопку-героя" */
 .is-hidden {
   pointer-events: none;
   /* MUST HAVE */
@@ -153,6 +153,13 @@ body .sr-only {
   /* MUST HAVE */
   /* НЕ ДОСТУПЕН ДЛЯ ЧИТАЛОК. Не выделяется ни мышкой, ни <tab>. Контент прозрачный. Блок в потоке. */
   opacity: 0;
+}
+
+/* "Мобильный оверлей и меню - скрыто от всех (и скрин-ридеров) до нажатия на кнопку-бургер" */
+.is-open {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Position, Block model, Typography, Visual, Other */
@@ -250,7 +257,6 @@ p {
 
 .studio-body {
   overflow-y: hidden;
-  position: relative;
 }
 
 .studio-body.no-scroll {
@@ -260,6 +266,7 @@ p {
 /* Главная */
 .studio-body,
 .portfolio-body {
+  position: relative;
   width: 100%;
   min-height: 100vh;
   font-family: var(--body-sans-serif);
@@ -608,39 +615,8 @@ p {
 }
 
 /* END "Фильтры-Кнопки" */
-/* START Mobile button */
-.btn-mobile {
-  max-width: 2.5rem;
-  /* 2.5rem */
-  max-height: 2.5rem;
-  padding: 0;
-  color: var(--color-text-primary);
-  background-color: #fff;
-}
-
-.btn-mobile:hover, .btn-mobile:focus, .btn-mobile:active {
-  color: var(--color-accent);
-  background-color: #fff;
-}
-
-.btn-mobile:hover {
-  box-shadow: none;
-}
-
-.btn-mobile__icon {
-  fill: currentColor;
-}
-
-/* END Mobile button */
 .nav__btn-mobile {
   margin-left: auto;
-  border: none;
-}
-
-.btn-mobile-close {
-  position: absolute;
-  top: 0.625rem;
-  right: 0.9375rem;
 }
 
 /* START "Шапка сайта - Контакты" */
@@ -916,6 +892,20 @@ p {
   word-wrap: break-word;
 }
 
+@media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
+  .designers-list__item {
+    max-width: 22.125rem;
+    /* 22.125rem */
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  .designers-list__item {
+    max-width: 16.875rem;
+    /* 16.875rem */
+  }
+}
+
 .designer-card {
   padding-bottom: 1.5rem;
   /* 1.5rem */
@@ -931,6 +921,24 @@ p {
   /* w450px img-h460px title-h162px card-h622px
      w354px img-h374px title-h162px card-h536px
      w270px img-h260px title-h168px card-h428px */
+}
+
+@media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
+  .designer-card__photo {
+    max-width: 22.125rem;
+    /* 22.125rem */
+    max-height: 23.375rem;
+    /* 23.375rem */
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  .designer-card__photo {
+    max-width: 16.875rem;
+    /* 16.875rem */
+    max-height: 16.25rem;
+    /* 16.25rem */
+  }
 }
 
 .designer-card__meta {
@@ -1851,10 +1859,61 @@ p {
   opacity: 1;
 }
 
-/* Studio and Portfolio - Mobile overlay */
-.mobile-overlay {
-  position: relative;
+/* Studio and Portfolio - Mobile menu */
+/* Menu,   w480, h796; */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 100;
+  width: 100%;
   height: 100vh;
+  pointer-events: none;
+  visibility: hidden;
+  background-color: var(--color-white);
+  opacity: 0;
+  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic), visibility var(--time) var(--cubic), background-color var(--time) var(--cubic);
+}
+
+.mobile-menu.is-open {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-100%);
+}
+
+.btn-mobile-close {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.9375rem;
+}
+
+.mobile-menu__container {
+  padding: 48px 40px;
+}
+
+/* START Mobile button */
+.btn-mobile {
+  max-width: 2.5rem;
+  /* 2.5rem */
+  max-height: 2.5rem;
+  padding: 0;
+  color: var(--color-text-primary);
+  background-color: #fff;
+  border: none;
+}
+
+.btn-mobile:hover, .btn-mobile:focus, .btn-mobile:active {
+  color: var(--color-accent);
+}
+
+.btn-mobile__icon {
+  fill: currentColor;
+}
+
+/* END Mobile button */
+.mobile-menu__btn-mobile-close {
+  margin-left: auto;
 }
 
 /* ------------------------------------------------------ */

@@ -1,38 +1,3 @@
-/* START Mobile button */
-.btn-mobile {
-  max-width: rem(40px); /* 2.5rem */
-  max-height: rem(40px);
-  padding: 0;
-
-  color: var(--color-text-primary);
-
-  background-color: #fff;
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: var(--color-accent);
-    background-color: #fff;
-  }
-
-  &:hover {
-    box-shadow: none;
-  }
-}
-
-.btn-mobile__icon {
-  fill: currentColor;
-}
-/* END Mobile button */
-
 .nav__btn-mobile {
   margin-left: auto;
-
-  border: none;
-}
-
-.btn-mobile-close {
-  position: absolute;
-  top: rem(10px);
-  right: rem(15px);
 }

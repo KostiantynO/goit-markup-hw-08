@@ -26,4 +26,12 @@
   margin-left: var(--uni-margin);
 
   word-wrap: break-word;
+
+  @include mq($tablet, $desktop) {
+    max-width: rem(354px); /* 22.125rem */
+  }
+
+  @include mq($desktop) {
+    max-width: rem(270px); /* 16.875rem */
+  }
 }

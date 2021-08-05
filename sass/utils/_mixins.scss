@@ -1,11 +1,10 @@
 /* ------------------------- START "MIXINS" ------------------------- */
-
 @mixin mq($start: null, $end: null, $mt: null, $mr: null, $mb: null, $ml: null) {
-  @if map_has_key($breakpoints, $end) and $end {
+  @if ($end and map_has_key($breakpoints, $end)) {
     $maxWidth: map_get($breakpoints, $end);
     $upToMaxWidth: $maxWidth - rem(1px);
 
-    @if map_has_key($breakpoints, $start) and $start {
+    @if ($start and map_has_key($breakpoints, $start)) {
       $minWidth: map_get($breakpoints, $start);
 
       @media screen and (min-width: $minWidth) and (max-width: $upToMaxWidth) {
@@ -20,7 +19,7 @@
         @content;
       }
     }
-  } @else if (map_has_key($breakpoints, $start) and $start) {
+  } @else if ($start and map_has_key($breakpoints, $start)) {
     $minWidth: map_get($breakpoints, $start);
 
     @media screen and (min-width: $minWidth) {

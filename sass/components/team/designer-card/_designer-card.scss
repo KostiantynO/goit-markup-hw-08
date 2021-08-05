@@ -13,8 +13,18 @@
   // object-position: top;
 
   // min-width: clamp(rem(250px), 100%, rem(450px)); /* 15.625rem...28.125rem */
-  // min-height: clamp( rem(260px), 100%, rem(460px)); /* 16.25rem...28.75rem */
+  // min-height: clamp(rem(260px), 100%, rem(460px)); /* 16.25rem...28.75rem */
   margin: 0 auto;
+
+  @include mq($tablet, $desktop) {
+    max-width: rem(354px); /* 22.125rem */
+    max-height: rem(374px); /* 23.375rem */
+  }
+
+  @include mq($desktop) {
+    max-width: rem(270px); /* 16.875rem */
+    max-height: rem(260px); /* 16.25rem */
+  }
 
   /* w450px img-h460px title-h162px card-h622px
      w354px img-h374px title-h162px card-h536px

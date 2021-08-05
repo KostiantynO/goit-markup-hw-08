@@ -1,0 +1,22 @@
+/* START Mobile button */
+.btn-mobile {
+  max-width: rem(40px); /* 2.5rem */
+  max-height: rem(40px);
+  padding: 0;
+
+  color: var(--color-text-primary);
+
+  background-color: #fff;
+  border: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--color-accent);
+  }
+}
+
+.btn-mobile__icon {
+  fill: currentColor;
+}
+/* END Mobile button */

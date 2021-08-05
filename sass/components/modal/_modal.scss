@@ -22,31 +22,25 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14),
     0 2px 1px rgba(0, 0, 0, 0.2);
   transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic);
-}
 
-@include mq($mobile) {
-  .modal {
+  @include mq($mobile) {
     margin-top: calc(40vw - 99px);
     margin-bottom: calc(39.24vw - 94px);
   }
-}
 
-@include mq($tablet) {
-  .modal {
+  @include mq($tablet) {
     margin-top: calc(3.01vw + 185px);
     margin-bottom: calc(3.47vw + 180px);
   }
-}
 
-@include mq($desktop) {
-  .modal {
+  @include mq($desktop) {
     margin-top: 221px;
     margin-bottom: 222px;
   }
-}
 
-.backdrop.is-hidden > .modal {
-  transform: scale(1.21);
+  .backdrop.is-hidden > & {
+    transform: scale(1.21);
+  }
 }
 
 .modal-close-btn-container {
