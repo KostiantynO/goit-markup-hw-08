@@ -51,18 +51,18 @@
           </a>
           <ul class="nav__menu">
             <li class="nav__item">
-              <a
-                class="nav__link nav__link--current"
-                data-content="Студия"
-                href="./"
-                aria-current="page"
-                hreflang="ru"
-                >Студия<span class="nav__link-overlay nav__link-overlay--current"></span>
+              <a class="nav__link" data-content="Студия" href="./" hreflang="ru"
+                >Студия<span class="nav__link-overlay"></span>
               </a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" data-content="Портфолио" href="./portfolio.html" hreflang="ru"
-                >Портфолио<span class="nav__link-overlay"></span
+              <a
+                class="nav__link nav__link--current"
+                data-content="Портфолио"
+                href="./portfolio.html"
+                aria-current="page"
+                hreflang="ru"
+                >Портфолио<span class="nav__link-overlay nav__link-overlay--current"></span
               ></a>
             </li>
             <li class="nav__item">
@@ -124,9 +124,9 @@
         <!-- Mobile menu - burger button -->
         <button
           class="btn btn-burger nav__btn-mobile btn-mobile"
+          data-menu-open
           type="button"
           aria-labelledby="burger-id-label"
-          data-menu-open
         >
           <!-- 40x40 -->
           <svg
@@ -991,9 +991,9 @@
         <!-- Кнопка закрытия мобильного меню -->
         <button
           class="btn btn-mobile btn-mobile-close"
+          data-menu-close
           type="button"
           aria-labelledby="close-nav__menu-id-label"
-          data-menu-close
         >
           <!-- 40x40 -->
           <svg
