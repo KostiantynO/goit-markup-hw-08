@@ -1,3 +1,8 @@
+.activities__list {
+  margin-top: calc(-1 * var(--gap));
+  margin-left: calc(-1 * var(--gap));
+}
+
 .activities-list {
   @extend %list;
 
@@ -5,19 +10,16 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-
-  margin-top: calc(-1 * var(--gap));
-  margin-left: calc(-1 * var(--gap));
 }
 
 .activities-list__item {
   position: relative;
 
-  flex-basis: calc(100% / var(--cards-per-line-3) - var(--uni-margin));
+  flex-basis: calc(100% / var(--cards-per-line-3) - var(--gap));
   min-width: 15.625rem;
 
   justify-content: center;
 
-  margin-top: var(--uni-margin);
-  margin-left: var(--uni-margin);
+  margin-top: var(--gap);
+  margin-left: var(--gap);
 }

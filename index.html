@@ -85,7 +85,7 @@
             >
               <!-- 16x12 -->
               <svg
-                class="header-contact-icon svg icon-envelope"
+                class="header-contact__icon svg header-contact__icon-envelope"
                 aria-hidden="true"
                 width="1rem"
                 height="0.75rem"
@@ -106,7 +106,7 @@
             >
               <!-- 10x16 -->
               <svg
-                class="header-contact-icon svg icon-smartphone"
+                class="header-contact__icon svg icon-smartphone"
                 aria-hidden="true"
                 width="0.625rem"
                 height="1rem"
@@ -145,7 +145,7 @@
     <main>
       <!-- Герой -->
       <section class="section hero main__hero" aria-labelledby="hero__title_id">
-        <div class="container" id="main-content">
+        <div class="container hero__container" id="main-content">
           <h1 class="hero__title" id="hero__title_id">
             Эффективные решения <br />
             для вашего бизнеса
@@ -158,9 +158,9 @@
 
       <!-- "Особенности" и h2 sr-only -->
       <section class="features main__features section" aria-labelledby="features-title-id">
-        <div class="features-container container">
+        <div class="features__container container">
           <h2 class="sr-only" id="features-title-id">Особенности</h2>
-          <ul class="features-list">
+          <ul class="features-list features__list">
             <!-- 70x70 -->
             <li class="features-list__item">
               <div class="feature-card features__feature-card">
@@ -245,11 +245,11 @@
 
       <!-- Чем мы занимаемся -->
       <section class="activities main__activities section" aria-labelledby="activities-title-id">
-        <div class="activities-container container">
+        <div class="activities__container container">
           <h2 class="section__title" id="activities-title-id">Чем мы занимаемся</h2>
 
           <!-- Сжатые *.jpg активностей -->
-          <ul class="activities-list" data-placeholder="Заполнитель">
+          <ul class="activities-list activities__list" data-placeholder="Заполнитель">
             <li class="activities-list__item">
               <div class="activity-card">
                 <picture class="activity__picture">
@@ -331,10 +331,10 @@
 
       <!-- Наша команда -->
       <section class="team section" aria-labelledby="team-title-id">
-        <div class="container">
+        <div class="container team__container">
           <h2 class="section__title" id="team-title-id">Наша команда</h2>
           <!-- Ужатые *.jpg участников -->
-          <ul class="designers-list" data-placeholder="Заполнитель">
+          <ul class="designers-list team__list" data-placeholder="Заполнитель">
             <li class="designers-list__item">
               <div class="designer-card">
                 <picture class="designer__picture">
@@ -386,7 +386,7 @@
                   <p class="designer-card__role" lang="en">Product Designer</p>
                 </div>
                 <!-- Social links -->
-                <ul class="social-list">
+                <ul class="social-list designer-card__list">
                   <li class="social-list__item">
                     <div class="social-card">
                       <a
@@ -541,7 +541,7 @@
                   <p class="designer-card__role" lang="en">Frontend Developer</p>
                 </div>
                 <!-- Social links -->
-                <ul class="social-list">
+                <ul class="social-list designer-card__list">
                   <li class="social-list__item">
                     <div class="social-card">
                       <a
@@ -696,7 +696,7 @@
                   <p class="designer-card__role" lang="en">Marketing</p>
                 </div>
                 <!-- Social links -->
-                <ul class="social-list">
+                <ul class="social-list designer-card__list">
                   <li class="social-list__item">
                     <div class="social-card">
                       <a
@@ -851,7 +851,7 @@
                   <p class="designer-card__role" lang="en">UI Designer</p>
                 </div>
                 <!-- Social links -->
-                <ul class="social-list">
+                <ul class="social-list designer-card__list">
                   <li class="social-list__item">
                     <div class="social-card">
                       <a
@@ -965,9 +965,9 @@
 
       <!-- Постоянные клиенты -->
       <section class="clients section" aria-labelledby="clients-title-id">
-        <div class="container">
+        <div class="container clients__container">
           <h2 class="section__title" id="clients-title-id">Постоянные клиенты</h2>
-          <ul class="clients-list">
+          <ul class="clients-list clients__list">
             <li class="clients-list__item">
               <div class="client-card">
                 <a
@@ -1176,7 +1176,7 @@
           <!-- Footer Social links -->
           <div class="page-footer__social-container">
             <p class="page-footer__social-title social-list__title">Присоединяйтесь</p>
-            <ul class="social-list">
+            <ul class="social-list page-footer__social-list">
               <li class="social-list__item">
                 <div class="social-card">
                   <a
@@ -1495,7 +1495,7 @@
 
     <!-- Мобильное меню - Главная (бургер, шаг 2) -->
     <div class="mobile-menu" data-menu>
-      <div class="container">
+      <div class="container mobile-menu__container">
         <!-- Кнопка закрытия мобильного меню -->
         <button
           class="btn btn-mobile btn-mobile-close"
@@ -1558,7 +1558,7 @@
             >
               <!-- 16x12 -->
               <svg
-                class="mobile-menu__contact-icon svg icon-envelope"
+                class="mobile-menu__contact-icon svg header-contact__icon-envelope"
                 aria-hidden="true"
                 width="1rem"
                 height="0.75rem"

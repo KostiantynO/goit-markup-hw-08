@@ -1,11 +1,22 @@
+.page-header__container,
+.hero__container,
+.features__container,
+.activities__container,
+.team__container,
+.clients__container,
+.portfolio__container,
+.page-footer__container,
+.backdrop__container,
+.mobile-menu__container {
+  margin-right: auto; /* Центрирует по ширине */
+  margin-left: auto;
+}
+
 .container {
   min-width: rem(250px); /* 250px Мин. и 1200px макс. ширина контейнера */
   max-width: rem(1200px); /* 75rem */
   padding-right: rem(15px); /* 0.9375rem, падинг от границы экрана */
   padding-left: rem(15px);
-
-  margin-right: auto; /* Центрирует по ширине */
-  margin-left: auto;
 
   @include mq($end: $tablet) {
     max-width: map_get($breakpoints, $mobile);

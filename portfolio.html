@@ -85,7 +85,7 @@
             >
               <!-- 16x12 -->
               <svg
-                class="header-contact-icon svg icon-envelope"
+                class="header-contact__icon svg header-contact__icon-envelope"
                 aria-hidden="true"
                 width="1rem"
                 height="0.75rem"
@@ -106,7 +106,7 @@
             >
               <!-- 10x16 -->
               <svg
-                class="header-contact-icon svg icon-smartphone"
+                class="header-contact__icon svg icon-smartphone"
                 aria-hidden="true"
                 width="0.625rem"
                 height="1rem"
@@ -145,14 +145,14 @@
     <main>
       <!-- Портфолио -->
       <section class="portfolio section" aria-labelledby="portfolio-title-id">
-        <div class="portfolio-container container" id="main-content">
+        <div class="portfolio__container container" id="main-content">
           <h1 class="sr-only" id="portfolio-title-id">Примеры работ</h1>
 
           <!-- Фильтры-кнопки -->
           <div class="portfolio-filters" aria-labelledby="portfolio-filters-title-id">
             <h2 class="sr-only" id="portfolio-filters-title-id">Фильтры-кнопки по типу проекта</h2>
 
-            <ul class="portfolio-filters-list" role="radiogroup">
+            <ul class="portfolio-filters-list portfolio-filters__list" role="radiogroup">
               <li class="portfolio-filters-list__item">
                 <button
                   class="btn btn--secondary current-btn filter-btn"
@@ -194,7 +194,7 @@
           <div class="portfolio-projects" aria-labelledby="portfolio-projects-title-id">
             <h2 class="sr-only" id="portfolio-projects-title-id">Список карточек проектов</h2>
 
-            <ul class="portfolio-list" data-placeholder="Заполнитель">
+            <ul class="portfolio-list portfolio__list" data-placeholder="Заполнитель">
               <li class="portfolio-list__item">
                 <div class="portfolio-card">
                   <a
@@ -846,7 +846,7 @@
           <!-- Footer Social links -->
           <div class="page-footer__social-container">
             <p class="page-footer__social-title social-list__title">Присоединяйтесь</p>
-            <ul class="social-list">
+            <ul class="social-list page-footer__social-list">
               <li class="social-list__item">
                 <div class="social-card">
                   <a
@@ -987,7 +987,7 @@
 
     <!-- Мобильное меню - Главная (бургер, шаг 2) -->
     <div class="mobile-menu" data-menu>
-      <div class="container">
+      <div class="container mobile-menu__container">
         <!-- Кнопка закрытия мобильного меню -->
         <button
           class="btn btn-mobile btn-mobile-close"
@@ -1050,7 +1050,7 @@
             >
               <!-- 16x12 -->
               <svg
-                class="mobile-menu__contact-icon svg icon-envelope"
+                class="mobile-menu__contact-icon svg header-contact__icon-envelope"
                 aria-hidden="true"
                 width="1rem"
                 height="0.75rem"

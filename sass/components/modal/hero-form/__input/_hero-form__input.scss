@@ -13,11 +13,11 @@
   transition: border-color var(--time) var(--cubic);
 
   &:valid:not(:focus):not(:placeholder-shown) {
-    border-color: green;
+    border-color: #21ff21;
   }
 
   &:invalid:not(:focus):not(:placeholder-shown) {
-    border-color: red;
+    border-color: #ff2121;
   }
 
   &:focus {

@@ -23,14 +23,14 @@
 
     transform: translateX(-100%);
   }
+
+  &__container {
+    padding: rem(48px) rem(40px); /* 3rem 2.5rem */
+  }
 }
 
 .btn-mobile-close {
   position: absolute;
   top: rem(10px);
   right: rem(15px);
-}
-
-.mobile-menu__container {
-  padding: rem(48px) rem(40px); /* 3rem 2.5rem */
 }

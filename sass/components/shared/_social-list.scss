@@ -1,18 +1,22 @@
 /* START "Ссылки на соц. сети" */
+
+.designer-card__list,
+.page-footer__social-list {
+  margin-top: -1 * rem(16px); /* -1rem */
+  margin-left: -1 * rem(10px); /* -0.625rem */
+}
+
 .social-list {
   @extend %list;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  margin-top: -1rem;
-  margin-left: -0.625rem;
 }
 
 .social-list__item {
-  margin-top: 1rem;
-  margin-left: 0.625rem;
+  margin-top: rem(16px); /* 1rem; */
+  margin-left: rem(10px); /* 0.625rem; */
 }
 
 .social-card__link {
@@ -22,7 +26,7 @@
   align-items: center;
   justify-content: center;
 
-  padding: 0.75rem;
+  padding: rem(12px); /* 0.75rem; */
 
   color: var(--color-icon);
 

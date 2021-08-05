@@ -1,4 +1,9 @@
 /* Постоянные клиенты */
+.clients__list {
+  margin-top: calc(-1 * var(--gap)); /* 30px top left */
+  margin-left: calc(-1 * var(--gap));
+}
+
 .clients-list {
   @extend %list;
 
@@ -7,9 +12,6 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-
-  margin-top: calc(-1 * var(--gap)); /* 30px top left */
-  margin-left: calc(-1 * var(--gap));
 
   @include tr($card);
 }

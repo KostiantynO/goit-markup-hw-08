@@ -1,15 +1,17 @@
-/* Особенности */ /* .features-container { } */
+/* Особенности */ /* .features__container { } */
+
+.features__list {
+  margin-top: calc(-1 * var(--gap));
+  margin-left: calc(-1 * var(--gap));
+}
+
 .features-list {
   @extend %list;
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
   justify-content: center;
-
-  margin-top: calc(-1 * var(--gap));
-  margin-left: calc(-1 * var(--gap));
 }
 
 .features-list__item {

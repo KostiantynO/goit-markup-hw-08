@@ -147,10 +147,10 @@ scalingUp {}
 .page-header__contacts-list
 .page-header__contacts-list .contact-item + .contact-item
 .header-contact
-.header-contact-icon
-.header-contact:hover > .header-contact-icon,
-.header-contact:focus > .header-contact-icon
-.icon-envelope
+.header-contact__icon
+.header-contact:hover > .header-contact__icon,
+.header-contact:focus > .header-contact__icon
+.header-contact__icon-envelope
 .social-list
 .social-list__item
 .social-card__link

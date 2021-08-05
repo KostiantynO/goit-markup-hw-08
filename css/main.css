@@ -271,6 +271,19 @@ p {
   fill: var(--color-text-primary);
 }
 
+.page-header__container,
+.hero__container,
+.features__container,
+.activities__container,
+.team__container,
+.clients__container,
+.portfolio__container,
+.page-footer__container {
+  margin-right: auto;
+  /* Центрирует по ширине */
+  margin-left: auto;
+}
+
 .container {
   min-width: 15.625rem;
   /* 250px Мин. и 1200px макс. ширина контейнера */
@@ -279,9 +292,6 @@ p {
   padding-right: 0.9375rem;
   /* 0.9375rem, падинг от границы экрана */
   padding-left: 0.9375rem;
-  margin-right: auto;
-  /* Центрирует по ширине */
-  margin-left: auto;
 }
 
 @media screen and (max-width: 47.9375rem) {
@@ -627,38 +637,50 @@ p {
   flex-wrap: wrap;
   align-items: center;
   padding-top: 0.4375rem;
+  /* 0.4375rem */
   color: var(--color-text-secondary);
 }
 
-.header-contact-icon {
+.header-contact__icon-envelope {
+  margin-top: 0.125rem;
+  /* 0.125rem; */
+  margin-bottom: 0.125rem;
+  /* 0.125rem; */
+}
+
+.header-contact__icon {
   margin-right: 0.625rem;
+  /* 0.625rem; */
   fill: currentColor;
   transition: transform var(--time) var(--cubic);
 }
 
-.header-contact:hover > .header-contact-icon,
-.header-contact:focus > .header-contact-icon {
+.header-contact:hover > .header-contact__icon,
+.header-contact:focus > .header-contact__icon {
   transform: rotateY(180deg);
-}
-
-.icon-envelope {
-  margin-top: 0.125rem;
-  margin-bottom: 0.125rem;
 }
 
 /* END "Шапка сайта - Контакты" */
 /* START "Ссылки на соц. сети" */
+.designer-card__list,
+.page-footer__social-list {
+  margin-top: -1rem;
+  /* -1rem */
+  margin-left: -0.625rem;
+  /* -0.625rem */
+}
+
 .social-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: -1rem;
-  margin-left: -0.625rem;
 }
 
 .social-list__item {
   margin-top: 1rem;
+  /* 1rem; */
   margin-left: 0.625rem;
+  /* 0.625rem; */
 }
 
 .social-card__link {
@@ -667,6 +689,7 @@ p {
   align-items: center;
   justify-content: center;
   padding: 0.75rem;
+  /* 0.75rem; */
   color: var(--color-icon);
   background-color: var(--color-white);
   border-radius: 50%;
@@ -719,13 +742,16 @@ p {
 /* Studio - Features */
 /* Особенности */
 /* .features-container { } */
+.features__list {
+  margin-top: calc(-1 * var(--gap));
+  margin-left: calc(-1 * var(--gap));
+}
+
 .features-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: calc(-1 * var(--gap));
-  margin-left: calc(-1 * var(--gap));
 }
 
 .features-list__item {
@@ -798,22 +824,25 @@ p {
 }
 
 /* Studio - Activities */
+.activities__list {
+  margin-top: calc(-1 * var(--gap));
+  margin-left: calc(-1 * var(--gap));
+}
+
 .activities-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: calc(-1 * var(--gap));
-  margin-left: calc(-1 * var(--gap));
 }
 
 .activities-list__item {
   position: relative;
-  flex-basis: calc(100% / var(--cards-per-line-3) - var(--uni-margin));
+  flex-basis: calc(100% / var(--cards-per-line-3) - var(--gap));
   min-width: 15.625rem;
   justify-content: center;
-  margin-top: var(--uni-margin);
-  margin-left: var(--uni-margin);
+  margin-top: var(--gap);
+  margin-left: var(--gap);
 }
 
 .activity-card__image {
@@ -854,20 +883,23 @@ p {
 
 /* Studio - Team */
 /* team */
+.team__list {
+  margin-top: calc(-1 * var(--gap));
+  margin-left: calc(-1 * var(--gap));
+}
+
 .designers-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: calc(-1 * var(--gap));
-  margin-left: calc(-1 * var(--gap));
   transition-property: width, height;
   transition: var(--time) var(--cubic);
 }
 
 /* team card 1-4 or "designer card" */
 .designers-list__item {
-  flex-basis: calc(100% / var(--cards-per-line-4) - var(--uni-margin));
+  flex-basis: calc(100% / var(--cards-per-line-4) - var(--gap));
   flex-grow: 1;
   /* for mobile */
   min-width: 15.625rem;
@@ -878,9 +910,9 @@ p {
   /* 26.75rem */
   max-height: 42.45rem;
   /* 42.45rem */
-  margin-top: var(--uni-margin);
+  margin-top: var(--gap);
   /* 30px top and left */
-  margin-left: var(--uni-margin);
+  margin-left: var(--gap);
   word-wrap: break-word;
   transition-property: width, height;
   transition: var(--time) var(--cubic);
@@ -987,15 +1019,18 @@ p {
 
 /* Studio - Clients */
 /* Постоянные клиенты */
+.clients__list {
+  margin-top: calc(-1 * var(--gap));
+  /* 30px top left */
+  margin-left: calc(-1 * var(--gap));
+}
+
 .clients-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-top: calc(-1 * var(--gap));
-  /* 30px top left */
-  margin-left: calc(-1 * var(--gap));
   transition-property: width, height;
   transition: var(--time) var(--cubic);
 }
@@ -1058,37 +1093,43 @@ p {
   white-space: nowrap;
 }
 
+.portfolio-filters__list {
+  margin-top: -0.9375rem;
+  margin-left: -0.5rem;
+}
+
 .portfolio-filters-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-top: calc(-1 * 0.9375rem);
-  margin-left: calc(-1 * 0.5rem);
 }
 
 .portfolio-filters-list__item {
   margin-top: 0.9375rem;
-  /* Верхний отступ между фильтрами-кнопками */
+  /* 0.9375rem; Верхний отступ между фильтрами-кнопками */
   margin-left: 0.5rem;
-  /* Левый отступ между фильтрами-кнопками */
+  /* 0.5rem;  Левый отступ между фильтрами-кнопками */
 }
 
 /* ------------------------------------------------------ */
 /* || ------- END "ПОРТФОЛИО - ФИЛЬТРЫ-КНОПКИ" ---------- */
 /* ------------------------------------------------------ */
 /* Portfolio - Projects */
+.portfolio__list {
+  margin-top: calc(-1 * var(--gap));
+  margin-left: calc(-1 * var(--gap));
+}
+
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: calc(-1 * var(--gap));
-  margin-left: calc(-1 * var(--gap));
 }
 
 /* project 4 */
 .portfolio-list__item {
   display: flex;
-  flex-basis: calc(100% / var(--cards-per-line-3) - var(--uni-margin));
+  flex-basis: calc(100% / var(--cards-per-line-3) - var(--gap));
   flex-direction: column;
   flex-grow: 1;
   width: clamp(15.625rem, 100%, var(--width-portfolio-card__image));
@@ -1101,9 +1142,9 @@ p {
   max-height: calc( 23.125rem + ( (var(--line-height-project-name) * 1.125rem * 2) + (var(--line-height-project-type) * 1rem * 2) + 2.875rem ));
   /* 370px + 178.16px = 548.16px */
   word-wrap: break-word;
-  margin-top: var(--uni-margin);
+  margin-top: var(--gap);
   /* 30px top and left */
-  margin-left: var(--uni-margin);
+  margin-left: var(--gap);
 }
 
 .portfolio-card {
@@ -1266,12 +1307,12 @@ p {
   margin-top: var(--uni-margin-small);
 }
 
-/* .address-list-item { } */
 .address-list__item:not(:last-child) {
   margin-bottom: 9px;
   /* Нижний отступ между ссылками в адресе */
 }
 
+/* .address-list-item { } */
 /* г. Киев, пр-т Леси Украинки, 26; LH24px; */
 .address-card__map-pointer {
   position: relative;
@@ -1365,8 +1406,8 @@ p {
 .subscribe-form__title {
   display: block;
   min-width: 13.6875rem;
-  /* margin-top: 60px; for mobile */
   margin-bottom: 20px;
+  /* mt60px; mobile */
   font-weight: 700;
   line-height: 1.07;
   color: var(--color-white);
@@ -1587,6 +1628,11 @@ p {
   transition: line-height var(--time) var(--cubic), height var(--time) var(--cubic);
 }
 
+.customer-info__field:not(:first-child) {
+  margin-top: 1.75rem;
+  /* 28px = 10px + 14px + 4px */
+}
+
 .customer-info__label, .customer-info__svg-wrapper {
   position: absolute;
   top: 50%;
@@ -1629,11 +1675,6 @@ p {
   flex-direction: column;
 }
 
-.customer-info__field:not(:first-child) {
-  margin-top: 1.75rem;
-  /* 28px = 10px + 14px + 4px */
-}
-
 /* name|tel|email|comment { mb4 fz12 lh14 lsp0.01em c#757575 } */
 .hero-form__label {
   font-size: 0.75rem;
@@ -1663,11 +1704,11 @@ p {
 }
 
 .hero-form__input:valid:not(:focus):not(:placeholder-shown) {
-  border-color: green;
+  border-color: #21ff21;
 }
 
 .hero-form__input:invalid:not(:focus):not(:placeholder-shown) {
-  border-color: red;
+  border-color: #ff2121;
 }
 
 .hero-form__input:focus {
@@ -1794,7 +1835,6 @@ p {
   min-height: 0.9375rem;
   /* 0.9375rem */
   max-height: 0.9375rem;
-  margin-right: 0.5rem;
 }
 
 @media screen and (min-width: 75rem) {

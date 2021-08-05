@@ -21,26 +21,26 @@
   flex-wrap: wrap;
   align-items: center;
 
-  padding-top: 0.4375rem;
+  padding-top: rem(7px); /* 0.4375rem */
 
   color: var(--color-text-secondary);
+
+  &__icon-envelope {
+    margin-top: rem(2px); /* 0.125rem; */
+    margin-bottom: rem(2px); /* 0.125rem; */
+  }
 }
 
-.header-contact-icon {
-  margin-right: 0.625rem;
+.header-contact__icon {
+  margin-right: rem(10px); /* 0.625rem; */
   fill: currentColor;
 
   transition: transform var(--time) var(--cubic);
-}
 
-.header-contact:hover > .header-contact-icon,
-.header-contact:focus > .header-contact-icon {
-  transform: rotateY(180deg);
-}
-
-.icon-envelope {
-  margin-top: 0.125rem;
-  margin-bottom: 0.125rem;
+  .header-contact:hover > &,
+  .header-contact:focus > & {
+    transform: rotateY(180deg);
+  }
 }
 
 /* END "Шапка сайта - Контакты" */

@@ -44,11 +44,6 @@
       #{margin-#{$side}}: rem(map-get($margins, $side));
     }
   }
-
-  // @if $mt { margin-top: $mt; }
-  // @if $mr { margin-right: $mr; }
-  // @if $mb { margin-bottom: $mb; }
-  // @if $ml { margin-left: $ml; }
 }
 
 // ========== Для media запросов ==========
@@ -61,7 +56,7 @@
 // }
 
 // Использование
-// .wrapper { margin: 0 auto; width: 100%;
+// .wrapper {   width: 100%;
 //   @include mq_Repin('tablet')  { width:  90%; }
 //   @include mq_Repin('desktop') { width:  85%; }
 // }

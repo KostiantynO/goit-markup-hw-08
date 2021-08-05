@@ -13,8 +13,6 @@
   min-height: rem(15px); /* 0.9375rem */
   max-height: rem(15px);
 
-  margin-right: rem(8px);
-
   @include mq($desktop, $mr: 7px);
 }
 

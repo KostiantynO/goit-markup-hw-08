@@ -1,4 +1,8 @@
 .customer-info {
+  &__field:not(:first-child) {
+    margin-top: 1.75rem; /* 28px = 10px + 14px + 4px */
+  }
+
   &__label,
   &__svg-wrapper {
     position: absolute;

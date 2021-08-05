@@ -8,20 +8,22 @@
   white-space: nowrap;
 }
 
+.portfolio-filters__list {
+  margin-top: -1 * rem(15px);
+  margin-left: -1 * rem(8px);
+}
+
 .portfolio-filters-list {
   @extend %list;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-
-  margin-top: calc(-1 * 0.9375rem);
-  margin-left: calc(-1 * 0.5rem);
 }
 
 .portfolio-filters-list__item {
-  margin-top: 0.9375rem; /* Верхний отступ между фильтрами-кнопками */
-  margin-left: 0.5rem; /* Левый отступ между фильтрами-кнопками */
+  margin-top: rem(15px); /* 0.9375rem; Верхний отступ между фильтрами-кнопками */
+  margin-left: rem(8px); /* 0.5rem;  Левый отступ между фильтрами-кнопками */
 }
 
 /* ------------------------------------------------------ */

@@ -1,18 +1,20 @@
+.portfolio__list {
+  margin-top: calc(-1 * var(--gap));
+  margin-left: calc(-1 * var(--gap));
+}
+
 .portfolio-list {
   @extend %list;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  margin-top: calc(-1 * var(--gap));
-  margin-left: calc(-1 * var(--gap));
 }
 
 /* project 4 */
 .portfolio-list__item {
   display: flex;
-  flex-basis: calc(100% / var(--cards-per-line-3) - var(--uni-margin));
+  flex-basis: calc(100% / var(--cards-per-line-3) - var(--gap));
   flex-direction: column;
   flex-grow: 1;
 
@@ -32,6 +34,6 @@
 
   word-wrap: break-word;
 
-  margin-top: var(--uni-margin); /* 30px top and left */
-  margin-left: var(--uni-margin);
+  margin-top: var(--gap); /* 30px top and left */
+  margin-left: var(--gap);
 }

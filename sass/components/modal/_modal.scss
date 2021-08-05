@@ -36,7 +36,8 @@
 /* tablet.modal  { w450 x h609 mt208  ml=mr159 mb207 p40 } */
 /* desktop.modal { w528 x h581 mt221  ml=mr536 mb222 p40 } */
 .backdrop__container {
-  margin: auto;
+  margin-top: auto;
+  margin-bottom: auto;
   max-width: rem(480px);
 
   @include mq($desktop) {
