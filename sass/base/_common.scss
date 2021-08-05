@@ -37,7 +37,17 @@ p {
 
   transition: color var(--time) var(--cubic), background-color var(--time) var(--cubic),
     background-clip var(--time) var(--cubic);
+
+  &:hover,
+  &:focus {
+    color: var(--color-accent); /* Акцент #2196F3 */
+  }
 }
+/* START Подсветка ссылок */
+.accent {
+  color: var(--color-accent); /* Акцент #2196F3 */
+}
+/* END Подсветка ссылок */
 
 .svg {
   display: inline-block;
@@ -52,16 +62,6 @@ p {
   max-width: 16rem;
   max-height: 2rem;
 }
-
-/* START Подсветка ссылок */
-
-.accent,
-.links:hover,
-.links:focus {
-  color: var(--color-accent);
-  /* Акцент #2196F3 */
-}
-/* END Подсветка ссылок */
 
 /* ------------------------------------------------------ */
 /* || -------------- END "ОБЩИЕ НАСТРОЙКИ" -------------- */

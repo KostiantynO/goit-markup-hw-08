@@ -1,35 +1,35 @@
 .client-card {
   height: 100%;
-}
 
-.client-card__link {
-  position: relative;
+  &__link {
+    position: relative;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
 
-  border-width: 1px;
-  border-style: solid;
-  border-color: var(--color-icon);
-  border-radius: 0.25rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--color-icon);
+    border-radius: 0.25rem;
 
-  transition: border-color var(--time) var(--cubic);
+    transition: border-color var(--time) var(--cubic);
 
-  &:hover,
-  &:focus {
-    border-color: var(--color-accent);
+    &:hover,
+    &:focus {
+      border-color: var(--color-accent);
+    }
   }
-}
 
-.client-card__icon {
-  fill: var(--color-icon);
+  &__icon {
+    fill: var(--color-icon);
 
-  transition: fill var(--time) var(--cubic);
+    transition: fill var(--time) var(--cubic);
 
-  .client-card__link:hover &,
-  .client-card__link:focus & {
-    fill: var(--color-accent);
+    .client-card__link:hover &,
+    .client-card__link:focus & {
+      fill: var(--color-accent);
+    }
   }
 }

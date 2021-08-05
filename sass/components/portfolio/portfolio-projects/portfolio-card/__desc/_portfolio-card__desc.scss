@@ -2,7 +2,7 @@
 .portfolio-card__desc {
   @extend %portfolio-card-overlay;
 
-  z-index: var(--zi-3);
+  z-index: map-get($z-index, "portfolio-card__desc");
 
   padding-top: clamp(15px, 5.3vw, 63px);
   padding-right: 1.5rem;

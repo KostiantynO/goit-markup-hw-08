@@ -3,9 +3,7 @@
   position: fixed;
   inset: 0;
 
-  z-index: var(--zi-7);
-
-  padding: 0 15px;
+  z-index: map-get($z-index, "backdrop");
 
   overflow-x: hidden;
   overflow-y: scroll;

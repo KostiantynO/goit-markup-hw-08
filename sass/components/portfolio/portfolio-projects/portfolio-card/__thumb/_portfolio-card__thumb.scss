@@ -6,7 +6,7 @@
   &::before {
     @extend %portfolio-card-overlay;
 
-    z-index: var(--zi-2);
+    z-index: map-get($z-index, "portfolio-card__thumb::before");
     content: "";
     background-color: rgba(33, 150, 243, 0.9);
   }

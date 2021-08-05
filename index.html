@@ -1323,181 +1323,173 @@
       aria-labelledby="hero-form__title-id"
       tabindex="-1"
     >
-      <!-- Модальное окно -->
-      <div class="modal" id="modal-id" role="document" aria-label="Modal window" aria-modal="true">
-        <!-- Кнопка "Закрыть" (close) -->
-        <div class="modal-close-btn-container">
-          <button
-            class="modal-close-btn btn"
-            data-modal-close
-            type="button"
-            aria-labelledby="modal-close-id-label"
-          >
-            <!-- 18x18 -->
-            <svg
-              class="modal-close-icon svg"
-              aria-hidden="true"
-              width="1.125rem"
-              height="1.125rem"
-              tabindex="-1"
+      <div class="container backdrop__container">
+        <!-- Модальное окно -->
+        <div
+          class="modal backdrop__modal"
+          id="modal-id"
+          role="document"
+          aria-label="Modal window"
+          aria-modal="true"
+        >
+          <!-- Кнопка "Закрыть" (close) -->
+          <div class="modal-close-btn-container">
+            <button
+              class="modal-close-btn btn"
+              data-modal-close
+              type="button"
+              aria-labelledby="modal-close-id-label"
             >
-              <use href="./images/icomoon-svgomg/icons.svg#icon-close-18px"></use>
-            </svg>
-            <span class="tooltip sr-only" id="modal-close-id-label">Закрыть</span>
-          </button>
-        </div>
-
-        <!-- Контактная форма (Form) -->
-        <form class="form js-speaker-form">
-          <b class="hero-form__title" id="hero-form__title-id" data-modal-title>
-            Оставьте свои данные, мы вам перезвоним</b
-          >
-
-          <!-- Вводим имя, телефон и почту (Inputs) -->
-          <div class="group customer-info hero-form__customer-info">
-            <label class="hero-form__field customer-info__field" aria-label="Ваше имя">
-              <input
-                class="hero-form__input"
-                name="user-name"
-                data-modal-input
-                data-placeholder="Иван Иванович"
-                type="text"
-                title="Ваше имя, до 50-и символов"
-                placeholder=" "
-                required
-                maxlength="50"
-              />
-
-              <span class="hero-form__label customer-info__label">Имя</span>
-
-              <div class="svg-wrapper customer-info__svg-wrapper">
-                <!-- 18x18 -->
-                <svg
-                  class="form-svg svg customer-info__svg"
-                  aria-hidden="true"
-                  tabindex="-1"
-                  width="1.125rem"
-                  height="1.125rem"
-                >
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-person"></use>
-                </svg>
-              </div>
-            </label>
-
-            <label class="hero-form__field customer-info__field" aria-label="Ваш телефон">
-              <input
-                class="hero-form__input"
-                name="user-tel"
-                data-modal-input
-                data-placeholder="0123456789"
-                type="tel"
-                title="Ваш мобильный номер, 0123456789"
-                placeholder=" "
-                required
-                pattern="[0-9 ]{10}"
-                maxlength="10"
-              />
-
-              <span class="hero-form__label customer-info__label">Телефон</span>
-
-              <div class="svg-wrapper customer-info__svg-wrapper">
-                <!-- 18x18 -->
-                <svg
-                  class="form-svg svg customer-info__svg"
-                  aria-hidden="true"
-                  tabindex="-1"
-                  width="1.125rem"
-                  height="1.125rem"
-                >
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-phone"></use>
-                </svg>
-              </div>
-            </label>
-
-            <label class="hero-form__field customer-info__field" aria-label="Ваша почта">
-              <input
-                class="hero-form__input"
-                name="user-email"
-                data-modal-input
-                data-placeholder="your@email.com"
-                type="email"
-                title="your@email.com, до 64-х символов"
-                maxlength="64"
-                placeholder=" "
-                required
-              />
-
-              <span class="hero-form__label customer-info__label">Почта</span>
-
-              <div class="svg-wrapper customer-info__svg-wrapper">
-                <!-- 18x18 -->
-                <svg
-                  class="form-svg svg customer-info__svg"
-                  aria-hidden="true"
-                  tabindex="-1"
-                  width="1.125rem"
-                  height="1.125rem"
-                >
-                  <use href="./images/icomoon-svgomg/icons.svg#icon-email"></use>
-                </svg>
-              </div>
-            </label>
-          </div>
-
-          <!-- Оставляем комментарий -->
-          <label class="hero-form__field customer-comment hero-form__customer-comment">
-            <textarea
-              class="hero-form__textarea"
-              name="comment"
-              placeholder="Введите текст"
-              rows="10"
-            ></textarea>
-
-            <span class="hero-form__label customer-comment__label">Комментарий </span>
-          </label>
-
-          <!-- Подтверждаем политику конфиденциальности (checkbox) -->
-          <label class="group policy">
-            <div class="custom-checkbox-wrapper policy__custom-checkbox-wrapper">
-              <input
-                class="hero-form__checkbox sr-only"
-                name="policy"
-                type="checkbox"
-                value="accepted"
-                required
-              />
-
-              <!-- 16x15 -->
+              <!-- 18x18 -->
               <svg
-                class="custom-checkbox policy__custom-checkbox svg"
-                title="Пожалуйста, установите этот флажок, если Вы хотите продолжить."
+                class="modal-close-icon svg"
                 aria-hidden="true"
+                width="1.125rem"
+                height="1.125rem"
                 tabindex="-1"
-                width="1rem"
-                height="0.9375rem"
               >
-                <!-- 11x8 -->
-                <use
-                  class="custom-checkbox__check-icon"
-                  href="./images/icomoon-svgomg/icons.svg#icon-checkbox-checked"
-                ></use>
+                <use href="./images/icomoon-svgomg/icons.svg#icon-close-18px"></use>
               </svg>
-            </div>
-
-            <span class="hero-form__label policy__label"
-              >Соглашаюсь с рассылкой и принимаю
-
-              <a class="policy__tac-link" href="#0">Условия договора</a>
-            </span>
-          </label>
-
-          <!-- Отправляем форму (Btn) -->
-          <div class="group submit-btn-wrapper">
-            <button class="form-submit-btn btn btn--primary" type="submit">
-              <span class="btn__label">Отправить</span>
+              <span class="tooltip sr-only" id="modal-close-id-label">Закрыть</span>
             </button>
           </div>
-        </form>
+
+          <!-- Контактная форма (Form) -->
+          <form class="form js-speaker-form">
+            <b class="hero-form__title" id="hero-form__title-id" data-modal-title>
+              Оставьте свои данные, мы вам перезвоним</b
+            >
+            <!-- Вводим имя, телефон и почту (Inputs) -->
+            <div class="group customer-info hero-form__customer-info">
+              <label class="hero-form__field customer-info__field" aria-label="Ваше имя">
+                <input
+                  class="hero-form__input"
+                  name="user-name"
+                  data-modal-input
+                  data-placeholder="Иван Иванович"
+                  type="text"
+                  title="Ваше имя, до 50-и символов"
+                  placeholder=" "
+                  required
+                  maxlength="50"
+                />
+                <span class="hero-form__label customer-info__label">Имя</span>
+                <div class="svg-wrapper customer-info__svg-wrapper">
+                  <!-- 18x18 -->
+                  <svg
+                    class="form-svg svg customer-info__svg"
+                    aria-hidden="true"
+                    tabindex="-1"
+                    width="1.125rem"
+                    height="1.125rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-person"></use>
+                  </svg>
+                </div>
+              </label>
+              <label class="hero-form__field customer-info__field" aria-label="Ваш телефон">
+                <input
+                  class="hero-form__input"
+                  name="user-tel"
+                  data-modal-input
+                  data-placeholder="0123456789"
+                  type="tel"
+                  title="Ваш мобильный номер, 0123456789"
+                  placeholder=" "
+                  required
+                  pattern="[0-9 ]{10}"
+                  maxlength="10"
+                />
+                <span class="hero-form__label customer-info__label">Телефон</span>
+                <div class="svg-wrapper customer-info__svg-wrapper">
+                  <!-- 18x18 -->
+                  <svg
+                    class="form-svg svg customer-info__svg"
+                    aria-hidden="true"
+                    tabindex="-1"
+                    width="1.125rem"
+                    height="1.125rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-phone"></use>
+                  </svg>
+                </div>
+              </label>
+              <label class="hero-form__field customer-info__field" aria-label="Ваша почта">
+                <input
+                  class="hero-form__input"
+                  name="user-email"
+                  data-modal-input
+                  data-placeholder="your@email.com"
+                  type="email"
+                  title="your@email.com, до 64-х символов"
+                  maxlength="64"
+                  placeholder=" "
+                  required
+                />
+                <span class="hero-form__label customer-info__label">Почта</span>
+                <div class="svg-wrapper customer-info__svg-wrapper">
+                  <!-- 18x18 -->
+                  <svg
+                    class="form-svg svg customer-info__svg"
+                    aria-hidden="true"
+                    tabindex="-1"
+                    width="1.125rem"
+                    height="1.125rem"
+                  >
+                    <use href="./images/icomoon-svgomg/icons.svg#icon-email"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+            <!-- Оставляем комментарий -->
+            <label class="hero-form__field customer-comment hero-form__customer-comment">
+              <textarea
+                class="hero-form__textarea"
+                name="comment"
+                placeholder="Введите текст"
+                rows="10"
+              ></textarea>
+              <span class="hero-form__label customer-comment__label">Комментарий </span>
+            </label>
+            <!-- Подтверждаем политику конфиденциальности (checkbox) -->
+            <label class="group policy">
+              <div class="custom-checkbox-wrapper policy__custom-checkbox-wrapper">
+                <input
+                  class="hero-form__checkbox sr-only"
+                  name="policy"
+                  type="checkbox"
+                  value="accepted"
+                  required
+                />
+                <!-- 16x15 -->
+                <svg
+                  class="custom-checkbox policy__custom-checkbox svg"
+                  title="Пожалуйста, установите этот флажок, если Вы хотите продолжить."
+                  aria-hidden="true"
+                  tabindex="-1"
+                  width="1rem"
+                  height="0.9375rem"
+                >
+                  <!-- 11x8 -->
+                  <use
+                    class="custom-checkbox__check-icon"
+                    href="./images/icomoon-svgomg/icons.svg#icon-checkbox-checked"
+                  ></use>
+                </svg>
+              </div>
+              <span class="hero-form__label policy__label"
+                >Соглашаюсь с рассылкой и принимаю
+                <a class="policy__tac-link" href="#0">Условия договора</a>
+              </span>
+            </label>
+            <!-- Отправляем форму (Btn) -->
+            <div class="group submit-btn-wrapper">
+              <button class="form-submit-btn btn btn--primary" type="submit">
+                <span class="btn__label">Отправить</span>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
 

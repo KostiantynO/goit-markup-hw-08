@@ -32,9 +32,6 @@
   /* Тень Кнопки-героя (статическая) */
   /* || ------------------ END "ПАЛИТРА" ------------------ */
   /* || ----------------- START "ОТСТУПЫ" ----------------- */
-  --mob: 480px;
-  --tab: 768px;
-  --desk: 1600px;
   --uni-margin: 1.875rem;
   /* Универсальное значение высоты и отступов, нижний отступ у H1 */
   /* Правый отступ между ссылками Главной навигации, and между ссылками Контактов в Хедере */
@@ -58,16 +55,6 @@
   --width-portfolio-card__image: 28.125rem;
   /* || ------------------ END "ОТСТУПЫ" ------------------ */
   /* || ---------------- START "АНИМАЦИЯ" ----------------- */
-  --zi-1: 1;
-  --zi-2: 2;
-  --zi-3: 3;
-  --zi-4: 4;
-  --zi-5: 5;
-  --zi-6: 6;
-  --zi-7: 7;
-  --zi-8: 8;
-  --zi-9: 9;
-  --zi-10: 10;
   --time: 250ms;
   --cubic: cubic-bezier(0.4, 0, 0.2, 1);
   /* || ----------------- END "АНИМАЦИЯ" ------------------ */
@@ -220,6 +207,18 @@ p {
   transition: color var(--time) var(--cubic), background-color var(--time) var(--cubic), background-clip var(--time) var(--cubic);
 }
 
+.links:hover, .links:focus {
+  color: var(--color-accent);
+  /* Акцент #2196F3 */
+}
+
+/* START Подсветка ссылок */
+.accent {
+  color: var(--color-accent);
+  /* Акцент #2196F3 */
+}
+
+/* END Подсветка ссылок */
 .svg {
   display: inline-block;
   outline: none;
@@ -233,15 +232,6 @@ p {
   max-height: 2rem;
 }
 
-/* START Подсветка ссылок */
-.accent,
-.links:hover,
-.links:focus {
-  color: var(--color-accent);
-  /* Акцент #2196F3 */
-}
-
-/* END Подсветка ссылок */
 /* ------------------------------------------------------ */
 /* || -------------- END "ОБЩИЕ НАСТРОЙКИ" -------------- */
 /* ------------------------------------------------------ */
@@ -414,7 +404,7 @@ p {
   /* 50px */
   top: calc(-1 * var(--skip-btn-max-height));
   left: 0;
-  z-index: var(--zi-2);
+  z-index: 2;
   max-width: 18.75rem;
   /* 300px */
   max-height: var(--skip-btn-max-height);
@@ -1134,7 +1124,7 @@ p {
 }
 
 .portfolio-card__thumb::before {
-  z-index: var(--zi-2);
+  z-index: 3;
   content: "";
   background-color: rgba(33, 150, 243, 0.9);
 }
@@ -1156,7 +1146,7 @@ p {
 
 /* Description = Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для цифрового шпионажа и атак на защищённые сервера конкурентов. */
 .portfolio-card__desc {
-  z-index: var(--zi-3);
+  z-index: 4;
   padding-top: clamp(15px, 5.3vw, 63px);
   padding-right: 1.5rem;
   padding-bottom: clamp(15px, 5.3vw, 63px);
@@ -1462,8 +1452,7 @@ p {
 .backdrop {
   position: fixed;
   inset: 0;
-  z-index: var(--zi-7);
-  padding: 0 15px;
+  z-index: 10;
   overflow-x: hidden;
   overflow-y: scroll;
   background-color: rgba(0, 0, 0, 0.2);
@@ -1485,11 +1474,10 @@ p {
 .modal {
   position: relative;
   /* need to catch close button */
-  width: clamp(15.625rem, 100%, 33rem);
-  /* max w528px */
-  /* min-mobile w250px, min-w450px, min-h609px */
+  max-width: clamp(15.625rem, 100%, 28.125rem);
+  /* w15.625rem..33rem */
+  /* mobile w250px, w450px, min-h609px */
   padding: 2.5rem;
-  margin: 93px auto 94px;
   overflow: hidden;
   background-color: var(--color-white);
   /* Form bg */
@@ -1498,34 +1486,41 @@ p {
   transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic);
 }
 
+.backdrop.is-hidden > .modal {
+  transform: scale(1.21);
+}
+
+.backdrop__container {
+  margin-top: 93px;
+  margin-bottom: 94px;
+}
+
 @media screen and (min-width: 30rem) {
-  .modal {
-    margin-top: calc(40vw - 99px);
-    margin-bottom: calc(39.24vw - 94px);
+  .backdrop__container {
+    margin-top: calc(40vw - 6.1875rem);
+    margin-bottom: calc(39.24vw - 5.875rem);
   }
 }
 
 @media screen and (min-width: 48rem) {
-  .modal {
-    margin-top: calc(3.01vw + 185px);
-    margin-bottom: calc(3.47vw + 180px);
+  .backdrop__container {
+    margin-top: calc(3.01vw + 11.5625rem);
+    margin-bottom: calc(3.47vw + 11.25rem);
   }
 }
 
 @media screen and (min-width: 75rem) {
-  .modal {
-    margin-top: 221px;
-    margin-bottom: 222px;
+  .backdrop__container {
+    margin-top: 13.8125rem;
+    margin-bottom: 13.875rem;
+    max-width: 33rem;
   }
-}
-
-.backdrop.is-hidden > .modal {
-  transform: scale(1.21);
 }
 
 .modal-close-btn-container {
   position: absolute;
   top: 0.5rem;
+  /* 0.5rem */
   right: 0.5rem;
 }
 
@@ -1535,31 +1530,30 @@ p {
   align-items: center;
   justify-content: center;
   min-width: 1.875rem;
-  /* 30px */
+  /* 1.875rem */
   max-width: 1.875rem;
   min-height: 1.875rem;
   max-height: 1.875rem;
   color: var(--color-black);
   padding: 0;
   background-color: var(--color-white);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 0.0625rem solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+}
+
+.modal-close-btn-container > .modal-close-btn:hover, .modal-close-btn-container > .modal-close-btn:focus {
+  color: var(--color-accent);
+  background-color: var(--color-white);
+}
+
+.modal-close-btn-container > .modal-close-btn:focus {
+  box-shadow: 0 0 0.1875rem 0.125rem rgba(33, 150, 243, 0.5);
+  outline: none;
 }
 
 .modal-close-icon {
   fill: currentColor;
   transition: fill var(--time) var(--cubic);
-}
-
-.modal-close-btn:hover,
-.modal-close-btn:focus {
-  color: var(--color-accent);
-  background-color: var(--color-white);
-}
-
-.modal-close-btn:focus {
-  box-shadow: 0 0 3px 2px rgba(33, 150, 243, 0.5);
-  outline: none;
 }
 
 /* ------------------------------------------------------ */
@@ -1583,11 +1577,16 @@ p {
   margin-bottom: 1.875rem;
   /* 30px */
   font-size: 1.25rem;
-  /* 20px */
-  font-weight: 700;
   line-height: 1.5;
-  /* 30px */
+  font-weight: 700;
+  /* 1.25rem, 1.5, 700 */
   text-align: center;
+}
+
+@media screen and (min-width: 75rem) {
+  .hero-form__title {
+    line-height: 1.4375rem;
+  }
 }
 
 .customer-info__label, .customer-info__svg-wrapper {
@@ -1865,7 +1864,7 @@ p {
   position: fixed;
   top: 0;
   left: 100%;
-  z-index: 100;
+  z-index: 20;
   width: 100%;
   height: 100vh;
   pointer-events: none;

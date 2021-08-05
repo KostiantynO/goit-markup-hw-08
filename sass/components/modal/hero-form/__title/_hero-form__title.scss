@@ -3,8 +3,10 @@
   display: block;
   margin-bottom: 1.875rem; /* 30px */
 
-  font-size: 1.25rem; /* 20px */
-  font-weight: 700;
-  line-height: 1.5; /* 30px */
+  @include fz-lh-fw(20px, 30px, 700); /* 1.25rem, 1.5, 700 */
   text-align: center;
+
+  @include mq($desktop) {
+    line-height: rem(23px);
+  }
 }

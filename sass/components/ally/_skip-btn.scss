@@ -3,7 +3,7 @@
   --skip-btn-max-height: 3.125rem; /* 50px */
   top: calc(-1 * var(--skip-btn-max-height));
   left: 0;
-  z-index: var(--zi-2);
+  z-index: map-get($z-index, "skip-btn");
 
   max-width: 18.75rem; /* 300px */
   max-height: var(--skip-btn-max-height);
