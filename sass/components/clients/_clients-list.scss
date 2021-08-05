@@ -10,6 +10,8 @@
 
   margin-top: calc(-1 * var(--gap)); /* 30px top left */
   margin-left: calc(-1 * var(--gap));
+
+  @include tr($card);
 }
 
 .clients-list__item {
@@ -24,4 +26,6 @@
 
   margin-top: var(--uni-margin); /* 30px top and left */
   margin-left: var(--uni-margin);
+
+  @include tr($card);
 }

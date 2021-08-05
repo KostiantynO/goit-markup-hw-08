@@ -6,7 +6,6 @@
   @include fz-lh-fw(20px, 30px, 700); /* 1.25rem, 1.5, 700 */
   text-align: center;
 
-  @include mq($desktop) {
-    line-height: rem(23px);
-  }
+  line-height: clamp(rem(30px), vw(rem(30px), $desktop), rem(23px));
+  transition: line-height var(--time) var(--cubic), height var(--time) var(--cubic);
 }

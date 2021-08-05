@@ -86,3 +86,9 @@ $z-index: (
   "backdrop": 10,
   "mobile-menu": 20,
 );
+
+$card: (
+  "property": "width, height",
+  "time": var(--time),
+  "cubic": var(--cubic),
+);

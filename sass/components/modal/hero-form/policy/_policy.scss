@@ -35,7 +35,6 @@
 
   @include mq($desktop) {
     @include fz-lh-fw(14px, 24px);
-    padding-top: rem(3px);
   }
 }
 

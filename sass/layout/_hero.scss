@@ -8,8 +8,7 @@
 .hero {
   max-width: 100rem;
 
-  padding-top: clamp(7.375rem, #{"max(12.5vw, 118px)"}, 12.5rem); /* 118px to 200px */
-  padding-bottom: clamp(7.375rem, #{"max(12.5vw, 118px)"}, 12.5rem);
+  padding: clamp(rem(118px), vw(rem(118px), $tablet), rem(200px)) 0; /*  7.375rem..12.5rem */
 
   text-align: center;
 
@@ -21,51 +20,71 @@
   background-size: cover;
   $gradient: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
 
+  // p - path
+  $p-bg: "url(../images/squooshed/hero-bg/";
+  $p-mobile: "mobile/hero-bg-mobile-";
+  $p-tablet: "tablet/hero-bg-tablet-";
+  $p-desktop: "desktop/hero-bg-desktop-";
+  $p-m: "480x400";
+  $p-j: ".jpg)";
+  $p-mr: "960x800";
+  $p-x: "@2x";
+  $p-w: ".webp)";
+  $p-t: "768x400";
+  $p-tr: "1536x800";
+  $p-d: "1600x600";
+  $p-dr: "3200x1200";
+
+  /* MOBILE */
+  $mobile-bg-jpg: #{$p-bg}#{$p-mobile}#{$p-m}#{$p-j};
+  $mobile-bg-jpg-2x: #{$p-bg}#{$p-mobile}#{$p-mr}#{$p-x}#{$p-j};
+  $mobile-bg-webp: #{$p-bg}#{$p-mobile}#{$p-m}#{$p-w};
+  $mobile-bg-webp-2x: #{$p-bg}#{$p-mobile}#{$p-mr}#{$p-x}#{$p-w};
+
+  /* TABLET */
+  $tablet-bg-jpg: #{$p-bg}#{$p-tablet}#{$p-t}#{$p-j};
+  $tablet-bg-jpg-2x: #{$p-bg}#{$p-tablet}#{$p-tr}#{$p-x}#{$p-j};
+  $tablet-bg-webp: #{$p-bg}#{$p-tablet}#{$p-t}#{$p-w};
+  $tablet-bg-webp-2x: #{$p-bg}#{$p-tablet}#{$p-tr}#{$p-x}#{$p-w};
+
   /* DESKTOP */
-  $desktop-bg-jpg: url(../images/squooshed/hero-bg/desktop/hero-bg-desktop-1600x600.jpg);
-  $desktop-bg-jpg-2x: url(../images/squooshed/hero-bg/desktop/hero-bg-desktop-3200x1200@2x.jpg);
-  $desktop-bg-webp: url(../images/squooshed/hero-bg/desktop/hero-bg-desktop-1600x600.webp);
-  $desktop-bg-webp-2x: url(../images/squooshed/hero-bg/desktop/hero-bg-desktop-3200x1200@2x.webp);
+  $desktop-bg-jpg: #{$p-bg}#{$p-desktop}#{$p-d}#{$p-j};
+  $desktop-bg-jpg-2x: #{$p-bg}#{$p-desktop}#{$p-dr}#{$p-x}#{$p-j};
+  $desktop-bg-webp: #{$p-bg}#{$p-desktop}#{$p-d}#{$p-w};
+  $desktop-bg-webp-2x: #{$p-bg}#{$p-desktop}#{$p-dr}#{$p-x}#{$p-w};
 
-  @media only screen and (min-width: map-get($breakpoints, $desktop)) {
-    background-image: $gradient, $desktop-bg-jpg;
+  background-image: $gradient, $mobile-bg-jpg;
+
+  @media only screen and (max-width: calc( #{rem(768px) - rem(1px)} )) and (min-device-pixel-ratio: 2),
+    only screen and (max-width: calc( #{rem(768px) - rem(1px)} )) and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (max-width: calc( #{rem(768px) - rem(1px)} )) and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (max-width: calc( #{rem(768px) - rem(1px)} )) and (min-resolution: 192dpi),
+    only screen and (max-width: calc( #{rem(768px) - rem(1px)} )) and (min-resolution: 2dppx) {
+    background-image: $gradient, $mobile-bg-jpg-2x;
   }
 
-  @media only screen and (min-width: map-get($breakpoints, $desktop)) and (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (-o-min-device-pixel-ratio: 2/1),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image: $gradient, $desktop-bg-jpg-2x;
+  @include mq($end: $tablet) {
+    background-image: $gradient, $mobile-bg-webp;
   }
 
-  @media only screen and (min-width: map-get($breakpoints, $desktop)) {
-    background-image: $gradient, $desktop-bg-webp;
-  }
-
-  @media only screen and (min-width: map-get($breakpoints, $desktop)) and (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (-o-min-device-pixel-ratio: 2/1),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image: $gradient, $desktop-bg-webp-2x;
+  @media only screen and (max-width: calc( #{rem(768px) - rem(1px)} )) and (min-device-pixel-ratio: 2),
+    only screen and (max-width: calc( #{rem(768px) - rem(1px)} )) and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (max-width: calc( #{rem(768px) - rem(1px)} )) and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (max-width: calc( #{rem(768px) - rem(1px)} )) and (min-resolution: 192dpi),
+    only screen and (max-width: calc( #{rem(768px) - rem(1px)} )) and (min-resolution: 2dppx) {
+    background-image: $gradient, $mobile-bg-webp-2x;
   }
 
   /* TABLET */
-  $tablet-bg-jpg: url(../images/squooshed/hero-bg/tablet/hero-bg-tablet-768x400.jpg);
-  $tablet-bg-jpg-2x: url(../images/squooshed/hero-bg/tablet/hero-bg-tablet-1536x800@2x.jpg);
-  $tablet-bg-webp: url(../images/squooshed/hero-bg/tablet/hero-bg-tablet-768x400.webp);
-  $tablet-bg-webp-2x: url(../images/squooshed/hero-bg/tablet/hero-bg-tablet-1536x800@2x.webp);
-
   @media only screen and (min-width: map-get($breakpoints, $tablet)) {
     background-image: $gradient, $tablet-bg-jpg;
   }
 
   @media only screen and (min-width: map-get($breakpoints, $tablet)) and (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (-o-min-device-pixel-ratio: 2/1),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
+    only screen and (min-width: map-get($breakpoints, $tablet)) and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-width: map-get($breakpoints, $tablet)) and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-width: map-get($breakpoints, $tablet)) and (min-resolution: 192dpi),
+    only screen and (min-width: map-get($breakpoints, $tablet)) and (min-resolution: 2dppx) {
     background-image: $gradient, $tablet-bg-jpg-2x;
   }
 
@@ -74,45 +93,36 @@
   }
 
   @media only screen and (min-width: map-get($breakpoints, $tablet)) and (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (-o-min-device-pixel-ratio: 2/1),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
+    only screen and (min-width: map-get($breakpoints, $tablet)) and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-width: map-get($breakpoints, $tablet)) and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-width: map-get($breakpoints, $tablet)) and (min-resolution: 192dpi),
+    only screen and (min-width: map-get($breakpoints, $tablet)) and (min-resolution: 2dppx) {
     background-image: $gradient, $tablet-bg-webp-2x;
   }
 
-  /* MOBILE */
-  $mobile-bg-jpg: url(../images/squooshed/hero-bg/mobile/hero-bg-mobile-480x400.jpg);
-  $mobile-bg-jpg-2x: url(../images/squooshed/hero-bg/mobile/hero-bg-mobile-960x800@2x.jpg);
-  $mobile-bg-webp: url(../images/squooshed/hero-bg/mobile/hero-bg-mobile-480x400.webp);
-  $mobile-bg-webp-2x: url(../images/squooshed/hero-bg/mobile/hero-bg-mobile-960x800@2x.webp);
-
-  background-image: $gradient, $mobile-bg-jpg;
-
-  @media only screen and (max-width: calc(rem(768px) - rem(1px))) and (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (-o-min-device-pixel-ratio: 2/1),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    .box {
-      background-image: $gradient, $mobile-bg-jpg-2x;
-    }
+  /* DESKTOP */
+  @media only screen and (min-width: map-get($breakpoints, $desktop)) {
+    background-image: $gradient, $desktop-bg-jpg;
   }
 
-  @media only screen and (max-width: calc(rem(768px) - rem(1px))) {
-    .box {
-      background-image: $gradient, $mobile-bg-webp;
-    }
+  @media only screen and (min-width: map-get($breakpoints, $desktop)) and (min-device-pixel-ratio: 2),
+    only screen and (min-width: map-get($breakpoints, $desktop)) and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-width: map-get($breakpoints, $desktop)) and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-width: map-get($breakpoints, $desktop)) and (min-resolution: 192dpi),
+    only screen and (min-width: map-get($breakpoints, $desktop)) and (min-resolution: 2dppx) {
+    background-image: $gradient, $desktop-bg-jpg-2x;
   }
 
-  @media only screen and (max-width: calc(rem(768px) - rem(1px))) and (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (-o-min-device-pixel-ratio: 2/1),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    .box {
-      background-image: $gradient, $mobile-bg-webp-2x;
-    }
+  @media only screen and (min-width: map-get($breakpoints, $desktop)) {
+    background-image: $gradient, $desktop-bg-webp;
+  }
+
+  @media only screen and (min-width: map-get($breakpoints, $desktop)) and (min-device-pixel-ratio: 2),
+    only screen and (min-width: map-get($breakpoints, $desktop)) and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-width: map-get($breakpoints, $desktop)) and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-width: map-get($breakpoints, $desktop)) and (min-resolution: 192dpi),
+    only screen and (min-width: map-get($breakpoints, $desktop)) and (min-resolution: 2dppx) {
+    background-image: $gradient, $desktop-bg-webp-2x;
   }
 }
 

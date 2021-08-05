@@ -2,8 +2,9 @@
 .backdrop {
   position: fixed;
   inset: 0;
-
   z-index: map-get($z-index, "backdrop");
+
+  display: flex;
 
   overflow-x: hidden;
   overflow-y: scroll;

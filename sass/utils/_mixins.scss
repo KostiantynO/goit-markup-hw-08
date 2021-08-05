@@ -99,4 +99,10 @@
     font-weight: $fw;
   }
 }
+
+@mixin tr($map: null) {
+  transition-property: unquote(map-get($map, "property"));
+  transition: map-get($map, "time") map-get($map, "cubic");
+}
+
 /* -------------------------- END "MIXINS" -------------------------- */

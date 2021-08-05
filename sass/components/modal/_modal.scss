@@ -9,7 +9,7 @@
 .modal {
   position: relative; /* need to catch close button */
 
-  max-width: clamp(rem(250px), 100%, rem(450px)); /* w15.625rem..33rem */
+  width: clamp(rem(250px), 100%, rem(450px)); /* w15.625rem..33rem */
   /* mobile w250px, w450px, min-h609px */
 
   padding: 2.5rem;
@@ -19,31 +19,28 @@
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14),
     0 2px 1px rgba(0, 0, 0, 0.2);
-  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic);
+  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic),
+    line-height var(--time) var(--cubic), height var(--time) var(--cubic),
+    width var(--time) var(--cubic);
+
+  @include mq($desktop) {
+    width: rem(528px);
+  }
 
   .backdrop.is-hidden > & {
     transform: scale(1.21);
   }
 }
 
+/* mobile.modal  { w450 x h609 mt93   ml=mr15  mb94  p40 } */
+/* tablet.modal  { w450 x h609 mt208  ml=mr159 mb207 p40 } */
+/* desktop.modal { w528 x h581 mt221  ml=mr536 mb222 p40 } */
 .backdrop__container {
-  margin-top: 93px;
-  margin-bottom: 94px;
-
-  @include mq($mobile) {
-    margin-top: calc(40vw - #{rem(99px)});
-    margin-bottom: calc(39.24vw - #{rem(94px)});
-  }
-
-  @include mq($tablet) {
-    margin-top: calc(3.01vw + #{rem(185px)});
-    margin-bottom: calc(3.47vw + #{rem(180px)});
-  }
+  margin: auto;
+  max-width: rem(480px);
 
   @include mq($desktop) {
-    margin-top: rem(221px);
-    margin-bottom: rem(222px);
-    max-width: rem(528px);
+    max-width: rem(558px);
   }
 }
 
