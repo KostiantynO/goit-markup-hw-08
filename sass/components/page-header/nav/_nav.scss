@@ -20,11 +20,10 @@
     @include tr("hidden");
 
     @include mq($end: $tablet) {
-      width: 0;
       height: 0;
       visibility: hidden;
       pointer-events: none;
-      transform: scale(0);
+      transform: scaleY(0);
     }
 
     @include mq($tablet, $desktop) {

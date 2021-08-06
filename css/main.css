@@ -470,11 +470,10 @@ p {
 
 @media screen and (max-width: 47.9375rem) {
   .nav__menu {
-    width: 0;
     height: 0;
     visibility: hidden;
     pointer-events: none;
-    transform: scale(0);
+    transform: scaleY(0);
   }
 }
 
