@@ -105,6 +105,6 @@ $tr: (
   "card": "width, height, flex",
   "text": "font-size, line-height",
   "both": "width, height, flex, font-size, line-height",
-  "time": var(--time),
+  "time": calc(var(--time) * 2),
   "cubic": var(--cubic),
 );

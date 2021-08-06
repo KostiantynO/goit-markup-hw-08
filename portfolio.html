@@ -41,7 +41,108 @@
       Skip to main content
     </button>
 
-    <!-- Шапка сайта 2021-08-06 02:39 -->
+    <!-- Шапка сайта 2021-08-07 01:59 -->
+    <header class="page-header">
+      <div class="container page-header__container">
+        <nav class="nav page-header__nav">
+          <a class="logo links" href="./" hreflang="ru" lang="en">
+            <span class="logo__web-studio logo__first-part">Web</span
+            ><span class="logo__web-studio logo__last-part">Studio</span>
+          </a>
+          <ul class="nav__menu">
+            <li class="nav__item">
+              <a class="nav__link" data-content="Студия" href="./" hreflang="ru"
+                >Студия<span class="nav__link-overlay"></span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a
+                class="nav__link nav__link--current"
+                data-content="Портфолио"
+                href="./portfolio.html"
+                aria-current="page"
+                hreflang="ru"
+                >Портфолио<span class="nav__link-overlay nav__link-overlay--current"></span
+              ></a>
+            </li>
+            <li class="nav__item">
+              <a
+                class="nav__link"
+                data-content="Контакты"
+                rel="noopener nofollow noreferrer"
+                href="#0"
+                >Контакты<span class="nav__link-overlay"></span
+              ></a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="page-header__contacts-list">
+          <li class="contacts-list__item">
+            <a
+              class="header-contact links"
+              href="mailto:info@devstudio.com"
+              aria-labelledby="header-email__label-id"
+            >
+              <!-- 14x10 tablet, 16x12 desktop -->
+              <svg
+                class="header-contact__icon svg header-contact__icon-envelope"
+                aria-hidden="true"
+                width="0.875rem"
+                height="0.625rem"
+              >
+                <use href="./images/icomoon-svgomg/icons.svg#icon-envelope"></use>
+              </svg>
+              <span class="tooltip sr-only" id="header-email__label-id" tabindex="-1">
+                Почта студии
+              </span>
+              info@devstudio.com
+            </a>
+          </li>
+          <li class="contacts-list__item">
+            <a
+              class="header-contact links"
+              href="tel:+380961111111"
+              aria-labelledby="webstudio-phone-id-label-1"
+            >
+              <!-- 10x14 tablet, 10x16 desktop -->
+              <svg
+                class="header-contact__icon svg icon-smartphone"
+                aria-hidden="true"
+                width="0.625rem"
+                height="0.875rem"
+              >
+                <use href="./images/icomoon-svgomg/icons.svg#icon-smartphone"></use>
+              </svg>
+              <span class="tooltip sr-only" id="webstudio-phone-id-label-1" tabindex="-1">
+                Мобильный студии
+              </span>
+              +38 096 111 11 11
+            </a>
+          </li>
+        </ul>
+
+        <!-- Mobile menu - burger button -->
+        <button
+          class="btn btn-burger btn-mobile nav__btn-mobile"
+          data-menu-open
+          type="button"
+          aria-controls="mobile-overlay-id"
+          aria-expanded="false"
+          aria-labelledby="btn-burger__label-id"
+        >
+          <!-- 40x40 -->
+          <svg
+            class="btn-mobile__icon svg icon-burger"
+            aria-hidden="true"
+            width="2.5rem"
+            height="2.5rem"
+          >
+            <use href="./images/icomoon-svgomg/icons.svg#icon-burger"></use>
+          </svg>
+          <span class="tooltip sr-only" id="btn-burger__label-id" tabindex="-1"> Меню </span>
+        </button>
+      </div>
+    </header>
 
     <main>
       <!-- Портфолио -->
@@ -890,10 +991,152 @@
     </footer>
 
     <!-- Мобильное меню - Главная (бургер, шаг 2) -->
+    <div class="mobile-overlay" id="mobile-overlay-id" data-menu>
+      <div class="container mobile-overlay__container">
+        <!-- Кнопка закрытия мобильного меню -->
+        <button
+          class="btn btn-mobile btn-mobile-close mobile-overlay__btn-mobile-close"
+          data-menu-close
+          type="button"
+          aria-labelledby="btn-mobile-close__label-id"
+        >
+          <!-- 40x40 -->
+          <svg
+            class="btn-mobile__icon svg icon-close"
+            aria-hidden="true"
+            width="2.5rem"
+            height="2.5rem"
+          >
+            <use href="./images/icomoon-svgomg/icons.svg#icon-close-40px"></use>
+          </svg>
+          <span class="tooltip sr-only" id="btn-mobile-close__label-id" tabindex="-1">
+            Закрыть
+          </span>
+        </button>
+
+        <!-- Nav links in mobile menu -->
+        <nav class="mobile-nav mobile-overlay__mobile-nav">
+          <ul class="mobile-nav__menu">
+            <li class="mobile-nav__item">
+              <a class="mobile-nav__link nav__link" data-content="Студия" href="./" hreflang="ru"
+                >Студия<span class="nav__link-overlay"></span>
+              </a>
+            </li>
+            <li class="mobile-nav__item">
+              <a
+                class="mobile-nav__link nav__link nav__link--current mobile-nav__link--current"
+                data-content="Портфолио"
+                href="./portfolio.html"
+                aria-current="page"
+                hreflang="ru"
+                >Портфолио<span class="nav__link-overlay nav__link-overlay--current"></span
+              ></a>
+            </li>
+            <li class="mobile-nav__item">
+              <a
+                class="mobile-nav__link nav__link"
+                data-content="Контакты"
+                rel="noopener nofollow noreferrer"
+                href="#0"
+                >Контакты<span class="nav__link-overlay"></span
+              ></a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Contacts in mobile menu -->
+        <ul class="mobile-contacts-list mobile-overlay__mobile-contacts-list">
+          <li class="mobile-contacts-list__item">
+            <!-- Телефон студии -->
+            <a
+              class="mobile-contact mobile-contacts-list__phone links"
+              href="tel:+380961111111"
+              aria-labelledby="mobile-overlay-webstudio-phone-label-id"
+            >
+              <span
+                class="tooltip sr-only"
+                id="mobile-overlay-webstudio-phone-label-id"
+                tabindex="-1"
+              >
+                Мобильный студии
+              </span>
+              +38 096 111 11 11
+            </a>
+          </li>
+
+          <li class="mobile-contacts-list__item">
+            <!-- Почта студии -->
+            <a
+              class="mobile-contact mobile-contacts-list__email links"
+              href="mailto:info@devstudio.com"
+              aria-labelledby="mobile-overlay-email__label-id"
+            >
+              <span class="tooltip sr-only" id="mobile-overlay-email__label-id" tabindex="-1">
+                Почта студии
+              </span>
+              info@devstudio.com
+            </a>
+          </li>
+        </ul>
+
+        <!-- Social links in mobile menu -->
+        <ul class="mobile-social-list">
+          <li class="mobile-social-list__item">
+            <div class="mobile-social-card">
+              <a
+                class="mobile-social-card__link links"
+                rel="noopener nofollow noreferrer"
+                href="#0"
+              >
+                <span class="mobile-social-card__label" tabindex="-1" lang="en">Instagram</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="mobile-social-list__item">
+            <div class="mobile-social-card">
+              <a
+                class="mobile-social-card__link links"
+                rel="noopener nofollow noreferrer"
+                href="#0"
+              >
+                <span class="mobile-social-card__label" tabindex="-1" lang="en">Twitter</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="mobile-social-list__item">
+            <div class="mobile-social-card">
+              <a
+                class="mobile-social-card__link links"
+                rel="noopener nofollow noreferrer"
+                href="#0"
+              >
+                <span class="mobile-social-card__label" tabindex="-1" lang="en">Facebook</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="mobile-social-list__item">
+            <div class="mobile-social-card">
+              <a
+                class="mobile-social-card__link links"
+                rel="noopener nofollow noreferrer"
+                href="#0"
+              >
+                <span class="mobile-social-card__label" tabindex="-1" lang="en">LinkedIn</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <!-- Скрипт мобильного меню -->
     <script src="./js/mobile-menu.js"></script>
 
+    <!-- Скрипт держит фокус в мобильном меню -->
+    <script src="./js/mobile-menu-focus-catch.js"></script>
     <!-- Скрипт держит фокус в мобильном меню -->
     <script src="./js/mobile-menu-focus-catch.js"></script>
   </body>

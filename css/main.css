@@ -204,7 +204,7 @@ p {
   color: inherit;
   text-decoration: none;
   transition-property: color, background-color;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 .links:hover, .links:focus {
@@ -295,7 +295,7 @@ p {
   /* 0.9375rem, падинг от границы экрана */
   padding-left: 0.9375rem;
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (max-width: calc( 48rem - 0.0625rem)) {
@@ -465,7 +465,7 @@ p {
   margin-left: 5.625rem;
   /* 5.625rem, левый у Нав */
   transition-property: width, height, margin, flex, visibility, opacity, transform, background-color;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (max-width: 47.9375rem) {
@@ -664,7 +664,7 @@ p {
 .page-header__contacts-list {
   margin-left: auto;
   transition-property: width, height, margin, flex, visibility, opacity, transform, background-color;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (max-width: 47.9375rem) {
@@ -830,7 +830,7 @@ mr8 */
   word-wrap: break-word;
   text-overflow: clip;
   transition-property: width, height, flex, font-size, line-height;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (min-width: 75rem) {
@@ -858,7 +858,7 @@ mr8 */
   flex-wrap: wrap;
   justify-content: center;
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 .features-list__item {
@@ -879,7 +879,7 @@ mr8 */
   overflow: hidden;
   word-wrap: break-word;
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
@@ -1020,7 +1020,7 @@ mr8 */
   flex-wrap: wrap;
   justify-content: center;
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 /* team card 1-4 or "designer card" */
@@ -1041,7 +1041,7 @@ mr8 */
   margin-left: var(--gap);
   word-wrap: break-word;
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
@@ -1174,7 +1174,7 @@ mr8 */
   align-items: center;
   justify-content: center;
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 .clients-list__item {
@@ -1193,7 +1193,7 @@ mr8 */
   /* 30px top and left */
   margin-left: var(--gap);
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 .client-card {
@@ -1251,7 +1251,7 @@ mr8 */
   flex-wrap: wrap;
   justify-content: flex-start;
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 .portfolio-filters-list__item {
@@ -1260,7 +1260,7 @@ mr8 */
   margin-left: 0.5rem;
   /* 0.5rem;  Левый отступ между фильтрами-кнопками */
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 /* ------------------------------------------------------ */
@@ -1277,7 +1277,7 @@ mr8 */
   flex-wrap: wrap;
   justify-content: center;
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 /* project 4 */
@@ -1300,7 +1300,7 @@ mr8 */
   /* 30px top and left */
   margin-left: var(--gap);
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
@@ -1797,7 +1797,7 @@ mr8 */
   text-align: center;
   line-height: clamp(1.875rem, 2.5vw, 1.4375rem);
   transition-property: width, height, flex, font-size, line-height;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 .customer-info__field:not(:first-child) {
@@ -2090,7 +2090,7 @@ mr8 */
   background-color: var(--color-white);
   box-shadow: var(--shadow-mobile-overlay);
   transition-property: width, height, margin, flex, visibility, opacity, transform, background-color;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (max-width: 47.9375rem) {
@@ -2239,7 +2239,7 @@ ls0.02em; c#2196F3; } */
   border-bottom: 0.0625rem solid #ececec;
   /* Line - Декор линия*/
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
@@ -2384,17 +2384,16 @@ ls0.02em; c#2196F3; } */
 
 .activities {
   transition-property: width, height, margin, flex, visibility, opacity, transform, background-color;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (max-width: 74.9375rem) {
   .activities {
-    width: 0;
     height: 0;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transform: scale(0);
+    transform: scaleY(0);
   }
 }
 
