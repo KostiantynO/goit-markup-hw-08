@@ -10,6 +10,10 @@
 
   padding: clamp(rem(118px), vw(rem(118px), $tablet), rem(200px)) 0; /*  7.375rem..12.5rem */
 
+  @include mq($desktop) {
+    padding: rem(200px) 0;
+  }
+
   text-align: center;
 
   background-color: var(--color-bg-hero); /* 2F303A */

@@ -1,5 +1,5 @@
 (() => {
-  document.querySelector(".js-speaker-form").addEventListener("submit", e => {
+  document.querySelector("[data-form-speaker]").addEventListener("submit", e => {
     const maxNameLength = 11;
     const maxValueLength = 45;
     const verticalSeparator = `┃`;

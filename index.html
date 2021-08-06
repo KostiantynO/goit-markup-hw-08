@@ -81,7 +81,7 @@
             <a
               class="header-contact links"
               href="mailto:info@devstudio.com"
-              aria-labelledby="devstudio-email-id-label"
+              aria-labelledby="header-email__label-id"
             >
               <!-- 14x10 tablet, 16x12 desktop -->
               <svg
@@ -92,7 +92,7 @@
               >
                 <use href="./images/icomoon-svgomg/icons.svg#icon-envelope"></use>
               </svg>
-              <span class="tooltip sr-only" id="devstudio-email-id-label" tabindex="-1">
+              <span class="tooltip sr-only" id="header-email__label-id" tabindex="-1">
                 Почта студии
               </span>
               info@devstudio.com
@@ -123,10 +123,12 @@
 
         <!-- Mobile menu - burger button -->
         <button
-          class="btn btn-burger nav__btn-mobile btn-mobile"
+          class="btn btn-burger btn-mobile nav__btn-mobile"
           data-menu-open
           type="button"
-          aria-labelledby="burger-id-label"
+          aria-controls="mobile-overlay-id"
+          aria-expanded="false"
+          aria-labelledby="btn-burger__label-id"
         >
           <!-- 40x40 -->
           <svg
@@ -137,7 +139,7 @@
           >
             <use href="./images/icomoon-svgomg/icons.svg#icon-burger"></use>
           </svg>
-          <span class="tooltip sr-only" id="burger-id-label" tabindex="-1"> Меню </span>
+          <span class="tooltip sr-only" id="btn-burger__label-id" tabindex="-1"> Меню </span>
         </button>
       </div>
     </header>
@@ -150,7 +152,13 @@
             Эффективные решения <br />
             для вашего бизнеса
           </h1>
-          <button class="btn btn--primary hero__btn" data-modal-open type="button">
+          <button
+            class="btn btn--primary hero__btn"
+            data-modal-open
+            type="button"
+            aria-controls="backdrop-id"
+            aria-expanded="false"
+          >
             <span class="btn__label">Заказать услугу</span>
           </button>
         </div>
@@ -1147,9 +1155,9 @@
                     <a
                       class="address-card__contact links"
                       href="mailto:info@example.com"
-                      aria-labelledby="webstudio-email-id-label"
+                      aria-labelledby="info-example-email__label-id"
                     >
-                      <span class="tooltip sr-only" id="webstudio-email-id-label" tabindex="-1">
+                      <span class="tooltip sr-only" id="info-example-email__label-id" tabindex="-1">
                         Почта для вопросов
                       </span>
                       info@example.com
@@ -1318,6 +1326,7 @@
     <!-- Backdrop (Overlay) -->
     <div
       class="backdrop is-hidden"
+      id="backdrop-id"
       data-modal
       role="dialog"
       aria-labelledby="hero-form__title-id"
@@ -1333,29 +1342,28 @@
           aria-modal="true"
         >
           <!-- Кнопка "Закрыть" (close) -->
-          <div class="modal-close-btn-container">
-            <button
-              class="modal-close-btn btn"
-              data-modal-close
-              type="button"
-              aria-labelledby="modal-close-id-label"
+
+          <button
+            class="modal__btn-close"
+            data-modal-close
+            type="button"
+            aria-labelledby="btn-close__label-id"
+          >
+            <!-- 18x18 -->
+            <svg
+              class="modal-close-icon svg"
+              aria-hidden="true"
+              width="1.125rem"
+              height="1.125rem"
+              tabindex="-1"
             >
-              <!-- 18x18 -->
-              <svg
-                class="modal-close-icon svg"
-                aria-hidden="true"
-                width="1.125rem"
-                height="1.125rem"
-                tabindex="-1"
-              >
-                <use href="./images/icomoon-svgomg/icons.svg#icon-close-18px"></use>
-              </svg>
-              <span class="tooltip sr-only" id="modal-close-id-label">Закрыть</span>
-            </button>
-          </div>
+              <use href="./images/icomoon-svgomg/icons.svg#icon-close-18px"></use>
+            </svg>
+            <span class="tooltip sr-only" id="btn-close__label-id">Закрыть</span>
+          </button>
 
           <!-- Контактная форма (Form) -->
-          <form class="form js-speaker-form">
+          <form class="form" data-form-speaker>
             <b class="hero-form__title" id="hero-form__title-id" data-modal-title>
               Оставьте свои данные, мы вам перезвоним</b
             >
@@ -1494,14 +1502,14 @@
     </div>
 
     <!-- Мобильное меню - Главная (бургер, шаг 2) -->
-    <div class="mobile-menu" data-menu>
-      <div class="container mobile-menu__container">
+    <div class="mobile-overlay" id="mobile-overlay-id" data-menu>
+      <div class="container mobile-overlay__container">
         <!-- Кнопка закрытия мобильного меню -->
         <button
-          class="btn btn-mobile btn-mobile-close"
+          class="btn btn-mobile btn-mobile-close mobile-overlay__btn-mobile-close"
           data-menu-close
           type="button"
-          aria-labelledby="close-nav__menu-id-label"
+          aria-labelledby="btn-mobile-close__label-id"
         >
           <!-- 40x40 -->
           <svg
@@ -1512,18 +1520,17 @@
           >
             <use href="./images/icomoon-svgomg/icons.svg#icon-close-40px"></use>
           </svg>
-          <span class="tooltip sr-only" id="close-nav__menu-id-label" tabindex="-1"> Закрыть </span>
+          <span class="tooltip sr-only" id="btn-mobile-close__label-id" tabindex="-1">
+            Закрыть
+          </span>
         </button>
+
         <!-- Nav links in mobile menu -->
-        <nav class="nav mobile-menu__nav">
-          <a class="logo links" href="./" hreflang="ru" lang="en">
-            <span class="logo__web-studio logo__first-part">Web</span
-            ><span class="logo__web-studio logo__last-part">Studio</span>
-          </a>
-          <ul class="nav__menu">
-            <li class="nav__item">
+        <nav class="mobile-nav mobile-overlay__mobile-nav">
+          <ul class="mobile-nav__menu">
+            <li class="mobile-nav__item">
               <a
-                class="nav__link nav__link--current"
+                class="mobile-nav__link nav__link nav__link--current"
                 data-content="Студия"
                 href="./"
                 aria-current="page"
@@ -1531,14 +1538,18 @@
                 >Студия<span class="nav__link-overlay nav__link-overlay--current"></span>
               </a>
             </li>
-            <li class="nav__item">
-              <a class="nav__link" data-content="Портфолио" href="./portfolio.html" hreflang="ru"
+            <li class="mobile-nav__item">
+              <a
+                class="mobile-nav__link nav__link"
+                data-content="Портфолио"
+                href="./portfolio.html"
+                hreflang="ru"
                 >Портфолио<span class="nav__link-overlay"></span
               ></a>
             </li>
-            <li class="nav__item">
+            <li class="mobile-nav__item">
               <a
-                class="nav__link"
+                class="mobile-nav__link nav__link"
                 data-content="Контакты"
                 rel="noopener nofollow noreferrer"
                 href="#0"
@@ -1547,80 +1558,68 @@
             </li>
           </ul>
         </nav>
+
         <!-- Contacts in mobile menu -->
-        <ul class="mobile-menu__contacts-list">
-          <li class="contacts-list__item">
-            <!-- Почта студии -->
-            <a
-              class="mobile-menu__contact links"
-              href="mailto:info@devstudio.com"
-              aria-labelledby="devstudio-email-id-label"
-            >
-              <!-- 16x12 -->
-              <svg
-                class="mobile-menu__contact-icon svg header-contact__icon-envelope"
-                aria-hidden="true"
-                width="1rem"
-                height="0.75rem"
-              >
-                <use href="./images/icomoon-svgomg/icons.svg#icon-envelope"></use>
-              </svg>
-              <span class="tooltip sr-only" id="devstudio-email-id-label" tabindex="-1">
-                Почта студии
-              </span>
-              info@devstudio.com
-            </a>
-          </li>
-          <li class="contacts-list__item">
+        <ul class="mobile-contacts-list mobile-overlay__mobile-contacts-list">
+          <li class="mobile-contacts-list__item">
             <!-- Телефон студии -->
             <a
-              class="mobile-menu__contact links"
+              class="mobile-contact mobile-contacts-list__phone links"
               href="tel:+380961111111"
-              aria-labelledby="webstudio-phone-id-label-1"
+              aria-labelledby="mobile-menu-webstudio-phone-label-id"
             >
-              <!-- 10x16 -->
-              <svg
-                class="mobile-menu__contact-icon svg icon-smartphone"
-                aria-hidden="true"
-                width="0.625rem"
-                height="1rem"
-              >
-                <use href="./images/icomoon-svgomg/icons.svg#icon-smartphone"></use>
-              </svg>
-              <span class="tooltip sr-only" id="webstudio-phone-id-label-1" tabindex="-1">
+              <span class="tooltip sr-only" id="mobile-menu-webstudio-phone-label-id" tabindex="-1">
                 Мобильный студии
               </span>
               +38 096 111 11 11
             </a>
           </li>
+
+          <li class="mobile-contacts-list__item">
+            <!-- Почта студии -->
+            <a
+              class="mobile-contact mobile-contacts-list__email links"
+              href="mailto:info@devstudio.com"
+              aria-labelledby="mobile-menu-email__label-id"
+            >
+              <span class="tooltip sr-only" id="mobile-menu-email__label-id" tabindex="-1">
+                Почта студии
+              </span>
+              info@devstudio.com
+            </a>
+          </li>
         </ul>
+
         <!-- Social links in mobile menu -->
-        <ul class="mobile-menu__social-list">
-          <li class="social-list__item">
-            <div class="social-card">
-              <a class="social-card__link" rel="noopener nofollow noreferrer" href="#0">
-                <span class="social-card__link-label" tabindex="-1">Инстаграм</span>
+        <ul class="mobile-social-list">
+          <li class="mobile-social-list__item">
+            <div class="mobile-social-card">
+              <a class="mobile-social-card__link" rel="noopener nofollow noreferrer" href="#0">
+                <span class="mobile-social-card__label" tabindex="-1" lang="en">Instagram</span>
               </a>
             </div>
           </li>
-          <li class="social-list__item">
-            <div class="social-card">
-              <a class="social-card__link" rel="noopener nofollow noreferrer" href="#0">
-                <span class="social-card__link-label" tabindex="-1">Твиттер</span>
+
+          <li class="mobile-social-list__item">
+            <div class="mobile-social-card">
+              <a class="mobile-social-card__link" rel="noopener nofollow noreferrer" href="#0">
+                <span class="mobile-social-card__label" tabindex="-1" lang="en">Twitter</span>
               </a>
             </div>
           </li>
-          <li class="social-list__item">
-            <div class="social-card">
-              <a class="social-card__link" rel="noopener nofollow noreferrer" href="#0">
-                <span class="social-card__link-label" tabindex="-1">Фейсбук</span>
+
+          <li class="mobile-social-list__item">
+            <div class="mobile-social-card">
+              <a class="mobile-social-card__link" rel="noopener nofollow noreferrer" href="#0">
+                <span class="mobile-social-card__label" tabindex="-1" lang="en">Facebook</span>
               </a>
             </div>
           </li>
-          <li class="social-list__item">
-            <div class="social-card">
-              <a class="social-card__link" rel="noopener nofollow noreferrer" href="#0">
-                <span class="social-card__link-label" tabindex="-1">LinkedIn</span>
+
+          <li class="mobile-social-list__item">
+            <div class="mobile-social-card">
+              <a class="mobile-social-card__link" rel="noopener nofollow noreferrer" href="#0">
+                <span class="mobile-social-card__label" tabindex="-1" lang="en">LinkedIn</span>
               </a>
             </div>
           </li>
@@ -1631,11 +1630,14 @@
     <!-- Скрипт мобильного меню -->
     <script src="./js/mobile-menu.js"></script>
 
+    <!-- Скрипт держит фокус в мобильном меню -->
+    <script src="./js/mobile-menu-focus-catch.js"></script>
+
     <!-- Скрипт модального окна -->
     <script src="./js/modal.js"></script>
     <!-- <script src="./js/modal.min.js" ></script> -->
 
-    <!-- Скрипт спикера формы модалки  -->
+    <!-- Скрипт спикера формы модалки -->
     <script src="./js/form.min.js"></script>
 
     <!-- Скрипт держит фокус в модальном окне -->

@@ -45,14 +45,16 @@
   }
 }
 
-.modal-close-btn-container {
+/* .modal__btn-close-container {
+
+} */
+
+/* Ellipse 1 */
+.modal__btn-close {
   position: absolute;
   top: rem(8px); /* 0.5rem */
   right: rem(8px);
-}
 
-/* Ellipse 1 */
-.modal-close-btn-container > .modal-close-btn {
   display: flex;
   align-items: center;
   justify-content: center;

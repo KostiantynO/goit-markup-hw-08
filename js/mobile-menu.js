@@ -1,14 +1,14 @@
 (() => {
-  const refs = {
+  const refsMobile = {
+    mobileMenu: document.querySelector("[data-menu]"),
     openMenuBtn: document.querySelector("[data-menu-open]"),
     closeMenuBtn: document.querySelector("[data-menu-close]"),
-    menu: document.querySelector("[data-menu]"),
   };
 
-  refs.openMenuBtn.addEventListener("click", toggleModal);
-  refs.closeMenuBtn.addEventListener("click", toggleModal);
-
-  function toggleModal() {
-    refs.menu.classList.toggle("is-open");
+  function toggleMenu() {
+    refsMobile.mobileMenu.classList.toggle("is-open");
   }
+
+  refsMobile.openMenuBtn.addEventListener("click", toggleMenu);
+  refsMobile.closeMenuBtn.addEventListener("click", toggleMenu);
 })();

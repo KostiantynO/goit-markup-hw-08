@@ -162,11 +162,11 @@ scalingUp {}
 .backdrop
 .modal
 .backdrop.is-hidden > .modal
-.modal-close-btn-container
-.modal-close-btn-container > .modal-close-btn
+.modal__btn-close-container
+.modal__btn-close
 .modal-close-icon
-.modal-close-btn-container > .modal-close-btn:hover,
-.modal-close-btn-container > .modal-close-btn:focus
+.modal__btn-close:hover,
+.modal__btn-close:focus
 .hero-form__title
 .hero-form__field
 .customer-info > .hero-form__field + .hero-form__field

@@ -87,6 +87,7 @@
   @if $fz {
     font-size: rem($fz);
   }
+
   @if ($fz and $lh and comparable($fz, $lh)) {
     line-height: (round($lh * 10000000 / $fz)) / 10000000;
   } @else if ($fz == null) {

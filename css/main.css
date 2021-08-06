@@ -833,7 +833,7 @@ mr8 */
   letter-spacing: 0.06em;
   word-wrap: break-word;
   text-overflow: clip;
-  transition-property: width, height, font-size, line-height;
+  transition-property: width, height, flex, font-size, line-height;
   transition: calc(var(--time) * 2) var(--cubic);
 }
 
@@ -1735,15 +1735,15 @@ mr8 */
   }
 }
 
-.modal-close-btn-container {
+/* .modal__btn-close-container {
+
+} */
+/* Ellipse 1 */
+.modal__btn-close {
   position: absolute;
   top: 0.5rem;
   /* 0.5rem */
   right: 0.5rem;
-}
-
-/* Ellipse 1 */
-.modal-close-btn-container > .modal-close-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1759,12 +1759,12 @@ mr8 */
   border-radius: 50%;
 }
 
-.modal-close-btn-container > .modal-close-btn:hover, .modal-close-btn-container > .modal-close-btn:focus {
+.modal__btn-close:hover, .modal__btn-close:focus {
   color: var(--color-accent);
   background-color: var(--color-white);
 }
 
-.modal-close-btn-container > .modal-close-btn:focus {
+.modal__btn-close:focus {
   box-shadow: 0 0 0.1875rem 0.125rem rgba(33, 150, 243, 0.5);
   outline: none;
 }
@@ -1800,7 +1800,7 @@ mr8 */
   /* 1.25rem, 1.5, 700 */
   text-align: center;
   line-height: clamp(1.875rem, 2.5vw, 1.4375rem);
-  transition-property: width, height, font-size, line-height;
+  transition-property: width, height, flex, font-size, line-height;
   transition: calc(var(--time) * 2) var(--cubic);
 }
 
@@ -2199,6 +2199,12 @@ mr8 */
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/squooshed/hero-bg/mobile/hero-bg-mobile-480x400.jpg);
   /* TABLET */
   /* DESKTOP */
+}
+
+@media screen and (min-width: 75rem) {
+  .hero {
+    padding: 12.5rem 0;
+  }
 }
 
 @media only screen and (max-width: calc( 47.9375rem)) and (min-device-pixel-ratio: 2), only screen and (max-width: calc( 47.9375rem)) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: calc( 47.9375rem)) and (-o-min-device-pixel-ratio: 2 / 1), only screen and (max-width: calc( 47.9375rem)) and (min-resolution: 192dpi), only screen and (max-width: calc( 47.9375rem)) and (min-resolution: 2dppx) {
