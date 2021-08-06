@@ -89,7 +89,13 @@
   }
   @if ($fz and $lh and comparable($fz, $lh)) {
     line-height: (round($lh * 10000000 / $fz)) / 10000000;
+  } @else if ($fz == null) {
+    $fz: $base-fz-body;
+    @if $lh and comparable($fz, $lh) {
+      line-height: (round($lh * 10000000 / $fz)) / 10000000;
+    }
   }
+
   @if $fw {
     font-weight: $fw;
   }

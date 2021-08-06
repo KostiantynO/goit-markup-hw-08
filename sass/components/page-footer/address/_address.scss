@@ -8,7 +8,7 @@
   @extend %list;
 
   &__item:not(:last-child) {
-    margin-bottom: 9px; /* Нижний отступ между ссылками в адресе */
+    margin-bottom: rem(9px); /* Нижний отступ между ссылками в адресе */
   }
 }
 /* .address-list-item { } */

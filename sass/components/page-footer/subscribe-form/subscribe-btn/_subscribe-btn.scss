@@ -1,9 +1,9 @@
 /* Подписаться */
 .subscribe-btn {
-  & .subscribe-btn__send-icon {
-    margin-left: 0.625rem;
+  &__send-icon {
+    margin-left: rem(10px); /* 0.625rem */
     fill: currentColor;
-    /* anchor */
+
     animation: send-icon-return var(--time) var(--cubic) 1 backwards;
 
     /* transform: rotate(-1deg) scale(1); */

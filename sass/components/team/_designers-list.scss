@@ -18,7 +18,16 @@
 
 /* team card 1-4 or "designer card" */
 .designers-list__item {
-  flex-basis: calc(100% / var(--cards-per-line-4) - var(--gap));
+  flex-basis: calc(100% / var(--cards-per-line-1) - var(--gap));
+
+  @include mq($tablet, $desktop) {
+    flex-basis: calc(100% / var(--cards-per-line-2) - var(--gap));
+  }
+
+  @include mq($desktop) {
+    flex-basis: calc(100% / var(--cards-per-line-4) - var(--gap));
+  }
+
   flex-grow: 1; /* for mobile */
 
   min-width: rem(250px); /* 15.625rem */

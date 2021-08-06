@@ -2,13 +2,13 @@
 .hero-form__input {
   height: 2.5rem; /* 40px */
 
-  padding: 0.75rem 0.75rem 0.75rem 2.625rem;
+  padding: rem(12px) rem(12px) rem(12px) rem(42px); /* 0.75rem 2.625rem */
 
   line-height: 1;
   color: var(--color-text-primary);
 
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 0.25rem;
+  border: rem(1px) solid rgba(33, 33, 33, 0.2);
+  border-radius: rem(4px); /* 0.25rem */
 
   transition: border-color var(--time) var(--cubic);
 
@@ -22,14 +22,14 @@
 
   &:focus {
     border-color: var(--color-accent);
-    box-shadow: 0 0 3px 2px rgba(33, 150, 243, 0.5);
+    box-shadow: 0 0 rem(3px) rem(2px) rgba(33, 150, 243, 0.5);
 
     outline: none;
   }
 
   &::placeholder {
-    margin-bottom: 0.25rem; /* 4px */
-    font-size: 0.75rem; /* 12px */
+    margin-bottom: rem(4px); /* 0.25rem */
+    font-size: rem(12px); /* 0.75rem */
     line-height: 1.17;
     letter-spacing: 0.01em;
     color: var(--color-text-secondary);

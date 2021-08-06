@@ -2,6 +2,7 @@
 /* || --------------- START "ПЕРЕМЕННЫЕ" ---------------- */
 /* ------------------------------------------------------ */
 $base-fz: 16px;
+$base-fz-body: 14px;
 $uni-margin-big: 50px;
 $uni-margin: 30px;
 $uni-margin-med: 20px;
@@ -99,6 +100,6 @@ $tr: (
   "card": "width, height, flex",
   "text": "font-size, line-height",
   "both": "width, height, font-size, line-height",
-  "time": var(--time),
+  "time": calc(var(--time) * 2),
   "cubic": var(--cubic),
 );

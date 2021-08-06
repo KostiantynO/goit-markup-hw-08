@@ -299,7 +299,7 @@ p {
   /* 0.9375rem, падинг от границы экрана */
   padding-left: 0.9375rem;
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (max-width: calc( 48rem - 0.0625rem)) {
@@ -416,33 +416,36 @@ p {
 }
 
 /* END Анимация */
+.body__skip-btn {
+  margin-left: 0.5rem;
+  /* 0.5rem; */
+}
+
 .skip-btn {
   position: absolute;
-  --skip-btn-max-height: 3.125rem;
-  /* 50px */
-  top: calc(-1 * var(--skip-btn-max-height));
+  /* 3.125rem */
+  top: calc(-1 * 3.125rem);
   left: 0;
   z-index: 2;
   max-width: 18.75rem;
-  /* 300px */
-  max-height: var(--skip-btn-max-height);
+  /* 18.75rem */
+  max-height: 3.125rem;
   padding: 0.5rem;
-  /* 8px */
-  margin-left: 0.5rem;
+  /* 0.5rem */
   overflow: hidden;
   font-size: 1.21rem;
-  font-weight: 700;
   line-height: 1.21;
+  font-weight: 700;
   color: var(--color-text-primary);
   word-wrap: break-word;
   background-color: var(--color-white);
-  border: 1px solid transparent;
-  border-radius: 3px;
+  border: 0.0625rem solid transparent;
+  border-radius: 0.1875rem;
   transition: transform var(--time) var(--cubic);
 }
 
 .skip-btn:focus {
-  transform: translateY(100%);
+  transform: translateY(121%);
 }
 
 .page-header__container {
@@ -466,7 +469,7 @@ p {
   margin-left: 5.625rem;
   /* 5.625rem, левый у Нав */
   transition-property: width, height, margin, flex, visibility, opacity, transform, background-color;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (max-width: 47.9375rem) {
@@ -665,7 +668,7 @@ p {
 .page-header__contacts-list {
   margin-left: auto;
   transition-property: width, height, margin, flex, visibility, opacity, transform, background-color;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (max-width: 47.9375rem) {
@@ -831,7 +834,7 @@ mr8 */
   word-wrap: break-word;
   text-overflow: clip;
   transition-property: width, height, font-size, line-height;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (min-width: 75rem) {
@@ -858,34 +861,40 @@ mr8 */
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  transition-property: width, height, flex;
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 .features-list__item {
   position: relative;
   /* display: flex; */
-  flex-basis: calc(100% / var(--cards-per-line-1) - var(--uni-margin));
+  flex-basis: calc(100% / var(--cards-per-line-1) - var(--gap));
   /* flex-direction: column; */
   flex-grow: 1;
   min-width: 15.625rem;
+  /* 15.625rem; */
   max-width: 28.125rem;
+  /* 28.125rem; */
   max-height: 16.735rem;
-  /* 267.76px */
-  margin-top: var(--uni-margin);
+  /* 16.735rem */
+  margin-top: var(--gap);
   /* 30px top and left */
-  margin-left: var(--uni-margin);
+  margin-left: var(--gap);
   overflow: hidden;
   word-wrap: break-word;
+  transition-property: width, height, flex;
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
   .features-list__item {
-    flex-basis: calc(100% / var(--cards-per-line-2) - var(--uni-margin));
+    flex-basis: calc(100% / var(--cards-per-line-2) - var(--gap));
   }
 }
 
 @media screen and (min-width: 75rem) {
   .features-list__item {
-    flex-basis: calc(100% / var(--cards-per-line-4) - var(--uni-margin));
+    flex-basis: calc(100% / var(--cards-per-line-4) - var(--gap));
   }
 }
 
@@ -1015,12 +1024,12 @@ mr8 */
   flex-wrap: wrap;
   justify-content: center;
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 /* team card 1-4 or "designer card" */
 .designers-list__item {
-  flex-basis: calc(100% / var(--cards-per-line-4) - var(--gap));
+  flex-basis: calc(100% / var(--cards-per-line-1) - var(--gap));
   flex-grow: 1;
   /* for mobile */
   min-width: 15.625rem;
@@ -1036,7 +1045,19 @@ mr8 */
   margin-left: var(--gap);
   word-wrap: break-word;
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
+}
+
+@media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
+  .designers-list__item {
+    flex-basis: calc(100% / var(--cards-per-line-2) - var(--gap));
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  .designers-list__item {
+    flex-basis: calc(100% / var(--cards-per-line-4) - var(--gap));
+  }
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
@@ -1099,19 +1120,22 @@ mr8 */
   padding-bottom: calc(1.5rem, 4.5vw, var(--uni-margin));
   padding-left: calc(var(--uni-margin) + 0.125rem);
   margin-bottom: 1rem;
+  /* 1rem */
   overflow: hidden;
 }
 
 /* Игорь Демьяненко, Ольга Репина, Николай Тарасов, Михаил Ермаков, h19px */
 .designer-card__name {
   min-height: 1.1875rem;
+  /*1.1875rem */
   max-height: 2.38rem;
+  /* 2.38rem */
   margin-bottom: var(--uni-margin-min);
   overflow: hidden;
   font-size: 1rem;
+  line-height: 1.1875;
   font-weight: 500;
-  line-height: 1.19;
-  /* 19px = box */
+  /* 1rem, 19px = box, 500 */
   text-align: center;
   /* inherits color: #212121; */
 }
@@ -1124,10 +1148,11 @@ mr8 */
 .designer-card__role {
   min-height: 1.1875rem;
   max-height: 3.57rem;
+  /* 3.57rem; */
   overflow: hidden;
   font-size: 1rem;
-  /* from browser font-weight: 400; */
-  line-height: 1.19;
+  line-height: 1.1875;
+  /* 1rem from chrome fw400; */
   /* 19px = box */
   color: var(--color-text-secondary);
   /* color: #757575; */
@@ -1153,23 +1178,26 @@ mr8 */
   align-items: center;
   justify-content: center;
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 .clients-list__item {
   /*  Ширина карточки постоянного клиента */
-  flex-basis: calc(100% / var(--cards-per-line-6) - var(--uni-margin));
+  flex-basis: calc(100% / var(--cards-per-line-6) - var(--gap));
   /* 6 cards */
   flex-grow: 1;
   min-width: 10.625rem;
+  /* 10.625rem; */
   max-width: 14.125rem;
+  /*  14.125rem; */
   /* flex-grow: 1; FIXME for mobile */
   height: 5.75rem;
-  margin-top: var(--uni-margin);
+  /* 5.75rem; */
+  margin-top: var(--gap);
   /* 30px top and left */
-  margin-left: var(--uni-margin);
+  margin-left: var(--gap);
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 .client-card {
@@ -1207,10 +1235,13 @@ mr8 */
 /* ------------------------------------------------------ */
 /* || ------- START "ПОРТФОЛИО - ФИЛЬТРЫ-КНОПКИ" -------- */
 /* ------------------------------------------------------ */
+.portfolio__portfolio-filters {
+  margin-bottom: var(--uni-margin-big);
+}
+
 .portfolio-filters {
   display: flex;
   justify-content: center;
-  margin-bottom: var(--uni-margin-big);
   white-space: nowrap;
 }
 
@@ -1223,6 +1254,8 @@ mr8 */
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  transition-property: width, height, flex;
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 .portfolio-filters-list__item {
@@ -1230,6 +1263,8 @@ mr8 */
   /* 0.9375rem; Верхний отступ между фильтрами-кнопками */
   margin-left: 0.5rem;
   /* 0.5rem;  Левый отступ между фильтрами-кнопками */
+  transition-property: width, height, flex;
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 /* ------------------------------------------------------ */
@@ -1245,18 +1280,20 @@ mr8 */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  transition-property: width, height, flex;
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 /* project 4 */
 .portfolio-list__item {
   display: flex;
-  flex-basis: calc(100% / var(--cards-per-line-3) - var(--gap));
+  flex-basis: calc(100% / var(--cards-per-line-1) - var(--gap));
   flex-direction: column;
   flex-grow: 1;
   width: clamp(15.625rem, 100%, var(--width-portfolio-card__image));
-  /* 250px, 100%, 450px */
+  /* 15.625rem, 100%, 450px */
   min-width: 15.625rem;
-  /* 250px */
+  /* 15.625rem */
   /* Макс. ширина карточки Проекта */
   max-width: var(--width-portfolio-card__image);
   /* 450px */
@@ -1266,6 +1303,20 @@ mr8 */
   margin-top: var(--gap);
   /* 30px top and left */
   margin-left: var(--gap);
+  transition-property: width, height, flex;
+  transition: calc(var(--time) * 2) var(--cubic);
+}
+
+@media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
+  .portfolio-list__item {
+    flex-basis: calc(100% / var(--cards-per-line-2) - var(--gap));
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  .portfolio-list__item {
+    flex-basis: calc(100% / var(--cards-per-line-3) - var(--gap));
+  }
 }
 
 .portfolio-card {
@@ -1360,14 +1411,14 @@ mr8 */
 
 /* "Технокряк, Постер New Orlean vs Golden Star, Ресторан Seafood, Проект Prime, Проект Boxes, Inspiration has no Borders, Издание Limited Edition, Проект LAB, Growing Business", h36px */
 .portfolio-card__name {
-  min-height: calc(6px + var(--uni-margin));
-  max-height: calc(var(--line-height-project-name) * 18px * 2);
-  margin-bottom: 4px;
+  min-height: calc(0.375rem + var(--uni-margin));
+  max-height: calc(var(--line-height-project-name) * 1.125rem * 2);
+  margin-bottom: 0.25rem;
   overflow: hidden;
-  font-size: 18px;
+  font-size: 1.125rem;
   /* от h3 font-weight: 700; */
   line-height: var(--line-height-project-name);
-  /* 2 = 36px = box */
+  /* lh = 2 = 36px/18px = box */
   letter-spacing: 0.06em;
   /* От body color: #212121; */
   /* white-space: nowrap; */
@@ -1382,8 +1433,9 @@ mr8 */
   min-height: var(--uni-margin);
   max-height: calc(var(--line-height-project-type) * 1rem * 2);
   margin-bottom: 0.25rem;
+  /* 0.25rem */
   overflow: hidden;
-  font-size: 16px;
+  font-size: 1rem;
   /* from body font-weight: 400; */
   line-height: var(--line-height-project-type);
   /* 1.88 = 30px = box */
@@ -1441,7 +1493,7 @@ mr8 */
 }
 
 .address-list__item:not(:last-child) {
-  margin-bottom: 9px;
+  margin-bottom: 0.5625rem;
   /* Нижний отступ между ссылками в адресе */
 }
 
@@ -1484,9 +1536,9 @@ mr8 */
 /* присоединяйтесь, h16.41px */
 .page-footer__social-title {
   margin-bottom: var(--uni-margin-med);
+  line-height: 1.17214;
   font-weight: 700;
-  line-height: 1.17;
-  /* from body font-size: 14px; */
+  /* from body fz14 */
   color: var(--color-white);
   text-transform: uppercase;
 }
@@ -1527,10 +1579,11 @@ mr8 */
 .subscribe-form__title {
   display: block;
   min-width: 13.6875rem;
-  margin-bottom: 20px;
+  /* 13.6875rem */
+  margin-bottom: var(--uni-margin-med);
   /* mt60px; mobile */
+  line-height: 1.07143;
   font-weight: 700;
-  line-height: 1.07;
   color: var(--color-white);
   text-transform: uppercase;
 }
@@ -1602,10 +1655,10 @@ mr8 */
 }
 
 /* Подписаться */
-.subscribe-btn .subscribe-btn__send-icon {
+.subscribe-btn__send-icon {
   margin-left: 0.625rem;
+  /* 0.625rem */
   fill: currentColor;
-  /* anchor */
   animation: send-icon-return var(--time) var(--cubic) 1 backwards;
   /* transform: rotate(-1deg) scale(1); */
   transform-origin: top left;
@@ -1739,15 +1792,16 @@ mr8 */
 /* mb12 w370 x h60 fw700 fz20 lh30 talcenter lsp0.03em c#212121 */
 .hero-form__title {
   display: block;
-  margin-bottom: 1.875rem;
-  /* 30px */
+  margin-bottom: var(--gap);
+  /* 1.875rem */
   font-size: 1.25rem;
   line-height: 1.5;
   font-weight: 700;
   /* 1.25rem, 1.5, 700 */
   text-align: center;
   line-height: clamp(1.875rem, 2.5vw, 1.4375rem);
-  transition: line-height var(--time) var(--cubic), height var(--time) var(--cubic);
+  transition-property: width, height, font-size, line-height;
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 .customer-info__field:not(:first-child) {
@@ -1818,10 +1872,12 @@ mr8 */
   height: 2.5rem;
   /* 40px */
   padding: 0.75rem 0.75rem 0.75rem 2.625rem;
+  /* 0.75rem 2.625rem */
   line-height: 1;
   color: var(--color-text-primary);
-  border: 1px solid rgba(33, 33, 33, 0.2);
+  border: 0.0625rem solid rgba(33, 33, 33, 0.2);
   border-radius: 0.25rem;
+  /* 0.25rem */
   transition: border-color var(--time) var(--cubic);
 }
 
@@ -1835,15 +1891,15 @@ mr8 */
 
 .hero-form__input:focus {
   border-color: var(--color-accent);
-  box-shadow: 0 0 3px 2px rgba(33, 150, 243, 0.5);
+  box-shadow: 0 0 0.1875rem 0.125rem rgba(33, 150, 243, 0.5);
   outline: none;
 }
 
 .hero-form__input::placeholder {
   margin-bottom: 0.25rem;
-  /* 4px */
+  /* 0.25rem */
   font-size: 0.75rem;
-  /* 12px */
+  /* 0.75rem */
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: var(--color-text-secondary);
@@ -1901,11 +1957,14 @@ mr8 */
 }
 
 /* .group.policy { df aifs mb30} */
+.hero-form__policy {
+  margin-bottom: 1.875rem;
+}
+
 .policy {
   position: relative;
   display: flex;
   justify-content: center;
-  margin-bottom: 1.875rem;
 }
 
 .policy__custom-checkbox-wrapper {
@@ -2032,7 +2091,7 @@ mr8 */
   opacity: 0;
   transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic), visibility var(--time) var(--cubic), background-color var(--time) var(--cubic);
   transition-property: width, height, margin, flex, visibility, opacity, transform, background-color;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 .mobile-menu.is-open {
@@ -2093,7 +2152,7 @@ mr8 */
   border-bottom: 0.0625rem solid #ececec;
   /* Line - Декор линия*/
   transition-property: width, height, flex;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
@@ -2232,7 +2291,7 @@ mr8 */
 
 .activities {
   transition-property: width, height, margin, flex, visibility, opacity, transform, background-color;
-  transition: var(--time) var(--cubic);
+  transition: calc(var(--time) * 2) var(--cubic);
 }
 
 @media screen and (max-width: 74.9375rem) {

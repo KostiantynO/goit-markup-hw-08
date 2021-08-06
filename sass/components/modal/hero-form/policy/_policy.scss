@@ -1,11 +1,13 @@
 /* .group.policy { df aifs mb30} */
+.hero-form__policy {
+  margin-bottom: rem(30px);
+}
+
 .policy {
   position: relative;
   display: flex;
 
   justify-content: center;
-
-  margin-bottom: rem(30px);
 
   &__custom-checkbox-wrapper {
     margin-right: rem(8px);

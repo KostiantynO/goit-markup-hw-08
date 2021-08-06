@@ -3,10 +3,10 @@
   min-height: var(--uni-margin);
   max-height: calc(var(--line-height-project-type) * 1rem * 2);
 
-  margin-bottom: 0.25rem;
+  margin-bottom: rem(4px); /* 0.25rem */
   overflow: hidden;
 
-  font-size: 16px; /* from body font-weight: 400; */
+  font-size: rem(16px); /* from body font-weight: 400; */
   line-height: var(--line-height-project-type); /* 1.88 = 30px = box */
   color: var(--color-text-secondary); /* color: #757575; */
 

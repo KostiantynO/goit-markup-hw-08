@@ -1,11 +1,11 @@
 /* mb12 w370 x h60 fw700 fz20 lh30 talcenter lsp0.03em c#212121 */
 .hero-form__title {
   display: block;
-  margin-bottom: 1.875rem; /* 30px */
+  margin-bottom: var(--gap); /* 1.875rem */
 
   @include fz-lh-fw(20px, 30px, 700); /* 1.25rem, 1.5, 700 */
   text-align: center;
 
   line-height: clamp(rem(30px), vw(rem(30px), $desktop), rem(23px));
-  transition: line-height var(--time) var(--cubic), height var(--time) var(--cubic);
+  @include tr("both");
 }

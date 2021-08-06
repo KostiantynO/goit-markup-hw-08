@@ -9,17 +9,30 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  @include tr();
 }
 
 /* project 4 */
 .portfolio-list__item {
   display: flex;
-  flex-basis: calc(100% / var(--cards-per-line-3) - var(--gap));
+  flex-basis: calc(100% / var(--cards-per-line-1) - var(--gap));
+
+  @include mq($tablet, $desktop) {
+    flex-basis: calc(100% / var(--cards-per-line-2) - var(--gap));
+  }
+
+  @include mq($desktop) {
+    flex-basis: calc(100% / var(--cards-per-line-3) - var(--gap));
+  }
+
   flex-direction: column;
   flex-grow: 1;
 
-  width: clamp(15.625rem, 100%, var(--width-portfolio-card__image)); /* 250px, 100%, 450px */
-  min-width: 15.625rem; /* 250px */
+  width: clamp(rem(250px), 100%, var(--width-portfolio-card__image));
+  /* 15.625rem, 100%, 450px */
+
+  min-width: rem(250px); /* 15.625rem */
 
   /* Макс. ширина карточки Проекта */
   max-width: var(--width-portfolio-card__image); /* 450px */
@@ -36,4 +49,6 @@
 
   margin-top: var(--gap); /* 30px top and left */
   margin-left: var(--gap);
+
+  @include tr();
 }

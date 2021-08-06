@@ -6,21 +6,19 @@
   padding-bottom: calc(1.5rem, 4.5vw, var(--uni-margin));
   padding-left: calc(var(--uni-margin) + 0.125rem);
 
-  margin-bottom: 1rem;
+  margin-bottom: rem(16px); /* 1rem */
   overflow: hidden;
 }
 
 /* Игорь Демьяненко, Ольга Репина, Николай Тарасов, Михаил Ермаков, h19px */
 .designer-card__name {
-  min-height: 1.1875rem;
-  max-height: 2.38rem;
+  min-height: rem(19px); /*1.1875rem */
+  max-height: rem(38.08px); /* 2.38rem */
 
   margin-bottom: var(--uni-margin-min);
   overflow: hidden;
 
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.19; /* 19px = box */
+  @include fz-lh-fw(16px, 19px, 500); /* 1rem, 19px = box, 500 */
   text-align: center; /* inherits color: #212121; */
 
   &:hover {
@@ -30,12 +28,12 @@
 
 /* Product Designer, Frontend Developer, Marketing, UI Designer, h19px */
 .designer-card__role {
-  min-height: 1.1875rem;
-  max-height: 3.57rem;
+  min-height: rem(19px);
+  max-height: rem(57.12px); /* 3.57rem; */
   overflow: hidden;
 
-  font-size: 1rem; /* from browser font-weight: 400; */
-  line-height: 1.19; /* 19px = box */
+  @include fz-lh-fw(16px, 19px); /* 1rem from chrome fw400; */ /* 19px = box */
+
   color: var(--color-text-secondary); /* color: #757575; */
   text-align: center;
 

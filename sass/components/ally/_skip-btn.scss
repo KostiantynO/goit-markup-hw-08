@@ -1,30 +1,32 @@
+.body__skip-btn {
+  margin-left: rem(8px); /* 0.5rem; */
+}
+
 .skip-btn {
   position: absolute;
-  --skip-btn-max-height: 3.125rem; /* 50px */
-  top: calc(-1 * var(--skip-btn-max-height));
+  $skip-btn-max-height: rem(50px); /* 3.125rem */
+  top: calc(-1 * #{$skip-btn-max-height});
   left: 0;
   z-index: map-get($z-index, "skip-btn");
 
-  max-width: 18.75rem; /* 300px */
-  max-height: var(--skip-btn-max-height);
-  padding: 0.5rem; /* 8px */
+  max-width: rem(300px); /* 18.75rem */
+  max-height: $skip-btn-max-height;
+  padding: rem(8px); /* 0.5rem */
 
-  margin-left: 0.5rem;
   overflow: hidden;
 
-  font-size: 1.21rem;
-  font-weight: 700;
-  line-height: 1.21;
+  @include fz-lh-fw(19.36px, 23.4256px, 700);
+
   color: var(--color-text-primary);
   word-wrap: break-word;
 
   background-color: var(--color-white);
-  border: 1px solid transparent;
-  border-radius: 3px;
+  border: rem(1px) solid transparent;
+  border-radius: rem(3px);
 
   transition: transform var(--time) var(--cubic);
 
   &:focus {
-    transform: translateY(100%);
+    transform: translateY(121%);
   }
 }

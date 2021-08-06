@@ -37,7 +37,7 @@
 
   <body class="portfolio-body">
     <!-- Пропустить к Основному Контенту -->
-    <button class="skip-btn links" onclick="window.location.href='#main-content';">
+    <button class="skip-btn body__skip-btn links" onclick="window.location.href='#main-content';">
       Skip to main content
     </button>
 
@@ -149,7 +149,10 @@
           <h1 class="sr-only" id="portfolio-title-id">Примеры работ</h1>
 
           <!-- Фильтры-кнопки -->
-          <div class="portfolio-filters" aria-labelledby="portfolio-filters-title-id">
+          <div
+            class="portfolio-filters portfolio__portfolio-filters"
+            aria-labelledby="portfolio-filters-title-id"
+          >
             <h2 class="sr-only" id="portfolio-filters-title-id">Фильтры-кнопки по типу проекта</h2>
 
             <ul class="portfolio-filters-list portfolio-filters__list" role="radiogroup">
@@ -1121,6 +1124,6 @@
     </div>
 
     <!-- Скрипт мобильного меню -->
-    <script src="./js/menu.js"></script>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>

@@ -18,16 +18,16 @@
 
 .clients-list__item {
   /*  Ширина карточки постоянного клиента */
-  flex-basis: calc(100% / var(--cards-per-line-6) - var(--uni-margin)); /* 6 cards */
+  flex-basis: calc(100% / var(--cards-per-line-6) - var(--gap)); /* 6 cards */
   flex-grow: 1;
 
-  min-width: 10.625rem;
-  max-width: 14.125rem;
+  min-width: rem(170px); /* 10.625rem; */
+  max-width: rem(226px); /*  14.125rem; */
   /* flex-grow: 1; FIXME for mobile */
-  height: 5.75rem;
+  height: rem(92px); /* 5.75rem; */
 
-  margin-top: var(--uni-margin); /* 30px top and left */
-  margin-left: var(--uni-margin);
+  margin-top: var(--gap); /* 30px top and left */
+  margin-left: var(--gap);
 
   @include tr();
 }

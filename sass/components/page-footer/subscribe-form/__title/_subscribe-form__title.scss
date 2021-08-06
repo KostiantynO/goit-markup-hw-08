@@ -2,12 +2,12 @@
 /* .subscribe-form__title { mb20 w219 h16 fw700 fz14 lh15 lsp0.03em ttup c#FFF } */
 .subscribe-form__title {
   display: block;
-  min-width: 13.6875rem;
+  min-width: rem(219px); /* 13.6875rem */
 
-  margin-bottom: 20px; /* mt60px; mobile */
+  margin-bottom: var(--uni-margin-med); /* mt60px; mobile */
 
-  font-weight: 700;
-  line-height: 1.07;
+  @include fz-lh-fw(null, 15px, 700);
+
   color: var(--color-white);
   text-transform: uppercase;
 }
