@@ -668,11 +668,10 @@ p {
 
 @media screen and (max-width: 47.9375rem) {
   .page-header__contacts-list {
-    width: 0;
     height: 0;
     visibility: hidden;
     pointer-events: none;
-    transform: scale(0);
+    transform: scaleY(0);
   }
 }
 
@@ -702,6 +701,7 @@ p {
   flex-wrap: wrap;
   align-items: center;
   color: var(--color-text-secondary);
+  /* 14x10envelope 10x14 mr8 */
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
@@ -733,9 +733,6 @@ p {
   }
 }
 
-/* 14x10envelope
-10x14
-mr8 */
 .header-contact__icon {
   margin-right: 0.5rem;
   /* 0.5rem; */
@@ -802,12 +799,7 @@ mr8 */
 
 .social-card__link:focus .social-card__icon,
 .social-card__link:hover .social-card__icon {
-  animation-name: rotate-box;
-  animation-duration: var(--time);
-  animation-timing-function: var(--cubic);
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
+  animation: rotate-box var(--time) var(--cubic) 1 normal forwards;
 }
 
 /* END "Ссылки на соц. сети" */
@@ -1178,7 +1170,7 @@ mr8 */
 
 .clients-list__item {
   /*  Ширина карточки постоянного клиента */
-  flex-basis: calc(100% / var(--cards-per-line-6) - var(--gap));
+  flex-basis: calc(100% / var(--cards-per-line-2) - var(--gap));
   /* 6 cards */
   flex-grow: 1;
   min-width: 10.625rem;
@@ -1193,6 +1185,20 @@ mr8 */
   margin-left: var(--gap);
   transition-property: width, height, flex;
   transition: calc(var(--time) * 2) var(--cubic);
+}
+
+@media screen and (min-width: 48rem) {
+  .clients-list__item {
+    flex-basis: calc(100% / var(--cards-per-line-3) - var(--gap));
+    /* 6 cards */
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  .clients-list__item {
+    flex-basis: calc(100% / var(--cards-per-line-6) - var(--gap));
+    /* 6 cards */
+  }
 }
 
 .client-card {

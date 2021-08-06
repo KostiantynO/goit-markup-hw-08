@@ -47,12 +47,7 @@
 
   .social-card__link:focus &,
   .social-card__link:hover & {
-    animation-name: rotate-box;
-    animation-duration: var(--time);
-    animation-timing-function: var(--cubic);
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
+    animation: rotate-box var(--time) var(--cubic) 1 normal forwards;
   }
 }
 /* END "Ссылки на соц. сети" */

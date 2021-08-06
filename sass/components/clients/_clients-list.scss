@@ -18,7 +18,16 @@
 
 .clients-list__item {
   /*  Ширина карточки постоянного клиента */
-  flex-basis: calc(100% / var(--cards-per-line-6) - var(--gap)); /* 6 cards */
+  flex-basis: calc(100% / var(--cards-per-line-2) - var(--gap)); /* 6 cards */
+
+  @include mq($tablet) {
+    flex-basis: calc(100% / var(--cards-per-line-3) - var(--gap)); /* 6 cards */
+  }
+
+  @include mq($desktop) {
+    flex-basis: calc(100% / var(--cards-per-line-6) - var(--gap)); /* 6 cards */
+  }
+
   flex-grow: 1;
 
   min-width: rem(170px); /* 10.625rem; */

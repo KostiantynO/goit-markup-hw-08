@@ -7,11 +7,10 @@
   @include tr("hidden");
 
   @include mq($end: $tablet) {
-    width: 0;
     height: 0;
     visibility: hidden;
     pointer-events: none;
-    transform: scale(0);
+    transform: scaleY(0);
   }
 
   @include mq($desktop) {
@@ -21,9 +20,11 @@
   }
 }
 
-.contacts-list__item:not(:last-child) {
-  @include mq($tablet, $desktop, $mb: 10px);
-  @include mq($desktop, $mr: $uni-margin-big);
+.contacts-list {
+  &__item:not(:last-child) {
+    @include mq($tablet, $desktop, $mb: 10px);
+    @include mq($desktop, $mr: $uni-margin-big);
+  }
 }
 
 /* info@devstudio.com, +38 096 111 11 11, h16px */
@@ -53,24 +54,20 @@
     margin-top: rem(2px); /* 0.125rem; */
     margin-bottom: rem(1px); /* 0.125rem; */
   }
-}
 
-/* 14x10envelope
-10x14
-mr8 */
+  /* 14x10envelope 10x14 mr8 */
+  &__icon {
+    margin-right: rem(8px); /* 0.5rem; */
 
-.header-contact__icon {
-  margin-right: rem(8px); /* 0.5rem; */
+    @include mq($desktop, $mr: 10px); /* 0.625rem; */
 
-  @include mq($desktop, $mr: 10px); /* 0.625rem; */
+    fill: currentColor;
+    transition: transform var(--time) var(--cubic);
 
-  fill: currentColor;
-
-  transition: transform var(--time) var(--cubic);
-
-  .header-contact:hover > &,
-  .header-contact:focus > & {
-    transform: rotateY(180deg);
+    .header-contact:hover > &,
+    .header-contact:focus > & {
+      transform: rotateY(180deg);
+    }
   }
 }
 
