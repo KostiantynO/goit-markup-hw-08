@@ -1,5 +1,9 @@
 /* START Mobile button */
 .btn-mobile {
+  position: absolute;
+  top: rem(10px);
+  right: rem(15px);
+
   max-width: rem(40px); /* 2.5rem */
   max-height: rem(40px);
   padding: 0;

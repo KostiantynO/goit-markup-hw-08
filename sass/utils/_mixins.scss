@@ -95,9 +95,9 @@
   }
 }
 
-@mixin tr($map: null) {
-  transition-property: unquote(map-get($map, "property"));
-  transition: map-get($map, "time") map-get($map, "cubic");
+@mixin tr($tr-key: "card", $tr-map: $tr) {
+  transition-property: unquote(map-get($tr-map, $tr-key));
+  transition: map-get($tr-map, "time") map-get($tr-map, "cubic");
 }
 
 /* -------------------------- END "MIXINS" -------------------------- */

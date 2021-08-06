@@ -17,6 +17,7 @@
 @import "./shared/btn/--secondary/btn--secondary";
 
 @import "./page-header/nav/__btn-mobile/nav__btn-mobile";
+@import "./page-header/nav/btn-burger/btn-burger";
 
 @import "./page-header/page-header__contacts-list";
 
@@ -63,8 +64,12 @@
 
 /* Studio - Page-footer */
 @import "./page-footer/__container/page-footer__container";
-@import "./page-footer/address/address";
 @import "./page-footer/address/page-footer__address-wrapper/page-footer__address-wrapper";
+@import "./page-footer/address/__address/page-footer__address";
+@import "./page-footer/address/address";
+@import "./page-footer/address/address-card/__map-pointer/address-card__map-pointer";
+@import "./page-footer/address/address-card/__contact/address-card__contact";
+
 @import "./page-footer/page-footer__social-container/page-footer__social-container";
 
 /* Studio - Page-footer - subscribe-form */

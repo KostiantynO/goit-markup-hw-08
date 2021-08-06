@@ -8,6 +8,20 @@
   padding-top: 2.9375rem;
 }
 
+// [0 - 767px], hide.
+.activities {
+  @include tr("hidden");
+
+  @include mq($end: $desktop) {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(0);
+  }
+}
+
 /* ------------------------------------------------------ */
 /* || ------------- END "ЧЕМ МЫ ЗАНИМАЕМСЯ" ------------- */
 /* ------------------------------------------------------ */

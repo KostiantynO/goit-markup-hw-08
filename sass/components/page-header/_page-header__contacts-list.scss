@@ -2,15 +2,28 @@
 
 .page-header__contacts-list {
   @extend %list;
-
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   margin-left: auto;
+
+  @include tr("hidden");
+
+  @include mq($end: $tablet) {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(0);
+  }
+
+  @include mq($desktop) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 }
 
-.page-header__contacts-list .contact-item + .contact-item {
-  margin-left: var(--uni-margin-big);
+.contacts-list__item:not(:last-child) {
+  @include mq($tablet, $desktop, $mb: 10px);
+  @include mq($desktop, $mr: $uni-margin-big);
 }
 
 /* info@devstudio.com, +38 096 111 11 11, h16px */
@@ -21,18 +34,36 @@
   flex-wrap: wrap;
   align-items: center;
 
-  padding-top: rem(7px); /* 0.4375rem */
-
   color: var(--color-text-secondary);
 
+  @include mq($tablet, $desktop) {
+    @include fz-lh-fw(12px, 14px); /* box */
+  }
+
+  @include mq($desktop) {
+    padding-top: rem(7px); /* 0.4375rem */
+  }
+
   &__icon-envelope {
+    @include mq($desktop) {
+      width: rem(16px);
+      height: rem(12px);
+    }
+
     margin-top: rem(2px); /* 0.125rem; */
-    margin-bottom: rem(2px); /* 0.125rem; */
+    margin-bottom: rem(1px); /* 0.125rem; */
   }
 }
 
+/* 14x10envelope
+10x14
+mr8 */
+
 .header-contact__icon {
-  margin-right: rem(10px); /* 0.625rem; */
+  margin-right: rem(8px); /* 0.5rem; */
+
+  @include mq($desktop, $mr: 10px); /* 0.625rem; */
+
   fill: currentColor;
 
   transition: transform var(--time) var(--cubic);

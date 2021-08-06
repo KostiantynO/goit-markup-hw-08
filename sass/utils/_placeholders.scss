@@ -6,13 +6,16 @@
 %header-link {
   position: relative;
 
-  padding-right: 3px;
-  padding-bottom: 0.5rem;
-  padding-left: 3px;
-
-  font-weight: 500;
-  line-height: 1.14; /* 16px, color: #2196f3; Hover Focus */
   letter-spacing: 0.02em; /* white-space: nowrap; */
+  font-weight: 500;
+
+  @include mq($desktop) {
+    padding-right: 3px;
+    padding-bottom: 0.5rem;
+    padding-left: 3px;
+
+    line-height: 1.14; /* 16px, color: #2196f3; Hover Focus */
+  }
 }
 
 /* nav-link overlays for centered color fill on :hover */

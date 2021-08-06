@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
 
-  @include tr($card);
+  @include tr();
 }
 
 .clients-list__item {
@@ -29,5 +29,5 @@
   margin-top: var(--uni-margin); /* 30px top and left */
   margin-left: var(--uni-margin);
 
-  @include tr($card);
+  @include tr();
 }

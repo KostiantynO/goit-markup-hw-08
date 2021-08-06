@@ -13,7 +13,7 @@
 
   justify-content: center;
 
-  @include tr($card);
+  @include tr();
 }
 
 /* team card 1-4 or "designer card" */
@@ -39,5 +39,5 @@
     max-width: rem(270px); /* 16.875rem */
   }
 
-  @include tr($card);
+  @include tr();
 }

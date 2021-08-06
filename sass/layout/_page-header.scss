@@ -3,16 +3,24 @@
 /* ------------------------------------------------------ */
 
 .page-header {
-  padding-top: rem(10px); /* 16px */
-  padding-bottom: rem(9px);
+  position: relative;
+  padding-top: rem(16px); /* 1rem */
+  padding-bottom: rem(15px); /* 0.9375rem */
+
+  background-color: var(--color-white);
+  border-bottom: rem(1px) solid #ececec; /* Line - Декор линия*/
+
+  @include mq($tablet, $desktop) {
+    padding-top: rem(21px); /* 1.3125rem */
+    padding-bottom: rem(20px); /* 1.25rem */
+  }
 
   @include mq($desktop) {
     padding-top: rem(24px); /* 1.5rem */
     padding-bottom: rem(24px);
   }
 
-  background-color: var(--color-white);
-  border-bottom: rem(1px) solid #ececec; /* Line - Декор линия*/
+  @include tr();
 }
 
 /* ------------------------------------------------------ */

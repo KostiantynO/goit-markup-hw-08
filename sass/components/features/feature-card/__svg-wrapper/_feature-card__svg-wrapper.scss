@@ -2,17 +2,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 7.5rem;
+  height: rem(120px); /* 7.5rem */
 
-  margin-bottom: 1.875rem;
+  margin-bottom: var(--gap);
 
   background-color: var(--color-bg-btn-secondary);
-  border-radius: 0.25rem;
+  border-radius: rem(4px); /* 0.25rem */
 }
 
 .feature-card__svg {
-  width: 4.375rem;
-  height: 4.375rem;
+  width: rem(70px); /* 4.375rem; */
+  height: rem(70px);
 
   /* .antenna-circle, .clock-ticks, .diagram-bars, .astronaut-stars */
   color: var(--color-accent);

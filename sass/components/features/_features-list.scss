@@ -17,11 +17,18 @@
 .features-list__item {
   position: relative;
 
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  flex-basis: calc(100% / var(--cards-per-line-1) - var(--uni-margin));
+  /* flex-direction: column; */
+  flex-grow: 1;
 
-  flex-basis: calc(100% / var(--cards-per-line-4) - var(--uni-margin));
-  /* flex-grow: 1; FIXME for mobile */
+  @include mq($tablet, $desktop) {
+    flex-basis: calc(100% / var(--cards-per-line-2) - var(--uni-margin));
+  }
+
+  @include mq($desktop) {
+    flex-basis: calc(100% / var(--cards-per-line-4) - var(--uni-margin));
+  }
 
   min-width: 15.625rem;
   max-width: 28.125rem;
@@ -31,6 +38,5 @@
   margin-left: var(--uni-margin);
 
   overflow: hidden;
-
   word-wrap: break-word;
 }

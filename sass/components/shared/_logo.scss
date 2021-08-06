@@ -4,7 +4,11 @@
 
   flex-direction: row;
   flex-wrap: nowrap;
-  width: 9.0625rem;
+  width: rem(138px);
+
+  @include mq($desktop) {
+    width: rem(145px);
+  }
 
   font-family: var(--logo-sans-serif);
   font-size: clamp(rem(24px), vw(rem(24px), $tablet), rem(26px));
@@ -33,12 +37,10 @@
 }
 
 .logo__first-part {
-  width: 3.66rem; /* 58.56px; */
   color: var(--color-accent); /* "Studio" в Лого */
 }
 
 .logo__last-part {
-  width: 5.22rem; /* 83.52px */
   color: var(--color-black);
 }
 

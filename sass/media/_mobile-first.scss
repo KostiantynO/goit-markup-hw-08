@@ -2,37 +2,9 @@
 
 // [480px - ♾] - container width: 480px, adaptive. // @include mq($mobile) {.container { width: 480px; } }
 
-// [0 - 767px], hide.
-@include mq($end: $tablet) {
-  .nav__menu,
-  .page-header__contacts-list {
-    display: none;
-  }
-}
-
-.activities {
-  display: none;
-}
-
-@include mq($desktop) {
-  .activities {
-    display: block;
-  }
-}
-
 // [480px - 767px] // @include mq($mobile, $tablet) {}
 
 // [768px - ♾], Same as 768px, but container width is fixed at 768px, adaptive.
-@include mq($tablet) {
-  .mobile-overlay,
-  .btn-burger {
-    display: none;
-  }
-
-  .feature-card__heading {
-    margin-bottom: var(--uni-margin-min);
-  }
-}
 
 // [768px - 1199px], for specific rules.
 // @include mq($tablet, $desktop) {}

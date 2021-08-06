@@ -2,10 +2,10 @@
 .hero__title {
   position: relative;
   min-height: clamp(rem(84px), 1vw, rem(120px)); /* 5.25rem, 7.5rem */
-  margin-bottom: var(--uni-margin);
+  margin-bottom: var(--gap);
 
-  font-size: clamp(rem(26px), #{"max(3.38vw, 1.625rem)"}, rem(44px)); /* 1.625rem, 2.75rem  */
-  line-height: clamp(rem(42px), #{"max(5.47vw, 2.625rem)"}, rem(60px)); /* 2.625rem, 3.75rem */
+  font-size: clamp(rem(26px), vw(rem(26px), $tablet), rem(44px)); /* 1.625rem, 2.75rem  */
+  line-height: clamp(rem(42px), vw(rem(42px), $tablet), rem(60px)); /* 2.625rem, 3.75rem */
   font-weight: 900;
 
   color: var(--color-white);
@@ -13,4 +13,10 @@
   letter-spacing: 0.06em;
   word-wrap: break-word;
   text-overflow: clip;
+
+  @include tr("both");
+
+  @include mq($desktop) {
+    @include fz-lh-fw(44px, 60px);
+  }
 }

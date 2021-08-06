@@ -15,7 +15,21 @@
     flex-wrap: wrap;
     align-items: center;
 
-    margin-left: 5.625rem; /* 90px, левый у Нав */
+    margin-left: rem(90px); /* 5.625rem, левый у Нав */
+
+    @include tr("hidden");
+
+    @include mq($end: $tablet) {
+      width: 0;
+      height: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: scale(0);
+    }
+
+    @include mq($tablet, $desktop) {
+      margin-left: rem(85px); /* 5.3125rem, левый у Нав */
+    }
   }
 
   &__item:not(:first-child) {

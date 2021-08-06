@@ -2,7 +2,7 @@
   @extend %header-link;
 
   display: inline-block;
-  padding-top: 0.5rem; /* 8px */
+  padding-top: rem(8px); /* 0.5rem */
 
   text-decoration: none;
 
@@ -33,16 +33,16 @@
   /* Current-link highlight */
   &--current::after {
     position: absolute;
-    top: 3.3125rem;
+    top: calc(100% + #{rem(21px)}); /* 3.3125rem;  */
     left: 0;
 
     min-width: 100%;
-    min-height: 0.25rem;
+    min-height: rem(4px); /* 0.25rem */
     content: "";
 
     background-color: var(--color-accent);
-    border-radius: 0.125rem;
-    border: 1px solid transparent;
+    border-radius: rem(2px); /* 0.125rem */
+    border: rem(1px) solid transparent;
   }
 }
 
