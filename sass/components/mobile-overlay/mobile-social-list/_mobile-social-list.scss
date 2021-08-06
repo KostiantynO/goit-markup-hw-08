@@ -1,0 +1,25 @@
+.mobile-social-list {
+  @extend %list;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__item:not(:last-child) {
+    /* Vertical separator - Line 1 */
+    //     .mobile-social-list__item:not(:last-child)::before { content: "";
+    // mr10; w22px; h0px; border: 1px solid rgba(#212121, 0.2); transform: rotate(90deg); }
+    &::after {
+      width: 22px;
+      height: 0;
+      content: "";
+      border-top: 1px solid rgba(33, 33, 33, 0.2);
+      transform: rotate(90deg);
+    }
+  }
+}

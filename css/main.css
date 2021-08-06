@@ -30,6 +30,8 @@
   /* Тень активной кнопки (статическая) - shadow-middle */
   --shadow-hero-btn: 0 4px 4px rgba(0, 0, 0, 0.15);
   /* Тень Кнопки-героя (статическая) */
+  --shadow-mobile-overlay: 0 4px 8px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.16);
   /* || ------------------ END "ПАЛИТРА" ------------------ */
   /* || ----------------- START "ОТСТУПЫ" ----------------- */
   --uni-margin: 1.875rem;
@@ -146,13 +148,6 @@ body .sr-only {
   opacity: 0;
 }
 
-/* "Мобильный оверлей и меню - скрыто от всех (и скрин-ридеров) до нажатия на кнопку-бургер" */
-.is-open {
-  pointer-events: auto;
-  visibility: visible;
-  opacity: 1;
-}
-
 /* Position, Block model, Typography, Visual, Other */
 /* .project-stats-languages {
   --homework-name: "hw-07";
@@ -208,7 +203,8 @@ p {
   display: inline-block;
   color: inherit;
   text-decoration: none;
-  transition: color var(--time) var(--cubic), background-color var(--time) var(--cubic), background-clip var(--time) var(--cubic);
+  transition-property: color, background-color;
+  transition: var(--time) var(--cubic);
 }
 
 .links:hover, .links:focus {
@@ -284,7 +280,7 @@ p {
 .portfolio__container,
 .page-footer__container,
 .backdrop__container,
-.mobile-menu__container {
+.mobile-overlay__container {
   margin-right: auto;
   /* Центрирует по ширине */
   margin-left: auto;
@@ -299,7 +295,7 @@ p {
   /* 0.9375rem, падинг от границы экрана */
   padding-left: 0.9375rem;
   transition-property: width, height, flex;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 @media screen and (max-width: calc( 48rem - 0.0625rem)) {
@@ -434,8 +430,8 @@ p {
   /* 0.5rem */
   overflow: hidden;
   font-size: 1.21rem;
-  line-height: 1.21;
   font-weight: 700;
+  line-height: 1.21667;
   color: var(--color-text-primary);
   word-wrap: break-word;
   background-color: var(--color-white);
@@ -469,7 +465,7 @@ p {
   margin-left: 5.625rem;
   /* 5.625rem, левый у Нав */
   transition-property: width, height, margin, flex, visibility, opacity, transform, background-color;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 @media screen and (max-width: 47.9375rem) {
@@ -668,7 +664,7 @@ p {
 .page-header__contacts-list {
   margin-left: auto;
   transition-property: width, height, margin, flex, visibility, opacity, transform, background-color;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 @media screen and (max-width: 47.9375rem) {
@@ -834,13 +830,13 @@ mr8 */
   word-wrap: break-word;
   text-overflow: clip;
   transition-property: width, height, flex, font-size, line-height;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 @media screen and (min-width: 75rem) {
   .hero__title {
     font-size: 2.75rem;
-    line-height: 1.36364;
+    line-height: 1.36667;
   }
 }
 
@@ -862,7 +858,7 @@ mr8 */
   flex-wrap: wrap;
   justify-content: center;
   transition-property: width, height, flex;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 .features-list__item {
@@ -883,7 +879,7 @@ mr8 */
   overflow: hidden;
   word-wrap: break-word;
   transition-property: width, height, flex;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
@@ -1024,7 +1020,7 @@ mr8 */
   flex-wrap: wrap;
   justify-content: center;
   transition-property: width, height, flex;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 /* team card 1-4 or "designer card" */
@@ -1045,7 +1041,7 @@ mr8 */
   margin-left: var(--gap);
   word-wrap: break-word;
   transition-property: width, height, flex;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
@@ -1133,8 +1129,8 @@ mr8 */
   margin-bottom: var(--uni-margin-min);
   overflow: hidden;
   font-size: 1rem;
-  line-height: 1.1875;
   font-weight: 500;
+  line-height: 1.18333;
   /* 1rem, 19px = box, 500 */
   text-align: center;
   /* inherits color: #212121; */
@@ -1151,7 +1147,7 @@ mr8 */
   /* 3.57rem; */
   overflow: hidden;
   font-size: 1rem;
-  line-height: 1.1875;
+  line-height: 1.18333;
   /* 1rem from chrome fw400; */
   /* 19px = box */
   color: var(--color-text-secondary);
@@ -1178,7 +1174,7 @@ mr8 */
   align-items: center;
   justify-content: center;
   transition-property: width, height, flex;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 .clients-list__item {
@@ -1197,7 +1193,7 @@ mr8 */
   /* 30px top and left */
   margin-left: var(--gap);
   transition-property: width, height, flex;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 .client-card {
@@ -1255,7 +1251,7 @@ mr8 */
   flex-wrap: wrap;
   justify-content: flex-start;
   transition-property: width, height, flex;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 .portfolio-filters-list__item {
@@ -1264,7 +1260,7 @@ mr8 */
   margin-left: 0.5rem;
   /* 0.5rem;  Левый отступ между фильтрами-кнопками */
   transition-property: width, height, flex;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 /* ------------------------------------------------------ */
@@ -1281,7 +1277,7 @@ mr8 */
   flex-wrap: wrap;
   justify-content: center;
   transition-property: width, height, flex;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 /* project 4 */
@@ -1304,7 +1300,7 @@ mr8 */
   /* 30px top and left */
   margin-left: var(--gap);
   transition-property: width, height, flex;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
@@ -1536,8 +1532,8 @@ mr8 */
 /* присоединяйтесь, h16.41px */
 .page-footer__social-title {
   margin-bottom: var(--uni-margin-med);
-  line-height: 1.17214;
   font-weight: 700;
+  line-height: 1.16667;
   /* from body fz14 */
   color: var(--color-white);
   text-transform: uppercase;
@@ -1582,8 +1578,8 @@ mr8 */
   /* 13.6875rem */
   margin-bottom: var(--uni-margin-med);
   /* mt60px; mobile */
-  line-height: 1.07143;
   font-weight: 700;
+  line-height: 1.06667;
   color: var(--color-white);
   text-transform: uppercase;
 }
@@ -1795,13 +1791,13 @@ mr8 */
   margin-bottom: var(--gap);
   /* 1.875rem */
   font-size: 1.25rem;
-  line-height: 1.5;
   font-weight: 700;
+  line-height: 1.5;
   /* 1.25rem, 1.5, 700 */
   text-align: center;
   line-height: clamp(1.875rem, 2.5vw, 1.4375rem);
   transition-property: width, height, flex, font-size, line-height;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 .customer-info__field:not(:first-child) {
@@ -1995,7 +1991,7 @@ mr8 */
 @media screen and (min-width: 75rem) {
   .policy__label {
     font-size: 0.875rem;
-    line-height: 1.71429;
+    line-height: 1.71667;
   }
 }
 
@@ -2076,32 +2072,40 @@ mr8 */
   opacity: 1;
 }
 
-/* Studio and Portfolio - Mobile menu */
+/* Studio and Portfolio - Mobile overlay */
 /* Menu,   w480, h796; */
-.mobile-menu {
+.mobile-overlay {
   position: fixed;
   top: 0;
   left: 100%;
   z-index: 20;
   width: 100%;
   height: 100vh;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   pointer-events: none;
   visibility: hidden;
-  background-color: var(--color-white);
   opacity: 0;
-  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic), visibility var(--time) var(--cubic), background-color var(--time) var(--cubic);
+  /* Menu Bg */
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-mobile-overlay);
   transition-property: width, height, margin, flex, visibility, opacity, transform, background-color;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
-.mobile-menu.is-open {
-  pointer-events: auto;
-  visibility: visible;
-  opacity: 1;
-  transform: translateX(-100%);
+@media screen and (max-width: 47.9375rem) {
+  .mobile-overlay.is-open {
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-100%);
+  }
 }
 
-.mobile-menu__container {
+.mobile-overlay__container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   padding: 3rem 2.5rem;
   /* 3rem 2.5rem */
 }
@@ -2129,8 +2133,91 @@ mr8 */
 }
 
 /* END Mobile button */
-.mobile-menu__btn-mobile-close {
-  margin-left: auto;
+.mobile-overlay__mobile-nav {
+  margin-bottom: auto;
+}
+
+.mobile-nav__item:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+/* Студия, Портфолио, Контакты */
+.mobile-nav__link {
+  font-size: 2.5rem;
+  line-height: 1.18333;
+  padding: 0;
+}
+
+.mobile-nav__link--current::after {
+  content: none;
+}
+
+.mobile-overlay__mobile-contacts-list {
+  margin-bottom: 4rem;
+}
+
+.mobile-contacts-list {
+  /* +38 096 111 11 11 */
+  /* .mobile-contacts-list__phone { w296; h40; Roboto; normal; fz34; lh40; fw500; // box
+  ls0.02em; c#2196F3; } */
+  /* info@devstudio.com */
+  /* .mobile-contacts-list__email { w231; h28; Roboto; normal; fw500; fs24; lh28; ls0.02em; c#757575; } */
+}
+
+.mobile-contacts-list__item:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.mobile-contacts-list__phone {
+  font-size: 2rem;
+  line-height: 1.25;
+  /* box */
+  color: var(--color-accent);
+}
+
+.mobile-contacts-list__email {
+  font-size: 1.5rem;
+  line-height: 1.16667;
+  /* box */
+  color: var(--color-text-secondary);
+}
+
+.mobile-social-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.mobile-social-list__item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.mobile-social-list__item:not(:last-child) {
+  /* Vertical separator - Line 1 */
+}
+
+.mobile-social-list__item:not(:last-child)::after {
+  width: 22px;
+  height: 0;
+  content: "";
+  border-top: 1px solid rgba(33, 33, 33, 0.2);
+  transform: rotate(90deg);
+}
+
+.mobile-social-card {
+  display: inline-block;
+}
+
+/* Instagram, Twitter, Facebook, LinkedIn */
+/* .mobile-social-card__link { w85; h22; ffRoboto; fsnormal; fw500; fs18; lh22; // box, or 122%
+ls0.02em; c#2196F3; } */
+/* Instagram, Twitter, Facebook, LinkedIn */
+.mobile-social-card__link {
+  font-size: 1.125rem;
+  line-height: 1.21667;
+  /* box, or 122% */
+  color: var(--color-accent);
 }
 
 /* ------------------------------------------------------ */
@@ -2152,7 +2239,7 @@ mr8 */
   border-bottom: 0.0625rem solid #ececec;
   /* Line - Декор линия*/
   transition-property: width, height, flex;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
@@ -2297,7 +2384,7 @@ mr8 */
 
 .activities {
   transition-property: width, height, margin, flex, visibility, opacity, transform, background-color;
-  transition: calc(var(--time) * 2) var(--cubic);
+  transition: var(--time) var(--cubic);
 }
 
 @media screen and (max-width: 74.9375rem) {
@@ -2354,8 +2441,10 @@ mr8 */
 /* ------------------------------------------------------ */
 /* || ------------------ END "LAYOUT" ------------------- */
 /* ------------------------------------------------------ */
-/* placeholders */
-.nav__menu, .page-header__contacts-list, .social-list, .features-list, .activities-list, .designers-list, .clients-list, .portfolio-filters-list, .portfolio-list, .address-list {
+/* Is-open needs to have high priority */
+/* "Мобильный оверлей - скрыт от всех (и скрин-ридеров) до нажатия на кнопку-бургер" */
+/* Placeholders are here for priority to take effect */
+.nav__menu, .page-header__contacts-list, .social-list, .features-list, .activities-list, .designers-list, .clients-list, .portfolio-filters-list, .portfolio-list, .address-list, .mobile-nav__menu, .mobile-contacts-list, .mobile-social-list {
   list-style: none;
 }
 

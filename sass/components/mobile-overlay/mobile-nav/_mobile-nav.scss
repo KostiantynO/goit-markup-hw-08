@@ -1,0 +1,9 @@
+.mobile-nav {
+  &__menu {
+    @extend %list;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: rem(32px);
+  }
+}

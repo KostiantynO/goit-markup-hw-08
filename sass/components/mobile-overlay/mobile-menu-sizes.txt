@@ -1,0 +1,48 @@
+.mobile-overlay__container {
+  pt48; pb48;
+  pr40; pl40;
+}  DONE.
+
+.mobile-nav__item:not(:last-child) {
+ mb32;
+} DONE.
+
+/* Студия */
+.mobile-nav__link {
+w139px; h48px; l40px; t48px;
+fw500; fz40; lh47; ls0.02em; c#212121;
+} DONE.
+
+.mobile-overlay__mobile-nav { mb: auto;} DONE.
+.mobile-contacts-list__item:not(:last-child) { mb32; } DONE.
+.mobile-overlay__mobile-contacts-list {mb64; } DONE.
+
+
+/* +38 096 111 11 11 */
+.mobile-contacts-list__phone { w296; h40; Roboto; normal; fz34; lh40; fw500; /* box */ ls0.02em; c#2196F3; } DONE.
+
+/* info@devstudio.com */
+.mobile-contacts-list__email { w231; h28; Roboto; normal; fw500; fs24; lh28; ls0.02em; c#757575; } DONE.
+
+.mobile-social-list { df; fww; } DONE.
+.mobile-social-list__item { }
+
+/* Instagram, Twitter, Facebook, LinkedIn */
+.mobile-social-list__link {
+w85; h22;
+ffRoboto; fsnormal; fw500; fs18;
+lh22; /* box, or 122% */
+ls0.02em; c#2196F3;
+} DONE.
+
+
+.mobile-social-list__item:not(:last-child) { mr10; } DONE.
+
+/* Vertical separator - Line 1 */
+.mobile-social-list__item:not(:last-child)::before {
+content: "";
+mr10;
+w22px; h0px;
+border: 1px solid rgba(#212121, 0.2);
+transform: rotate(90deg);
+} DONE.

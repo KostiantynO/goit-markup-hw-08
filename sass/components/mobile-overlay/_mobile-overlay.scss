@@ -1,0 +1,40 @@
+/* Menu,   w480, h796; */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: map-get($z-index, "mobile-overlay");
+  width: 100%;
+  height: 100vh;
+
+  font-weight: 500;
+  letter-spacing: 0.02em;
+
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+
+  /* Menu Bg */
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-mobile-overlay);
+
+  @include tr("hidden");
+
+  &.is-open {
+    @include mq($end: $tablet) {
+      pointer-events: auto;
+      visibility: visible;
+      opacity: 1;
+
+      transform: translateX(-100%);
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    padding: rem(48px) rem(40px); /* 3rem 2.5rem */
+  }
+}

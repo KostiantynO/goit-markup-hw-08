@@ -10,7 +10,10 @@
 // Layout
 @import "./layout/index";
 
-/* placeholders */
+/* Is-open needs to have high priority */
+@import "./utils/is-open";
+
+/* Placeholders are here for priority to take effect */
 @import "./utils/placeholders";
 
 // Media

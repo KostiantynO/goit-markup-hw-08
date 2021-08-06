@@ -18,9 +18,10 @@
   &:active {
     color: var(--color-accent);
   }
+
+  &__icon {
+    fill: currentColor;
+  }
 }
 
-.btn-mobile__icon {
-  fill: currentColor;
-}
 /* END Mobile button */

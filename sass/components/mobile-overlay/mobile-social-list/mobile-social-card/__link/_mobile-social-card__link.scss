@@ -1,0 +1,9 @@
+/* Instagram, Twitter, Facebook, LinkedIn */
+/* .mobile-social-card__link { w85; h22; ffRoboto; fsnormal; fw500; fs18; lh22; // box, or 122%
+ls0.02em; c#2196F3; } */
+
+/* Instagram, Twitter, Facebook, LinkedIn */
+.mobile-social-card__link {
+  @include fz-lh-fw(18px, 22px); /* box, or 122% */
+  color: var(--color-accent);
+}
