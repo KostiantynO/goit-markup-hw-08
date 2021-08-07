@@ -2395,8 +2395,7 @@ ls0.02em; c#2196F3; } */
 /* .activities__container { } */
 .main__activities {
   padding-top: 2.9375rem;
-  height: 600px;
-  background-color: wheat;
+  min-height: 600px;
 }
 
 .activities {
