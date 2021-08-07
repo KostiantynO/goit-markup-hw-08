@@ -6,12 +6,11 @@
 
 .main__activities {
   padding-top: 2.9375rem;
-  min-height: 600px;
 }
 
 // [0 - 767px], hide.
 .activities {
-  @include tr("hidden");
+  @extend %anime;
 
   @include mq($end: $desktop) {
     height: 0;

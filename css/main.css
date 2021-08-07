@@ -295,8 +295,6 @@ p {
   padding-right: 0.9375rem;
   /* 0.9375rem, падинг от границы экрана */
   padding-left: 0.9375rem;
-  transition-property: width, height, flex;
-  transition: calc(var(--time) * 4) var(--cubic);
 }
 
 @media screen and (max-width: calc( 48rem - 0.0625rem)) {
@@ -849,8 +847,6 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  transition-property: width, height, flex;
-  transition: calc(var(--time) * 4) var(--cubic);
 }
 
 .features-list__item {
@@ -870,8 +866,6 @@ p {
   margin-left: var(--gap);
   overflow: hidden;
   word-wrap: break-word;
-  transition-property: width, height, flex;
-  transition: calc(var(--time) * 4) var(--cubic);
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
@@ -1028,8 +1022,6 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  transition-property: width, height, flex;
-  transition: calc(var(--time) * 4) var(--cubic);
 }
 
 /* team card 1-4 or "designer card" */
@@ -1049,8 +1041,6 @@ p {
   /* 30px top and left */
   margin-left: var(--gap);
   word-wrap: break-word;
-  transition-property: width, height, flex;
-  transition: calc(var(--time) * 4) var(--cubic);
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
@@ -1182,8 +1172,6 @@ p {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  transition-property: width, height, flex;
-  transition: calc(var(--time) * 4) var(--cubic);
 }
 
 .clients-list__item {
@@ -1201,8 +1189,6 @@ p {
   margin-top: var(--gap);
   /* 30px top and left */
   margin-left: var(--gap);
-  transition-property: width, height, flex;
-  transition: calc(var(--time) * 4) var(--cubic);
 }
 
 @media screen and (min-width: 48rem) {
@@ -1273,8 +1259,6 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  transition-property: width, height, flex;
-  transition: calc(var(--time) * 4) var(--cubic);
 }
 
 .portfolio-filters-list__item {
@@ -1282,8 +1266,6 @@ p {
   /* 0.9375rem; Верхний отступ между фильтрами-кнопками */
   margin-left: 0.5rem;
   /* 0.5rem;  Левый отступ между фильтрами-кнопками */
-  transition-property: width, height, flex;
-  transition: calc(var(--time) * 4) var(--cubic);
 }
 
 /* ------------------------------------------------------ */
@@ -1299,8 +1281,6 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  transition-property: width, height, flex;
-  transition: calc(var(--time) * 4) var(--cubic);
 }
 
 /* project 4 */
@@ -1322,8 +1302,6 @@ p {
   margin-top: var(--gap);
   /* 30px top and left */
   margin-left: var(--gap);
-  transition-property: width, height, flex;
-  transition: calc(var(--time) * 4) var(--cubic);
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
@@ -2254,8 +2232,6 @@ ls0.02em; c#2196F3; } */
   background-color: var(--color-white);
   border-bottom: 0.0625rem solid #ececec;
   /* Line - Декор линия*/
-  transition-property: width, height, flex;
-  transition: calc(var(--time) * 4) var(--cubic);
 }
 
 @media screen and (min-width: 48rem) {
@@ -2298,6 +2274,8 @@ ls0.02em; c#2196F3; } */
   text-align: center;
   background-color: var(--color-bg-hero);
   /* 2F303A */
+  transition-property: background, width, height, flex, padding;
+  transition: calc(var(--time) * 4) var(--cubic);
   /* Img Overlay */
   background-repeat: no-repeat;
   background-position: center;
@@ -2402,12 +2380,6 @@ ls0.02em; c#2196F3; } */
 /* .activities__container { } */
 .main__activities {
   padding-top: 2.9375rem;
-  min-height: 600px;
-}
-
-.activities {
-  transition-property: width, height, margin, flex, visibility, opacity, transform, background-color;
-  transition: calc(var(--time) * 4) var(--cubic);
 }
 
 @media screen and (max-width: 74.9375rem) {
@@ -2528,6 +2500,11 @@ ls0.02em; c#2196F3; } */
   visibility: hidden;
   opacity: 0;
   transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic), visibility var(--time) var(--cubic);
+}
+
+.container, .features-list, .features-list__item, .activities-list, .activities-list__item, .designers-list, .designers-list__item, .clients-list, .clients-list__item, .portfolio-filters, .portfolio-filters-list, .portfolio-filters-list__item, .portfolio-list, .portfolio-list__item, .page-header, .main__features, .activities, .team, .clients, .portfolio, .page-footer {
+  transition-property: position, top, right, bottom, left, display, flex, flex-basis, width, min-width, max-width, height, min-height, max-height, padding, margin, font-size, line-height, color, background, border, outline, transform, fill;
+  transition: calc(var(--time) * 4) var(--cubic);
 }
 
 /* ------------------------------------------------------ */

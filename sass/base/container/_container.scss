@@ -18,7 +18,7 @@
   padding-right: rem(15px); /* 0.9375rem, падинг от границы экрана */
   padding-left: rem(15px);
 
-  @include tr();
+  @extend %anime;
 
   @media screen and (max-width: calc( #{rem(768px)} - #{rem(1px)} )) {
     max-width: map_get($breakpoints, $mobile);

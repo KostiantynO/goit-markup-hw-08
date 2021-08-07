@@ -3,6 +3,8 @@
 /* ------------------------------------------------------ */
 .main__features {
   padding-bottom: 2.9375rem;
+
+  @extend %anime;
 }
 
 // @include mq($tablet) {}

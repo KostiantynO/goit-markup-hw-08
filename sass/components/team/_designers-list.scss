@@ -13,7 +13,7 @@
 
   justify-content: center;
 
-  @include tr();
+  @extend %anime;
 }
 
 /* team card 1-4 or "designer card" */
@@ -40,6 +40,8 @@
 
   word-wrap: break-word;
 
+  @extend %anime;
+
   @include mq($tablet, $desktop) {
     max-width: rem(354px); /* 22.125rem */
   }
@@ -47,6 +49,4 @@
   @include mq($desktop) {
     max-width: rem(270px); /* 16.875rem */
   }
-
-  @include tr();
 }

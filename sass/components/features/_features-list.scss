@@ -13,7 +13,7 @@
   flex-wrap: wrap;
   justify-content: center;
 
-  @include tr();
+  @extend %anime;
 }
 
 .features-list__item {
@@ -42,5 +42,5 @@
   overflow: hidden;
   word-wrap: break-word;
 
-  @include tr();
+  @extend %anime;
 }

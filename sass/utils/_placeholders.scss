@@ -65,3 +65,7 @@
   transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic),
     visibility var(--time) var(--cubic);
 }
+
+%anime {
+  @include tr("uni", "time", $tr);
+}

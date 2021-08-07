@@ -7,6 +7,8 @@
   padding-bottom: 3.75rem;
   background-color: var(--color-bg-hero);
 
+  @extend %anime;
+
   @include mq($end: $desktop) {
     text-align: center; /* till desktop */
   }

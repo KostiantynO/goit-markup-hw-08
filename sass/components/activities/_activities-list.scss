@@ -10,6 +10,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+
+  @extend %anime;
 }
 
 .activities-list__item {
@@ -22,4 +24,6 @@
 
   margin-top: var(--gap);
   margin-left: var(--gap);
+
+  @extend %anime;
 }

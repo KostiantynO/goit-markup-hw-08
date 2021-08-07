@@ -17,6 +17,7 @@
   text-align: center;
 
   background-color: var(--color-bg-hero); /* 2F303A */
+  @include tr("hero-bg");
 
   /* Img Overlay */
   background-repeat: no-repeat;

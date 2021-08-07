@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
 
-  @include tr();
+  @extend %anime;
 }
 
 .clients-list__item {
@@ -38,5 +38,5 @@
   margin-top: var(--gap); /* 30px top and left */
   margin-left: var(--gap);
 
-  @include tr();
+  @extend %anime;
 }

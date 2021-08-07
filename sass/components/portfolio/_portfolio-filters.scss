@@ -10,6 +10,8 @@
   justify-content: center;
 
   white-space: nowrap;
+
+  @extend %anime;
 }
 
 .portfolio-filters__list {
@@ -24,14 +26,14 @@
   flex-wrap: wrap;
   justify-content: flex-start;
 
-  @include tr();
+  @extend %anime;
 }
 
 .portfolio-filters-list__item {
   margin-top: rem(15px); /* 0.9375rem; Верхний отступ между фильтрами-кнопками */
   margin-left: rem(8px); /* 0.5rem;  Левый отступ между фильтрами-кнопками */
 
-  @include tr();
+  @extend %anime;
 }
 
 /* ------------------------------------------------------ */
