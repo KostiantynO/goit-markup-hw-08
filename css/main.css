@@ -1311,6 +1311,7 @@ p {
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
   .portfolio-list__item {
     flex-basis: calc(100% / var(--cards-per-line-2) - var(--gap));
+    max-width: 22.125rem;
   }
 }
 

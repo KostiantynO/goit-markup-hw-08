@@ -20,6 +20,7 @@
 
   @include mq($tablet, $desktop) {
     flex-basis: calc(100% / var(--cards-per-line-2) - var(--gap));
+    max-width: rem(354px);
   }
 
   @include mq($desktop) {
