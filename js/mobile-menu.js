@@ -22,11 +22,15 @@
   }
 
   refsMobile.openMenuBtn.addEventListener("click", () => {
-    refsMobile.menu.classList.contains("is-hidden") && (toggleMenu(), focusLog(refsMobile.menu));
+    // (refsMobile.menu.classList.contains("is-hidden") ||
+    refsMobile.openMenuBtn.getAttribute("aria-expanded") === "false" &&
+      (refsMobile.openMenuBtn.setAttribute("aria-expanded", "true"),
+      toggleMenu(),
+      focusLog(refsMobile.menu));
   });
 
   refsMobile.closeMenuBtn.addEventListener("click", () => {
-    toggleMenu(), focusLog();
+    refsMobile.openMenuBtn.setAttribute("aria-expanded", "false"), toggleMenu(), focusLog();
   });
 
   refsMobile.menu.addEventListener("keyup", event => {
@@ -39,5 +43,5 @@
     event.target.matches("[data-menu]") && (toggleMenu(), focusLog());
   });
 
-  // TODO - Kostiatyn Ochenash till EBD 2021-08-08: add aria-expanded="false" attributes changes for mobile-overlay.
+  // TODO - Kostiatyn Ochenash till EBD 2021-08-08: add aria-expanded="false" attributes changes for mobile-overlay open button.
 })();
