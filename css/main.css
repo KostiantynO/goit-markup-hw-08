@@ -2246,6 +2246,7 @@ ls0.02em; c#2196F3; } */
 /* ------------------------------------------------------ */
 .page-header {
   position: relative;
+  max-height: 3.75rem;
   padding-top: 1rem;
   /* 1rem */
   padding-bottom: 0.9375rem;
@@ -2255,6 +2256,12 @@ ls0.02em; c#2196F3; } */
   /* Line - Декор линия*/
   transition-property: width, height, flex;
   transition: calc(var(--time) * 4) var(--cubic);
+}
+
+@media screen and (min-width: 48rem) {
+  .page-header {
+    max-height: 5rem;
+  }
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {

@@ -4,11 +4,16 @@
 
 .page-header {
   position: relative;
+  max-height: rem(60px);
   padding-top: rem(16px); /* 1rem */
   padding-bottom: rem(15px); /* 0.9375rem */
 
   background-color: var(--color-white);
   border-bottom: rem(1px) solid #ececec; /* Line - Декор линия*/
+
+  @include mq($tablet) {
+    max-height: rem(80px);
+  }
 
   @include mq($tablet, $desktop) {
     padding-top: rem(21px); /* 1.3125rem */
