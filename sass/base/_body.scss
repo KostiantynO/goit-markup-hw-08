@@ -1,6 +1,7 @@
 .page-html {
   height: 100vh;
   overflow-y: scroll;
+
   &.no-scroll {
     overflow-y: hidden; /* STOP MOVING AROUND! */
   }
@@ -8,6 +9,7 @@
 
 .studio-body {
   overflow-y: hidden;
+
   &.no-scroll {
     overflow-y: scroll;
   }

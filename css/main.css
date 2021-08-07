@@ -2089,9 +2089,15 @@ p {
   transition: var(--time) var(--cubic);
 }
 
-@media screen and (max-width: 47.9375rem) {
-  .mobile-overlay.is-hidden {
-    transform: translateX(100%);
+.mobile-overlay.is-hidden {
+  transform: translateX(100%);
+}
+
+@media screen and (min-width: 48rem) {
+  .mobile-overlay {
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
   }
 }
 

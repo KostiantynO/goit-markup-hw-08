@@ -6,7 +6,7 @@
     htmlAndBody: document.querySelectorAll("[data-no-scroll]"),
   };
 
-  function toggleModal() {
+  function toggleMenu() {
     refsMobile.menu.classList.toggle("is-hidden"),
       refsMobile.htmlAndBody[0].classList.toggle("no-scroll"),
       refsMobile.htmlAndBody[1].classList.toggle("no-scroll");
@@ -21,18 +21,23 @@
     }, 250);
   }
 
-  refsMobile.openMenuBtn.addEventListener("click", function () {
-    refsMobile.menu.classList.contains("is-hidden") && (toggleModal(), focusLog(refsMobile.modal));
-  }),
-    refsMobile.closeMenuBtn.addEventListener("click", event => {
-      toggleModal(), focusLog();
-    }),
-    refsMobile.menu.addEventListener("keyup", event => {
-      (event.which === 27 || event.key === "Escape") &&
-        !refsMobile.menu.classList.contains("is-hidden") &&
-        (toggleModal(), focusLog());
-    }),
-    refsMobile.menu.addEventListener("mousedown", event => {
-      event.target.matches("[data-menu]") && (toggleModal(), focusLog());
-    });
+  refsMobile.openMenuBtn.addEventListener("click", () => {
+    refsMobile.menu.classList.contains("is-hidden") && (toggleMenu(), focusLog(refsMobile.menu));
+  });
+
+  refsMobile.closeMenuBtn.addEventListener("click", () => {
+    toggleMenu(), focusLog();
+  });
+
+  refsMobile.menu.addEventListener("keyup", event => {
+    (event.which === 27 || event.key === "Escape") &&
+      !refsMobile.menu.classList.contains("is-hidden") &&
+      (toggleMenu(), focusLog());
+  });
+
+  refsMobile.menu.addEventListener("mousedown", event => {
+    event.target.matches("[data-menu]") && (toggleMenu(), focusLog());
+  });
+
+  // TODO - Kostiatyn Ochenash till EBD 2021-08-08: add aria-expanded="false" attributes changes for mobile-overlay.
 })();
