@@ -295,6 +295,7 @@ p {
   padding-right: 0.9375rem;
   /* 0.9375rem, падинг от границы экрана */
   padding-left: 0.9375rem;
+  padding-top: 60px;
 }
 
 @media screen and (max-width: calc( 48rem - 0.0625rem)) {
@@ -312,13 +313,25 @@ p {
 @media screen and (min-width: 75rem) {
   .container {
     max-width: 75rem;
+    padding-top: 94px;
   }
 }
 
+.page-header__container,
+.hero__container,
+.activities__container {
+  padding-top: 0;
+}
+
 .section {
-  padding-top: clamp(3.75rem, 7.8vw, 5.875rem);
-  /* 94px = 5.875rem; */
-  padding-bottom: clamp(3.75rem, 7.8vw, 5.875rem);
+  padding-bottom: clamp(3.75rem, 7.8125vw, 5.875rem);
+}
+
+@media screen and (min-width: 75rem) {
+  .section {
+    padding-bottom: 5.875rem;
+    /* 5.875rem; */
+  }
 }
 
 .section:nth-child(2n + 4) {
@@ -329,8 +342,8 @@ p {
 .section__title {
   margin-bottom: clamp(var(--uni-margin), 3.90625vw, var(--uni-margin-big));
   /* Постоянные клиенты h33px mobile + tablet */
-  font-size: clamp(1.75rem, 3.6vw, 2.25rem);
-  line-height: clamp(2.0625rem, 4.2vw, 2.625rem);
+  font-size: clamp(1.75rem, 3.64583vw, 2.25rem);
+  line-height: clamp(2.0625rem, 4.29688vw, 2.625rem);
   text-align: center;
   /* body c#212121; h2=fw700;*/
   /* fz2.25rem  */
@@ -2373,7 +2386,13 @@ ls0.02em; c#2196F3; } */
 /* || --------------- START "ОСОБЕННОСТИ" --------------- */
 /* ------------------------------------------------------ */
 .main__features {
-  padding-bottom: 2.9375rem;
+  padding-bottom: 3.75rem;
+}
+
+@media screen and (min-width: 75rem) {
+  .main__features {
+    padding-bottom: 94px;
+  }
 }
 
 /* ------------------------------------------------------ */
@@ -2384,12 +2403,9 @@ ls0.02em; c#2196F3; } */
 /* ------------------------------------------------------ */
 /* .activities { } */
 /* .activities__container { } */
-.main__activities {
-  padding-top: 2.9375rem;
-}
-
 @media screen and (max-width: 74.9375rem) {
   .activities {
+    padding: 0;
     height: 0;
     opacity: 0;
     visibility: hidden;

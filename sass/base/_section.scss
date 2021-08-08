@@ -1,8 +1,9 @@
 .section {
-  padding-top: clamp(rem($uni-pad-med), 7.8vw, rem($uni-pad-big));
+  padding-bottom: clamp(rem($uni-pad-med), vw(rem($uni-pad-med), $tablet), rem($uni-pad-big));
 
-  /* 94px = 5.875rem; */
-  padding-bottom: clamp(rem($uni-pad-med), 7.8vw, rem($uni-pad-big));
+  @include mq($desktop) {
+    padding-bottom: rem(94px); /* 5.875rem; */
+  }
 
   &:nth-child(2n + 4) {
     background-color: var(--color-bg-btn-secondary);
@@ -15,8 +16,8 @@
 
   /* Постоянные клиенты h33px mobile + tablet */
 
-  font-size: clamp(rem(28px), 3.6vw, rem(36px));
-  line-height: clamp(rem(33px), 4.2vw, rem(42px));
+  font-size: clamp(rem(28px), vw(rem(28px), $tablet), rem(36px));
+  line-height: clamp(rem(33px), vw(rem(33px), $tablet), rem(42px));
   text-align: center; /* body c#212121; h2=fw700;*/
 
   // @include mq($desktop) { @include fz-lh-fw(36px, 42.19px); }

@@ -4,15 +4,12 @@
 /* .activities { } */
 /* .activities__container { } */
 
-.main__activities {
-  padding-top: 2.9375rem;
-}
-
 // [0 - 767px], hide.
 .activities {
   @extend %anime;
 
   @include mq($end: $desktop) {
+    padding: 0;
     height: 0;
     opacity: 0;
     visibility: hidden;

@@ -18,6 +18,8 @@
   padding-right: rem(15px); /* 0.9375rem, падинг от границы экрана */
   padding-left: rem(15px);
 
+  padding-top: 60px;
+
   @extend %anime;
 
   @media screen and (max-width: calc( #{rem(768px)} - #{rem(1px)} )) {
@@ -30,6 +32,7 @@
 
   @media screen and (min-width: rem(1200px)) {
     max-width: map_get($breakpoints, $desktop);
+    padding-top: 94px;
   }
 
   // @include mq($end: $tablet) {
@@ -43,4 +46,9 @@
   // @include mq($desktop) {
   //   max-width: map_get($breakpoints, $desktop);
   // }
+}
+.page-header__container,
+.hero__container,
+.activities__container {
+  padding-top: 0;
 }
