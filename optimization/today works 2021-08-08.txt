@@ -1,0 +1,27 @@
+«B13» Все необходимые по макету шрифты и их вариации (вес и начертание) подключены с сервиса Google Fonts одной ссылкой. Необходимый вес для Raleway – 700, а для Roboto – 400, 500, 700 и 900.
+
+🎉
+npm audit 
+	picture: npm audit log
+
+Github security policy
+	github security alert
+
+📦Run npm update
+	Delete your package-lock.json
+	delete your yarn.lock
+		but there might be some dependency which does not follow semver and might get updated too.ed too.
+	delete the lines corresponding to the vulnerable package in your package-lock.json(or yarn.lock) file.
+	Run npm install again
+🔭 npm audit
+	npm audit
+
+🔑 Resolutions key
+	npm install minimist --save-dev
+	package.json file
+		{ "resolutions": { "minimist": "^1.2.5" } }
+	
+	npm-force-resolutions
+		"scripts": { "preinstall": "npx npm-force-resolutions" }
+	npm install
+	npm ls minimist

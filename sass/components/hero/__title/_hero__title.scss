@@ -17,6 +17,6 @@
   @include tr("both");
 
   @include mq($desktop) {
-    @include fz-lh-fw(44px, 60px);
+    @include fz(44px, 60px);
   }
 }

@@ -3,7 +3,7 @@
   display: block;
   margin-bottom: var(--gap); /* 1.875rem */
 
-  @include fz-lh-fw(20px, 30px, 700); /* 1.25rem, 1.5, 700 */
+  @include fz(20px, 30px, 700); /* 1.25rem, 1.5, 700 */
   text-align: center;
 
   line-height: clamp(rem(30px), vw(rem(30px), $desktop), rem(23px));

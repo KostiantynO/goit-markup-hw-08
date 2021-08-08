@@ -3,22 +3,9 @@
 }
 
 .skip-btn {
-  position: absolute;
-  $skip-btn-max-height: rem(50px); /* 3.125rem */
-  top: calc(-1 * #{$skip-btn-max-height});
-  left: 0;
-  z-index: map-get($z-index, "skip-btn");
+  @include btn(absolute, calc(-1 * #{rem(36px)}), null, null, 0, map-get($z-index, "skip-btn"));
 
-  max-width: rem(300px); /* 18.75rem */
-  max-height: $skip-btn-max-height;
   padding: rem(8px); /* 0.5rem */
-
-  overflow: hidden;
-
-  @include fz-lh-fw(19.36px, 23.4256px, 700);
-
-  color: var(--color-text-primary);
-  word-wrap: break-word;
 
   background-color: var(--color-white);
   border: rem(1px) solid transparent;

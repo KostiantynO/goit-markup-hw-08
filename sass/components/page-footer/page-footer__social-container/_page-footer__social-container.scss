@@ -9,7 +9,7 @@
 .page-footer__social-title {
   margin-bottom: var(--uni-margin-med);
 
-  @include fz-lh-fw(null, 16.41px, 700); /* from body fz14 */
+  @include fz(null, 16.41px, 700); /* from body fz14 */
   color: var(--color-white);
   text-transform: uppercase;
 }

@@ -4,18 +4,15 @@
   align-items: center;
   justify-content: center;
 
-  min-width: 12.5rem; /* 200px */
-  max-width: 18.75rem;
-  min-height: 3.125rem; /* 50px */
-  padding-top: 0.5625rem; /* 9px */
-  padding-right: 1.6875rem; /* 27px */
-  padding-bottom: 0.5625rem; /* 9px */
-  padding-left: 1.75rem; /* 28px */
+  min-width: rem(200px); /* 12.5rem */
+  max-width: rem(300px); /* 18.75rem */
+  min-height: rem(50px); /* 3.125rem */
 
-  font-weight: 700;
-  line-height: 1.875; /* identical to box height, or 187% */
+  padding: rem(9px) rem(27px) rem(9px) rem(28px);
+
+  @include fz(16px, 30px, 700, 0.06em);
+
   color: var(--color-white);
-  letter-spacing: 0.06em;
 
   background-color: var(--color-accent);
   box-shadow: var(--shadow-hero-btn);

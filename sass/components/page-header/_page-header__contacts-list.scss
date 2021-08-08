@@ -38,7 +38,7 @@
   color: var(--color-text-secondary);
 
   @include mq($tablet, $desktop) {
-    @include fz-lh-fw(12px, 14px); /* box */
+    @include fz(12px, 14px); /* box */
   }
 
   @include mq($desktop) {

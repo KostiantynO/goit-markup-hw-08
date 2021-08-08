@@ -9,14 +9,14 @@
   /* .mobile-contacts-list__phone { w296; h40; Roboto; normal; fz34; lh40; fw500; // box
   ls0.02em; c#2196F3; } */
   &__phone {
-    @include fz-lh-fw(32px, 40px); /* box */
+    @include fz(32px, 40px); /* box */
     color: var(--color-accent);
   }
 
   /* info@devstudio.com */
   /* .mobile-contacts-list__email { w231; h28; Roboto; normal; fw500; fs24; lh28; ls0.02em; c#757575; } */
   &__email {
-    @include fz-lh-fw(24px, 28px); /* box */
+    @include fz(24px, 28px); /* box */
     color: var(--color-text-secondary);
   }
 }

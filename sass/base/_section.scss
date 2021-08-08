@@ -20,7 +20,7 @@
   line-height: clamp(rem(33px), vw(rem(33px), $tablet), rem(42px));
   text-align: center; /* body c#212121; h2=fw700;*/
 
-  // @include mq($desktop) { @include fz-lh-fw(36px, 42.19px); }
+  // @include mq($desktop) { @include fz(36px, 42.19px); }
   /* fz2.25rem  */
 
   @include mq($desktop, $mb: $uni-margin-big); /* fz2.25rem  */

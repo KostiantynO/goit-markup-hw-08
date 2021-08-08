@@ -1,7 +1,7 @@
 /* Студия, Портфолио, Контакты */
 // .mobile-nav__link { w139px; h48px; l40px; t48px; fw500; fz40; lh47; ls0.02em; c#212121; }
 .mobile-nav__link {
-  @include fz-lh-fw(40px, 47px);
+  @include fz(40px, 47px);
   padding: 0;
 
   &--current::after {

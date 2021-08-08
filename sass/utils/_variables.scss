@@ -3,7 +3,7 @@
 /* ------------------------------------------------------ */
 $base-fz: 16px;
 $base-fz-body: 14px;
-$precision: (10 * 6);
+$precision: (10 * 3);
 
 $uni-margin-big: 50px;
 $uni-margin: 30px;
@@ -118,3 +118,8 @@ $tr: (
   "time": calc(var(--time) * 4),
   "cubic": var(--cubic),
 );
+
+$t: top;
+$r: right;
+$b: bottom;
+$l: left;

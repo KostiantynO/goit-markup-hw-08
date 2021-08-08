@@ -1,4 +1,5 @@
 /* ------------------------- START "MIXINS" ------------------------- */
+// Media Query + Margins
 @mixin mq($start: null, $end: null, $mt: null, $mr: null, $mb: null, $ml: null) {
   @if ($end and map_has_key($breakpoints, $end)) {
     $maxWidth: map_get($breakpoints, $end);
@@ -30,7 +31,7 @@
   }
 }
 
-/* Margin converter */
+// Margin converter
 @mixin margins($mt: null, $mr: null, $mb: null, $ml: null) {
   $margins: (
     "top": $mt,
@@ -47,19 +48,6 @@
 }
 
 // ========== Для media запросов ==========
-// @mixin mq_Repin($width, $type: min) {
-//   @if map_has_key($breakpoints, $width) {
-//     $width: map_get($breakpoints, $width);
-//     @if $type == max { $width: $width - 1px; }
-//     @media only screen and (#{$type}-width: $width) { @content; }
-//   }
-// }
-
-// Использование
-// .wrapper {   width: 100%;
-//   @include mq_Repin('tablet')  { width:  90%; }
-//   @include mq_Repin('desktop') { width:  85%; }
-// }
 
 /* MEDIA */
 
@@ -83,7 +71,7 @@
 // $colors-second: "#F44336", "#3F51B5", "#4CAf50", "#00BCD4", "#E91E63", "#009688";
 // @include colorize($colors-second, ".features-list__item");
 
-@mixin fz-lh-fw($fz: null, $lh: null, $fw: null) {
+@mixin fz($fz: null, $lh: null, $fw: null, $ls: null) {
   @if $fz {
     font-size: rem($fz);
   }
@@ -100,6 +88,10 @@
       line-height: (round($lh * $precision / $fz)) / $precision;
     }
   }
+
+  @if $ls {
+    letter-spacing: $ls;
+  }
 }
 
 @mixin tr($tr-key: "card", $tr-time: "time", $tr-map: $tr) {
@@ -108,3 +100,99 @@
 }
 
 /* -------------------------- END "MIXINS" -------------------------- */
+
+/* Component mixins */
+
+/*  btn mixin / placeholder */
+/* Миксин кнопки - "Все", "Веб-сайты", "Приложения", "Дизайн", "Маркетинг", h26px */
+
+/* prettier-ignore */
+@mixin btn(
+  $pos: null, $top: null, $right: null, $bottom: null, $left: null, $zi: null,
+  $mnw: null, $mxw: null, $mnh:   null, $mxh:    null,
+  $pt:  null, $pr:  null, $pb:    null, $pl:     null,
+
+  $over: null,
+) {
+  @if $pos    { position:       $pos;     }  @if $top    { top:           $top;     }
+  @if $right  { right:          $right;   }  @if $bottom { bottom:        $bottom;  }
+  @if $left   { left:           $left;    }  @if $zi     { z-index:       $zi;      }
+  @if $mnw    { min-width:      $mnw;     }  @if $mxw    { max-width:     $mxw;     }
+  @if $mnh    { min-height:     $mnh;     }  @if $mxh    { max-height:    $mxh;     }
+  @if ($pt or $pr or $pb or $pl) {
+    @if (($pt == $pb) and ($pb == $pr) and ($pr == $pl)) { padding: rem($pt);                            }
+      @else if (($pt == $pb) and ($pr == $pl))           { padding: rem($pt) rem($pr);                   }
+      @else if (
+        (
+          (
+          ($pt != $pb) and (($pt and $pb) != null)
+          ) and (
+              ($pr == $pl) and ($pr != null)
+            )
+        ) or (
+            (
+            ($pr != $pl) and (($pr and $pl) != null)
+            ) and (
+                ($pt == $pb) and ($pt != null)
+              )
+          )
+      )                                                  { padding: rem($pt) rem($pr) rem($pb); }
+      @else if (
+        (
+          ($pt != $pb) and (($pt and $pb) != null)
+        )
+        and
+        (
+          ($pr != $pl) and (($pr and $pl) != null)
+        )
+      )                                                  { padding: rem($pt) rem($pr) rem($pb) rem($pl); }
+
+        @else {
+          @if $pt { padding-top:    rem($pt); } @if $pr { padding-right: rem($pr); }
+          @if $pb { padding-bottom: rem($pb); } @if $pl { padding-left:  rem($pl); }
+        }
+  }
+
+
+
+
+
+
+  @if $over   { overflow:   $over;  }
+
+  @include fz(16px, 26px, 500, 0.03em);
+  color: var(--color-text-primary);
+
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  cursor: pointer;
+
+  background-color: var(--color-bg-btn-secondary);
+  border: rem(1px) solid transparent;
+  border-radius: rem(4px);
+
+  transition: background-color var(--time) var(--cubic);
+
+  @content;
+}
+
+@mixin btn-static {
+  position: relative;
+  max-width: rem(300px); /* 31.25rem; */
+  min-height: rem(36px); /* 2.25rem; */
+  max-height: rem(50px); /* 3.125rem; */
+  overflow: hidden;
+
+  @include fz(16px, 26px, 500, 0.03em);
+  color: var(--color-text-primary);
+
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  cursor: pointer;
+
+  background-color: var(--color-bg-btn-secondary);
+  border: rem(1px) solid transparent;
+  border-radius: rem(4px);
+
+  transition: background-color var(--time) var(--cubic);
+}

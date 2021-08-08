@@ -18,7 +18,7 @@
   margin-bottom: var(--uni-margin-min);
   overflow: hidden;
 
-  @include fz-lh-fw(16px, 19px, 500); /* 1rem, 19px = box, 500 */
+  @include fz(16px, 19px, 500); /* 1rem, 19px = box, 500 */
   text-align: center; /* inherits color: #212121; */
 
   &:hover {
@@ -32,7 +32,7 @@
   max-height: rem(57.12px); /* 3.57rem; */
   overflow: hidden;
 
-  @include fz-lh-fw(16px, 19px); /* 1rem from chrome fw400; */ /* 19px = box */
+  @include fz(16px, 19px); /* 1rem from chrome fw400; */ /* 19px = box */
 
   color: var(--color-text-secondary); /* color: #757575; */
   text-align: center;

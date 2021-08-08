@@ -6,7 +6,7 @@
 
   margin-bottom: var(--uni-margin-med); /* mt60px; mobile */
 
-  @include fz-lh-fw(null, 15px, 700);
+  @include fz(null, 15px, 700);
 
   color: var(--color-white);
   text-transform: uppercase;
