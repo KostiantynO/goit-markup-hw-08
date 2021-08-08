@@ -3,23 +3,20 @@
     openModalBtn: document.querySelector("[data-modal-open]"),
     closeModalBtn: document.querySelector("[data-modal-close]"),
     modal: document.querySelector("[data-modal]"),
-    modalElements: document
-      .querySelector("[data-modal]")
-      .querySelectorAll(
-        "button, a[href], input, select, textarea, [tabindex]:not([tabindex='-1'])",
-      ),
     formInputs: document.querySelectorAll("[data-modal-input]"),
-    modalTitle: document.querySelector("[data-modal-title]"),
     htmlAndBody: document.querySelectorAll("[data-no-scroll]"),
   };
 
   function toggleModal() {
-    refs.modal.classList.toggle("is-hidden"),
-      refs.htmlAndBody[0].classList.toggle("no-scroll"),
-      refs.htmlAndBody[1].classList.toggle("no-scroll");
+    const isModalOpen = refs.openModalBtn.getAttribute("aria-expanded") === "true" || false;
+
+    refs.openModalBtn.setAttribute("aria-expanded", !isModalOpen);
+    refs.modal.classList.toggle("is-hidden");
+    refs.htmlAndBody[0].classList.toggle("no-scroll");
+    refs.htmlAndBody[1].classList.toggle("no-scroll");
   }
 
-  for (let i = 0; i < refs.formInputs.length; i++) {
+  for (let i = refs.formInputs.length - 1; i >= 0; i--) {
     refs.formInputs[i].addEventListener("focusin", e => {
       e.currentTarget.placeholder = e.currentTarget.dataset.placeholder;
     });
@@ -39,18 +36,29 @@
     }, 250);
   }
 
+  function openModal(focusTarget = refs.modal) {
+    toggleModal(), focusLog(focusTarget);
+  }
+
+  function closeModal() {
+    toggleModal(), focusLog();
+  }
+
   refs.openModalBtn.addEventListener("click", function () {
-    refs.modal.classList.contains("is-hidden") && (toggleModal(), focusLog(refs.modal));
-  }),
-    refs.closeModalBtn.addEventListener("click", event => {
-      toggleModal(), focusLog();
-    }),
-    refs.modal.addEventListener("keyup", event => {
-      (event.which === 27 || event.key === "Escape") &&
-        !refs.modal.classList.contains("is-hidden") &&
-        (toggleModal(), focusLog());
-    }),
-    refs.modal.addEventListener("mousedown", event => {
-      event.target.matches("[data-modal]") && (toggleModal(), focusLog());
-    });
+    refs.modal.classList.contains("is-hidden") && openModal();
+  });
+
+  refs.closeModalBtn.addEventListener("click", event => {
+    closeModal();
+  });
+
+  refs.modal.addEventListener("keyup", event => {
+    (event.which === 27 || event.key === "Escape") &&
+      !refs.modal.classList.contains("is-hidden") &&
+      closeModal();
+  });
+
+  refs.modal.addEventListener("mousedown", event => {
+    event.target.matches("[data-modal]") && closeModal();
+  });
 })();

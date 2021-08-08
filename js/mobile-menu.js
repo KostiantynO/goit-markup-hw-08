@@ -1,16 +1,11 @@
-(function () {
+(() => {
   const refsMobile = {
     openMenuBtn: document.querySelector("[data-menu-open]"),
     closeMenuBtn: document.querySelector("[data-menu-close]"),
     menu: document.querySelector("[data-menu]"),
     htmlAndBody: document.querySelectorAll("[data-no-scroll]"),
+    focusTarget: document.querySelector("[data-menu-focus]"),
   };
-
-  function toggleMenu() {
-    refsMobile.menu.classList.toggle("is-hidden"),
-      refsMobile.htmlAndBody[0].classList.toggle("no-scroll"),
-      refsMobile.htmlAndBody[1].classList.toggle("no-scroll");
-  }
 
   function focusLog(targetElem = refsMobile.openMenuBtn) {
     /* Чарівництво */
@@ -21,27 +16,42 @@
     }, 250);
   }
 
+  function openMenu() {
+    refsMobile.openMenuBtn.setAttribute("aria-expanded", "true");
+    refsMobile.menu.classList.remove("is-hidden");
+    refsMobile.htmlAndBody[0].classList.add("no-scroll");
+    refsMobile.htmlAndBody[1].classList.add("no-scroll");
+    focusLog(refsMobile.menu);
+  }
+
+  function closeMenuAndFocusLog(returnFocusTo = refsMobile.openMenuBtn) {
+    refsMobile.openMenuBtn.setAttribute("aria-expanded", "false");
+    refsMobile.menu.classList.add("is-hidden");
+    refsMobile.htmlAndBody[0].classList.remove("no-scroll");
+    refsMobile.htmlAndBody[1].classList.remove("no-scroll");
+    focusLog(returnFocusTo);
+  }
+
   refsMobile.openMenuBtn.addEventListener("click", () => {
-    // (refsMobile.menu.classList.contains("is-hidden") ||
-    refsMobile.openMenuBtn.getAttribute("aria-expanded") === "false" &&
-      (refsMobile.openMenuBtn.setAttribute("aria-expanded", "true"),
-      toggleMenu(),
-      focusLog(refsMobile.menu));
+    openMenu();
   });
 
   refsMobile.closeMenuBtn.addEventListener("click", () => {
-    refsMobile.openMenuBtn.setAttribute("aria-expanded", "false"), toggleMenu(), focusLog();
+    closeMenuAndFocusLog();
   });
 
   refsMobile.menu.addEventListener("keyup", event => {
-    (event.which === 27 || event.key === "Escape") &&
-      !refsMobile.menu.classList.contains("is-hidden") &&
-      (toggleMenu(), focusLog());
+    (event.which === 27 || event.key === "Escape") && closeMenuAndFocusLog();
   });
 
   refsMobile.menu.addEventListener("mousedown", event => {
-    event.target.matches("[data-menu]") && (toggleMenu(), focusLog());
+    event.target.matches("[data-menu]") && closeMenuAndFocusLog();
   });
 
-  // TODO - Kostiatyn Ochenash till EBD 2021-08-08: add aria-expanded="false" attributes changes for mobile-overlay open button.
+  window.matchMedia("(min-width: 768px)").addEventListener("change", e => {
+    if (!e.matches) return;
+    (!refsMobile.menu.classList.contains("is-hidden") ||
+      refsMobile.openMenuBtn.getAttribute("aria-expanded") === "true") &&
+      closeMenuAndFocusLog(refsMobile.focusTarget);
+  });
 })();
