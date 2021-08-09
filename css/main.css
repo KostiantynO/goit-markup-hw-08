@@ -82,9 +82,84 @@
 /*  btn mixin / placeholder */
 /* Миксин кнопки - "Все", "Веб-сайты", "Приложения", "Дизайн", "Маркетинг", h26px */
 /* prettier-ignore */
+.nav__menu, .page-header__contacts-list, .social-list, .features-list, .activities-list, .designers-list, .clients-list, .portfolio-filters-list, .portfolio-list, .address-list, .mobile-nav__menu, .mobile-contacts-list, .mobile-social-list {
+  list-style: none;
+}
+
+/* Студия, Портфолио, Контакты, h16px */
+.nav__link, .header-contact {
+  position: relative;
+  letter-spacing: 0.02em;
+  /* white-space: nowrap; */
+  font-weight: 500;
+}
+
+@media screen and (min-width: 75rem) {
+  .nav__link, .header-contact {
+    padding-right: 3px;
+    padding-bottom: 0.5rem;
+    padding-left: 3px;
+    line-height: 1.14;
+    /* 16px, color: #2196f3; Hover Focus */
+  }
+}
+
+/* nav-link overlays for centered color fill on :hover */
+.nav__link::before, .nav__link-overlay {
+  position: absolute;
+  inset: 0.0625rem;
+  display: inline-block;
+  mix-blend-mode: screen;
+  transition: transform var(--time) var(--cubic);
+}
+
+/* Hide standard overlay over active nav-link */
+.nav__link::before, .nav__link:focus > .nav__link-overlay,
+.nav__link:hover > .nav__link-overlay, .nav__link-overlay--current {
+  transform: scaleX(0);
+}
+
+/* Show overlay over active nav-link */
+.nav__link:focus::before, .nav__link:hover::before, .nav__link--current::before, .nav__link-overlay {
+  transform: scaleX(100%);
+}
+
+/* Вторичная кнопка по наведению: текст белый, фон - акцент, + тень (динамическая) */
+.btn--secondary:hover, .btn--secondary:focus, .current-btn,
+.btn--secondary.current-btn {
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  box-shadow: var(--shadow-middle);
+}
+
+/* Главная кнопка - активна */
+.btn--primary:focus, .btn--primary:hover, .current-btn:focus, .current-btn:hover,
+.btn--secondary.current-btn:focus,
+.btn--secondary.current-btn:hover {
+  background-color: var(--color-bg-hero-btn);
+}
+
+/* hover overlay */
+.portfolio-card__thumb::before, .portfolio-card__desc {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic), visibility var(--time) var(--cubic);
+}
+
+.container, .features-list, .features-list__item, .activities-list, .activities-list__item, .designers-list, .designers-list__item, .designer-card, .designer-card__picture, .designer-card__photo, .clients-list, .clients-list__item, .portfolio-filters, .portfolio-filters-list, .portfolio-filters-list__item, .portfolio-list, .portfolio-list__item, .page-footer__top-row-wrapper, .page-footer__address-wrapper, .page-footer__social-container, .page-header, .main__features, .activities, .team, .clients, .portfolio, .page-footer {
+  transition-property: position, top, right, bottom, left, display, flex, flex-basis, width, min-width, max-width, height, min-height, max-height, padding, margin, font-size, line-height, color, background, border, outline, transform, fill;
+  transition: calc(var(--time) * 4) var(--cubic);
+}
+
 /* || ----------------- START "COLORS" ------------------ */
 /* || ------------------ END "COLORS" ------------------- */
 /* map-get($colors, $key) */
+/* not used, because css vars for colors is more preferable */
 /* START "Скрытый класс для скрин-ридеров"*/
 body .sr-only {
   /* В классе "screen readers only" (.sr-only) Для Читалок удалить visibility: hidden; -> и задать элементу (скрытым заголовкам секций) в тег tabindex="0"
@@ -365,13 +440,13 @@ p {
   padding-top: 60px;
 }
 
-@media screen and (max-width: calc( 48rem - 0.0625rem)) {
+@media screen and (max-width: 47.9375rem) {
   .container {
     max-width: 30rem;
   }
 }
 
-@media screen and (min-width: 48rem) and (max-width: calc( 75rem - 0.0625rem)) {
+@media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
   .container {
     max-width: 48rem;
   }
@@ -664,7 +739,6 @@ p {
 }
 
 .btn {
-  /* pt=pb= 5px = 0.3125rem pr=pl=21px = 1.3125rem */
   /* prettier-ignore */
   position: relative;
   max-width: 18.75rem;
@@ -2513,78 +2587,6 @@ ls0.02em; c#2196F3; } */
 /* ------------------------------------------------------ */
 /* || ------------------ END "LAYOUT" ------------------- */
 /* ------------------------------------------------------ */
-/* Placeholders are here for priority to take effect */
-.nav__menu, .page-header__contacts-list, .social-list, .features-list, .activities-list, .designers-list, .clients-list, .portfolio-filters-list, .portfolio-list, .address-list, .mobile-nav__menu, .mobile-contacts-list, .mobile-social-list {
-  list-style: none;
-}
-
-/* Студия, Портфолио, Контакты, h16px */
-.nav__link, .header-contact {
-  position: relative;
-  letter-spacing: 0.02em;
-  /* white-space: nowrap; */
-  font-weight: 500;
-}
-
-@media screen and (min-width: 75rem) {
-  .nav__link, .header-contact {
-    padding-right: 3px;
-    padding-bottom: 0.5rem;
-    padding-left: 3px;
-    line-height: 1.14;
-    /* 16px, color: #2196f3; Hover Focus */
-  }
-}
-
-/* nav-link overlays for centered color fill on :hover */
-.nav__link::before, .nav__link-overlay {
-  position: absolute;
-  inset: 0.0625rem;
-  display: inline-block;
-  mix-blend-mode: screen;
-  transition: transform var(--time) var(--cubic);
-}
-
-/* Hide standard overlay over active nav-link */
-.nav__link::before, .nav__link:focus > .nav__link-overlay,
-.nav__link:hover > .nav__link-overlay, .nav__link-overlay--current {
-  transform: scaleX(0);
-}
-
-/* Show overlay over active nav-link */
-.nav__link:focus::before, .nav__link:hover::before, .nav__link--current::before, .nav__link-overlay {
-  transform: scaleX(100%);
-}
-
-/* Вторичная кнопка по наведению: текст белый, фон - акцент, + тень (динамическая) */
-.btn--secondary:hover, .btn--secondary:focus, .current-btn {
-  color: var(--color-white);
-  background-color: var(--color-accent);
-  box-shadow: var(--shadow-middle);
-}
-
-/* Главная кнопка - активна */
-.btn--primary:focus, .btn--primary:hover, .current-btn:focus, .current-btn:hover {
-  background-color: var(--color-bg-hero-btn);
-}
-
-/* hover overlay */
-.portfolio-card__thumb::before, .portfolio-card__desc {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-  opacity: 0;
-  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic), visibility var(--time) var(--cubic);
-}
-
-.container, .features-list, .features-list__item, .activities-list, .activities-list__item, .designers-list, .designers-list__item, .clients-list, .clients-list__item, .portfolio-filters, .portfolio-filters-list, .portfolio-filters-list__item, .portfolio-list, .portfolio-list__item, .page-header, .main__features, .activities, .team, .clients, .portfolio, .page-footer {
-  transition-property: position, top, right, bottom, left, display, flex, flex-basis, width, min-width, max-width, height, min-height, max-height, padding, margin, font-size, line-height, color, background, border, outline, transform, fill;
-  transition: calc(var(--time) * 4) var(--cubic);
-}
-
 /* ------------------------------------------------------ */
 /* || ------------------ START "MEDIA" ------------------ */
 /* ------------------------------------------------------ */

@@ -5,16 +5,3 @@
     align-items: baseline;
   }
 }
-
-.page-footer__top-row-wrapper {
-  @include mq($tablet) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-
-  @include mq($desktop) {
-    justify-content: flex-start;
-  }
-}

@@ -1,6 +1,4 @@
 .btn {
-  /* pt=pb= 5px = 0.3125rem pr=pl=21px = 1.3125rem */
-
   /* prettier-ignore */
   @include btn(
     relative, null,  null,  null,  null,  null,
@@ -11,8 +9,5 @@
     16px, 26px, 500, 0.03em, var(--color-text-primary), ellipsis,
     break-word, pointer, "btn", "t"
   );
-
-  // @include btn($pt: 5px, $pb: 5px, $pr: 21px, $pl: 21px);
-
   /* color: #ffffff; and background-color: #2196f3; on Hover Focus from .btn--secondary */
 }

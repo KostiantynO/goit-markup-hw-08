@@ -5,8 +5,9 @@
 @import "./breakpoints";
 @import "./functions";
 @import "./mixins";
+@import "./placeholders";
 
-@import "./colors";
+@import "./colors"; /* not used, because css vars for colors is more preferable */
 
 @import "./sr-only";
 @import "./is-hidden";

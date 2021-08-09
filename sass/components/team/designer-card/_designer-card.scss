@@ -6,6 +6,12 @@
   /* Тень для Карточки дизайнера (статическая) - material shadow v1 */
   box-shadow: 0 rem(1px) rem(3px) rgba(0, 0, 0, 0.12), 0 rem(1px) rem(1px) rgba(0, 0, 0, 0.14),
     0 rem(2px) rem(1px) rgba(0, 0, 0, 0.2);
+
+  @extend %anime;
+
+  &__picture {
+    @extend %anime;
+  }
 }
 
 .designer-card__photo {
@@ -29,4 +35,6 @@
   /* w450px img-h460px title-h162px card-h622px
      w354px img-h374px title-h162px card-h536px
      w270px img-h260px title-h168px card-h428px */
+
+  @extend %anime;
 }

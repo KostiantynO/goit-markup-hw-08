@@ -13,13 +13,12 @@ $colors: (
 );
 /* || ------------------ END "COLORS" ------------------- */
 
-@function getColor($key) {
-  @return nth($colorsValues, $key);
+@function color($key: null) {
+  @return map-get($colors, $key);
 }
 
 $colorsValues: map-values($colors);
-
-@function getColorValue($key) {
+@function getColorValue($key: null) {
   @return nth($colorsValues, $key);
 }
 
