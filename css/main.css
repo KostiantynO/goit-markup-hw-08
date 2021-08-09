@@ -1426,7 +1426,7 @@ p {
 .portfolio-card__image {
   width: 100%;
   /* 22.125rem=354px if need later */
-  height: 18.375rem;
+  max-height: 18.375rem;
   /* 250px, 100%, 450px */
   min-width: clamp(15.625rem, 100%, var(--width-portfolio-card__image));
 }
