@@ -1,8 +1,18 @@
 .btn {
-  padding: rem(5px) rem(21px); /* pt=pb= 0.3125rem pr=pl= 1.3125rem */
+  /* pt=pb= 5px = 0.3125rem pr=pl=21px = 1.3125rem */
 
-  @include btn($pt: 5px, $pb: auto, $pr: 21px, $pl: null);
+  /* prettier-ignore */
+  @include btn(
+    relative, null,  null,  null,  null,  null,
+    null, 300px, 36px, 50px,
+    5px, 21px, 5px, 21px,
+    hidden, var(--color-bg-btn-secondary),
+    1px, solid, transparent, 4px,
+    16px, 26px, 500, 0.03em, var(--color-text-primary), ellipsis,
+    break-word, pointer, "btn", "t"
+  );
+
   // @include btn($pt: 5px, $pb: 5px, $pr: 21px, $pl: 21px);
 
-  /* Inherits color: #212121; and background-color: #f5f4fa; in normal state and color: #ffffff; and background-color: #2196f3; on Hover Focus from .btn--secondary */
+  /* color: #ffffff; and background-color: #2196f3; on Hover Focus from .btn--secondary */
 }

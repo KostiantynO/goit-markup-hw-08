@@ -29,4 +29,7 @@
   }
 }
 
+/* prettier-ignore */
+@function c($param) { $result: ($param); @return ($result); }
+
 /* -------------------------- END "FUNCTIONS" -------------------------- */

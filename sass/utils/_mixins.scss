@@ -32,20 +32,11 @@
 }
 
 // Margin converter
+/* prettier-ignore */
 @mixin margins($mt: null, $mr: null, $mb: null, $ml: null) {
-  $margins: (
-    "top": $mt,
-    "right": $mr,
-    "bottom": $mb,
-    "left": $ml,
-  );
-
-  @each $side, $direction in $margins {
-    @if map-get($margins, $side) {
-      #{margin-#{$side}}: rem(map-get($margins, $side));
-    }
-  }
-}
+  $margins: ("top": $mt, "right": $mr, "bottom": $mb, "left": $ml,);
+  @each $side, $direction in $margins { @if map-get($margins, $side) {
+      #{margin-#{$side}}: rem(map-get($margins, $side)); }}}
 
 // ========== Для media запросов ==========
 
@@ -71,27 +62,15 @@
 // $colors-second: "#F44336", "#3F51B5", "#4CAf50", "#00BCD4", "#E91E63", "#009688";
 // @include colorize($colors-second, ".features-list__item");
 
-@mixin fz($fz: null, $lh: null, $fw: null, $ls: null) {
-  @if $fz {
-    font-size: rem($fz);
-  }
-
-  @if $fw {
-    font-weight: $fw;
-  }
-
+/* prettier-ignore */
+@mixin fz($fz: null, $lh: null, $fw: null, $ls: null, $clr: null, $teo: null) {
+  @if $fz { font-size: rem($fz); }
+  @if $fw { font-weight: $fw; }
   @if ($fz and $lh and comparable($fz, $lh)) {
     line-height: (round($lh * $precision / $fz)) / $precision;
-  } @else if ($fz == null) {
-    $fz: $base-fz-body;
-    @if $lh and comparable($fz, $lh) {
-      line-height: (round($lh * $precision / $fz)) / $precision;
-    }
-  }
-
-  @if $ls {
-    letter-spacing: $ls;
-  }
+  } @else if ($fz == null) { $fz: $base-fz-body;
+    @if $lh and comparable($fz, $lh) { line-height: (round($lh * $precision / $fz)) / $precision; }}
+  @if $clr { color: $clr; } @if $teo { text-overflow: $teo; } @if $ls { letter-spacing: $ls; }
 }
 
 @mixin tr($tr-key: "card", $tr-time: "time", $tr-map: $tr) {
@@ -113,12 +92,18 @@
   $pt:  null, $pr:  null, $pb:    null, $pl:     null,
 
   $over: null,
+  $bgc: null,
+  $bw: null, $bs: null, $bc: null, $brad: null,
+
+  $fz: null, $lh: null, $fw: null, $ls: null, $clr: null, $teo: null,
+  $wwbw: null, $cur: null,
+  $trp: null, $trdr: null
 ) {
-  @if $pos    { position:       $pos;     }  @if $top    { top:           $top;     }
-  @if $right  { right:          $right;   }  @if $bottom { bottom:        $bottom;  }
-  @if $left   { left:           $left;    }  @if $zi     { z-index:       $zi;      }
-  @if $mnw    { min-width:      $mnw;     }  @if $mxw    { max-width:     $mxw;     }
-  @if $mnh    { min-height:     $mnh;     }  @if $mxh    { max-height:    $mxh;     }
+  @if $pos    { position:       $pos;        }  @if $top    { top:           rem($top);                  }
+  @if $right  { right:          rem($right); }  @if $bottom { bottom:        rem($bottom);               }
+  @if $left   { left:           rem($left);  }  @if $zi     { z-index:       $zi;                        }
+  @if $mnw    { min-width:      rem($mnw);   }  @if $mxw    { max-width:     rem($mxw);                  }
+  @if $mnh    { min-height:     rem($mnh);   }  @if $mxh    { max-height:    rem($mxh);                  }
   @if ($pt or $pr or $pb or $pl) {
     @if (($pt == $pb) and ($pb == $pr) and ($pr == $pl)) { padding: rem($pt);                            }
       @else if (($pt == $pb) and ($pr == $pl))           { padding: rem($pt) rem($pr);                   }
@@ -153,46 +138,25 @@
         }
   }
 
+          @if $over     { overflow:                   $over;            }
+          @if $bgc      { background-color:           $bgc;             }
+
+          @if (($bw and $bs and $bc) != null)
+                        { border:                     rem($bw) $bs $bc; }
+            @else {
+              @if $bw   { border-width:               rem($bw);         }
+              @if $bs   { border-style:               $bs;              }
+              @if $bc   { border-color:               $bc;              }
+            }
+          @if $brad     { border-radius:              rem($brad);       }
+
+          @include fz($fz, $lh, $fw, $ls, $clr, $teo);
 
 
+          @if $wwbw     { word-wrap: $wwbw;                             }
+          @if $cur      { cursor: $cur;                                 }
 
+          @if $trp      { @include tr($trp, $trdr);                     }
 
-
-  @if $over   { overflow:   $over;  }
-
-  @include fz(16px, 26px, 500, 0.03em);
-  color: var(--color-text-primary);
-
-  text-overflow: ellipsis;
-  word-wrap: break-word;
-  cursor: pointer;
-
-  background-color: var(--color-bg-btn-secondary);
-  border: rem(1px) solid transparent;
-  border-radius: rem(4px);
-
-  transition: background-color var(--time) var(--cubic);
-
-  @content;
-}
-
-@mixin btn-static {
-  position: relative;
-  max-width: rem(300px); /* 31.25rem; */
-  min-height: rem(36px); /* 2.25rem; */
-  max-height: rem(50px); /* 3.125rem; */
-  overflow: hidden;
-
-  @include fz(16px, 26px, 500, 0.03em);
-  color: var(--color-text-primary);
-
-  text-overflow: ellipsis;
-  word-wrap: break-word;
-  cursor: pointer;
-
-  background-color: var(--color-bg-btn-secondary);
-  border: rem(1px) solid transparent;
-  border-radius: rem(4px);
-
-  transition: background-color var(--time) var(--cubic);
+          @content;
 }

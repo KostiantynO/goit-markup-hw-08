@@ -1,19 +1,15 @@
 .body__skip-btn {
   margin-left: rem(8px); /* 0.5rem; */
 }
-
+/* prettier-ignore */
 .skip-btn {
-  @include btn(absolute, calc(-1 * #{rem(36px)}), null, null, 0, map-get($z-index, "skip-btn"));
-
-  padding: rem(8px); /* 0.5rem */
-
-  background-color: var(--color-white);
-  border: rem(1px) solid transparent;
-  border-radius: rem(3px);
-
-  transition: transform var(--time) var(--cubic);
+  @include btn(absolute, -36px, null, null, 0,
+  map-get($z-index, "skip-btn"), null, null, null, null, 8px, 8px, 8px, 8px, hidden, var(--color-white), 1px, solid, transparent, 3px, 16px, 26px, 500, 0.03em, var(--color-text-primary), ellipsis, break-word, pointer, "btn", "t");
+  /* p=8px=0.5rem */
 
   &:focus {
     transform: translateY(121%);
   }
+
+
 }

@@ -71,9 +71,12 @@
 /* ------------------------------------------------------ */
 /* ------------------------- START "FUNCTIONS" ------------------------- */
 /* vw(30px, (rem768px)) */
+/* prettier-ignore */
 /* -------------------------- END "FUNCTIONS" -------------------------- */
 /* ------------------------- START "MIXINS" ------------------------- */
+/* prettier-ignore */
 /* MEDIA */
+/* prettier-ignore */
 /* -------------------------- END "MIXINS" -------------------------- */
 /* Component mixins */
 /*  btn mixin / placeholder */
@@ -493,29 +496,28 @@ p {
   /* 0.5rem; */
 }
 
+/* prettier-ignore */
 .skip-btn {
   position: absolute;
-  top: calc(-1 * 2.25rem);
+  top: -2.25rem;
   left: 0;
   z-index: 2;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.63333;
-  letter-spacing: 0.03em;
-  color: var(--color-text-primary);
-  text-overflow: ellipsis;
-  word-wrap: break-word;
-  cursor: pointer;
-  background-color: var(--color-bg-btn-secondary);
-  border: 0.0625rem solid transparent;
-  border-radius: 0.25rem;
-  transition: background-color var(--time) var(--cubic);
   padding: 0.5rem;
-  /* 0.5rem */
+  overflow: hidden;
   background-color: var(--color-white);
   border: 0.0625rem solid transparent;
   border-radius: 0.1875rem;
-  transition: transform var(--time) var(--cubic);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.63333;
+  color: var(--color-text-primary);
+  text-overflow: ellipsis;
+  letter-spacing: 0.03em;
+  word-wrap: break-word;
+  cursor: pointer;
+  transition-property: color, background-color, box-shadow;
+  transition: var(--time) var(--cubic);
+  /* p=8px=0.5rem */
 }
 
 .skip-btn:focus {
@@ -661,24 +663,28 @@ p {
 }
 
 .btn {
+  /* pt=pb= 5px = 0.3125rem pr=pl=21px = 1.3125rem */
+  /* prettier-ignore */
+  position: relative;
+  max-width: 18.75rem;
+  min-height: 2.25rem;
+  max-height: 3.125rem;
   padding: 0.3125rem 1.3125rem;
-  /* pt=pb= 0.3125rem pr=pl= 1.3125rem */
-  padding-top: 0.3125rem;
-  padding-right: 1.3125rem;
-  padding-bottom: auto;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.63333;
-  letter-spacing: 0.03em;
-  color: var(--color-text-primary);
-  text-overflow: ellipsis;
-  word-wrap: break-word;
-  cursor: pointer;
+  overflow: hidden;
   background-color: var(--color-bg-btn-secondary);
   border: 0.0625rem solid transparent;
   border-radius: 0.25rem;
-  transition: background-color var(--time) var(--cubic);
-  /* Inherits color: #212121; and background-color: #f5f4fa; in normal state and color: #ffffff; and background-color: #2196f3; on Hover Focus from .btn--secondary */
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.63333;
+  color: var(--color-text-primary);
+  text-overflow: ellipsis;
+  letter-spacing: 0.03em;
+  word-wrap: break-word;
+  cursor: pointer;
+  transition-property: color, background-color, box-shadow;
+  transition: var(--time) var(--cubic);
+  /* color: #ffffff; and background-color: #2196f3; on Hover Focus from .btn--secondary */
 }
 
 /* Главная кнопка: фон - акцент,  цвет - белый #ffffff. + тень статическая */
@@ -704,10 +710,6 @@ p {
 
 /* START "Фильтры-Кнопки" - Все, Веб-сайты, Приложения, Дизайн, Маркетинг */
 /* Вторичная кнопка: цвет - темный #212121, фон - серый #f5f4fa, + тень динамическая по наведению */
-.btn--secondary {
-  transition: color var(--time) var(--cubic), box-shadow var(--time) var(--cubic);
-}
-
 /* END "Фильтры-Кнопки" */
 .nav__btn-mobile {
   margin-left: auto;
