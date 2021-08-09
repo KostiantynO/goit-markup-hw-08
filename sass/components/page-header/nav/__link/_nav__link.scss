@@ -9,8 +9,8 @@
   /* || ----- START SPECIAL LINK OVERLAY -----  */
   /* Result: link color = #2196f3 (accent) */
 
-  color: var(--color-black) !important;
-  background-color: var(--color-white) !important;
+  color: var(--color-black);
+  background-color: var(--color-white);
 
   &::before {
     content: "";
@@ -18,7 +18,7 @@
     @extend %scaleX-zero;
 
     /* Result: link color = #2196f3 (accent) */
-    background-color: var(--color-accent) !important;
+    background-color: var(--color-accent);
   }
   /* || ------ END SPECIAL LINK OVERLAY ------  */
 
@@ -41,7 +41,7 @@
     min-height: rem(4px); /* 0.25rem */
     content: "";
 
-    background-color: var(--color-accent) !important;
+    background-color: var(--color-accent);
     border-radius: rem(2px); /* 0.125rem */
     border: rem(1px) solid transparent;
   }
@@ -52,7 +52,7 @@
   @extend %scaleX-full-width;
 
   /* Result: nav__link color = #212121 (text-primary) */
-  background-color: var(--color-text-primary) !important;
+  background-color: var(--color-text-primary);
 }
 
 .nav__link:focus > .nav__link-overlay,
