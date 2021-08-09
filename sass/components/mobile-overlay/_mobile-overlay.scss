@@ -2,6 +2,7 @@
 .mobile-overlay {
   position: fixed;
   inset: 0;
+  min-height: 100vh;
   z-index: map-get($z-index, "mobile-overlay");
 
   font-weight: 500;
