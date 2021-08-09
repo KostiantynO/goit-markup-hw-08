@@ -624,6 +624,7 @@ p {
 
 /* END "Лого-ссылка WebStudio" */
 .nav__link {
+  isolation: isolate;
   display: inline-block;
   padding-top: 0.5rem;
   /* 0.5rem */
@@ -2172,7 +2173,7 @@ p {
 .mobile-overlay__container {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100%;
   padding: 3rem 2.5rem;
   /* 3rem 2.5rem */
 }
@@ -2537,7 +2538,7 @@ ls0.02em; c#2196F3; } */
 /* nav-link overlays for centered color fill on :hover */
 .nav__link::before, .nav__link-overlay {
   position: absolute;
-  inset: 0;
+  inset: 0.0625rem;
   display: inline-block;
   mix-blend-mode: screen;
   transition: transform var(--time) var(--cubic);

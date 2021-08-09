@@ -21,7 +21,7 @@
 /* nav-link overlays for centered color fill on :hover */
 %nav__link-overlay {
   position: absolute;
-  inset: 0;
+  inset: rem(1px);
 
   display: inline-block;
   mix-blend-mode: screen;

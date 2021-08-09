@@ -1,13 +1,14 @@
 .nav__link {
   @extend %header-link;
 
+  isolation: isolate;
   display: inline-block;
   padding-top: rem(8px); /* 0.5rem */
 
   text-decoration: none;
-
   /* || ----- START SPECIAL LINK OVERLAY -----  */
   /* Result: link color = #2196f3 (accent) */
+
   color: var(--color-black);
   background-color: var(--color-white);
 
