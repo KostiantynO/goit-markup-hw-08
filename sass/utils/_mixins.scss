@@ -73,9 +73,29 @@
   @if $clr { color: $clr; } @if $teo { text-overflow: $teo; } @if $ls { letter-spacing: $ls; }
 }
 
+/* Transitions */
 @mixin tr($tr-key: "card", $tr-time: "time", $tr-map: $tr) {
-  transition-property: unquote(map-get($tr-map, $tr-key));
-  transition: map-get($tr-map, $tr-time) map-get($tr-map, "cubic");
+  @if ($tr-key == "anime") {
+    transition: unquote(map-get($tr-map, $tr-key))
+      map-get($tr-map, $tr-time)
+      map-get($tr-map, "cubic");
+  } @else {
+    transition-property: unquote(map-get($tr-map, $tr-key));
+    transition: map-get($tr-map, $tr-time) map-get($tr-map, "cubic");
+  }
+}
+
+/* DARK MODE */
+/* prettier-ignore */
+@mixin dark($c: "body-color", $bgc: "body-bg", $fi: null, $st: null) {
+  @media (prefers-color-scheme: dark) {
+    @if ( $c   )  { color:            color( $c,    $theme-dark ); }
+    @if ( $bgc )  { background-color: color( $bgc,  $theme-dark ); }
+    @if ( $fi  )  { fill:             color( $fi,   $theme-dark ); }
+    @if ( $st  )  { stroke:           color( $st,   $theme-dark ); }
+
+    @content;
+  }
 }
 
 /* -------------------------- END "MIXINS" -------------------------- */

@@ -1,5 +1,4 @@
 /* START "Шапка сайта - Контакты" */
-
 .page-header__contacts-list {
   @extend %list;
   margin-left: auto;
@@ -29,13 +28,16 @@
 
 /* info@devstudio.com, +38 096 111 11 11, h16px */
 .header-contact {
-  @extend %header-link;
+  position: relative;
 
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  padding: rem(6px) rem(3px);
 
   color: var(--color-text-secondary);
+
+  @include fz(14px, 16px, 500, 0.02em);
 
   @include mq($tablet, $desktop) {
     @include fz(12px, 14px); /* box */

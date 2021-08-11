@@ -25,6 +25,7 @@
     padding-bottom: rem(24px);
   }
 
+  @extend %dark;
   @extend %anime;
 }
 

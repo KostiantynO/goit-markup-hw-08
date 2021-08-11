@@ -3,13 +3,17 @@
 }
 /* prettier-ignore */
 .skip-btn {
-  @include btn(absolute, -36px, null, null, 0,
-  map-get($z-index, "skip-btn"), null, null, null, null, 8px, 8px, 8px, 8px, hidden, var(--color-white), 1px, solid, transparent, 3px, 16px, 26px, 500, 0.03em, var(--color-text-primary), ellipsis, break-word, pointer, "btn", "t");
+  @include btn(absolute, -50px, null, null, 0, map-get($z-index, "skip-btn"),
+  null, 200px, null, 50px,
+  8px, 8px, 8px, 8px, hidden,
+  var(--color-white), 1px, solid, transparent, 3px,
+  16px, 26px, 500, 0.03em, var(--color-text-primary),
+  ellipsis, break-word, pointer, "btn", "t");
   /* p=8px=0.5rem */
 
   &:focus {
     transform: translateY(121%);
   }
 
-
+  @include dark(wheat, var(--color-text-primary));
 }

@@ -2,43 +2,6 @@
   list-style: none;
 }
 
-/* Студия, Портфолио, Контакты, h16px */
-%header-link {
-  position: relative;
-
-  letter-spacing: 0.02em; /* white-space: nowrap; */
-  font-weight: 500;
-
-  @include mq($desktop) {
-    padding-right: 3px;
-    padding-bottom: 0.5rem;
-    padding-left: 3px;
-
-    line-height: 1.14; /* 16px, color: #2196f3; Hover Focus */
-  }
-}
-
-/* nav-link overlays for centered color fill on :hover */
-%nav__link-overlay {
-  position: absolute;
-  inset: rem(1px);
-
-  display: inline-block;
-  mix-blend-mode: screen;
-
-  transition: transform var(--time) var(--cubic);
-}
-
-/* Hide standard overlay over active nav-link */
-%scaleX-zero {
-  transform: scaleX(0);
-}
-
-/* Show overlay over active nav-link */
-%scaleX-full-width {
-  transform: scaleX(100%);
-}
-
 /* Вторичная кнопка по наведению: текст белый, фон - акцент, + тень (динамическая) */
 %btn--secondary-active {
   color: var(--color-white);
@@ -54,9 +17,7 @@
 /* hover overlay */
 %portfolio-card-overlay {
   position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
+  inset: 100% 0 0;
   height: 100%;
 
   visibility: hidden;

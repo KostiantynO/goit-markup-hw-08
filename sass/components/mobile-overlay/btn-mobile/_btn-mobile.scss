@@ -13,6 +13,8 @@
   background-color: #fff;
   border: none;
 
+  @extend %dark;
+
   &:hover,
   &:focus,
   &:active {

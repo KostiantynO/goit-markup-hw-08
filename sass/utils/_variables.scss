@@ -84,12 +84,67 @@ $uni-pad-med: 60px;
 /* || ---------------- END "ПЕРЕМЕННЫЕ" ----------------- */
 /* ------------------------------------------------------ */
 
+/* || --------------- START "SASS COLORS" --------------- */
+$colors: (
+  "text-primary": var(--color-text-primary),
+  "text-secondary": var(--color-text-secondary),
+  "accent": var(--color-accent),
+  "bg-hero": var(--color-bg-hero),
+  "bg-hero-btn": var(--color-bg-hero-btn),
+  "bg-btn-secondary": var(--color-bg-btn-secondary),
+  "bg-project-card": var(--color-bg-project-card),
+  "white": var(--color-white),
+  "black": var(--color-black),
+  "icon": var(--color-icon),
+  "shadow-middle": var(--shadow-middle),
+  "shadow-hero-btn": var(--shadow-hero-btn),
+  "shadow-mobile-overlay": var(--shadow-mobile-overlay),
+  "dev-tools": #202124,
+);
+
+@function color($key: null, $map: $colors) {
+  @if ($key != null) {
+    @return map-get($map, $key);
+  }
+}
+
+$theme-dark: (
+  "logo-last-part": color("white"),
+  "nav__link-color": color("white"),
+  "nav__link-bg": color("black"),
+  "nav__link-overlay-bg": color("icon"),
+  "dev-tools": color("dev-tools"),
+  "body-color": color("bg-project-card"),
+  "body-bg": color("dev-tools"),
+  "feature-card__svg-color": color("accent"),
+  "feature-card__svg-fill": color("bg-btn-secondary"),
+  "feature-card__svg-wrapper-bg": color("bg-hero"),
+  "section-title": color("icon"),
+  "section-bg-nth-child": color("text-primary"),
+  "portfolio-filter-color": color("bg-project-card"),
+  "portfolio-filter-bg": color("bg-hero"),
+  "portfolio-card-bg": color("bg-hero"),
+  "btn-mobile-close-color": color("icon"),
+  "btn-mobile-close-bg": color("icon"),
+  "social-card-color": color("bg-project-card"),
+  "social-card-bg": color("bg-hero"),
+);
+
+$colorsValues: map-values($colors);
+@function getColorValue($key: null) {
+  @return nth($colorsValues, $key);
+}
+
+/* map-get($colors, $key) */
+
+/* || ---------------- END "SASS COLORS" ---------------- */
+
 $z-index: (
   "zi-01": 1,
   "skip-btn": 2,
   "portfolio-card__thumb::before": 3,
   "portfolio-card__desc": 4,
-  "zi-05": 5,
+  "nav__link::after": 5,
   "zi-06": 6,
   "zi-07": 7,
   "zi-08": 8,
@@ -116,6 +171,7 @@ $tr: (
   "both": "width, height, flex, font-size, line-height",
   "anime": "transform",
   "t": var(--time),
+  "tt": calc(var(--time) * 2),
   "time": calc(var(--time) * 4),
   "cubic": var(--cubic),
 );

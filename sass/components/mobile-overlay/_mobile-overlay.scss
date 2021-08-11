@@ -13,6 +13,10 @@
   background-color: var(--color-white);
   box-shadow: var(--shadow-mobile-overlay);
 
+  @extend %dark;
+  // { @include dark("body-color", "body-bg");
+  // }
+
   @include tr("hidden", $tr-time: "t");
 
   &.is-hidden {

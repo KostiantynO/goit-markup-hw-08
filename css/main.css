@@ -69,6 +69,9 @@
 /* ------------------------------------------------------ */
 /* || ---------------- END "ПЕРЕМЕННЫЕ" ----------------- */
 /* ------------------------------------------------------ */
+/* || --------------- START "SASS COLORS" --------------- */
+/* map-get($colors, $key) */
+/* || ---------------- END "SASS COLORS" ---------------- */
 /* ------------------------- START "FUNCTIONS" ------------------------- */
 /* vw(30px, (rem768px)) */
 /* prettier-ignore */
@@ -77,6 +80,9 @@
 /* prettier-ignore */
 /* MEDIA */
 /* prettier-ignore */
+/* Transitions */
+/* DARK MODE */
+/* prettier-ignore */
 /* -------------------------- END "MIXINS" -------------------------- */
 /* Component mixins */
 /*  btn mixin / placeholder */
@@ -84,44 +90,6 @@
 /* prettier-ignore */
 .nav__menu, .page-header__contacts-list, .social-list, .features-list, .activities-list, .designers-list, .clients-list, .portfolio-filters-list, .portfolio-list, .address-list, .mobile-nav__menu, .mobile-contacts-list, .mobile-social-list {
   list-style: none;
-}
-
-/* Студия, Портфолио, Контакты, h16px */
-.nav__link, .header-contact {
-  position: relative;
-  letter-spacing: 0.02em;
-  /* white-space: nowrap; */
-  font-weight: 500;
-}
-
-@media screen and (min-width: 75rem) {
-  .nav__link, .header-contact {
-    padding-right: 3px;
-    padding-bottom: 0.5rem;
-    padding-left: 3px;
-    line-height: 1.14;
-    /* 16px, color: #2196f3; Hover Focus */
-  }
-}
-
-/* nav-link overlays for centered color fill on :hover */
-.nav__link::before, .nav__link-overlay {
-  position: absolute;
-  inset: 0.0625rem;
-  display: inline-block;
-  mix-blend-mode: screen;
-  transition: transform var(--time) var(--cubic);
-}
-
-/* Hide standard overlay over active nav-link */
-.nav__link::before, .nav__link:focus > .nav__link-overlay,
-.nav__link:hover > .nav__link-overlay, .nav__link-overlay--current {
-  transform: scaleX(0);
-}
-
-/* Show overlay over active nav-link */
-.nav__link:focus::before, .nav__link:hover::before, .nav__link--current::before, .nav__link-overlay {
-  transform: scaleX(100%);
 }
 
 /* Вторичная кнопка по наведению: текст белый, фон - акцент, + тень (динамическая) */
@@ -142,9 +110,7 @@
 /* hover overlay */
 .portfolio-card__thumb::before, .portfolio-card__desc {
   position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
+  inset: 100% 0 0;
   height: 100%;
   visibility: hidden;
   opacity: 0;
@@ -156,9 +122,6 @@
   transition: calc(var(--time) * 4) var(--cubic);
 }
 
-/* || ----------------- START "COLORS" ------------------ */
-/* || ------------------ END "COLORS" ------------------- */
-/* map-get($colors, $key) */
 /* not used, because css vars for colors is more preferable */
 /* START "Скрытый класс для скрин-ридеров"*/
 body .sr-only {
@@ -480,6 +443,13 @@ p {
   background-color: var(--color-bg-btn-secondary);
 }
 
+@media (prefers-color-scheme: dark) {
+  .section:nth-child(2n + 4) {
+    color: var(--color-bg-project-card);
+    background-color: var(--color-text-primary);
+  }
+}
+
 /* Чем мы занимаемся, Наша команда, Постоянные клиенты h42px */
 .section__title {
   margin-bottom: clamp(var(--uni-margin), 3.90625vw, var(--uni-margin-big));
@@ -574,9 +544,11 @@ p {
 /* prettier-ignore */
 .skip-btn {
   position: absolute;
-  top: -2.25rem;
+  top: -3.125rem;
   left: 0;
   z-index: 2;
+  max-width: 12.5rem;
+  max-height: 3.125rem;
   padding: 0.5rem;
   overflow: hidden;
   background-color: var(--color-white);
@@ -693,49 +665,133 @@ p {
   color: var(--color-black);
 }
 
+@media (prefers-color-scheme: dark) {
+  .logo__last-part {
+    color: var(--color-white);
+  }
+}
+
 .logo__last-part--inverse {
   color: var(--color-white);
 }
 
 /* END "Лого-ссылка WebStudio" */
+/* Студия, Портфолио, Контакты, h16px */
 .nav__link {
-  isolation: isolate;
+  position: relative;
   display: inline-block;
-  padding-top: 0.5rem;
-  /* 0.5rem */
+  padding: 0.4375rem 0.1875rem 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.13333;
+  letter-spacing: 0.02em;
   text-decoration: none;
   /* || ----- START SPECIAL LINK OVERLAY -----  */
   /* Result: link color = #2196f3 (accent) */
   color: var(--color-black);
   background-color: var(--color-white);
+  /* Current-link highlight */
+  /* nav-link before-overlay on :hover and for current link */
   /* || ------ END SPECIAL LINK OVERLAY ------  */
   /* Current-link highlight */
 }
 
-.nav__link::before {
-  content: "";
-  /* Result: link color = #2196f3 (accent) */
-  background-color: var(--color-accent);
+@media screen and (min-width: 75rem) {
+  .nav__link {
+    padding: 0.5rem 0.1875rem;
+  }
 }
 
-.nav__link--current::after {
+@media (prefers-color-scheme: dark) {
+  .nav__link {
+    color: var(--color-white);
+    background-color: var(--color-black);
+    mix-blend-mode: screen;
+  }
+}
+
+.nav__link::before, .nav__link::after, .nav__link--current::after {
+  content: "";
   position: absolute;
-  top: calc(100% + 1.3125rem);
+}
+
+.nav__link::before {
+  /* nav-link before-overlay for centered color fill on :hover */
+  inset: 1px;
+  display: block;
+  mix-blend-mode: screen;
+  /* Result: link color = #2196f3 (accent) */
+  background-color: var(--color-accent);
+  /* Hide highlight of non-active nav__link */
+  transform: scaleX(0);
+  transition: transform var(--time) var(--cubic);
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav__link::before {
+    mix-blend-mode: multiply;
+  }
+}
+
+.nav__link:focus::before, .nav__link:hover::before, .nav__link.nav__link--current::before {
+  transform: scaleX(100%);
+}
+
+.nav__link::after, .nav__link.nav__link--current::after {
+  z-index: 5;
+  inset: calc(100% + 0.625rem) 0 0;
   /* 3.3125rem;  */
-  left: 0;
-  min-width: 100%;
   min-height: 0.25rem;
   /* 0.25rem */
-  content: "";
+  pointer-events: none;
   background-color: var(--color-accent);
   border-radius: 0.125rem;
   /* 0.125rem */
   border: 0.0625rem solid transparent;
 }
 
+@media screen and (min-width: 75rem) {
+  .nav__link::after, .nav__link.nav__link--current::after {
+    top: calc(100% + 1.3125rem);
+    /* 3.3125rem;  */
+  }
+}
+
+.nav__link::after {
+  transform: scaleX(0);
+  transition: transform var(--time) var(--cubic);
+}
+
+.nav__link:focus::after, .nav__link:hover::after, .nav__link.nav__link--current::after {
+  transform: scaleX(100%);
+}
+
 .nav__link-overlay {
+  /* nav-link > span-overlay for centered color fill on :hover */
+  position: absolute;
+  inset: 1px;
+  display: block;
+  mix-blend-mode: screen;
   /* Result: nav__link color = #212121 (text-primary) */
   background-color: var(--color-text-primary);
+}
+
+.nav__link:focus .nav__link-overlay,
+.nav__link:hover .nav__link-overlay {
+  transform: scaleX(0);
+}
+
+.nav__link-overlay.nav__link-overlay--current,
+.nav__link:focus .nav__link-overlay--current,
+.nav__link:hover .nav__link-overlay--current {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav__link-overlay {
+    background-color: var(--color-icon);
+    mix-blend-mode: multiply;
+  }
 }
 
 .btn {
@@ -760,6 +816,13 @@ p {
   transition-property: color, background-color, box-shadow;
   transition: var(--time) var(--cubic);
   /* color: #ffffff; and background-color: #2196f3; on Hover Focus from .btn--secondary */
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn {
+    color: var(--color-bg-project-card);
+    background-color: var(--color-bg-hero);
+  }
 }
 
 /* Главная кнопка: фон - акцент,  цвет - белый #ffffff. + тень статическая */
@@ -839,10 +902,16 @@ p {
 
 /* info@devstudio.com, +38 096 111 11 11, h16px */
 .header-contact {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  padding: 0.375rem 0.1875rem;
   color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.13333;
+  letter-spacing: 0.02em;
   /* 14x10envelope 10x14 mr8 */
 }
 
@@ -917,6 +986,7 @@ p {
   /* 0.625rem; */
 }
 
+/* END "Ссылки на соц. сети" */
 .social-card__link {
   position: relative;
   display: flex;
@@ -928,6 +998,13 @@ p {
   background-color: var(--color-white);
   border-radius: 50%;
   transition: color var(--time) var(--cubic), background-color var(--time) var(--cubic);
+}
+
+@media (prefers-color-scheme: dark) {
+  .social-card__link {
+    color: var(--color-bg-project-card);
+    background-color: var(--color-bg-hero);
+  }
 }
 
 .social-card__link:focus, .social-card__link:hover {
@@ -944,7 +1021,6 @@ p {
   animation: rotate-box var(--time) var(--cubic) 1 normal forwards;
 }
 
-/* END "Ссылки на соц. сети" */
 /* Studio - Hero */
 /* Эффективные решения для вашего бизнеса */
 .hero__title {
@@ -1035,12 +1111,26 @@ p {
   /* 0.25rem */
 }
 
+@media (prefers-color-scheme: dark) {
+  .feature-card__svg-wrapper {
+    color: var(--color-bg-project-card);
+    background-color: var(--color-bg-hero);
+  }
+}
+
 .feature-card__svg {
   width: 4.375rem;
   /* 4.375rem; */
   height: 4.375rem;
   /* .antenna-circle, .clock-ticks, .diagram-bars, .astronaut-stars */
   color: var(--color-accent);
+}
+
+@media (prefers-color-scheme: dark) {
+  .feature-card__svg {
+    color: var(--color-accent);
+    fill: var(--color-bg-btn-secondary);
+  }
 }
 
 /* Внимание к деталям, Пунктуальность, Планирование, Современные технологии, h16.41px */
@@ -1054,8 +1144,7 @@ p {
   line-height: 1.17;
   /* from h3 font-weight: 700; */
   text-transform: uppercase;
-  transition-property: transform;
-  transition: calc(var(--time) * 4) var(--cubic);
+  transition: transform calc(var(--time) * 4) var(--cubic);
 }
 
 @media screen and (max-width: 47.9375rem) {
@@ -1073,8 +1162,7 @@ p {
 
 .feature-card__heading-span {
   display: inline-block;
-  transition-property: transform;
-  transition: calc(var(--time) * 4) var(--cubic);
+  transition: transform calc(var(--time) * 4) var(--cubic);
 }
 
 /*Идейные соображения, а также начало повседневной работы по формированию позиции.
@@ -1467,6 +1555,13 @@ p {
   background-color: var(--color-white);
 }
 
+@media (prefers-color-scheme: dark) {
+  .portfolio-card {
+    color: var(--color-bg-project-card);
+    background-color: var(--color-bg-hero);
+  }
+}
+
 .portfolio-card__link {
   display: flex;
   /* Магия флексов :) */
@@ -1499,7 +1594,6 @@ p {
 }
 
 .portfolio-card__image {
-  width: 100%;
   /* 22.125rem=354px if need later */
   max-height: 18.375rem;
   /* 250px, 100%, 450px */
@@ -2291,7 +2385,7 @@ p {
   padding: 0;
 }
 
-.mobile-nav__link--current::after {
+.mobile-nav__link::after, .mobile-nav__link--current::after {
   content: none;
 }
 
@@ -2593,4 +2687,11 @@ ls0.02em; c#2196F3; } */
 /* ------------------------------------------------------ */
 /* || ------------------- END "MEDIA" ------------------- */
 /* ------------------------------------------------------ */
+@media (prefers-color-scheme: dark) {
+  .studio-body,
+  .portfolio-body, .designer-card, .mobile-overlay, .btn-mobile, .page-header {
+    color: var(--color-bg-project-card);
+    background-color: #202124;
+  }
+}
 /*# sourceMappingURL=main.css.map */

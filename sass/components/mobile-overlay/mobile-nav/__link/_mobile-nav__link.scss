@@ -4,6 +4,7 @@
   @include fz(40px, 47px);
   padding: 0;
 
+  &::after,
   &--current::after {
     content: none;
   }

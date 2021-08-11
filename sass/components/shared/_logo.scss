@@ -42,6 +42,8 @@
 
 .logo__last-part {
   color: var(--color-black);
+
+  @include dark("logo-last-part", null);
 }
 
 .logo__last-part--inverse {

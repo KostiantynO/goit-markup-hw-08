@@ -1,65 +1,116 @@
+/* Студия, Портфолио, Контакты, h16px */
+
 .nav__link {
-  @extend %header-link;
+  position: relative;
 
-  isolation: isolate;
   display: inline-block;
-  padding-top: rem(8px); /* 0.5rem */
+  padding: rem(7px) rem(3px) rem(6px);
 
+  @include mq($desktop) {
+    padding: rem(8px) rem(3px);
+  }
+
+  @include fz(14px, 16px, 500, 0.02em);
   text-decoration: none;
+
   /* || ----- START SPECIAL LINK OVERLAY -----  */
   /* Result: link color = #2196f3 (accent) */
-
   color: var(--color-black);
   background-color: var(--color-white);
 
-  &::before {
+  @include dark("nav__link-color", "nav__link-bg") {
+    mix-blend-mode: screen;
+  }
+
+  &::before,
+  &::after,
+  &--current::after {
     content: "";
-    @extend %nav__link-overlay;
-    @extend %scaleX-zero;
-
-    /* Result: link color = #2196f3 (accent) */
-    background-color: var(--color-accent);
-  }
-  /* || ------ END SPECIAL LINK OVERLAY ------  */
-
-  &:focus::before,
-  &:hover::before {
-    @extend %scaleX-full-width;
-  }
-
-  &--current::before {
-    @extend %scaleX-full-width;
+    position: absolute;
   }
 
   /* Current-link highlight */
-  &--current::after {
-    position: absolute;
-    top: calc(100% + #{rem(21px)}); /* 3.3125rem;  */
-    left: 0;
+  &::before {
+    /* nav-link before-overlay for centered color fill on :hover */
+    inset: 1px;
+    display: block;
+    mix-blend-mode: screen;
 
-    min-width: 100%;
-    min-height: rem(4px); /* 0.25rem */
-    content: "";
-
+    /* Result: link color = #2196f3 (accent) */
     background-color: var(--color-accent);
+
+    @include dark(null, null, null, null) {
+      mix-blend-mode: multiply;
+    }
+
+    /* Hide highlight of non-active nav__link */
+    transform: scaleX(0);
+    @include tr("anime", "t");
+  }
+
+  /* nav-link before-overlay on :hover and for current link */
+  &:focus::before,
+  &:hover::before,
+  &.nav__link--current::before {
+    transform: scaleX(100%);
+  }
+
+  /* || ------ END SPECIAL LINK OVERLAY ------  */
+
+  /* Current-link highlight */
+  &::after,
+  &.nav__link--current::after {
+    z-index: map-get($z-index, "nav__link::after");
+    inset: calc(100% + #{rem(10px)}) 0 0; /* 3.3125rem;  */
+
+    @include mq($desktop) {
+      top: calc(100% + #{rem(21px)}); /* 3.3125rem;  */
+    }
+
+    min-height: rem(4px); /* 0.25rem */
+
+    pointer-events: none;
+    background-color: var(--color-accent);
+
     border-radius: rem(2px); /* 0.125rem */
     border: rem(1px) solid transparent;
   }
-}
 
-.nav__link-overlay {
-  @extend %nav__link-overlay;
-  @extend %scaleX-full-width;
+  &::after {
+    transform: scaleX(0);
+    @include tr("anime", "t");
+  }
 
-  /* Result: nav__link color = #212121 (text-primary) */
-  background-color: var(--color-text-primary);
-}
+  &:focus::after,
+  &:hover::after,
+  &.nav__link--current::after {
+    transform: scaleX(100%);
+  }
 
-.nav__link:focus > .nav__link-overlay,
-.nav__link:hover > .nav__link-overlay {
-  @extend %scaleX-zero;
-}
+  &-overlay {
+    /* nav-link > span-overlay for centered color fill on :hover */
+    position: absolute;
+    inset: 1px;
 
-.nav__link-overlay--current {
-  @extend %scaleX-zero;
+    display: block;
+    mix-blend-mode: screen;
+
+    /* Result: nav__link color = #212121 (text-primary) */
+    background-color: var(--color-text-primary);
+
+    .nav__link:focus &,
+    .nav__link:hover & {
+      transform: scaleX(0);
+    }
+
+    &.nav__link-overlay--current,
+    .nav__link:focus &--current,
+    .nav__link:hover &--current {
+      display: none;
+    }
+
+    @include dark(null, "nav__link-overlay-bg") {
+      mix-blend-mode: multiply;
+    }
+  }
 }

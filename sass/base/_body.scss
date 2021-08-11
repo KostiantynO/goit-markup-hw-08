@@ -33,4 +33,6 @@
 
   background-color: var(--color-white);
   fill: var(--color-text-primary);
+
+  @extend %dark;
 }

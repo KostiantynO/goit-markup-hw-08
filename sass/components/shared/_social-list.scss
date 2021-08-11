@@ -19,35 +19,4 @@
   margin-left: rem(10px); /* 0.625rem; */
 }
 
-.social-card__link {
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: rem(12px); /* 0.75rem; */
-
-  color: var(--color-icon);
-
-  background-color: var(--color-white);
-  border-radius: 50%;
-
-  transition: color var(--time) var(--cubic), background-color var(--time) var(--cubic);
-
-  &:focus,
-  &:hover {
-    color: var(--color-white);
-    background-color: var(--color-accent);
-  }
-}
-
-.social-card__icon {
-  fill: currentColor;
-
-  .social-card__link:focus &,
-  .social-card__link:hover & {
-    animation: rotate-box var(--time) var(--cubic) 1 normal forwards;
-  }
-}
 /* END "Ссылки на соц. сети" */

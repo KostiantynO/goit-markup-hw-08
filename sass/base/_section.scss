@@ -7,6 +7,8 @@
 
   &:nth-child(2n + 4) {
     background-color: var(--color-bg-btn-secondary);
+
+    @include dark($bgc: "section-bg-nth-child");
   }
 }
 
