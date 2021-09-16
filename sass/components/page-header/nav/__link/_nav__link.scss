@@ -60,7 +60,6 @@
   /* Current-link highlight */
   &::after,
   &.nav__link--current::after {
-    z-index: map-get($z-index, "nav__link::after");
     inset: calc(100% + #{rem(10px)}) 0 0; /* 3.3125rem;  */
 
     @include mq($desktop) {
