@@ -72,6 +72,30 @@
 /* || --------------- START "SASS COLORS" --------------- */
 /* map-get($colors, $key) */
 /* || ---------------- END "SASS COLORS" ---------------- */
+.skip-btn {
+  z-index: 6;
+}
+
+.portfolio-card__thumb::before {
+  z-index: 9;
+}
+
+.portfolio-card__desc {
+  z-index: 12;
+}
+
+.nav__link::after, .nav__link.nav__link--current::after {
+  z-index: 15;
+}
+
+.backdrop {
+  z-index: 18;
+}
+
+.mobile-overlay {
+  z-index: 21;
+}
+
 /* ------------------------- START "FUNCTIONS" ------------------------- */
 /* vw(30px, (rem768px)) */
 /* prettier-ignore */
@@ -157,9 +181,6 @@ body .sr-only {
   clip: rect(1px, 1px, 1px, 1px);
   /* Useful */
   /* Старая, вырезает контент. Блок в потоке. */
-  font-size: 1px;
-  /* Useful */
-  /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
   line-height: 1px;
   /* Useful */
   /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
@@ -546,7 +567,6 @@ p {
   position: absolute;
   top: -3.125rem;
   left: 0;
-  z-index: 2;
   max-width: 12.5rem;
   max-height: 3.125rem;
   padding: 0.5rem;
@@ -738,7 +758,6 @@ p {
 }
 
 .nav__link::after, .nav__link.nav__link--current::after {
-  z-index: 5;
   inset: calc(100% + 0.625rem) 0 0;
   /* 3.3125rem;  */
   min-height: 0.25rem;
@@ -1581,7 +1600,6 @@ p {
 }
 
 .portfolio-card__thumb::before {
-  z-index: 3;
   content: "";
   background-color: rgba(33, 150, 243, 0.9);
 }
@@ -1602,7 +1620,6 @@ p {
 
 /* Description = Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для цифрового шпионажа и атак на защищённые сервера конкурентов. */
 .portfolio-card__desc {
-  z-index: 4;
   padding-top: clamp(15px, 5.3vw, 63px);
   padding-right: 1.5rem;
   padding-bottom: clamp(15px, 5.3vw, 63px);
@@ -1910,7 +1927,6 @@ p {
 .backdrop {
   position: fixed;
   inset: 0;
-  z-index: 10;
   display: flex;
   overflow-y: scroll;
   background-color: rgba(0, 0, 0, 0.2);
@@ -2316,7 +2332,6 @@ p {
   position: fixed;
   inset: 0;
   min-height: 100vh;
-  z-index: 20;
   font-weight: 500;
   letter-spacing: 0.02em;
   overflow-y: auto;
