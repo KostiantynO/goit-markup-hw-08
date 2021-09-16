@@ -1,9 +1,21 @@
-$mobile: "mobile";
-$tablet: "tablet";
-$desktop: "desktop";
+$mobile: 'mobile';
+$tablet: 'tablet';
+$desktop: 'desktop';
 
 $breakpoints: (
-  "mobile": 30rem,
-  "tablet": 48rem,
-  "desktop": 75rem,
+  'mobile': 30rem,
+  'tablet': 48rem,
+  'desktop': 75rem,
 );
+
+/*
+team project :)
+screen: blocks:       container:
+1440w   body {mw1440} .container {p0 109; mw1280;  }
+768w    body {mw768}  .container {p0  60;          }
+320w    body {mw320}  .container {p0  20;          }
+
+header {mw1280},      .container {p0  80; mw1440;  }
+more-photos {mw1062;} .container {p0  109; mw1280; }
+
+ */
