@@ -1533,23 +1533,19 @@ p {
 /* ------------------------------------------------------ */
 /* Portfolio - Projects */
 .portfolio__list {
-  margin-top: calc(-1 * var(--gap));
-  margin-left: calc(-1 * var(--gap));
+  gap: 30px;
 }
 
 .portfolio-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   justify-content: center;
 }
 
 /* project 4 */
 .portfolio-list__item {
   display: flex;
-  flex-basis: calc(100% / var(--cards-per-line-1) - var(--gap));
   flex-direction: column;
   flex-grow: 1;
-  width: clamp(15.625rem, 100%, var(--width-portfolio-card__image));
   /* 15.625rem, 100%, 450px */
   min-width: 15.625rem;
   /* 15.625rem */
@@ -1559,21 +1555,13 @@ p {
   max-height: calc( 23.125rem + ( (var(--line-height-project-name) * 1.125rem * 2) + (var(--line-height-project-type) * 1rem * 2) + 2.875rem ));
   /* 370px + 178.16px = 548.16px */
   word-wrap: break-word;
-  margin-top: var(--gap);
+  margin-bottom: var(--gap);
   /* 30px top and left */
-  margin-left: var(--gap);
 }
 
 @media screen and (min-width: 48rem) and (max-width: 74.9375rem) {
   .portfolio-list__item {
-    flex-basis: calc(100% / var(--cards-per-line-2) - var(--gap));
     max-width: 22.125rem;
-  }
-}
-
-@media screen and (min-width: 75rem) {
-  .portfolio-list__item {
-    flex-basis: calc(100% / var(--cards-per-line-3) - var(--gap));
   }
 }
 
