@@ -8,6 +8,11 @@ const removeClasses = els =>
 
 const iso = new Isotope(elem, {
   itemSelector: '.portfolio-list__item',
+  percentPosition: true,
+  masonry: {
+    columnWidth: '.portfolio-list__item',
+    gutter: 30,
+  },
 });
 
 const onFilterBtnClick = ({ target }) => {
@@ -15,16 +20,13 @@ const onFilterBtnClick = ({ target }) => {
   let btn = target;
   if (!isBtn) {
     btn = target.closest('.filter-btn');
-    if (!btn) return;
+    if (!btn || btn.classList.contains(filterClass)) return;
   }
 
-  if (btn.classList.contains(filterClass)) {
-    btn.classList.remove(filterClass);
-  } else {
+  if (!btn.classList.contains(filterClass)) {
     removeClasses(filtersBtns);
     btn.classList.add(filterClass);
   }
-
   iso.arrange({ filter: btn.dataset.filter });
 };
 
