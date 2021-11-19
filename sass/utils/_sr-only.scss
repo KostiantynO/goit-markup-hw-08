@@ -1,6 +1,6 @@
 /* START "Скрытый класс для скрин-ридеров"*/
 body .sr-only {
-  /* В классе "screen readers only" (.sr-only) Для Читалок удалить visibility: hidden; -> и задать элементу (скрытым заголовкам секций) в тег tabindex="0"
+  /* В классе "screen readers only" (.sr-only) Для Читалок удалить visibility: hidden; -> и задать элементу (скрытым заголовкам секций) в тег tabindex="-1"
   Тогда контент не выделяется клавишей <таб>.  Контент видно, выделяется мышкой. Блок в потоке. */
 
   /* Do not size content to 0 pixels if you want the content to be read by a screen reader.
@@ -17,7 +17,6 @@ body .sr-only {
   clip: rect(1px 1px 1px 1px); /* Useful */ /* Старая IE6, IE7, вырезает контент. Блок в потоке. */
   clip: rect(1px, 1px, 1px, 1px); /* Useful */ /* Старая, вырезает контент. Блок в потоке. */
 
-  font-size: 1px; /* Useful */ /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
   line-height: 1px; /* Useful */ /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
   white-space: nowrap; /* small importance */ /* Nowrap - элементы в одной строке не переходят на новую строку. Влияет на overflow. */
 

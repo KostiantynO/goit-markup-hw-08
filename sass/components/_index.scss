@@ -3,114 +3,115 @@
 /* ------------------------------------------------------ */
 
 /* Studio and Portfolio - Page-header */
-@import "./shared/animations";
-@import "./ally/skip-btn";
-@import "./page-header/__container/page-header__container";
+@import './shared/animations';
+@import './ally/skip-btn';
+@import './page-header/__container/page-header__container';
 
-@import "./page-header/nav/nav";
-@import "./shared/logo";
+@import './page-header/nav/nav';
+@import './shared/logo';
 
-@import "./page-header/nav/__link/nav__link";
+@import './page-header/nav/__link/nav__link';
 
-@import "./shared/btn/btn";
-@import "./shared/btn/--primary/btn--primary";
-@import "./shared/btn/--secondary/btn--secondary";
+@import './shared/btn/btn';
+@import './shared/btn/--primary/btn--primary';
+@import './shared/btn/--secondary/btn--secondary';
 
-@import "./page-header/nav/__btn-mobile/nav__btn-mobile";
-@import "./page-header/nav/btn-burger/btn-burger";
+@import './page-header/nav/__btn-mobile/nav__btn-mobile';
+@import './page-header/nav/btn-burger/btn-burger';
 
-@import "./page-header/page-header__contacts-list";
+@import './page-header/page-header__contacts-list';
 
-@import "./shared/social-list";
-@import "./shared/social-card/__link/social-card__link";
+@import './shared/social-list';
+@import './shared/social-card/__link/social-card__link';
 
 /* Studio - Hero */
-@import "./hero/__title/hero__title";
+@import './hero/__title/hero__title';
 
-@import "./hero/__btn/hero__btn";
+@import './hero/__btn/hero__btn';
 
 /* Studio - Features */
-@import "./features/features-list";
-@import "./features/feature-card/feature-card";
-@import "./features/feature-card/__svg-wrapper/feature-card__svg-wrapper";
-@import "./features/feature-card/__heading/feature-card__heading";
-@import "./features/feature-card/__paragraph/feature-card__paragraph";
+@import './features/features-list';
+@import './features/feature-card/feature-card';
+@import './features/feature-card/__svg-wrapper/feature-card__svg-wrapper';
+@import './features/feature-card/__heading/feature-card__heading';
+@import './features/feature-card/__paragraph/feature-card__paragraph';
 
 /* Studio - Activities */
-@import "./activities/activities-list";
-@import "./activities/activity-card";
+@import './activities/activities-list';
+@import './activities/activity-card';
 
 /* Studio - Team */
-@import "./team/designers-list";
-@import "./team/designer-card/designer-card";
-@import "./team/designer-card/__meta/designer-card__meta";
+@import './team/designers-list';
+@import './team/designer-card/designer-card';
+@import './team/designer-card/__meta/designer-card__meta';
 
 /* Studio - Clients */
-@import "./clients/clients-list";
-@import "./clients/client-card";
+@import './clients/clients-list';
+@import './clients/client-card';
 
 /* Portfolio - Filters */
-@import "./portfolio/portfolio-filters";
+@import './portfolio/portfolio-filters';
+@import './shared/btn/filter-btn';
 
 /* Portfolio - Projects */
-@import "./portfolio/portfolio-projects/portfolio-list";
-@import "./portfolio/portfolio-projects/portfolio-card/portfolio-card";
-@import "./portfolio/portfolio-projects/portfolio-card/__link/portfolio-card__link";
-@import "./portfolio/portfolio-projects/portfolio-card/__thumb/portfolio-card__thumb";
-@import "./portfolio/portfolio-projects/portfolio-card/__image/portfolio-card__image";
-@import "./portfolio/portfolio-projects/portfolio-card/__desc/portfolio-card__desc";
-@import "./portfolio/portfolio-projects/portfolio-card/__meta/portfolio-card__meta";
-@import "./portfolio/portfolio-projects/portfolio-card/__meta/__name/portfolio-card__name";
-@import "./portfolio/portfolio-projects/portfolio-card/__meta/__type/portfolio-card__type";
+@import './portfolio/portfolio-projects/portfolio-list';
+@import './portfolio/portfolio-projects/portfolio-card/portfolio-card';
+@import './portfolio/portfolio-projects/portfolio-card/__link/portfolio-card__link';
+@import './portfolio/portfolio-projects/portfolio-card/__thumb/portfolio-card__thumb';
+@import './portfolio/portfolio-projects/portfolio-card/__image/portfolio-card__image';
+@import './portfolio/portfolio-projects/portfolio-card/__desc/portfolio-card__desc';
+@import './portfolio/portfolio-projects/portfolio-card/__meta/portfolio-card__meta';
+@import './portfolio/portfolio-projects/portfolio-card/__meta/__name/portfolio-card__name';
+@import './portfolio/portfolio-projects/portfolio-card/__meta/__type/portfolio-card__type';
 
 /* Studio - Page-footer */
-@import "./page-footer/__container/page-footer__container";
-@import "./page-footer/__top-row-wrapper/page-footer__top-row-wrapper";
-@import "./page-footer/address/page-footer__address-wrapper/page-footer__address-wrapper";
-@import "./page-footer/address/__address/page-footer__address";
-@import "./page-footer/address/address";
-@import "./page-footer/address/address-card/__map-pointer/address-card__map-pointer";
-@import "./page-footer/address/address-card/__contact/address-card__contact";
+@import './page-footer/__container/page-footer__container';
+@import './page-footer/__top-row-wrapper/page-footer__top-row-wrapper';
+@import './page-footer/address/page-footer__address-wrapper/page-footer__address-wrapper';
+@import './page-footer/address/__address/page-footer__address';
+@import './page-footer/address/address';
+@import './page-footer/address/address-card/__map-pointer/address-card__map-pointer';
+@import './page-footer/address/address-card/__contact/address-card__contact';
 
-@import "./page-footer/page-footer__social-container/page-footer__social-container";
+@import './page-footer/page-footer__social-container/page-footer__social-container';
 
 /* Studio - Page-footer - subscribe-form */
-@import "./page-footer/subscribe-form/subscribe-form";
-@import "./page-footer/subscribe-form/page-footer__subscribe-form/page-footer__subscribe-form";
-@import "./page-footer/subscribe-form/__title/subscribe-form__title";
-@import "./page-footer/subscribe-form/__group/subscribe-form__group";
-@import "./page-footer/subscribe-form/__field/subscribe-form__field";
-@import "./page-footer/subscribe-form/__input/subscribe-form__input";
-@import "./page-footer/subscribe-form/subscribe-btn/subscribe-btn";
+@import './page-footer/subscribe-form/subscribe-form';
+@import './page-footer/subscribe-form/page-footer__subscribe-form/page-footer__subscribe-form';
+@import './page-footer/subscribe-form/__title/subscribe-form__title';
+@import './page-footer/subscribe-form/__group/subscribe-form__group';
+@import './page-footer/subscribe-form/__field/subscribe-form__field';
+@import './page-footer/subscribe-form/__input/subscribe-form__input';
+@import './page-footer/subscribe-form/subscribe-btn/subscribe-btn';
 
 /* Studio - Modal */
-@import "./modal/backdrop";
-@import "./modal/modal";
-@import "./modal/hero-form/hero-form";
-@import "./modal/hero-form/__title/hero-form__title";
-@import "./modal/hero-form/customer-info/customer-info";
-@import "./modal/hero-form/__customer-info/hero-form__customer-info";
+@import './modal/backdrop';
+@import './modal/modal';
+@import './modal/hero-form/hero-form';
+@import './modal/hero-form/__title/hero-form__title';
+@import './modal/hero-form/customer-info/customer-info';
+@import './modal/hero-form/__customer-info/hero-form__customer-info';
 
-@import "./modal/hero-form/__field/hero-form__field";
+@import './modal/hero-form/__field/hero-form__field';
 
-@import "./modal/hero-form/__label/hero-form__label";
-@import "./modal/hero-form/__input/hero-form__input";
+@import './modal/hero-form/__label/hero-form__label';
+@import './modal/hero-form/__input/hero-form__input';
 
-@import "./modal/hero-form/__customer-comment/hero-form__customer-comment";
-@import "./modal/hero-form/policy/policy";
-@import "./modal/hero-form/policy/custom-checkbox/custom-checkbox";
+@import './modal/hero-form/__customer-comment/hero-form__customer-comment';
+@import './modal/hero-form/policy/policy';
+@import './modal/hero-form/policy/custom-checkbox/custom-checkbox';
 
 /* Studio and Portfolio - Mobile overlay */
-@import "./mobile-overlay/mobile-overlay";
-@import "./mobile-overlay/btn-mobile/btn-mobile";
-@import "./mobile-overlay/__mobile-nav/mobile-overlay__mobile-nav";
-@import "./mobile-overlay/mobile-nav/mobile-nav";
-@import "./mobile-overlay/mobile-nav/__link/mobile-nav__link";
-@import "./mobile-overlay/__mobile-contacts-list/mobile-overlay__mobile-contacts-list";
-@import "./mobile-overlay/mobile-contacts-list/mobile-contacts-list";
-@import "./mobile-overlay/mobile-social-list/mobile-social-list";
-@import "./mobile-overlay/mobile-social-list/mobile-social-card/mobile-social-card";
-@import "./mobile-overlay/mobile-social-list/mobile-social-card/__link/mobile-social-card__link";
+@import './mobile-overlay/mobile-overlay';
+@import './mobile-overlay/btn-mobile/btn-mobile';
+@import './mobile-overlay/__mobile-nav/mobile-overlay__mobile-nav';
+@import './mobile-overlay/mobile-nav/mobile-nav';
+@import './mobile-overlay/mobile-nav/__link/mobile-nav__link';
+@import './mobile-overlay/__mobile-contacts-list/mobile-overlay__mobile-contacts-list';
+@import './mobile-overlay/mobile-contacts-list/mobile-contacts-list';
+@import './mobile-overlay/mobile-social-list/mobile-social-list';
+@import './mobile-overlay/mobile-social-list/mobile-social-card/mobile-social-card';
+@import './mobile-overlay/mobile-social-list/mobile-social-card/__link/mobile-social-card__link';
 
 /* ------------------------------------------------------ */
 /* || ---------------- END "COMPONENTS" ----------------- */

@@ -1,0 +1,29 @@
+/* Margin converter */
+@mixin margins($mt: null, $mr: null, $mb: null, $ml: null) {
+  @if ($mt or $mr or $mb or $ml) {
+    @if (($mt == $mb) and ($mb == $mr) and ($mr == $ml)) {
+      margin: $mt;
+    } @else if (($mt == $mb) and ($mr == $ml)) {
+      margin: $mt $mr;
+    } @else if
+      (
+        ((($mt != $mb) and (($mt and $mb) != null)) and (($mr == $ml) and ($mr != null))) or
+          ((($mr != $ml) and (($mr and $ml) != null)) and (($mt == $mb) and ($mt != null)))
+      )
+    {
+      margin: $mt $mr $mb;
+    } @else if
+      ((($mt != $mb) and (($mt and $mb) != null)) and (($mr != $ml) and (($mr and $ml) != null)))
+    {
+      margin: $mt $mr $mb $ml;
+    } @else {
+      /* prettier-ignore */
+      $margins: ('top': $mt, 'right': $mr, 'bottom': $mb, 'left': $ml,);
+      /* prettier-ignore */
+      @each $side, $direction in $margins { @if map-get($margins, $side) {
+        #{margin-#{$side}}: map-get($margins, $side); }}
+    }
+  }
+
+  @content;
+}

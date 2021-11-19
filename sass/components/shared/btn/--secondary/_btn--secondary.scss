@@ -2,8 +2,7 @@
 
 /* Вторичная кнопка: цвет - темный #212121, фон - серый #f5f4fa, + тень динамическая по наведению */
 .btn--secondary {
-  &:hover,
-  &:focus {
+  &:hover {
     @extend %btn--secondary-active;
   }
 }
@@ -12,7 +11,6 @@
 .btn--secondary.current-btn {
   @extend %btn--secondary-active;
 
-  &:focus,
   &:hover {
     @extend %btn--primary-active;
   }

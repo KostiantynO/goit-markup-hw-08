@@ -140,18 +140,26 @@ $colorsValues: map-values($colors);
 /* || ---------------- END "SASS COLORS" ---------------- */
 
 $z-index: (
-  "zi-01": 1,
-  "skip-btn": 2,
-  "portfolio-card__thumb::before": 3,
-  "portfolio-card__desc": 4,
-  "nav__link::after": 5,
-  "zi-06": 6,
-  "zi-07": 7,
-  "zi-08": 8,
-  "zi-09": 9,
-  "backdrop": 10,
-  "mobile-overlay": 20,
+  "skip-btn",
+  "portfolio-card__thumb::before",
+  "portfolio-card__desc",
+  "nav__link::after, .nav__link.nav__link--current::after",
+  "backdrop",
+  "mobile-overlay"
 );
+
+@mixin zi($i: 3) {
+  $z-step: $i;
+  @each $index in $z-index {
+    $z-step: $z-step + $i;
+
+    .#{$index} {
+      z-index: $z-step;
+    }
+  }
+}
+
+@include zi;
 
 // .universal-transition {
 //   transition-property: position, top, right, bottom, left, display, flex, flex-basis, width,
