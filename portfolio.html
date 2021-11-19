@@ -2,15 +2,18 @@
 <html class="page-html" data-no-scroll lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'" /> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#2f303a" />
+    <meta name="keywords" content="HTML, CSS, JS, Web design" />
     <meta
       name="description"
       content="Portfolio - showcases WebStudio's projects with filters by projects type. The site is a Training project of the GoIT student of FullStack Dev online course"
     />
+    <meta name="author" content="Kostiantyn Ochenash" />
+    <meta name="theme-color" content="#2f303a" />
 
-    <style>
+    <style class="critical-css">
       .list:empty::after {
         content: attr(data-placeholder);
       }
@@ -37,7 +40,10 @@
 
   <body class="portfolio-body" data-no-scroll>
     <!-- Пропустить к Основному Контенту -->
-    <button class="skip-btn body__skip-btn links" onclick="window.location.href='#main-content';">
+    <button
+      class="skip-btn body__skip-btn links"
+      onclick="window.location.href='#main-content';"
+    >
       Skip to main content
     </button>
 
@@ -62,7 +68,9 @@
                 href="./portfolio.html"
                 aria-current="page"
                 hreflang="ru"
-                >Портфолио<span class="nav__link-overlay nav__link-overlay--current"></span
+                >Портфолио<span
+                  class="nav__link-overlay nav__link-overlay--current"
+                ></span
               ></a>
             </li>
             <li class="nav__item">
@@ -86,9 +94,15 @@
                 width="0.875rem"
                 height="0.625rem"
               >
-                <use href="./images/icomoon-svgomg/icons.svg#icon-envelope"></use>
+                <use
+                  href="./images/icomoon-svgomg/icons.svg#icon-envelope"
+                ></use>
               </svg>
-              <span class="tooltip sr-only" id="header-email__label-id" tabindex="-1">
+              <span
+                class="tooltip sr-only"
+                id="header-email__label-id"
+                tabindex="-1"
+              >
                 Почта студии
               </span>
               info@devstudio.com
@@ -107,9 +121,15 @@
                 width="0.625rem"
                 height="0.875rem"
               >
-                <use href="./images/icomoon-svgomg/icons.svg#icon-smartphone"></use>
+                <use
+                  href="./images/icomoon-svgomg/icons.svg#icon-smartphone"
+                ></use>
               </svg>
-              <span class="tooltip sr-only" id="webstudio-phone-id-label-1" tabindex="-1">
+              <span
+                class="tooltip sr-only"
+                id="webstudio-phone-id-label-1"
+                tabindex="-1"
+              >
                 Мобильный студии
               </span>
               +38 096 111 11 11
@@ -135,7 +155,9 @@
           >
             <use href="./images/icomoon-svgomg/icons.svg#icon-burger"></use>
           </svg>
-          <span class="tooltip sr-only" id="btn-burger__label-id" tabindex="-1"> Меню </span>
+          <span class="tooltip sr-only" id="btn-burger__label-id" tabindex="-1">
+            Меню
+          </span>
         </button>
       </div>
     </header>
@@ -151,40 +173,70 @@
             class="portfolio-filters portfolio__portfolio-filters"
             aria-labelledby="portfolio-filters-title-id"
           >
-            <h2 class="sr-only" id="portfolio-filters-title-id">Фильтры-кнопки по типу проекта</h2>
+            <h2 class="sr-only" id="portfolio-filters-title-id">
+              Фильтры-кнопки по типу проекта
+            </h2>
 
-            <ul class="portfolio-filters-list portfolio-filters__list" role="radiogroup">
+            <!--
+              ".filter-all", ".filter-web-site",
+              ".filter-app", ".filter-design", ".filter-marketing" -->
+            <ul
+              class="portfolio-filters-list portfolio-filters__list"
+              role="radiogroup"
+              data-filter-radiogroup
+            >
               <li class="portfolio-filters-list__item">
                 <button
-                  class="btn btn--secondary current-btn filter-btn"
+                  class="btn btn--secondary is-checked filter-btn"
                   id="filter-1"
                   type="button"
                   aria-current="true"
+                  data-filter=".filter-all"
                 >
                   <span class="btn__label">Все</span>
                 </button>
               </li>
 
               <li class="portfolio-filters-list__item">
-                <button class="btn btn--secondary filter-btn" id="filter-2" type="button">
+                <button
+                  class="btn btn--secondary filter-btn"
+                  id="filter-2"
+                  type="button"
+                  data-filter=".filter-web-site"
+                >
                   <span class="btn__label">Веб-сайты</span>
                 </button>
               </li>
 
               <li class="portfolio-filters-list__item">
-                <button class="btn btn--secondary filter-btn" id="filter-3" type="button">
+                <button
+                  class="btn btn--secondary filter-btn"
+                  id="filter-3"
+                  type="button"
+                  data-filter=".filter-app"
+                >
                   <span class="btn__label">Приложения</span>
                 </button>
               </li>
 
               <li class="portfolio-filters-list__item">
-                <button class="btn btn--secondary filter-btn" id="filter-4" type="button">
+                <button
+                  class="btn btn--secondary filter-btn"
+                  id="filter-4"
+                  type="button"
+                  data-filter=".filter-design"
+                >
                   <span class="btn__label">Дизайн</span>
                 </button>
               </li>
 
               <li class="portfolio-filters-list__item">
-                <button class="btn btn--secondary filter-btn" id="filter-5" type="button">
+                <button
+                  class="btn btn--secondary filter-btn"
+                  id="filter-5"
+                  type="button"
+                  data-filter=".filter-marketing"
+                >
                   <span class="btn__label">Маркетинг</span>
                 </button>
               </li>
@@ -192,11 +244,19 @@
           </div>
 
           <!-- Список карточек проектов -->
-          <div class="portfolio-projects" aria-labelledby="portfolio-projects-title-id">
-            <h2 class="sr-only" id="portfolio-projects-title-id">Список карточек проектов</h2>
+          <div
+            class="portfolio-projects"
+            aria-labelledby="portfolio-projects-title-id"
+          >
+            <h2 class="sr-only" id="portfolio-projects-title-id">
+              Список карточек проектов
+            </h2>
 
-            <ul class="portfolio-list portfolio__list" data-placeholder="Заполнитель">
-              <li class="portfolio-list__item">
+            <ul
+              class="portfolio-list portfolio__list"
+              data-placeholder="Заполнитель"
+            >
+              <li class="portfolio-list__item filter-all filter-web-site">
                 <div class="portfolio-card">
                   <a
                     class="portfolio-card__link links"
@@ -247,8 +307,9 @@
                       <!-- width="23.125rem" height="18.375rem" -->
 
                       <p class="portfolio-card__desc" tabindex="-1">
-                        Технокряк это современная площадка распространения коронавируса. Компании
-                        используют эту платформу для цифрового шпионажа и атак на защищённые сервера
+                        Технокряк это современная площадка распространения
+                        коронавируса. Компании используют эту платформу для
+                        цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
@@ -261,7 +322,7 @@
                 </div>
               </li>
 
-              <li class="portfolio-list__item">
+              <li class="portfolio-list__item filter-all filter-design">
                 <div class="portfolio-card">
                   <a
                     class="portfolio-card__link links"
@@ -311,8 +372,9 @@
                       </picture>
 
                       <p class="portfolio-card__desc" tabindex="-1">
-                        Технокряк это современная площадка распространения коронавируса. Компании
-                        используют эту платформу для цифрового шпионажа и атак на защищённые сервера
+                        Технокряк это современная площадка распространения
+                        коронавируса. Компании используют эту платформу для
+                        цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
@@ -327,7 +389,7 @@
                 </div>
               </li>
 
-              <li class="portfolio-list__item">
+              <li class="portfolio-list__item filter-all filter-app">
                 <div class="portfolio-card">
                   <a
                     class="portfolio-card__link links"
@@ -377,21 +439,24 @@
                       </picture>
 
                       <p class="portfolio-card__desc" tabindex="-1">
-                        Технокряк это современная площадка распространения коронавируса. Компании
-                        используют эту платформу для цифрового шпионажа и атак на защищённые сервера
+                        Технокряк это современная площадка распространения
+                        коронавируса. Компании используют эту платформу для
+                        цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
 
                     <div class="portfolio-card__meta">
-                      <h3 class="portfolio-card__name">Ресторан <span lang="en">Seafood</span></h3>
+                      <h3 class="portfolio-card__name">
+                        Ресторан <span lang="en">Seafood</span>
+                      </h3>
                       <p class="portfolio-card__type">Приложение</p>
                     </div>
                   </a>
                 </div>
               </li>
 
-              <li class="portfolio-list__item">
+              <li class="portfolio-list__item filter-all filter-marketing">
                 <div class="portfolio-card">
                   <a
                     class="portfolio-card__link links"
@@ -433,25 +498,32 @@
                           "
                         />
 
-                        <img class="portfolio-card__image image" src="#" alt="Студийные наушники" />
+                        <img
+                          class="portfolio-card__image image"
+                          src="#"
+                          alt="Студийные наушники"
+                        />
                       </picture>
 
                       <p class="portfolio-card__desc" tabindex="-1">
-                        Технокряк это современная площадка распространения коронавируса. Компании
-                        используют эту платформу для цифрового шпионажа и атак на защищённые сервера
+                        Технокряк это современная площадка распространения
+                        коронавируса. Компании используют эту платформу для
+                        цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
 
                     <div class="portfolio-card__meta">
-                      <h3 class="portfolio-card__name">Проект <span lang="en">Prime</span></h3>
+                      <h3 class="portfolio-card__name">
+                        Проект <span lang="en">Prime</span>
+                      </h3>
                       <p class="portfolio-card__type">Маркетинг</p>
                     </div>
                   </a>
                 </div>
               </li>
 
-              <li class="portfolio-list__item">
+              <li class="portfolio-list__item filter-all filter-app">
                 <div class="portfolio-card">
                   <a
                     class="portfolio-card__link links"
@@ -501,21 +573,24 @@
                       </picture>
 
                       <p class="portfolio-card__desc" tabindex="-1">
-                        Технокряк это современная площадка распространения коронавируса. Компании
-                        используют эту платформу для цифрового шпионажа и атак на защищённые сервера
+                        Технокряк это современная площадка распространения
+                        коронавируса. Компании используют эту платформу для
+                        цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
 
                     <div class="portfolio-card__meta">
-                      <h3 class="portfolio-card__name">Проект <span lang="en">Boxes</span></h3>
+                      <h3 class="portfolio-card__name">
+                        Проект <span lang="en">Boxes</span>
+                      </h3>
                       <p class="portfolio-card__type">Приложение</p>
                     </div>
                   </a>
                 </div>
               </li>
 
-              <li class="portfolio-list__item">
+              <li class="portfolio-list__item filter-all filter-web-site">
                 <div class="portfolio-card">
                   <a
                     class="portfolio-card__link links"
@@ -565,8 +640,9 @@
                       </picture>
 
                       <p class="portfolio-card__desc" tabindex="-1">
-                        Технокряк это современная площадка распространения коронавируса. Компании
-                        используют эту платформу для цифрового шпионажа и атак на защищённые сервера
+                        Технокряк это современная площадка распространения
+                        коронавируса. Компании используют эту платформу для
+                        цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
@@ -581,7 +657,7 @@
                 </div>
               </li>
 
-              <li class="portfolio-list__item">
+              <li class="portfolio-list__item filter-all filter-design">
                 <div class="portfolio-card">
                   <a
                     class="portfolio-card__link links"
@@ -631,8 +707,9 @@
                       </picture>
 
                       <p class="portfolio-card__desc" tabindex="-1">
-                        Технокряк это современная площадка распространения коронавируса. Компании
-                        используют эту платформу для цифрового шпионажа и атак на защищённые сервера
+                        Технокряк это современная площадка распространения
+                        коронавируса. Компании используют эту платформу для
+                        цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
@@ -647,7 +724,7 @@
                 </div>
               </li>
 
-              <li class="portfolio-list__item">
+              <li class="portfolio-list__item filter-all filter-marketing">
                 <div class="portfolio-card">
                   <a
                     class="portfolio-card__link links"
@@ -697,21 +774,24 @@
                       </picture>
 
                       <p class="portfolio-card__desc" tabindex="-1">
-                        Технокряк это современная площадка распространения коронавируса. Компании
-                        используют эту платформу для цифрового шпионажа и атак на защищённые сервера
+                        Технокряк это современная площадка распространения
+                        коронавируса. Компании используют эту платформу для
+                        цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
 
                     <div class="portfolio-card__meta">
-                      <h3 class="portfolio-card__name">Проект <span lang="en">LAB</span></h3>
+                      <h3 class="portfolio-card__name">
+                        Проект <span lang="en">LAB</span>
+                      </h3>
                       <p class="portfolio-card__type">Маркетинг</p>
                     </div>
                   </a>
                 </div>
               </li>
 
-              <li class="portfolio-list__item">
+              <li class="portfolio-list__item filter-all filter-app">
                 <div class="portfolio-card">
                   <a
                     class="portfolio-card__link links"
@@ -761,8 +841,9 @@
                       </picture>
 
                       <p class="portfolio-card__desc" tabindex="-1">
-                        Технокряк это современная площадка распространения коронавируса. Компании
-                        используют эту платформу для цифрового шпионажа и атак на защищённые сервера
+                        Технокряк это современная площадка распространения
+                        коронавируса. Компании используют эту платформу для
+                        цифрового шпионажа и атак на защищённые сервера
                         конкурентов.
                       </p>
                     </div>
@@ -789,7 +870,9 @@
           <div class="address-wrapper page-footer__address-wrapper">
             <a class="logo links" href="./" lang="en">
               <span class="logo__web-studio logo__first-part"> Web</span
-              ><span class="logo__web-studio logo__last-part--inverse">Studio </span>
+              ><span class="logo__web-studio logo__last-part--inverse"
+                >Studio
+              </span>
             </a>
             <address class="address page-footer__address">
               <ul class="address-list address__list">
@@ -820,7 +903,11 @@
                       href="mailto:info@example.com"
                       aria-labelledby="webstudio-email-id-label"
                     >
-                      <span class="tooltip sr-only" id="webstudio-email-id-label" tabindex="-1">
+                      <span
+                        class="tooltip sr-only"
+                        id="webstudio-email-id-label"
+                        tabindex="-1"
+                      >
                         Почта для вопросов
                       </span>
                       info@example.com
@@ -834,7 +921,11 @@
                       href="tel:+380991111111"
                       aria-labelledby="webstudio-phone-id-label-2"
                     >
-                      <span class="tooltip sr-only" id="webstudio-phone-id-label-2" tabindex="-1">
+                      <span
+                        class="tooltip sr-only"
+                        id="webstudio-phone-id-label-2"
+                        tabindex="-1"
+                      >
                         Мобильный студии
                       </span>
                       +38 099 111 11 11
@@ -846,7 +937,9 @@
           </div>
           <!-- Footer Social links -->
           <div class="page-footer__social-container">
-            <p class="page-footer__social-title social-list__title">Присоединяйтесь</p>
+            <p class="page-footer__social-title social-list__title">
+              Присоединяйтесь
+            </p>
             <ul class="social-list page-footer__social-list">
               <li class="social-list__item">
                 <div class="social-card">
@@ -863,9 +956,14 @@
                       width="1.25rem"
                       height="1.25rem"
                     >
-                      <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
+                      <use
+                        href="./images/icomoon-svgomg/icons.svg#icon-instagram"
+                      ></use>
                     </svg>
-                    <span class="tooltip sr-only" id="webstudio-instagram-id-label" tabindex="-1"
+                    <span
+                      class="tooltip sr-only"
+                      id="webstudio-instagram-id-label"
+                      tabindex="-1"
                       >Инстаграм</span
                     >
                   </a>
@@ -886,9 +984,14 @@
                       width="1.25rem"
                       height="1.25rem"
                     >
-                      <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
+                      <use
+                        href="./images/icomoon-svgomg/icons.svg#icon-twitter"
+                      ></use>
                     </svg>
-                    <span class="tooltip sr-only" id="webstudio-twitter-id-label" tabindex="-1"
+                    <span
+                      class="tooltip sr-only"
+                      id="webstudio-twitter-id-label"
+                      tabindex="-1"
                       >Твиттер</span
                     >
                   </a>
@@ -909,9 +1012,14 @@
                       width="1.25rem"
                       height="1.25rem"
                     >
-                      <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
+                      <use
+                        href="./images/icomoon-svgomg/icons.svg#icon-facebook"
+                      ></use>
                     </svg>
-                    <span class="tooltip sr-only" id="webstudio-facebook-id-label" tabindex="-1"
+                    <span
+                      class="tooltip sr-only"
+                      id="webstudio-facebook-id-label"
+                      tabindex="-1"
                       >Фейсбук</span
                     >
                   </a>
@@ -932,9 +1040,14 @@
                       width="1.25rem"
                       height="1.25rem"
                     >
-                      <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
+                      <use
+                        href="./images/icomoon-svgomg/icons.svg#icon-linkedin"
+                      ></use>
                     </svg>
-                    <span class="tooltip sr-only" id="webstudio-linkedin-id-label" tabindex="-1"
+                    <span
+                      class="tooltip sr-only"
+                      id="webstudio-linkedin-id-label"
+                      tabindex="-1"
                       >LinkedIn</span
                     >
                   </a>
@@ -949,7 +1062,9 @@
           class="subscribe-form page-footer__subscribe-form"
           aria-labelledby="subscribe-form__title-id"
         >
-          <b class="subscribe-form__title" id="subscribe-form__title-id">Подпишитесь на рассылку</b>
+          <b class="subscribe-form__title" id="subscribe-form__title-id"
+            >Подпишитесь на рассылку</b
+          >
           <div class="subscribe-form__group">
             <!-- E-mail -->
             <div class="subscribe-form__field">
@@ -964,12 +1079,19 @@
                 placeholder="E-mail"
                 required
               />
-              <label class="subscribe-label tooltip sr-only" for="subscribe-user-email-id">
+              <label
+                class="subscribe-label tooltip sr-only"
+                for="subscribe-user-email-id"
+              >
                 Ваша почта
               </label>
             </div>
             <!-- Отправляем форму подписки -->
-            <button class="subscribe-btn btn btn--primary" id="subscribe-btn-id" type="submit">
+            <button
+              class="subscribe-btn btn btn--primary"
+              id="subscribe-btn-id"
+              type="submit"
+            >
               <span class="btn__label">Подписаться</span>
               <!-- 24x24 -->
               <svg
@@ -987,11 +1109,19 @@
     </footer>
 
     <!-- Мобильное меню - Главная (бургер, шаг 2) -->
-    <div class="mobile-overlay is-hidden" id="mobile-overlay-id" data-menu tabindex="-1">
+    <div
+      class="mobile-overlay is-hidden"
+      id="mobile-overlay-id"
+      data-menu
+      tabindex="-1"
+    >
       <div class="container mobile-overlay__container">
         <!-- Кнопка закрытия мобильного меню -->
         <button
-          class="btn btn-mobile btn-mobile-close mobile-overlay__btn-mobile-close"
+          class="
+            btn btn-mobile btn-mobile-close
+            mobile-overlay__btn-mobile-close
+          "
           data-menu-close
           type="button"
           aria-labelledby="btn-mobile-close__label-id"
@@ -1005,7 +1135,11 @@
           >
             <use href="./images/icomoon-svgomg/icons.svg#icon-close-40px"></use>
           </svg>
-          <span class="tooltip sr-only" id="btn-mobile-close__label-id" tabindex="-1">
+          <span
+            class="tooltip sr-only"
+            id="btn-mobile-close__label-id"
+            tabindex="-1"
+          >
             Закрыть
           </span>
         </button>
@@ -1020,15 +1154,24 @@
             </li>
             <li class="mobile-nav__item">
               <a
-                class="mobile-nav__link nav__link nav__link--current mobile-nav__link--current"
+                class="
+                  mobile-nav__link
+                  nav__link nav__link--current
+                  mobile-nav__link--current
+                "
                 href="./portfolio.html"
                 aria-current="page"
                 hreflang="ru"
-                >Портфолио<span class="nav__link-overlay nav__link-overlay--current"></span
+                >Портфолио<span
+                  class="nav__link-overlay nav__link-overlay--current"
+                ></span
               ></a>
             </li>
             <li class="mobile-nav__item">
-              <a class="mobile-nav__link nav__link" rel="noopener nofollow noreferrer" href="#0"
+              <a
+                class="mobile-nav__link nav__link"
+                rel="noopener nofollow noreferrer"
+                href="#0"
                 >Контакты<span class="nav__link-overlay"></span
               ></a>
             </li>
@@ -1062,7 +1205,11 @@
               href="mailto:info@devstudio.com"
               aria-labelledby="mobile-overlay-email__label-id"
             >
-              <span class="tooltip sr-only" id="mobile-overlay-email__label-id" tabindex="-1">
+              <span
+                class="tooltip sr-only"
+                id="mobile-overlay-email__label-id"
+                tabindex="-1"
+              >
                 Почта студии
               </span>
               info@devstudio.com
@@ -1079,7 +1226,9 @@
                 rel="noopener nofollow noreferrer"
                 href="#0"
               >
-                <span class="mobile-social-card__label" tabindex="-1" lang="en">Instagram</span>
+                <span class="mobile-social-card__label" tabindex="-1" lang="en"
+                  >Instagram</span
+                >
               </a>
             </div>
           </li>
@@ -1091,7 +1240,9 @@
                 rel="noopener nofollow noreferrer"
                 href="#0"
               >
-                <span class="mobile-social-card__label" tabindex="-1" lang="en">Twitter</span>
+                <span class="mobile-social-card__label" tabindex="-1" lang="en"
+                  >Twitter</span
+                >
               </a>
             </div>
           </li>
@@ -1103,7 +1254,9 @@
                 rel="noopener nofollow noreferrer"
                 href="#0"
               >
-                <span class="mobile-social-card__label" tabindex="-1" lang="en">Facebook</span>
+                <span class="mobile-social-card__label" tabindex="-1" lang="en"
+                  >Facebook</span
+                >
               </a>
             </div>
           </li>
@@ -1115,7 +1268,9 @@
                 rel="noopener nofollow noreferrer"
                 href="#0"
               >
-                <span class="mobile-social-card__label" tabindex="-1" lang="en">LinkedIn</span>
+                <span class="mobile-social-card__label" tabindex="-1" lang="en"
+                  >LinkedIn</span
+                >
               </a>
             </div>
           </li>
@@ -1123,10 +1278,19 @@
       </div>
     </div>
 
+    <!-- Script for isotope - gallery-items filtering -->
+    <script
+      src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
+      defer
+    ></script>
+
+    <!-- Isotope configuration -->
+    <script src="./js/isotope.js" type="module" defer></script>
+
     <!-- Скрипт мобильного меню -->
-    <script src="./js/mobile-menu.js"></script>
+    <script src="./js/mobile-menu.js" type="module" defer></script>
 
     <!-- Скрипт держит фокус в мобильном меню -->
-    <script src="./js/menu-focus-catch.js"></script>
+    <script src="./js/menu-focus-catch.js" type="module" defer></script>
   </body>
 </html>

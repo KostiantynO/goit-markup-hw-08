@@ -96,6 +96,17 @@
   z-index: 21;
 }
 
+/*
+team project :)
+screen: blocks:       container:
+1440w   body {mw1440} .container {p0 109; mw1280;  }
+768w    body {mw768}  .container {p0  60;          }
+320w    body {mw320}  .container {p0  20;          }
+
+header {mw1280},      .container {p0  80; mw1440;  }
+more-photos {mw1062;} .container {p0  109; mw1280; }
+
+ */
 /* ------------------------- START "FUNCTIONS" ------------------------- */
 /* vw(30px, (rem768px)) */
 /* prettier-ignore */
@@ -117,7 +128,7 @@
 }
 
 /* Вторичная кнопка по наведению: текст белый, фон - акцент, + тень (динамическая) */
-.btn--secondary:hover, .btn--secondary:focus, .current-btn,
+.btn--secondary:hover, .current-btn,
 .btn--secondary.current-btn {
   color: var(--color-white);
   background-color: var(--color-accent);
@@ -125,9 +136,8 @@
 }
 
 /* Главная кнопка - активна */
-.btn--primary:focus, .btn--primary:hover, .current-btn:focus, .current-btn:hover,
-.btn--secondary.current-btn:focus,
-.btn--secondary.current-btn:hover {
+.btn--primary:focus, .btn--primary:hover, .current-btn:hover,
+.btn--secondary.current-btn:hover, .filter-btn.is-checked {
   background-color: var(--color-bg-hero-btn);
 }
 
@@ -149,7 +159,7 @@
 /* not used, because css vars for colors is more preferable */
 /* START "Скрытый класс для скрин-ридеров"*/
 body .sr-only {
-  /* В классе "screen readers only" (.sr-only) Для Читалок удалить visibility: hidden; -> и задать элементу (скрытым заголовкам секций) в тег tabindex="0"
+  /* В классе "screen readers only" (.sr-only) Для Читалок удалить visibility: hidden; -> и задать элементу (скрытым заголовкам секций) в тег tabindex="-1"
   Тогда контент не выделяется клавишей <таб>.  Контент видно, выделяется мышкой. Блок в потоке. */
   /* Do not size content to 0 pixels if you want the content to be read by a screen reader.
   * If content styled with font-size:0px or line-height:0, then the elements would still take horizontal space on the screen.

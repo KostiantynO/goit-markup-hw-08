@@ -1,0 +1,5 @@
+.filter-btn {
+  &.is-checked {
+    @extend %btn--primary-active;
+  }
+}

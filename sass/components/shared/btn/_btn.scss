@@ -11,5 +11,5 @@
   );
   /* color: #ffffff; and background-color: #2196f3; on Hover Focus from .btn--secondary */
 
-  @include dark("portfolio-filter-color", "portfolio-filter-bg");
+  @include dark('portfolio-filter-color', 'portfolio-filter-bg');
 }

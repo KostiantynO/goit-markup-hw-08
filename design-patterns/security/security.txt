@@ -1,0 +1,14 @@
+csp:
+script-src 'nonce-rAnd0m123';
+object-src 'none'; base-uri 'none';
+"require-trusted-types-for 'script'"
+
+
+Learn the best practices for your technology
+The following best practices can help you reduce XSS vulnerabilities in your code for specific technologies.
+
+JavaScript: Many XSS vulnerabilities are caused by passing user data to Javascript execution sinks; browser mechanisms that will execute scripts from their input. Such APIs include *.innerHTML, document.write and eval(). When user-controlled data (in the form of location.*, document.cookie or JavaScript variables containing user data) is returned by the server, calling such functions can lead to XSS.
+JSON: Make sure you apply proper escaping (including HTML-escaping of characters such as < and >). Do not allow user-supplied data to be returned as the first part of the response (as often happens in JSONP). Do not use eval() to parse the data.
+Flash: Consider hosting SWF files in a separate domain.
+GWT: Follow the guidelines in the GWT Developer's Guide on SafeHtml. In particular, avoid the use of APIs that interpret plain String-typed values as HTML and prefer the SafeHtml-variants where available. For example, prefer HTML#setHTML(SafeHtml) over HTML#setHTML(String).
+HTML sanitization: If you need to support user-supplied markup such as images or links, look for technologies that support HTML sanitization. For example, Caja includes an html-sanitizer written in Javascript that can be used to remove potentially executable Javascript from a snippet of HTML.

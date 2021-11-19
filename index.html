@@ -2,13 +2,26 @@
 <html class="page-html" data-no-scroll lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'" /> -->
+    <!-- <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src-elem
+      'sha256-ERSJzoL80W4YyX8LMrFJaz2AwhRx2CzI/sZerkT/+VA='
+      'sha256-qGuQDDbWGlwbWVjmsHkJ47R5Eo7rRKx/eNTuBORi6S8='
+      'sha256-DC8r6w2Uq9+rHwlouBgyr0H5UDwKfCPKYxqhlAvDnPs='
+      'sha256-b043f45d81fca9a8b1b25439a53606f7996f5eb8500c4acf9029cbc9a03afaf4';
+
+      object-src 'none'; base-uri 'none'; require-trusted-types-for 'script';"
+    /> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#2f303a" />
+    <meta name="keywords" content="HTML, CSS, JS, Web design" />
     <meta
       name="description"
       content="Studio - showcases WebStudio's index page with features, activities, team, clients. The site is a Training project of the GoIT student of FullStack Dev online course"
     />
+    <meta name="author" content="Kostiantyn Ochenash" />
+    <meta name="theme-color" content="#2f303a" />
 
     <style class="critical-css">
       .list:empty::after {
@@ -37,7 +50,10 @@
 
   <body class="studio-body" data-no-scroll>
     <!-- Пропустить к Основному Контенту -->
-    <button class="skip-btn body__skip-btn links" onclick="window.location.href='#main-content';">
+    <button
+      class="skip-btn body__skip-btn links"
+      onclick="window.location.href='#main-content';"
+    >
       Skip to main content
     </button>
 
@@ -51,8 +67,14 @@
           </a>
           <ul class="nav__menu">
             <li class="nav__item">
-              <a class="nav__link nav__link--current" href="./" aria-current="page" hreflang="ru"
-                >Студия<span class="nav__link-overlay nav__link-overlay--current"></span>
+              <a
+                class="nav__link nav__link--current"
+                href="./"
+                aria-current="page"
+                hreflang="ru"
+                >Студия<span
+                  class="nav__link-overlay nav__link-overlay--current"
+                ></span>
               </a>
             </li>
 
@@ -83,9 +105,15 @@
                 width="0.875rem"
                 height="0.625rem"
               >
-                <use href="./images/icomoon-svgomg/icons.svg#icon-envelope"></use>
+                <use
+                  href="./images/icomoon-svgomg/icons.svg#icon-envelope"
+                ></use>
               </svg>
-              <span class="tooltip sr-only" id="header-email__label-id" tabindex="-1">
+              <span
+                class="tooltip sr-only"
+                id="header-email__label-id"
+                tabindex="-1"
+              >
                 Почта студии
               </span>
               info@devstudio.com
@@ -104,7 +132,9 @@
                 width="0.625rem"
                 height="0.875rem"
               >
-                <use href="./images/icomoon-svgomg/icons.svg#icon-smartphone"></use>
+                <use
+                  href="./images/icomoon-svgomg/icons.svg#icon-smartphone"
+                ></use>
               </svg>
               <span class="tooltip sr-only" id="webstudio-phone-id-label-1">
                 Мобильный студии
@@ -132,7 +162,9 @@
           >
             <use href="./images/icomoon-svgomg/icons.svg#icon-burger"></use>
           </svg>
-          <span class="tooltip sr-only" id="btn-burger__label-id" tabindex="-1"> Меню </span>
+          <span class="tooltip sr-only" id="btn-burger__label-id" tabindex="-1">
+            Меню
+          </span>
         </button>
       </div>
     </header>
@@ -159,7 +191,10 @@
       </section>
 
       <!-- "Особенности" и h2 sr-only -->
-      <section class="features main__features section" aria-labelledby="features-title-id">
+      <section
+        class="features main__features section"
+        aria-labelledby="features-title-id"
+      >
         <div class="features__container container">
           <h2 class="sr-only" id="features-title-id">Особенности</h2>
           <ul class="features-list features__list">
@@ -173,14 +208,19 @@
                     width="4.375rem"
                     height="4.375rem"
                   >
-                    <use href="./images/icomoon-svgomg/icons.svg#icon-antenna"></use>
+                    <use
+                      href="./images/icomoon-svgomg/icons.svg#icon-antenna"
+                    ></use>
                   </svg>
                 </div>
                 <h3 class="feature-card__heading">
-                  <span class="feature-card__heading-span">Внимание к деталям</span>
+                  <span class="feature-card__heading-span"
+                    >Внимание к деталям</span
+                  >
                 </h3>
                 <p class="feature-card__paragraph">
-                  Идейные соображения, а также начало повседневной работы по формированию позиции.
+                  Идейные соображения, а также начало повседневной работы по
+                  формированию позиции.
                 </p>
               </div>
             </li>
@@ -194,15 +234,17 @@
                     width="4.375rem"
                     height="4.375rem"
                   >
-                    <use href="./images/icomoon-svgomg/icons.svg#icon-clock"></use>
+                    <use
+                      href="./images/icomoon-svgomg/icons.svg#icon-clock"
+                    ></use>
                   </svg>
                 </div>
                 <h3 class="feature-card__heading">
                   <span class="feature-card__heading-span">Пунктуальность</span>
                 </h3>
                 <p class="feature-card__paragraph">
-                  Задача организации, в особенности же рамки и место обучения кадров влечет за
-                  собой.
+                  Задача организации, в особенности же рамки и место обучения
+                  кадров влечет за собой.
                 </p>
               </div>
             </li>
@@ -216,15 +258,17 @@
                     width="4.375rem"
                     height="4.375rem"
                   >
-                    <use href="./images/icomoon-svgomg/icons.svg#icon-diagram"></use>
+                    <use
+                      href="./images/icomoon-svgomg/icons.svg#icon-diagram"
+                    ></use>
                   </svg>
                 </div>
                 <h3 class="feature-card__heading">
                   <span class="feature-card__heading-span">Планирование</span>
                 </h3>
                 <p class="feature-card__paragraph">
-                  Равным образом консультация с широким активом в значительной степени
-                  обуславливает.
+                  Равным образом консультация с широким активом в значительной
+                  степени обуславливает.
                 </p>
               </div>
             </li>
@@ -238,14 +282,19 @@
                     width="4.375rem"
                     height="4.375rem"
                   >
-                    <use href="./images/icomoon-svgomg/icons.svg#icon-astronaut"></use>
+                    <use
+                      href="./images/icomoon-svgomg/icons.svg#icon-astronaut"
+                    ></use>
                   </svg>
                 </div>
                 <h3 class="feature-card__heading">
-                  <span class="feature-card__heading-span">Современные технологии</span>
+                  <span class="feature-card__heading-span"
+                    >Современные технологии</span
+                  >
                 </h3>
                 <p class="feature-card__paragraph">
-                  Значимость этих проблем настолько очевидна, что реализация плановых заданий.
+                  Значимость этих проблем настолько очевидна, что реализация
+                  плановых заданий.
                 </p>
               </div>
             </li>
@@ -254,12 +303,20 @@
       </section>
 
       <!-- Чем мы занимаемся -->
-      <section class="activities main__activities section" aria-labelledby="activities-title-id">
+      <section
+        class="activities main__activities section"
+        aria-labelledby="activities-title-id"
+      >
         <div class="activities__container container">
-          <h2 class="section__title" id="activities-title-id">Чем мы занимаемся</h2>
+          <h2 class="section__title" id="activities-title-id">
+            Чем мы занимаемся
+          </h2>
 
           <!-- Сжатые *.jpg активностей -->
-          <ul class="activities-list activities__list" data-placeholder="Заполнитель">
+          <ul
+            class="activities-list activities__list"
+            data-placeholder="Заполнитель"
+          >
             <li class="activities-list__item">
               <div class="activity-card">
                 <picture class="activity__picture">
@@ -412,7 +469,9 @@
                           width="1.25rem"
                           height="1.25rem"
                         >
-                          <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
+                          <use
+                            href="./images/icomoon-svgomg/icons.svg#icon-instagram"
+                          ></use>
                         </svg>
                         <span
                           class="tooltip social-list__tooltip sr-only"
@@ -438,7 +497,9 @@
                           width="1.25rem"
                           height="1.25rem"
                         >
-                          <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
+                          <use
+                            href="./images/icomoon-svgomg/icons.svg#icon-twitter"
+                          ></use>
                         </svg>
                         <span
                           class="tooltip social-list__tooltip sr-only"
@@ -464,7 +525,9 @@
                           width="1.25rem"
                           height="1.25rem"
                         >
-                          <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
+                          <use
+                            href="./images/icomoon-svgomg/icons.svg#icon-facebook"
+                          ></use>
                         </svg>
                         <span
                           class="tooltip social-list__tooltip sr-only"
@@ -490,7 +553,9 @@
                           width="1.25rem"
                           height="1.25rem"
                         >
-                          <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
+                          <use
+                            href="./images/icomoon-svgomg/icons.svg#icon-linkedin"
+                          ></use>
                         </svg>
                         <span
                           class="tooltip social-list__tooltip sr-only"
@@ -548,7 +613,9 @@
                 </picture>
                 <div class="designer-card__meta">
                   <h3 class="designer-card__name">Ольга Репина</h3>
-                  <p class="designer-card__role" lang="en">Frontend Developer</p>
+                  <p class="designer-card__role" lang="en">
+                    Frontend Developer
+                  </p>
                 </div>
                 <!-- Social links -->
                 <ul class="social-list designer-card__list">
@@ -567,7 +634,9 @@
                           width="1.25rem"
                           height="1.25rem"
                         >
-                          <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
+                          <use
+                            href="./images/icomoon-svgomg/icons.svg#icon-instagram"
+                          ></use>
                         </svg>
                         <span
                           class="tooltip social-list__tooltip sr-only"
@@ -593,7 +662,9 @@
                           width="1.25rem"
                           height="1.25rem"
                         >
-                          <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
+                          <use
+                            href="./images/icomoon-svgomg/icons.svg#icon-twitter"
+                          ></use>
                         </svg>
                         <span
                           class="tooltip social-list__tooltip sr-only"
@@ -619,7 +690,9 @@
                           width="1.25rem"
                           height="1.25rem"
                         >
-                          <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
+                          <use
+                            href="./images/icomoon-svgomg/icons.svg#icon-facebook"
+                          ></use>
                         </svg>
                         <span
                           class="tooltip social-list__tooltip sr-only"
@@ -645,7 +718,9 @@
                           width="1.25rem"
                           height="1.25rem"
                         >
-                          <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
+                          <use
+                            href="./images/icomoon-svgomg/icons.svg#icon-linkedin"
+                          ></use>
                         </svg>
                         <span
                           class="tooltip social-list__tooltip sr-only"
@@ -722,7 +797,9 @@
                           width="1.25rem"
                           height="1.25rem"
                         >
-                          <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
+                          <use
+                            href="./images/icomoon-svgomg/icons.svg#icon-instagram"
+                          ></use>
                         </svg>
                         <span
                           class="tooltip social-list__tooltip sr-only"
@@ -748,7 +825,9 @@
                           width="1.25rem"
                           height="1.25rem"
                         >
-                          <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
+                          <use
+                            href="./images/icomoon-svgomg/icons.svg#icon-twitter"
+                          ></use>
                         </svg>
                         <span
                           class="tooltip social-list__tooltip sr-only"
@@ -774,7 +853,9 @@
                           width="1.25rem"
                           height="1.25rem"
                         >
-                          <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
+                          <use
+                            href="./images/icomoon-svgomg/icons.svg#icon-facebook"
+                          ></use>
                         </svg>
                         <span
                           class="tooltip social-list__tooltip sr-only"
@@ -800,7 +881,9 @@
                           width="1.25rem"
                           height="1.25rem"
                         >
-                          <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
+                          <use
+                            href="./images/icomoon-svgomg/icons.svg#icon-linkedin"
+                          ></use>
                         </svg>
                         <span
                           class="tooltip social-list__tooltip sr-only"
@@ -877,7 +960,9 @@
                           width="1.25rem"
                           height="1.25rem"
                         >
-                          <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
+                          <use
+                            href="./images/icomoon-svgomg/icons.svg#icon-instagram"
+                          ></use>
                         </svg>
                         <span
                           class="tooltip social-list__tooltip sr-only"
@@ -903,7 +988,9 @@
                           width="1.25rem"
                           height="1.25rem"
                         >
-                          <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
+                          <use
+                            href="./images/icomoon-svgomg/icons.svg#icon-twitter"
+                          ></use>
                         </svg>
                         <span
                           class="tooltip social-list__tooltip sr-only"
@@ -929,7 +1016,9 @@
                           width="1.25rem"
                           height="1.25rem"
                         >
-                          <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
+                          <use
+                            href="./images/icomoon-svgomg/icons.svg#icon-facebook"
+                          ></use>
                         </svg>
                         <span
                           class="tooltip social-list__tooltip sr-only"
@@ -955,7 +1044,9 @@
                           width="1.25rem"
                           height="1.25rem"
                         >
-                          <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
+                          <use
+                            href="./images/icomoon-svgomg/icons.svg#icon-linkedin"
+                          ></use>
                         </svg>
                         <span
                           class="tooltip social-list__tooltip sr-only"
@@ -976,7 +1067,9 @@
       <!-- Постоянные клиенты -->
       <section class="clients section" aria-labelledby="clients-title-id">
         <div class="container clients__container">
-          <h2 class="section__title" id="clients-title-id">Постоянные клиенты</h2>
+          <h2 class="section__title" id="clients-title-id">
+            Постоянные клиенты
+          </h2>
           <ul class="clients-list clients__list">
             <li class="clients-list__item">
               <div class="client-card">
@@ -993,9 +1086,16 @@
                     width="6.625rem"
                     height="3.75rem"
                   >
-                    <use href="./images/icomoon-svgomg/icons.svg#icon-client-1"></use>
+                    <use
+                      href="./images/icomoon-svgomg/icons.svg#icon-client-1"
+                    ></use>
                   </svg>
-                  <span class="tooltip sr-only" id="client-id-label-1" tabindex="-1" lang="en">
+                  <span
+                    class="tooltip sr-only"
+                    id="client-id-label-1"
+                    tabindex="-1"
+                    lang="en"
+                  >
                     YA & CO
                   </span>
                 </a>
@@ -1016,9 +1116,16 @@
                     width="6.625rem"
                     height="3.75rem"
                   >
-                    <use href="./images/icomoon-svgomg/icons.svg#icon-client-2"></use>
+                    <use
+                      href="./images/icomoon-svgomg/icons.svg#icon-client-2"
+                    ></use>
                   </svg>
-                  <span class="tooltip sr-only" id="client-id-label-2" tabindex="-1" lang="en">
+                  <span
+                    class="tooltip sr-only"
+                    id="client-id-label-2"
+                    tabindex="-1"
+                    lang="en"
+                  >
                     COMPANY
                     <span class="small">Tag line here</span>
                   </span>
@@ -1040,9 +1147,15 @@
                     width="6.625rem"
                     height="3.75rem"
                   >
-                    <use href="./images/icomoon-svgomg/icons.svg#icon-client-3"></use>
+                    <use
+                      href="./images/icomoon-svgomg/icons.svg#icon-client-3"
+                    ></use>
                   </svg>
-                  <span class="tooltip sr-only" id="client-id-label-3" tabindex="-1">
+                  <span
+                    class="tooltip sr-only"
+                    id="client-id-label-3"
+                    tabindex="-1"
+                  >
                     COMPANY
                   </span>
                 </a>
@@ -1063,9 +1176,15 @@
                     width="6.625rem"
                     height="3.75rem"
                   >
-                    <use href="./images/icomoon-svgomg/icons.svg#icon-client-4"></use>
+                    <use
+                      href="./images/icomoon-svgomg/icons.svg#icon-client-4"
+                    ></use>
                   </svg>
-                  <span class="tooltip sr-only" id="client-id-label-4" tabindex="-1">
+                  <span
+                    class="tooltip sr-only"
+                    id="client-id-label-4"
+                    tabindex="-1"
+                  >
                     FOSTER PETERS
                   </span>
                 </a>
@@ -1086,9 +1205,17 @@
                     width="6.625rem"
                     height="3.75rem"
                   >
-                    <use href="./images/icomoon-svgomg/icons.svg#icon-client-5"></use>
+                    <use
+                      href="./images/icomoon-svgomg/icons.svg#icon-client-5"
+                    ></use>
                   </svg>
-                  <span class="tooltip sr-only" id="client-id-label-5" tabindex="-1"> BRAND </span>
+                  <span
+                    class="tooltip sr-only"
+                    id="client-id-label-5"
+                    tabindex="-1"
+                  >
+                    BRAND
+                  </span>
                 </a>
               </div>
             </li>
@@ -1107,9 +1234,16 @@
                     width="6.625rem"
                     height="3.75rem"
                   >
-                    <use href="./images/icomoon-svgomg/icons.svg#icon-client-6"></use>
+                    <use
+                      href="./images/icomoon-svgomg/icons.svg#icon-client-6"
+                    ></use>
                   </svg>
-                  <span class="tooltip sr-only" id="client-id-label-6" tabindex="-1" lang="en">
+                  <span
+                    class="tooltip sr-only"
+                    id="client-id-label-6"
+                    tabindex="-1"
+                    lang="en"
+                  >
                     COMPANY
                     <span class="small">Tag line</span>
                   </span>
@@ -1128,7 +1262,9 @@
           <div class="address-wrapper page-footer__address-wrapper">
             <a class="logo links" href="./" lang="en">
               <span class="logo__web-studio logo__first-part"> Web</span
-              ><span class="logo__web-studio logo__last-part--inverse">Studio </span>
+              ><span class="logo__web-studio logo__last-part--inverse"
+                >Studio
+              </span>
             </a>
             <address class="address page-footer__address">
               <ul class="address-list address__list">
@@ -1159,7 +1295,11 @@
                       href="mailto:info@example.com"
                       aria-labelledby="info-example-email__label-id"
                     >
-                      <span class="tooltip sr-only" id="info-example-email__label-id" tabindex="-1">
+                      <span
+                        class="tooltip sr-only"
+                        id="info-example-email__label-id"
+                        tabindex="-1"
+                      >
                         Почта для вопросов
                       </span>
                       info@example.com
@@ -1173,7 +1313,11 @@
                       href="tel:+380991111111"
                       aria-labelledby="webstudio-phone-id-label-2"
                     >
-                      <span class="tooltip sr-only" id="webstudio-phone-id-label-2" tabindex="-1">
+                      <span
+                        class="tooltip sr-only"
+                        id="webstudio-phone-id-label-2"
+                        tabindex="-1"
+                      >
                         Мобильный студии
                       </span>
                       +38 099 111 11 11
@@ -1185,7 +1329,9 @@
           </div>
           <!-- Footer Social links -->
           <div class="page-footer__social-container">
-            <p class="page-footer__social-title social-list__title">Присоединяйтесь</p>
+            <p class="page-footer__social-title social-list__title">
+              Присоединяйтесь
+            </p>
             <ul class="social-list page-footer__social-list">
               <li class="social-list__item">
                 <div class="social-card">
@@ -1202,9 +1348,14 @@
                       width="1.25rem"
                       height="1.25rem"
                     >
-                      <use href="./images/icomoon-svgomg/icons.svg#icon-instagram"></use>
+                      <use
+                        href="./images/icomoon-svgomg/icons.svg#icon-instagram"
+                      ></use>
                     </svg>
-                    <span class="tooltip sr-only" id="webstudio-instagram-id-label" tabindex="-1"
+                    <span
+                      class="tooltip sr-only"
+                      id="webstudio-instagram-id-label"
+                      tabindex="-1"
                       >Инстаграм</span
                     >
                   </a>
@@ -1225,9 +1376,14 @@
                       width="1.25rem"
                       height="1.25rem"
                     >
-                      <use href="./images/icomoon-svgomg/icons.svg#icon-twitter"></use>
+                      <use
+                        href="./images/icomoon-svgomg/icons.svg#icon-twitter"
+                      ></use>
                     </svg>
-                    <span class="tooltip sr-only" id="webstudio-twitter-id-label" tabindex="-1"
+                    <span
+                      class="tooltip sr-only"
+                      id="webstudio-twitter-id-label"
+                      tabindex="-1"
                       >Твиттер</span
                     >
                   </a>
@@ -1248,9 +1404,14 @@
                       width="1.25rem"
                       height="1.25rem"
                     >
-                      <use href="./images/icomoon-svgomg/icons.svg#icon-facebook"></use>
+                      <use
+                        href="./images/icomoon-svgomg/icons.svg#icon-facebook"
+                      ></use>
                     </svg>
-                    <span class="tooltip sr-only" id="webstudio-facebook-id-label" tabindex="-1"
+                    <span
+                      class="tooltip sr-only"
+                      id="webstudio-facebook-id-label"
+                      tabindex="-1"
                       >Фейсбук</span
                     >
                   </a>
@@ -1271,9 +1432,14 @@
                       width="1.25rem"
                       height="1.25rem"
                     >
-                      <use href="./images/icomoon-svgomg/icons.svg#icon-linkedin"></use>
+                      <use
+                        href="./images/icomoon-svgomg/icons.svg#icon-linkedin"
+                      ></use>
                     </svg>
-                    <span class="tooltip sr-only" id="webstudio-linkedin-id-label" tabindex="-1"
+                    <span
+                      class="tooltip sr-only"
+                      id="webstudio-linkedin-id-label"
+                      tabindex="-1"
                       >LinkedIn</span
                     >
                   </a>
@@ -1288,7 +1454,9 @@
           class="subscribe-form page-footer__subscribe-form"
           aria-labelledby="subscribe-form__title-id"
         >
-          <b class="subscribe-form__title" id="subscribe-form__title-id">Подпишитесь на рассылку</b>
+          <b class="subscribe-form__title" id="subscribe-form__title-id"
+            >Подпишитесь на рассылку</b
+          >
           <div class="subscribe-form__group">
             <!-- E-mail -->
             <div class="subscribe-form__field">
@@ -1303,12 +1471,19 @@
                 placeholder="E-mail"
                 required
               />
-              <label class="subscribe-label tooltip sr-only" for="subscribe-user-email-id">
+              <label
+                class="subscribe-label tooltip sr-only"
+                for="subscribe-user-email-id"
+              >
                 Ваша почта
               </label>
             </div>
             <!-- Отправляем форму подписки -->
-            <button class="subscribe-btn btn btn--primary" id="subscribe-btn-id" type="submit">
+            <button
+              class="subscribe-btn btn btn--primary"
+              id="subscribe-btn-id"
+              type="submit"
+            >
               <span class="btn__label">Подписаться</span>
               <!-- 24x24 -->
               <svg
@@ -1359,19 +1534,30 @@
               height="1.125rem"
               tabindex="-1"
             >
-              <use href="./images/icomoon-svgomg/icons.svg#icon-close-18px"></use>
+              <use
+                href="./images/icomoon-svgomg/icons.svg#icon-close-18px"
+              ></use>
             </svg>
-            <span class="tooltip sr-only" id="btn-close__label-id">Закрыть</span>
+            <span class="tooltip sr-only" id="btn-close__label-id"
+              >Закрыть</span
+            >
           </button>
 
           <!-- Контактная форма (Form) -->
           <form class="form" data-form-speaker>
-            <b class="hero-form__title" id="hero-form__title-id" data-modal-title>
+            <b
+              class="hero-form__title"
+              id="hero-form__title-id"
+              data-modal-title
+            >
               Оставьте свои данные, мы вам перезвоним</b
             >
             <!-- Вводим имя, телефон и почту (Inputs) -->
             <div class="group customer-info hero-form__customer-info">
-              <label class="hero-form__field customer-info__field" aria-label="Ваше имя">
+              <label
+                class="hero-form__field customer-info__field"
+                aria-label="Ваше имя"
+              >
                 <input
                   class="hero-form__input"
                   name="user-name"
@@ -1393,11 +1579,16 @@
                     width="1.125rem"
                     height="1.125rem"
                   >
-                    <use href="./images/icomoon-svgomg/icons.svg#icon-person"></use>
+                    <use
+                      href="./images/icomoon-svgomg/icons.svg#icon-person"
+                    ></use>
                   </svg>
                 </div>
               </label>
-              <label class="hero-form__field customer-info__field" aria-label="Ваш телефон">
+              <label
+                class="hero-form__field customer-info__field"
+                aria-label="Ваш телефон"
+              >
                 <input
                   class="hero-form__input"
                   name="user-tel"
@@ -1410,7 +1601,9 @@
                   pattern="[0-9 ]{10}"
                   maxlength="10"
                 />
-                <span class="hero-form__label customer-info__label">Телефон</span>
+                <span class="hero-form__label customer-info__label"
+                  >Телефон</span
+                >
                 <div class="svg-wrapper customer-info__svg-wrapper">
                   <!-- 18x18 -->
                   <svg
@@ -1420,11 +1613,16 @@
                     width="1.125rem"
                     height="1.125rem"
                   >
-                    <use href="./images/icomoon-svgomg/icons.svg#icon-phone"></use>
+                    <use
+                      href="./images/icomoon-svgomg/icons.svg#icon-phone"
+                    ></use>
                   </svg>
                 </div>
               </label>
-              <label class="hero-form__field customer-info__field" aria-label="Ваша почта">
+              <label
+                class="hero-form__field customer-info__field"
+                aria-label="Ваша почта"
+              >
                 <input
                   class="hero-form__input"
                   name="user-email"
@@ -1446,24 +1644,36 @@
                     width="1.125rem"
                     height="1.125rem"
                   >
-                    <use href="./images/icomoon-svgomg/icons.svg#icon-email"></use>
+                    <use
+                      href="./images/icomoon-svgomg/icons.svg#icon-email"
+                    ></use>
                   </svg>
                 </div>
               </label>
             </div>
             <!-- Оставляем комментарий -->
-            <label class="hero-form__field customer-comment hero-form__customer-comment">
+            <label
+              class="
+                hero-form__field
+                customer-comment
+                hero-form__customer-comment
+              "
+            >
               <textarea
                 class="hero-form__textarea"
                 name="comment"
                 placeholder="Введите текст"
                 rows="10"
               ></textarea>
-              <span class="hero-form__label customer-comment__label">Комментарий </span>
+              <span class="hero-form__label customer-comment__label"
+                >Комментарий
+              </span>
             </label>
             <!-- Подтверждаем политику конфиденциальности (checkbox) -->
             <label class="group policy hero-form__policy">
-              <div class="custom-checkbox-wrapper policy__custom-checkbox-wrapper">
+              <div
+                class="custom-checkbox-wrapper policy__custom-checkbox-wrapper"
+              >
                 <input
                   class="hero-form__checkbox sr-only"
                   name="policy"
@@ -1504,11 +1714,19 @@
     </div>
 
     <!-- Мобильное меню - Главная (бургер, шаг 2) -->
-    <div class="mobile-overlay is-hidden" id="mobile-overlay-id" data-menu tabindex="-1">
+    <div
+      class="mobile-overlay is-hidden"
+      id="mobile-overlay-id"
+      data-menu
+      tabindex="-1"
+    >
       <div class="container mobile-overlay__container">
         <!-- Кнопка закрытия мобильного меню -->
         <button
-          class="btn btn-mobile btn-mobile-close mobile-overlay__btn-mobile-close"
+          class="
+            btn btn-mobile btn-mobile-close
+            mobile-overlay__btn-mobile-close
+          "
           data-menu-close
           type="button"
           aria-labelledby="btn-mobile-close__label-id"
@@ -1522,7 +1740,11 @@
           >
             <use href="./images/icomoon-svgomg/icons.svg#icon-close-40px"></use>
           </svg>
-          <span class="tooltip sr-only" id="btn-mobile-close__label-id" tabindex="-1">
+          <span
+            class="tooltip sr-only"
+            id="btn-mobile-close__label-id"
+            tabindex="-1"
+          >
             Закрыть
           </span>
         </button>
@@ -1532,20 +1754,32 @@
           <ul class="mobile-nav__menu">
             <li class="mobile-nav__item">
               <a
-                class="mobile-nav__link nav__link nav__link--current mobile-nav__link--current"
+                class="
+                  mobile-nav__link
+                  nav__link nav__link--current
+                  mobile-nav__link--current
+                "
                 href="./"
                 aria-current="page"
                 hreflang="ru"
-                >Студия<span class="nav__link-overlay nav__link-overlay--current"></span>
+                >Студия<span
+                  class="nav__link-overlay nav__link-overlay--current"
+                ></span>
               </a>
             </li>
             <li class="mobile-nav__item">
-              <a class="mobile-nav__link nav__link" href="./portfolio.html" hreflang="ru"
+              <a
+                class="mobile-nav__link nav__link"
+                href="./portfolio.html"
+                hreflang="ru"
                 >Портфолио<span class="nav__link-overlay"></span
               ></a>
             </li>
             <li class="mobile-nav__item">
-              <a class="mobile-nav__link nav__link" rel="noopener nofollow noreferrer" href="#0"
+              <a
+                class="mobile-nav__link nav__link"
+                rel="noopener nofollow noreferrer"
+                href="#0"
                 >Контакты<span class="nav__link-overlay"></span
               ></a>
             </li>
@@ -1579,7 +1813,11 @@
               href="mailto:info@devstudio.com"
               aria-labelledby="mobile-overlay-email__label-id"
             >
-              <span class="tooltip sr-only" id="mobile-overlay-email__label-id" tabindex="-1">
+              <span
+                class="tooltip sr-only"
+                id="mobile-overlay-email__label-id"
+                tabindex="-1"
+              >
                 Почта студии
               </span>
               info@devstudio.com
@@ -1596,7 +1834,9 @@
                 rel="noopener nofollow noreferrer"
                 href="#0"
               >
-                <span class="mobile-social-card__label" tabindex="-1" lang="en">Instagram</span>
+                <span class="mobile-social-card__label" tabindex="-1" lang="en"
+                  >Instagram</span
+                >
               </a>
             </div>
           </li>
@@ -1608,7 +1848,9 @@
                 rel="noopener nofollow noreferrer"
                 href="#0"
               >
-                <span class="mobile-social-card__label" tabindex="-1" lang="en">Twitter</span>
+                <span class="mobile-social-card__label" tabindex="-1" lang="en"
+                  >Twitter</span
+                >
               </a>
             </div>
           </li>
@@ -1620,7 +1862,9 @@
                 rel="noopener nofollow noreferrer"
                 href="#0"
               >
-                <span class="mobile-social-card__label" tabindex="-1" lang="en">Facebook</span>
+                <span class="mobile-social-card__label" tabindex="-1" lang="en"
+                  >Facebook</span
+                >
               </a>
             </div>
           </li>
@@ -1632,7 +1876,9 @@
                 rel="noopener nofollow noreferrer"
                 href="#0"
               >
-                <span class="mobile-social-card__label" tabindex="-1" lang="en">LinkedIn</span>
+                <span class="mobile-social-card__label" tabindex="-1" lang="en"
+                  >LinkedIn</span
+                >
               </a>
             </div>
           </li>
@@ -1641,19 +1887,41 @@
     </div>
 
     <!-- Скрипт мобильного меню -->
-    <script src="./js/mobile-menu.js"></script>
+    <script src="./js/mobile-menu.js" defer></script>
 
     <!-- Скрипт держит фокус в мобильном меню -->
-    <script src="./js/menu-focus-catch.js"></script>
+    <script
+      sha256="SHA256-b043f45d81fca9a8b1b25439a53606f7996f5eb8500c4acf9029cbc9a03afaf4"
+      src="./js/menu-focus-catch.js"
+      type="module"
+      defer
+    ></script>
 
     <!-- Скрипт модального окна -->
-    <script src="./js/modal.js"></script>
-    <!-- <script src="./js/modal.min.js" ></script> -->
+    <script
+      integrity="sha256-DC8r6w2Uq9+rHwlouBgyr0H5UDwKfCPKYxqhlAvDnPs="
+      src="./js/modal.js"
+      type="module"
+      defer
+    ></script>
+    <!-- <script
+      intergrity="sha256-4a7916bf369d701bce85fc0d997a943cda2d3dc295c17c02c3ad044bcb278b2e"
+      src="./js/modal.min.js" ></script> -->
 
     <!-- Скрипт держит фокус в модальном окне -->
-    <script src="./js/modal-focus-catch.js"></script>
+    <script
+      integrity="sha256-qGuQDDbWGlwbWVjmsHkJ47R5Eo7rRKx/eNTuBORi6S8="
+      src="./js/modal-focus-catch.js"
+      type="module"
+      defer
+    ></script>
 
     <!-- Скрипт спикера формы модалки -->
-    <script src="./js/form.min.js"></script>
+    <script
+      integrity="sha256-ERSJzoL80W4YyX8LMrFJaz2AwhRx2CzI/sZerkT/+VA="
+      src="./js/form.min.js"
+      type="module"
+      defer
+    ></script>
   </body>
 </html>
